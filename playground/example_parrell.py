@@ -20,18 +20,17 @@ The calculators can work in parallel using the module `multiprocessing`.
 Author: Mike Müller, mmueller@hydrocomputing.com
 """
 
-
 import multiprocessing
 import os
 import timeit
 
 import matplotlib.pyplot as plt
 
-MODE = 'dll'  # 'dll' or 'com'
+MODE = "dll"  # 'dll' or 'com'
 
-if MODE == 'com':
+if MODE == "com":
     import phreeqpy.iphreeqc.phreeqc_com as phreeqc_mod
-elif MODE == 'dll':
+elif MODE == "dll":
     import phreeqpy.iphreeqc.phreeqc_dll as phreeqc_mod
 else:
     raise Exception('Mode "%s" is not defined use "com" or "dll".' % MODE)
@@ -50,21 +49,24 @@ class CoupledModel(object):
 
     def __init__(self, ncells, nshifts, initial_conditions, processes):
         self.nshifts = nshifts
-        self.reaction_model = ReactionModel(ncells, initial_conditions,
-                                            processes)
+        self.reaction_model = ReactionModel(ncells, initial_conditions, processes)
         self.reaction_model.make_initial_state()
-        init_conc = dict([(name, [value] * ncells) for name, value in
-                          self.reaction_model.init_conc.items()])
-        self.advection_model = AdvectionModel(init_conc,
-                                              self.reaction_model.inflow_conc)
+        init_conc = dict(
+            [
+                (name, [value] * ncells)
+                for name, value in self.reaction_model.init_conc.items()
+            ]
+        )
+        self.advection_model = AdvectionModel(
+            init_conc, self.reaction_model.inflow_conc
+        )
         self.component_names = self.reaction_model.component_names
         self.results = {}
         for name in self.component_names:
             self.results[name] = []
 
     def run(self):
-        """Go over all time steps (shifts).
-        """
+        """Go over all time steps (shifts)."""
         for _ in range(self.nshifts):
             self.advection_model.advect()
             self.advection_model.save_results(self.results)
@@ -101,8 +103,7 @@ class AdvectionModel(object):
         self.conc = new_conc
 
     def advect(self):
-        """Shift one cell.
-        """
+        """Shift one cell."""
         for name in self.conc:
             self.outflow[name] = self.conc[name][-1]
             self.conc[name][1:] = self.conc[name][:-1]
@@ -132,11 +133,12 @@ class ReactionModel(object):
 
     def __init__(self, ncells, initial_conditions, processes):
         if processes > ncells:
-            raise ValueError('Number of processes needs to be less or equal '
-                             'than number of cells. %d processes %d cells.'
-                             % (processes, ncells))
+            raise ValueError(
+                "Number of processes needs to be less or equal "
+                "than number of cells. %d processes %d cells." % (processes, ncells)
+            )
         if processes < 1:
-            raise ValueError('Need at least one process got %d' % processes)
+            raise ValueError("Need at least one process got %d" % processes)
         self.parallel = False
         if processes > 1:
             self.parallel = True
@@ -153,37 +155,33 @@ class ReactionModel(object):
         self.make_initial_state()
 
     def _init_calculators(self):
-        """If we are going parallel we need several calculators.
-        """
+        """If we are going parallel we need several calculators."""
         if self.parallel:
             # Domain decomposition.
             slave_ncells, reminder = divmod(self.ncells, self.processes)
             root_ncells = slave_ncells + reminder
             current_cell = root_ncells
-            root_calculator = PhreeqcCalculator(root_ncells,
-                                                self.initial_conditions)
+            root_calculator = PhreeqcCalculator(root_ncells, self.initial_conditions)
             self.calculators = [root_calculator]
             self.cell_ranges = [(0, root_ncells)]
             for _ in range(self.processes - 1):
-                self.calculators.append(PhreeqcCalculatorProxy(slave_ncells,
-                                                    self.initial_conditions))
-                self.cell_ranges.append((current_cell,
-                                         current_cell + slave_ncells))
+                self.calculators.append(
+                    PhreeqcCalculatorProxy(slave_ncells, self.initial_conditions)
+                )
+                self.cell_ranges.append((current_cell, current_cell + slave_ncells))
                 current_cell += slave_ncells
             assert current_cell == self.ncells
             self.calculators.reverse()
             self.cell_ranges.reverse()
         else:
-            root_calculator = PhreeqcCalculator(self.ncells,
-                                                self.initial_conditions)
+            root_calculator = PhreeqcCalculator(self.ncells, self.initial_conditions)
             # Just one calculator and the entire range but still use a list
             # to provide the same interface as the parallel case.
             self.calculators = [root_calculator]
             self.cell_ranges = [(0, self.ncells)]
 
     def make_initial_state(self):
-        """Get the initial values from the calculator(s).
-        """
+        """Get the initial values from the calculator(s)."""
         self.inflow_conc = self.calculators[0].inflow_conc
         self.init_conc = self.calculators[0].init_conc
         self.component_names = self.calculators[0].component_names
@@ -195,14 +193,17 @@ class ReactionModel(object):
                 assert self.component_names == calculator.component_names
 
     def modify(self, new_conc):
-        """Pass new conc after advection to the calculator.
-        """
+        """Pass new conc after advection to the calculator."""
         self.conc = {}
         for name in self.component_names:
             self.conc[name] = []
         for cell_range, calculator in zip(self.cell_ranges, self.calculators):
-            current_conc = dict([(name, value[cell_range[0]:cell_range[1]]) for
-                                  name, value in new_conc.items()])
+            current_conc = dict(
+                [
+                    (name, value[cell_range[0] : cell_range[1]])
+                    for name, value in new_conc.items()
+                ]
+            )
             calculator.modify(current_conc)
         for calculator in self.calculators:
             conc = calculator.get_modified()
@@ -239,20 +240,23 @@ class PhreeqcCalculator(object):
         self.inflow_conc = {}
         self.init_conc = {}
         self.conc = {}
-        self.phreeqc = phreeqc_mod.IPhreeqc(r"/home/jjl122/iphreeqc-3.7.3-15968/src/.libs/libiphreeqc.so")
-        self.phreeqc.load_database(r"/home/jjl122/iphreeqc-3.7.3-15968/database/phreeqc.dat")
+        self.phreeqc = phreeqc_mod.IPhreeqc(
+            r"/home/jjl122/iphreeqc-3.7.3-15968/src/.libs/libiphreeqc.so"
+        )
+        self.phreeqc.load_database(
+            r"/home/jjl122/iphreeqc-3.7.3-15968/database/phreeqc.dat"
+        )
         self.components = []
         self.component_names = []
         self._make_initial_state()
 
     def _make_initial_state(self):
-        """Copy solution to all cells and calculate initial conditions.
-        """
+        """Copy solution to all cells and calculate initial conditions."""
         self.phreeqc.run_string(self.initial_conditions)
         self.components = self.phreeqc.get_component_list()
         start = 1
         end = self.ncells
-        code = ''
+        code = ""
         code += "COPY solution 1 %d-%d\n" % (start, end)
         code += "COPY exchange 1 %d-%d\n" % (start, end)
         code += "END\n"
@@ -261,9 +265,10 @@ class PhreeqcCalculator(object):
         self.phreeqc.run_string(code)
         self.conc = self.get_selected_output()
         all_names = self.conc.keys()
-        self.component_names = [name for name in all_names if name not in
-                                ('cb', 'H', 'O')]
-        code = ''
+        self.component_names = [
+            name for name in all_names if name not in ("cb", "H", "O")
+        ]
+        code = ""
         code += self.make_selected_output(self.components)
         code += "RUN_CELLS; -cells 0-1\n"
         self.phreeqc.run_string(code)
@@ -273,37 +278,35 @@ class PhreeqcCalculator(object):
             self.init_conc[name] = start_conc[name][1]
 
     def modify(self, new_conc):
-        """Set new concentration after advection and re-calculate.
-        """
+        """Set new concentration after advection and re-calculate."""
         conc = self.conc
         end = self.ncells + 1
         conc.update(new_conc)
         modify = []
         for index, cell in enumerate(range(1, end)):
             modify.append("SOLUTION_MODIFY %d" % cell)
-            modify.append("\t-cb      %e" % conc['cb'][index])
-            modify.append("\t-total_h %s" % conc['H'][index])
-            modify.append("\t-total_o %s" % conc['O'][index])
+            modify.append("\t-cb      %e" % conc["cb"][index])
+            modify.append("\t-total_h %s" % conc["H"][index])
+            modify.append("\t-total_o %s" % conc["O"][index])
             modify.append("\t-totals")
             for name in self.component_names:
                 modify.append("\t\t%s\t%s" % (name, conc[name][index]))
         modify.append("RUN_CELLS; -cells %d-%d\n" % (1, self.ncells))
-        code = '\n'.join(modify)
+        code = "\n".join(modify)
         self.phreeqc.run_string(code)
         self.conc = self.get_selected_output()
 
     def get_modified(self):
-        """Return calculated conc.
-        """
+        """Return calculated conc."""
         return self.conc
 
-    @ staticmethod # this is just a function but belongs here
+    @staticmethod  # this is just a function but belongs here
     def make_selected_output(components):
         """
         Build SELECTED_OUTPUT data block.
         """
         headings = "-headings    cb    H    O    "
-        headings += '\t'.join(components)
+        headings += "\t".join(components)
         selected_output = """
         SELECTED_OUTPUT
             -reset false
@@ -316,7 +319,7 @@ class PhreeqcCalculator(object):
         # All other elements
         lino = 30
         for component in components:
-            code += '%d PUNCH w*TOT(\"%s\")\n' % (lino, component)
+            code += '%d PUNCH w*TOT("%s")\n' % (lino, component)
             lino += 10
         selected_output += code
         return selected_output
@@ -338,8 +341,7 @@ class PhreeqcCalculator(object):
         return conc
 
     def finish(self):
-        """Placeholder to give same interface as the multiprocessing version.
-        """
+        """Placeholder to give same interface as the multiprocessing version."""
         pass
 
 
@@ -352,42 +354,37 @@ class PhreeqcCalculatorProxy(object):
     """
 
     def __init__(self, ncells, initial_conditions):
-        """Go parallel.
-        """
+        """Go parallel."""
         self.in_queue = multiprocessing.JoinableQueue()
         self.out_queue = multiprocessing.JoinableQueue()
         self.process = multiprocessing.Process(
             target=process_worker,
-            args=(ncells, initial_conditions, self.in_queue, self.out_queue))
+            args=(ncells, initial_conditions, self.in_queue, self.out_queue),
+        )
         self.process.start()
-        (self.inflow_conc,
-         self.init_conc,
-         self.component_names) = self.out_queue.get()
+        (self.inflow_conc, self.init_conc, self.component_names) = self.out_queue.get()
 
     def modify(self, new_conc):
-        """Run PHREEQC in another process.
-        """
+        """Run PHREEQC in another process."""
         self.in_queue.put(new_conc)
 
     def get_modified(self):
-        """Return calculated conc.
-        """
+        """Return calculated conc."""
         return self.out_queue.get()
 
     def finish(self):
-        """Terminate the process.
-        """
+        """Terminate the process."""
         self.in_queue.put(None)
         self.process.join()
 
 
 def process_worker(ncells, initial_conditions, in_queue, out_queue):
-    """This runs in another process.
-    """
-    print('Started process with ID', os.getpid())
+    """This runs in another process."""
+    print("Started process with ID", os.getpid())
     calculator = PhreeqcCalculator(ncells, initial_conditions)
-    out_queue.put((calculator.inflow_conc, calculator.init_conc,
-                  calculator.component_names))
+    out_queue.put(
+        (calculator.inflow_conc, calculator.init_conc, calculator.component_names)
+    )
     while True:
         new_conc = in_queue.get()
         # None is the sentinel. We are done
@@ -398,25 +395,22 @@ def process_worker(ncells, initial_conditions, in_queue, out_queue):
 
 
 def plot(ncells, outflow, specie_names):
-    """Plot the results.
-    """
-    colors = {'Ca': 'r', 'Cl': 'b', 'K': 'g', 'N': 'y', 'Na': 'm'}
-    x = [i / float(ncells) for i in
-         range(1, len(outflow[specie_names[0]]) + 1)]
+    """Plot the results."""
+    colors = {"Ca": "r", "Cl": "b", "K": "g", "N": "y", "Na": "m"}
+    x = [i / float(ncells) for i in range(1, len(outflow[specie_names[0]]) + 1)]
     args = []
     for name in specie_names:
         args.extend([x, outflow[name], colors[name]])
     plt.plot(*args)
     plt.legend(specie_names, loc=(0.8, 0.5))
-    plt.ylabel('MILLIMOLES PER KILOGRAM WATER')
-    plt.xlabel('PORE VOLUME')
+    plt.ylabel("MILLIMOLES PER KILOGRAM WATER")
+    plt.xlabel("PORE VOLUME")
     plt.savefig("ex11.png")
     plt.show()
 
 
 def measure_time(func, *args, **kwargs):
-    """Convenience function to measure run times.
-    """
+    """Convenience function to measure run times."""
     start = timeit.default_timer()
     result = func(*args, **kwargs)
     return result, timeit.default_timer() - start
@@ -453,26 +447,24 @@ def main(ncells, nshifts, processes=2, show_plot=False):
         """
 
     def run():
-        """Do the work.
-        """
-        model = CoupledModel(ncells, nshifts, initial_conditions,
-                             processes)
+        """Do the work."""
+        model = CoupledModel(ncells, nshifts, initial_conditions, processes)
         model.run()
         return model, model.results
 
     (model, outflow), run_time = measure_time(run)
-    print('Statistics')
-    print('==========')
-    print('number of cells:    ', ncells)
-    print('number of shifts:   ', nshifts)
-    print('number of processes:', processes)
-    print('run_time:           ', run_time)
+    print("Statistics")
+    print("==========")
+    print("number of cells:    ", ncells)
+    print("number of shifts:   ", nshifts)
+    print("number of processes:", processes)
+    print("run_time:           ", run_time)
     print()
     if show_plot:
         plot(ncells, outflow, model.component_names)
 
 
-def benchmark(ncells=400, nshifts=1200, process_range=range(1,9)):
+def benchmark(ncells=400, nshifts=1200, process_range=range(1, 9)):
     """Benchmark for diffrent numbers of processes"""
     for processes in process_range:
         main(ncells=ncells, nshifts=nshifts, processes=processes)
@@ -483,6 +475,6 @@ def plot_result(ncells=400, nshifts=1200, processes=4):
     main(ncells=ncells, nshifts=nshifts, processes=processes, show_plot=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     benchmark()
     plot_result()

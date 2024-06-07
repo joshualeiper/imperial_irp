@@ -15,11 +15,11 @@ if sys.version_info[0] == 2:
 import os
 import timeit
 
-MODE = 'dll'  # 'dll' or 'com'
+MODE = "dll"  # 'dll' or 'com'
 
-if MODE == 'com':
+if MODE == "com":
     import phreeqpy.iphreeqc.phreeqc_com as phreeqc_mod
-elif MODE == 'dll':
+elif MODE == "dll":
     import phreeqpy.iphreeqc.phreeqc_dll as phreeqc_mod
 else:
     raise Exception('Mode "%s" is not defined use "com" or "dll".' % MODE)
@@ -80,7 +80,7 @@ def make_selected_output(components):
     #
     lino = 30
     for component in components:
-        code += '%d PUNCH w*TOT(\"%s\")\n' % (lino, component)
+        code += '%d PUNCH w*TOT("%s")\n' % (lino, component)
         lino += 10
     selected_output += code
     return selected_output
@@ -90,7 +90,9 @@ def initialize(cells, first=False):
     """
     Initialize IPhreeqc module
     """
-    phreeqc = phreeqc_mod.IPhreeqc(r"/home/jjl122/iphreeqc-3.7.3-15968/src/.libs/libiphreeqc.so")
+    phreeqc = phreeqc_mod.IPhreeqc(
+        r"/home/jjl122/iphreeqc-3.7.3-15968/src/.libs/libiphreeqc.so"
+    )
     phreeqc.load_database(r"/home/jjl122/iphreeqc-3.7.3-15968/database/phreeqc.dat")
     initial_conditions = make_initial_conditions()
     phreeqc.run_string(initial_conditions)
@@ -123,10 +125,9 @@ def initialize(cells, first=False):
 
 
 def advect_step(phreeqc, inflow, conc, cells):
-    """Advect by shifting concentrations from previous time step.
-    """
+    """Advect by shifting concentrations from previous time step."""
     all_names = conc.keys()
-    names = [name for name in all_names if name not in ('cb', 'H', 'O')]
+    names = [name for name in all_names if name not in ("cb", "H", "O")]
     for name in conc:
         # shift one cell
         conc[name][1:] = conc[name][:-1]
@@ -134,14 +135,14 @@ def advect_step(phreeqc, inflow, conc, cells):
     modify = []
     for index, cell in enumerate(range(cells[0], cells[1] + 1)):
         modify.append("SOLUTION_MODIFY %d" % cell)
-        modify.append("\t-cb      %e" % conc['cb'][index])
-        modify.append("\t-total_h %f" % conc['H'][index])
-        modify.append("\t-total_o %f" % conc['O'][index])
+        modify.append("\t-cb      %e" % conc["cb"][index])
+        modify.append("\t-total_h %f" % conc["H"][index])
+        modify.append("\t-total_o %f" % conc["O"][index])
         modify.append("\t-totals")
         for name in names:
             modify.append("\t\t%s\t%f" % (name, conc[name][index]))
     modify.append("RUN_CELLS; -cells %d-%d\n" % (cells[0], cells[1]))
-    cmd = '\n'.join(modify)
+    cmd = "\n".join(modify)
     phreeqc.run_string(cmd)
     conc = get_selected_output(phreeqc)
     return conc
@@ -165,8 +166,7 @@ def get_selected_output(phreeqc):
 
 
 def run(ncells, shifts, specie_names):
-    """Do one run in one process.
-    """
+    """Do one run in one process."""
     cells = (1, ncells)
     phreeqc, inflow, conc = initialize(cells, first=True)
     outflow = {}
@@ -181,41 +181,39 @@ def run(ncells, shifts, specie_names):
 
 
 def write_outflow(file_name, outflow):
-    """Write the outflow values to a file.
-    """
-    fobj = open(file_name, 'w')
+    """Write the outflow values to a file."""
+    fobj = open(file_name, "w")
     header = outflow.keys()
     for head in header:
-        fobj.write('%20s' % head)
-    fobj.write('\n')
+        fobj.write("%20s" % head)
+    fobj.write("\n")
     for lineno in range(len(outflow[head])):
         for head in header:
-            fobj.write('%20.17f' % outflow[head][lineno])
-        fobj.write('\n')
+            fobj.write("%20.17f" % outflow[head][lineno])
+        fobj.write("\n")
 
 
 def main(ncells, shifts):
-    """Run different versions with and without multiprocessing
-    """
+    """Run different versions with and without multiprocessing"""
 
     def measure_time(func, *args, **kwargs):
-        """Convinience function to measure run times.
-        """
+        """Convinience function to measure run times."""
         start = timeit.default_timer()
         result = func(*args, **kwargs)
         return result, timeit.default_timer() - start
 
-    print('Dimensions')
-    print('==========')
-    print('number of cells:   ', ncells)
-    print('number of shifts   ', shifts)
-    specie_names = ('Ca', 'Cl', 'K', 'N', 'Na')
+    print("Dimensions")
+    print("==========")
+    print("number of cells:   ", ncells)
+    print("number of shifts   ", shifts)
+    specie_names = ("Ca", "Cl", "K", "Na")
     outflow, run_time = measure_time(run, ncells, shifts, specie_names)
-    if not os.path.exists('data'):
-        os.mkdir('data')
-    write_outflow('data/out.txt', outflow)
-    print('run time:', run_time)
+    if not os.path.exists("data"):
+        os.mkdir("data")
+    write_outflow("data/out.txt", outflow)
+    print("run time:", run_time)
     print("Finished simulation\n")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main(ncells=40, shifts=120)
