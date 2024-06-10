@@ -202,10 +202,10 @@ def main(ncells, shifts):
         result = func(*args, **kwargs)
         return result, timeit.default_timer() - start
 
-    print("Dimensions")
-    print("==========")
-    print("number of cells:   ", ncells)
-    print("number of shifts   ", shifts)
+    # print("Dimensions")
+    # print("==========")
+    # print("number of cells:   ", ncells)
+    # print("number of shifts   ", shifts)
     specie_names = ("Ca", "Cl", "K", "Na")
     outflow, run_time = measure_time(run, ncells, shifts, specie_names)
     if not os.path.exists("data"):
