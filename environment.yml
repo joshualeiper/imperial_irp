@@ -11,6 +11,3 @@ dependencies:
   - pip
   - pip:
     - phreeqpy
-post_build:
-  - echo "Environment setup complete!"
-  - echo "Activate the environment using: conda activate josh_2024"
