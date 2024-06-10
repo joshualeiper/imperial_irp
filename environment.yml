@@ -1,0 +1,16 @@
+name: josh_2024
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - matplotlib
+  - jupyter
+  - pip
+  - pip:
+    - phreeqpy
+post_build:
+  - echo "Environment setup complete!"
+  - echo "Activate the environment using: conda activate josh_2024"
