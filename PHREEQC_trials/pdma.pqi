@@ -1,0 +1,28 @@
+DATABASE C:\Program Files (x86)\USGS\Phreeqc Interactive 3.7.3-15968\database\PdmaDatabase1.txt
+SOLUTION_MASTER_SPECIES
+Cu		Cu+2		0.0	Cu	63.546
+Cu(1)		Cu+		0.0	Cu
+Cu(2)		Cu+2		0.0	Cu
+END
+
+SOLUTION
+pe 		5.92	#+350mV
+temp 		25.0
+
+END
+
+SELECTED_OUTPUT 
+-file			CuPdma Speciation experiments_10-12_pE+350mV.xls
+-reset		true
+-molalities		Cl- Cu(Pdma) Cu(Pdma)-
+END
+
+SOLUTION 1
+pH	3.0
+Cl	0.02 	mol/kgw
+Na	0.02	mol/kgw
+Pdma	0.00001	mol/kgw
+Cu	0.000001	mol/kgw
+pe 	5.92
+END
+

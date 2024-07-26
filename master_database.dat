@@ -1,0 +1,1493 @@
+
+NAMED_EXPRESSIONS
+#
+# formation of O2 from H2O
+# 2H2O =  O2 + 4H+ + 4e-
+#
+    Log_K_O2
+        log_k      -85.9951
+        -delta_H	559.543	kJ/mol	# Calculated enthalpy of reaction	O2
+#	Enthalpy of formation:	-2.9 kcal/mol
+            -analytic   38.0229    7.99407E-03   -2.7655e+004  -1.4506e+001  199838.45
+#	Range:  0-300
+
+SOLUTION_MASTER_SPECIES
+#element	master species	alkalinity	gfw|formula	gfw of element	source
+Ag	Ag+	0.0	107.868	107.868	#wateq4f.dat
+Al	Al+3	0.0	26.9815	26.9815	#wateq4f.dat
+Alkalinity	CO3-2	1.0	50.05	50.05	#wateq4f.dat
+As	H3AsO4	-1.0	74.9216	74.9216	#wateq4f.dat
+As(+3)	H3AsO3	0.0	74.9216	74.9216	#wateq4f.dat
+As(+5)	H3AsO4	-1.0	74.9216	None	#wateq4f.dat
+B	H3BO3	0.0	10.81	10.81	#wateq4f.dat
+Ba	Ba+2	0.0	137.34	137.34	#wateq4f.dat
+Br	Br-	0.0	79.904	79.904	#wateq4f.dat
+C	CO3-2	2.0	61.0173	12.0111	#wateq4f.dat
+C(+4)	CO3-2	2.0	61.0173	None	#wateq4f.dat
+C(-4)	CH4	0.0	16.042	None	#wateq4f.dat
+Ca	Ca+2	0.0	40.08	40.08	#wateq4f.dat
+Cd	Cd+2	0.0	112.4	112.4	#wateq4f.dat
+Cl	Cl-	0.0	35.453	35.453	#wateq4f.dat
+Cs	Cs+	0.0	132.905	132.905	#wateq4f.dat
+Cu	Cu+2	0.0	63.546	63.546	#wateq4f.dat
+Cu(+1)	Cu+1	0.0	63.546	None	#wateq4f.dat
+Cu(+2)	Cu+2	0.0	63.546	None	#wateq4f.dat
+E	e-	0.0	0.0	0.0	#wateq4f.dat
+F	F-	0.0	18.9984	18.9984	#wateq4f.dat
+Fe	Fe+2	0.0	55.847	55.847	#wateq4f.dat
+Fe(+2)	Fe+2	0.0	55.847	None	#wateq4f.dat
+Fe(+3)	Fe+3	-2.0	55.847	None	#wateq4f.dat
+Fulvate	Fulvate-2	0.0	650.	650.	#wateq4f.dat
+H	H+	-1.	1.008	1.008	#wateq4f.dat
+H(0)	H2	0.0	1.008	None	#wateq4f.dat
+H(+1)	H+	-1.	1.008	None	#wateq4f.dat
+Humate	Humate-2	0.0	2000.	2000.	#wateq4f.dat
+I	I-	0.0	126.9044	126.9044	#wateq4f.dat
+K	K+	0.0	39.102	39.102	#wateq4f.dat
+Li	Li+	0.0	6.939	6.939	#wateq4f.dat
+Mg	Mg+2	0.0	24.312	24.312	#wateq4f.dat
+Mn	Mn+2	0.0	54.938	54.938	#wateq4f.dat
+Mn(+2)	Mn+2	0.0	54.938	None	#wateq4f.dat
+Mn(+3)	Mn+3	0.0	54.938	None	#wateq4f.dat
+Mn(+6)	MnO4-2	0.0	54.938	None	#wateq4f.dat
+Mn(+7)	MnO4-	0.0	54.938	None	#wateq4f.dat
+N	NO3-	0.0	14.0067	14.0067	#wateq4f.dat
+N(-3)	NH4+	0.0	14.0067	None	#wateq4f.dat
+N(0)	N2	0.0	14.0067	None	#wateq4f.dat
+N(+3)	NO2-	0.0	14.0067	None	#wateq4f.dat
+N(+5)	NO3-	0.0	14.0067	None	#wateq4f.dat
+Na	Na+	0.0	22.9898	22.9898	#wateq4f.dat
+Ni	Ni+2	0.0	58.71	58.71	#wateq4f.dat
+O	H2O	0.0	16.00	16.00	#wateq4f.dat
+O(-2)	H2O	0.0	18.016	None	#wateq4f.dat
+O(0)	O2	0.0	16.00	None	#wateq4f.dat
+P	PO4-3	2.0	30.9738	30.9738	#wateq4f.dat
+Pb	Pb+2	0.0	207.19	207.19	#wateq4f.dat
+Rb	Rb+	0.0	85.47	85.47	#wateq4f.dat
+S	SO4-2	0.0	96.0616	32.064	#wateq4f.dat
+S(-2)	H2S	0.0	32.064	None	#wateq4f.dat
+S(+6)	SO4-2	0.0	96.0616	None	#wateq4f.dat
+Se	SeO4-2	0.0	78.96	78.96	#wateq4f.dat
+Se(-2)	HSe-	0.0	78.96	None	#wateq4f.dat
+Se(+4)	SeO3-2	0.0	78.96	None	#wateq4f.dat
+Se(+6)	SeO4-2	0.0	78.96	None	#wateq4f.dat
+Si	H4SiO4	0.0	60.0843	28.0843	#wateq4f.dat
+Sr	Sr+2	0.0	87.62	87.62	#wateq4f.dat
+Zn	Zn+2	0.0	65.37	65.37	#wateq4f.dat
+U	UO2+2	0.0	238.0290	238.0290	#wateq4f.dat
+U(+3)	U+3	0.0	238.0290	238.0290	#wateq4f.dat
+U(+4)	U+4	0.0	238.0290	238.0290	#wateq4f.dat
+U(+5)	UO2+	0.0	238.0290	238.0290	#wateq4f.dat
+U(+6)	UO2+2	0.0	238.0290	238.0290	#wateq4f.dat
+
+SOLUTION_SPECIES
+H+ = H+
+	log_k	0.0
+	gamma	9.0 0.0 
+	# source	wateq4f.dat
+e- = e-
+	log_k	0.0
+	# source	wateq4f.dat
+H2O = H2O
+	log_k	0.0
+	# source	wateq4f.dat
+Ag+ = Ag+
+	log_k	0.0
+	# source	wateq4f.dat
+Al+3 = Al+3
+	log_k	0.0
+	gamma	9.0 0.0 
+	# source	wateq4f.dat
+H3AsO4 = H3AsO4
+	log_k	0.0
+	# source	wateq4f.dat
+H3BO3 = H3BO3
+	log_k	0.0
+	# source	wateq4f.dat
+Ba+2 = Ba+2
+	log_k	0.0
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Br- = Br-
+	log_k	0.0
+	# source	wateq4f.dat
+CO3-2 = CO3-2
+	log_k	0.0
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Ca+2 = Ca+2
+	log_k	0.0
+	gamma	5.0 0.165 
+	# source	wateq4f.dat
+Cd+2 = Cd+2
+	log_k	0.0
+	# source	wateq4f.dat
+Cl- = Cl-
+	log_k	0.0
+	gamma	3.5 0.015 
+	# source	wateq4f.dat
+Cs+ = Cs+
+	log_k	0.0
+	# source	wateq4f.dat
+Cu+2 = Cu+2
+	log_k	0.0
+	gamma	6.0 0.0 
+	# source	wateq4f.dat
+F- = F-
+	log_k	0.0
+	gamma	3.5 0.0 
+	# source	wateq4f.dat
+Fe+2 = Fe+2
+	log_k	0.0
+	gamma	6.0 0.0 
+	# source	wateq4f.dat
+Fulvate-2 = Fulvate-2
+	log_k	0.0
+	# source	wateq4f.dat
+Humate-2 = Humate-2
+	log_k	0.0
+	# source	wateq4f.dat
+I- = I-
+	log_k	0.0
+	# source	wateq4f.dat
+K+ = K+
+	log_k	0.0
+	gamma	3.5 0.015 
+	# source	wateq4f.dat
+Li+ = Li+
+	log_k	0.0
+	gamma	6.0 0.0 
+	# source	wateq4f.dat
+Mg+2 = Mg+2
+	log_k	0.0
+	gamma	5.5 0.200 
+	# source	wateq4f.dat
+Mn+2 = Mn+2
+	log_k	0.0
+	gamma	6.0 0.0 
+	# source	wateq4f.dat
+NO3- = NO3-
+	log_k	0.0
+	gamma	3.0 0.0 
+	# source	wateq4f.dat
+Na+ = Na+
+	log_k	0.0
+	gamma	4.0 0.075 
+	# source	wateq4f.dat
+Ni+2 = Ni+2
+	log_k	0.0
+	# source	wateq4f.dat
+PO4-3 = PO4-3
+	log_k	0.0
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Pb+2 = Pb+2
+	log_k	0.0
+	# source	wateq4f.dat
+Rb+ = Rb+
+	log_k	0.0
+	# source	wateq4f.dat
+SO4-2 = SO4-2
+	log_k	0.0
+	gamma	5.0 -0.040 
+	# source	wateq4f.dat
+SeO4-2 = SeO4-2
+	log_k	0.0
+	# source	wateq4f.dat
+H4SiO4 = H4SiO4
+	log_k	0.0
+	# source	wateq4f.dat
+Sr+2 = Sr+2
+	log_k	0.0
+	gamma	5.26 0.121 
+	# source	wateq4f.dat
+UO2+2 = UO2+2
+	log_k	0.0
+	# source	wateq4f.dat
+Zn+2 = Zn+2
+	log_k	0.0
+	gamma	6.0 0.0 
+	# source	wateq4f.dat
+Fe+2 = Fe+3 + e-
+	log_k	-13.02
+	-delta_h	9.680 kcal 
+	gamma	9.0 0.0 
+	# source	wateq4f.dat
+Fe+3 + H2O = FeOH+2 + H+
+	log_k	-2.19
+	-delta_h	10.4 kcal 
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Fe+2 + H2O = FeOH+ + H+
+	log_k	-9.5
+	-delta_h	13.2 kcal 
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Fe+2 + 3H2O = Fe(OH)3- + 3H+
+	log_k	-31.0
+	-delta_h	30.3 kcal 
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Fe+3 + SO4-2 = FeSO4+
+	log_k	4.04
+	-delta_h	3.91 kcal 
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Fe+3 + Cl- = FeCl+2
+	log_k	1.48
+	-delta_h	5.6 kcal 
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Fe+3 + 2Cl- = FeCl2+
+	log_k	2.13
+	# source	wateq4f.dat
+Fe+3 + 3Cl- = FeCl3
+	log_k	1.13
+	# source	wateq4f.dat
+Fe+2 + SO4-2 = FeSO4
+	log_k	2.25
+	-delta_h	3.23 kcal 
+	# source	wateq4f.dat
+H4SiO4 = H3SiO4- + H+
+	log_k	-9.83
+	-delta_h	6.12 kcal 
+	gamma	4.0 0.0 
+	# source	wateq4f.dat
+H4SiO4 = H2SiO4-2 + 2H+
+	log_k	-23.0
+	-delta_h	17.6 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+H+ + PO4-3 = HPO4-2
+	log_k	12.346
+	-delta_h	-3.53 kcal 
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+2H+ + PO4-3 = H2PO4-
+	log_k	19.553
+	-delta_h	-4.52 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Mg+2 + F- = MgF+
+	log_k	1.82
+	-delta_h	3.2 kcal 
+	gamma	4.5 0.0 
+	# source	wateq4f.dat
+Ca+2 + SO4-2 = CaSO4
+	log_k	2.3
+	-delta_h	1.65 kcal 
+	# source	wateq4f.dat
+Mg+2 + H2O = MgOH+ + H+
+	log_k	-11.44
+	-delta_h	15.952 kcal 
+	gamma	6.5 0.0 
+	# source	wateq4f.dat
+H3BO3 = H2BO3- + H+
+	log_k	-9.24
+	-delta_h	3.224 kcal 
+	gamma	2.5 0.0 
+	# source	wateq4f.dat
+NH4+ = NH3 + H+
+	log_k	-9.252
+	-delta_h	12.48 kcal 
+	gamma	2.5 0.0 
+	# source	wateq4f.dat
+Na+ + HPO4-2 = NaHPO4-
+	log_k	0.29
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+K+ + HPO4-2 = KHPO4-
+	log_k	0.29
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Mg+2 + HPO4-2 = MgHPO4
+	log_k	2.87
+	-delta_h	3.3 kcal 
+	# source	wateq4f.dat
+Ca+2 + HPO4-2 = CaHPO4
+	log_k	2.739
+	-delta_h	3.3 kcal 
+	# source	wateq4f.dat
+CO3-2 + 10 H+ + 8 e- = CH4 + 3 H2O
+	log_k	41.071
+	-delta_h	-61.039 kcal 
+	# source	wateq4f.dat
+CO3-2 + 2 H+ = CO2 + H2O
+	log_k	16.681
+	-delta_h	-5.738 kcal 
+	# source	wateq4f.dat
+H+ + CO3-2 = HCO3-
+	log_k	10.329
+	-delta_h	-3.561 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Na+ + CO3-2 = NaCO3-
+	log_k	1.27
+	-delta_h	8.91 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Na+ + HCO3- = NaHCO3
+	log_k	-0.25
+	# source	wateq4f.dat
+Na+ + SO4-2 = NaSO4-
+	log_k	0.7
+	-delta_h	1.12 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+K+ + SO4-2 = KSO4-
+	log_k	0.85
+	-delta_h	2.25 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Mg+2 + CO3-2 = MgCO3
+	log_k	2.98
+	-delta_h	2.713 kcal 
+	# source	wateq4f.dat
+Mg+2 + HCO3- = MgHCO3+
+	log_k	1.07
+	-delta_h	0.79 kcal 
+	gamma	4.0 0.0 
+	# source	wateq4f.dat
+Mg+2 + SO4-2 = MgSO4
+	log_k	2.37
+	-delta_h	4.55 kcal 
+	# source	wateq4f.dat
+Ca+2 + H2O = CaOH+ + H+
+	log_k	-12.78
+	gamma	6.0 0.0 
+	# source	wateq4f.dat
+Ca+2 + HCO3- = CaHCO3+
+	log_k	1.106
+	-delta_h	2.69 kcal 
+	gamma	6.0 0.0 
+	# source	wateq4f.dat
+Ca+2 + CO3-2 = CaCO3
+	log_k	3.224
+	-delta_h	3.545 kcal 
+	# source	wateq4f.dat
+Sr+2 + HCO3- = SrHCO3+
+	log_k	1.18
+	-delta_h	6.05 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Al+3 + H2O = AlOH+2 + H+
+	log_k	-5.0
+	-delta_h	11.49 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Al+3 + 2H2O = Al(OH)2+ + 2H+
+	log_k	-10.1
+	-delta_h	26.9 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Al+3 + 3H2O = Al(OH)3 + 3H+
+	log_k	-16.9
+	-delta_h	39.89 kcal 
+	# source	wateq4f.dat
+Al+3 + 4H2O = Al(OH)4- + 4H+
+	log_k	-22.7
+	-delta_h	42.3 kcal 
+	gamma	4.5 0.0 
+	# source	wateq4f.dat
+Al+3 + F- = AlF+2
+	log_k	7.0
+	-delta_h	1.06 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Al+3 + 2F- = AlF2+
+	log_k	12.7
+	-delta_h	1.98 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Al+3 + 3F- = AlF3
+	log_k	16.8
+	-delta_h	2.16 kcal 
+	# source	wateq4f.dat
+Al+3 + 4F- = AlF4-
+	log_k	19.4
+	-delta_h	2.2 kcal 
+	gamma	4.5 0.0 
+	# source	wateq4f.dat
+Al+3 + SO4-2 = AlSO4+
+	log_k	3.5
+	-delta_h	2.29 kcal 
+	gamma	4.5 0.0 
+	# source	wateq4f.dat
+Al+3 + 2SO4-2 = Al(SO4)2-
+	log_k	5.0
+	-delta_h	3.11 kcal 
+	gamma	4.5 0.0 
+	# source	wateq4f.dat
+H+ + SO4-2 = HSO4-
+	log_k	1.988
+	-delta_h	3.85 kcal 
+	gamma	4.5 0.0 
+	# source	wateq4f.dat
+SO4-2 + 10H+ + 8e- = H2S + 4H2O
+	log_k	40.644
+	-delta_h	-65.44 kcal 
+	# source	wateq4f.dat
+H2S = HS- + H+
+	log_k	-6.994
+	-delta_h	5.3 kcal 
+	gamma	3.5 0.0 
+	# source	wateq4f.dat
+HS- = S-2 + H+
+	log_k	-12.918
+	-delta_h	12.1 kcal 
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+2H2O = O2 + 4H+ + 4e-
+	log_k	-86.08
+	-delta_h	134.79 kcal 
+	# source	wateq4f.dat
+2 H+ + 2 e- = H2
+	log_k	-3.15
+	-delta_h	-1.759 kcal 
+	# source	wateq4f.dat
+Fe+3 + 2H2O = Fe(OH)2+ + 2H+
+	log_k	-5.67
+	-delta_h	17.1 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Fe+3 + 3H2O = Fe(OH)3 + 3H+
+	log_k	-12.56
+	-delta_h	24.8 kcal 
+	# source	wateq4f.dat
+Fe+3 + 4H2O = Fe(OH)4- + 4H+
+	log_k	-21.6
+	-delta_h	31.9 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Fe+2 + 2H2O = Fe(OH)2 + 2H+
+	log_k	-20.57
+	-delta_h	28.565 kcal 
+	# source	wateq4f.dat
+Fe+2 + H2PO4- = FeH2PO4+
+	log_k	2.7
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Ca+2 + PO4-3 = CaPO4-
+	log_k	6.459
+	-delta_h	3.1 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Ca+2 + H2PO4- = CaH2PO4+
+	log_k	1.408
+	-delta_h	3.4 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Mg+2 + PO4-3 = MgPO4-
+	log_k	6.589
+	-delta_h	3.1 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Mg+2 + H2PO4- = MgH2PO4+
+	log_k	1.513
+	-delta_h	3.4 kcal 
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Li+ + SO4-2 = LiSO4-
+	log_k	0.64
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+2 NO3- + 12 H+ + 10 e- = N2 + 6 H2O
+	log_k	207.08
+	-delta_h	-312.130 kcal 
+	# source	wateq4f.dat
+NO3- + 10H+ + 8e- = NH4+ + 3H2O
+	log_k	119.077
+	-delta_h	-187.055 kcal 
+	# source	wateq4f.dat
+Sr+2 + H2O = SrOH+ + H+
+	log_k	-13.29
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Ba+2 + H2O = BaOH+ + H+
+	log_k	-13.47
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+NH4+ + SO4-2 = NH4SO4-
+	log_k	1.11
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Sr+2 + CO3-2 = SrCO3
+	log_k	2.81
+	-delta_h	5.22 kcal 
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Fe+2 + HPO4-2 = FeHPO4
+	log_k	3.6
+	# source	wateq4f.dat
+Fe+3 + HPO4-2 = FeHPO4+
+	log_k	5.43
+	-delta_h	5.76 kcal 
+	gamma	5.5 0.0 
+	# source	wateq4f.dat
+Fe+2 + HSO4- = FeHSO4+
+	log_k	1.08
+	# source	wateq4f.dat
+H2O = OH- + H+
+	log_k	-14.0
+	-delta_h	13.362 kcal 
+	gamma	3.5 0.0 
+	# source	wateq4f.dat
+Fe+3 + H2PO4- = FeH2PO4+2
+	log_k	5.43
+	gamma	5.4 0.0 
+	# source	wateq4f.dat
+Fe+3 + HSO4- = FeHSO4+2
+	log_k	2.48
+	# source	wateq4f.dat
+Ca+2 + F- = CaF+
+	log_k	0.94
+	-delta_h	4.12 kcal 
+	gamma	5.5 0.0 
+	# source	wateq4f.dat
+H3BO3 + F- = BF(OH)3-
+	log_k	-0.4
+	-delta_h	1.85 kcal 
+	gamma	2.5 0.0 
+	# source	wateq4f.dat
+H3BO3 + H+ + 2F- = BF2(OH)2- + H2O
+	log_k	7.63
+	-delta_h	1.618 kcal 
+	gamma	2.5 0.0 
+	# source	wateq4f.dat
+H3BO3 + 2H+ + 3F- = BF3OH- + 2H2O
+	log_k	13.67
+	-delta_h	-1.614 kcal 
+	gamma	2.5 0.0 
+	# source	wateq4f.dat
+H3BO3 + 3H+ + 4F- = BF4- + 3H2O
+	log_k	20.28
+	-delta_h	-1.846 kcal 
+	gamma	2.5 0.0 
+	# source	wateq4f.dat
+Fe+3 + F- = FeF+2
+	log_k	6.2
+	-delta_h	2.7 kcal 
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Fe+3 + 2F- = FeF2+
+	log_k	10.8
+	-delta_h	4.8 kcal 
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Fe+3 + 3F- = FeF3
+	log_k	14.0
+	-delta_h	5.4 kcal 
+	# source	wateq4f.dat
+Ca+2 + HSO4- = CaHSO4+
+	log_k	1.08
+	# source	wateq4f.dat
+Mn+2 = Mn+3 + e-
+	log_k	-25.51
+	-delta_h	25.8 kcal 
+	gamma	9.0 0.0 
+	# source	wateq4f.dat
+Mn+2 + Cl- = MnCl+
+	log_k	0.61
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Mn+2 + 2Cl- = MnCl2
+	log_k	0.25
+	# source	wateq4f.dat
+Mn+2 + 3Cl- = MnCl3-
+	log_k	-0.31
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Mn+2 + H2O = MnOH+ + H+
+	log_k	-10.59
+	-delta_h	14.4 kcal 
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Mn+2 + 3H2O = Mn(OH)3- + 3H+
+	log_k	-34.8
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Mn+2 + F- = MnF+
+	log_k	0.84
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Mn+2 + SO4-2 = MnSO4
+	log_k	2.25
+	-delta_h	3.37 kcal 
+	# source	wateq4f.dat
+Mn+2 + 2NO3- = Mn(NO3)2
+	log_k	0.6
+	-delta_h	-0.396 kcal 
+	# source	wateq4f.dat
+Mn+2 + HCO3- = MnHCO3+
+	log_k	1.95
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Mn+2 + 4H2O = MnO4- + 8H+ + 5e-
+	log_k	-127.824
+	-delta_h	176.62 kcal 
+	gamma	3.0 0.0 
+	# source	wateq4f.dat
+Mn+2 + 4H2O = MnO4-2 + 8H+ + 4e-
+	log_k	-118.44
+	-delta_h	150.02 kcal 
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+H4SiO4 + 4H+ + 6F- = SiF6-2 + 4H2O
+	log_k	30.18
+	-delta_h	-16.26 kcal 
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+H+ + F- = HF
+	log_k	3.18
+	-delta_h	3.18 kcal 
+	# source	wateq4f.dat
+H+ + 2F- = HF2-
+	log_k	3.76
+	-delta_h	4.55 kcal 
+	gamma	3.5 0.0 
+	# source	wateq4f.dat
+Cu+ + 2Cl- = CuCl2-
+	log_k	5.5
+	-delta_h	-0.42 kcal 
+	gamma	4.0 0.0 
+	# source	wateq4f.dat
+Cu+ + 3Cl- = CuCl3-2
+	log_k	5.7
+	-delta_h	0.26 kcal 
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Cu+2 + e- = Cu+
+	log_k	2.72
+	-delta_h	1.65 kcal 
+	gamma	2.5 0.0 
+	# source	wateq4f.dat
+Cu+2 + CO3-2 = CuCO3
+	log_k	6.73
+	# source	wateq4f.dat
+Cu+2 + 2CO3-2 = Cu(CO3)2-2
+	log_k	9.83
+	# source	wateq4f.dat
+Cu+2 + Cl- = CuCl+
+	log_k	0.43
+	-delta_h	8.65 kcal 
+	gamma	4.0 0.0 
+	# source	wateq4f.dat
+Cu+2 + 2Cl- = CuCl2
+	log_k	0.16
+	-delta_h	10.56 kcal 
+	# source	wateq4f.dat
+Cu+2 + 3Cl- = CuCl3-
+	log_k	-2.29
+	-delta_h	13.69 kcal 
+	gamma	4.0 0.0 
+	# source	wateq4f.dat
+Cu+2 + 4Cl- = CuCl4-2
+	log_k	-4.59
+	-delta_h	17.78 kcal 
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Cu+2 + F- = CuF+
+	log_k	1.26
+	-delta_h	1.62 kcal 
+	# source	wateq4f.dat
+Cu+2 + H2O = CuOH+ + H+
+	log_k	-8.0
+	gamma	4.0 0.0 
+	# source	wateq4f.dat
+Cu+2 + 2H2O = Cu(OH)2 + 2H+
+	log_k	-13.68
+	# source	wateq4f.dat
+Cu+2 + 3H2O = Cu(OH)3- + 3H+
+	log_k	-26.9
+	# source	wateq4f.dat
+Cu+2 + 4H2O = Cu(OH)4-2 + 4H+
+	log_k	-39.6
+	# source	wateq4f.dat
+2Cu+2 + 2H2O = Cu2(OH)2+2 + 2H+
+	log_k	-10.359
+	-delta_h	17.539 kcal 
+	# source	wateq4f.dat
+Cu+2 + SO4-2 = CuSO4
+	log_k	2.31
+	-delta_h	1.22 kcal 
+	# source	wateq4f.dat
+Cu+2 + 3HS- = Cu(HS)3-
+	log_k	25.9
+	# source	wateq4f.dat
+Zn+2 + Cl- = ZnCl+
+	log_k	0.43
+	-delta_h	7.79 kcal 
+	gamma	4.0 0.0 
+	# source	wateq4f.dat
+Zn+2 + 2Cl- = ZnCl2
+	log_k	0.45
+	-delta_h	8.5 kcal 
+	# source	wateq4f.dat
+Zn+2 + 3Cl- = ZnCl3-
+	log_k	0.5
+	-delta_h	9.56 kcal 
+	gamma	4.0 0.0 
+	# source	wateq4f.dat
+Zn+2 + 4Cl- = ZnCl4-2
+	log_k	0.2
+	-delta_h	10.96 kcal 
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Zn+2 + F- = ZnF+
+	log_k	1.15
+	-delta_h	2.22 kcal 
+	# source	wateq4f.dat
+Zn+2 + H2O = ZnOH+ + H+
+	log_k	-8.96
+	-delta_h	13.4 kcal 
+	# source	wateq4f.dat
+Zn+2 + 2H2O = Zn(OH)2 + 2H+
+	log_k	-16.9
+	# source	wateq4f.dat
+Zn+2 + 3H2O = Zn(OH)3- + 3H+
+	log_k	-28.4
+	# source	wateq4f.dat
+Zn+2 + 4H2O = Zn(OH)4-2 + 4H+
+	log_k	-41.2
+	# source	wateq4f.dat
+Zn+2 + H2O + Cl- = ZnOHCl + H+
+	log_k	-7.48
+	# source	wateq4f.dat
+Zn+2 + 2HS- = Zn(HS)2
+	log_k	14.94
+	# source	wateq4f.dat
+Zn+2 + 3HS- = Zn(HS)3-
+	log_k	16.1
+	# source	wateq4f.dat
+Zn+2 + SO4-2 = ZnSO4
+	log_k	2.37
+	-delta_h	1.36 kcal 
+	# source	wateq4f.dat
+Zn+2 + 2SO4-2 = Zn(SO4)2-2
+	log_k	3.28
+	# source	wateq4f.dat
+Cd+2 + Cl- = CdCl+
+	log_k	1.98
+	-delta_h	0.59 kcal 
+	# source	wateq4f.dat
+Cd+2 + 2Cl- = CdCl2
+	log_k	2.6
+	-delta_h	1.24 kcal 
+	# source	wateq4f.dat
+Cd+2 + 3Cl- = CdCl3-
+	log_k	2.4
+	-delta_h	3.9 kcal 
+	# source	wateq4f.dat
+Cd+2 + F- = CdF+
+	log_k	1.1
+	# source	wateq4f.dat
+Cd+2 + 2F- = CdF2
+	log_k	1.5
+	# source	wateq4f.dat
+Cd+2 + 2CO3-2 = Cd(CO3)2-2
+	log_k	6.4
+	# source	wateq4f.dat
+Cd+2 + H2O = CdOH+ + H+
+	log_k	-10.08
+	-delta_h	13.1 kcal 
+	# source	wateq4f.dat
+Cd+2 + 2H2O = Cd(OH)2 + 2H+
+	log_k	-20.35
+	# source	wateq4f.dat
+Cd+2 + 3H2O = Cd(OH)3- + 3H+
+	log_k	-33.3
+	# source	wateq4f.dat
+Cd+2 + 4H2O = Cd(OH)4-2 + 4H+
+	log_k	-47.35
+	# source	wateq4f.dat
+2Cd+2 + H2O = Cd2OH+3 + H+
+	log_k	-9.39
+	-delta_h	10.9 kcal 
+	# source	wateq4f.dat
+Cd+2 + H2O + Cl- = CdOHCl + H+
+	log_k	-7.404
+	-delta_h	4.355 kcal 
+	# source	wateq4f.dat
+Cd+2 + NO3- = CdNO3+
+	log_k	0.4
+	-delta_h	-5.2 kcal 
+	# source	wateq4f.dat
+Cd+2 + SO4-2 = CdSO4
+	log_k	2.46
+	-delta_h	1.08 kcal 
+	# source	wateq4f.dat
+Cd+2 + HS- = CdHS+
+	log_k	10.17
+	# source	wateq4f.dat
+Cd+2 + 2HS- = Cd(HS)2
+	log_k	16.53
+	# source	wateq4f.dat
+Cd+2 + 3HS- = Cd(HS)3-
+	log_k	18.71
+	# source	wateq4f.dat
+Cd+2 + 4HS- = Cd(HS)4-2
+	log_k	20.9
+	# source	wateq4f.dat
+Fe+3 + 2SO4-2 = Fe(SO4)2-
+	log_k	5.38
+	-delta_h	4.6 kcal 
+	# source	wateq4f.dat
+2Fe+3 + 2H2O = Fe2(OH)2+4 + 2H+
+	log_k	-2.95
+	-delta_h	13.5 kcal 
+	# source	wateq4f.dat
+3Fe+3 + 4H2O = Fe3(OH)4+5 + 4H+
+	log_k	-6.3
+	-delta_h	14.3 kcal 
+	# source	wateq4f.dat
+Pb+2 + Cl- = PbCl+
+	log_k	1.6
+	-delta_h	4.38 kcal 
+	# source	wateq4f.dat
+Pb+2 + 2Cl- = PbCl2
+	log_k	1.8
+	-delta_h	1.08 kcal 
+	# source	wateq4f.dat
+Pb+2 + 3Cl- = PbCl3-
+	log_k	1.7
+	-delta_h	2.17 kcal 
+	# source	wateq4f.dat
+Pb+2 + 4Cl- = PbCl4-2
+	log_k	1.38
+	-delta_h	3.53 kcal 
+	# source	wateq4f.dat
+Pb+2 + 2CO3-2 = Pb(CO3)2-2
+	log_k	10.64
+	# source	wateq4f.dat
+Pb+2 + F- = PbF+
+	log_k	1.25
+	# source	wateq4f.dat
+Pb+2 + 2F- = PbF2
+	log_k	2.56
+	# source	wateq4f.dat
+Pb+2 + 3F- = PbF3-
+	log_k	3.42
+	# source	wateq4f.dat
+Pb+2 + 4F- = PbF4-2
+	log_k	3.1
+	# source	wateq4f.dat
+Pb+2 + H2O = PbOH+ + H+
+	log_k	-7.71
+	# source	wateq4f.dat
+Pb+2 + 2H2O = Pb(OH)2 + 2H+
+	log_k	-17.12
+	# source	wateq4f.dat
+Pb+2 + 3H2O = Pb(OH)3- + 3H+
+	log_k	-28.06
+	# source	wateq4f.dat
+2Pb+2 + H2O = Pb2OH+3 + H+
+	log_k	-6.36
+	# source	wateq4f.dat
+Pb+2 + NO3- = PbNO3+
+	log_k	1.17
+	# source	wateq4f.dat
+Pb+2 + SO4-2 = PbSO4
+	log_k	2.75
+	# source	wateq4f.dat
+Pb+2 + 2HS- = Pb(HS)2
+	log_k	15.27
+	# source	wateq4f.dat
+Pb+2 + 3HS- = Pb(HS)3-
+	log_k	16.57
+	# source	wateq4f.dat
+3Pb+2 + 4H2O = Pb3(OH)4+2 + 4H+
+	log_k	-23.88
+	-delta_h	26.5 kcal 
+	# source	wateq4f.dat
+Fe+2 + F- = FeF+
+	log_k	1.0
+	# source	wateq4f.dat
+Al+3 + HSO4- = AlHSO4+2
+	log_k	0.46
+	# source	wateq4f.dat
+NO3- + 2H+ + 2e- = NO2- + H2O
+	log_k	28.57
+	-delta_h	-43.76 kcal 
+	# source	wateq4f.dat
+Ni+2 + Br- = NiBr+
+	log_k	0.5
+	# source	wateq4f.dat
+Ni+2 + Cl- = NiCl+
+	log_k	0.4
+	# source	wateq4f.dat
+Ni+2 + F- = NiF+
+	log_k	1.3
+	# source	wateq4f.dat
+Ni+2 + H2O = NiOH+ + H+
+	log_k	-9.86
+	-delta_h	12.42 kcal 
+	# source	wateq4f.dat
+Ni+2 + 2H2O = Ni(OH)2 + 2H+
+	log_k	-19.0
+	# source	wateq4f.dat
+Ni+2 + 3H2O = Ni(OH)3- + 3H+
+	log_k	-30.0
+	# source	wateq4f.dat
+Ni+2 + SO4-2 = NiSO4
+	log_k	2.29
+	-delta_h	1.52 kcal 
+	# source	wateq4f.dat
+Ag+ + Br- = AgBr
+	log_k	4.24
+	# source	wateq4f.dat
+Ag+ + 2Br- = AgBr2-
+	log_k	7.28
+	# source	wateq4f.dat
+Ag+ + Cl- = AgCl
+	log_k	3.27
+	-delta_h	-2.68 kcal 
+	# source	wateq4f.dat
+Ag+ + 2Cl- = AgCl2-
+	log_k	5.27
+	-delta_h	-3.93 kcal 
+	# source	wateq4f.dat
+Ag+ + 3Cl- = AgCl3-2
+	log_k	5.29
+	# source	wateq4f.dat
+Ag+ + 4Cl- = AgCl4-3
+	log_k	5.51
+	# source	wateq4f.dat
+Ag+ + F- = AgF
+	log_k	0.36
+	-delta_h	-2.83 kcal 
+	# source	wateq4f.dat
+Ag+ + HS- = AgHS
+	log_k	14.05
+	# source	wateq4f.dat
+Ag+ + 2HS- = Ag(HS)2-
+	log_k	18.45
+	# source	wateq4f.dat
+Ag+ + I- = AgI
+	log_k	6.6
+	# source	wateq4f.dat
+Ag+ + 2I- = AgI2-
+	log_k	10.68
+	# source	wateq4f.dat
+Ag+ + H2O = AgOH + H+
+	log_k	-12.0
+	# source	wateq4f.dat
+Ag+ + 2H2O = Ag(OH)2- + 2H+
+	log_k	-24.0
+	# source	wateq4f.dat
+Ag+ + SO4-2 = AgSO4-
+	log_k	1.29
+	-delta_h	1.49 kcal 
+	# source	wateq4f.dat
+Ag+ + NO3- = AgNO3
+	log_k	-0.29
+	# source	wateq4f.dat
+Ag+ + 2NO2- = Ag(NO2)2-
+	log_k	2.22
+	# source	wateq4f.dat
+Zn+2 + Br- = ZnBr+
+	log_k	-0.58
+	# source	wateq4f.dat
+Zn+2 + 2Br- = ZnBr2
+	log_k	-0.98
+	# source	wateq4f.dat
+Zn+2 + I- = ZnI+
+	log_k	-2.91
+	# source	wateq4f.dat
+Zn+2 + 2I- = ZnI2
+	log_k	-1.69
+	# source	wateq4f.dat
+Cd+2 + Br- = CdBr+
+	log_k	2.17
+	-delta_h	-0.81 kcal 
+	# source	wateq4f.dat
+Cd+2 + 2Br- = CdBr2
+	log_k	2.9
+	# source	wateq4f.dat
+Cd+2 + I- = CdI+
+	log_k	2.15
+	-delta_h	-2.37 kcal 
+	# source	wateq4f.dat
+Cd+2 + 2I- = CdI2
+	log_k	3.59
+	# source	wateq4f.dat
+Pb+2 + Br- = PbBr+
+	log_k	1.77
+	-delta_h	2.88 kcal 
+	# source	wateq4f.dat
+Pb+2 + 2Br- = PbBr2
+	log_k	1.44
+	# source	wateq4f.dat
+Pb+2 + I- = PbI+
+	log_k	1.94
+	# source	wateq4f.dat
+Pb+2 + 2I- = PbI2
+	log_k	3.2
+	# source	wateq4f.dat
+Pb+2 + CO3-2 = PbCO3
+	log_k	7.24
+	# source	wateq4f.dat
+Pb+2 + 4H2O = Pb(OH)4-2 + 4H+
+	log_k	-39.7
+	# source	wateq4f.dat
+Pb+2 + 2SO4-2 = Pb(SO4)2-2
+	log_k	3.47
+	# source	wateq4f.dat
+Ag+ + 3Br- = AgBr3-2
+	log_k	8.71
+	# source	wateq4f.dat
+Ag+ + 3I- = AgI3-2
+	log_k	13.37
+	-delta_h	-27.03 kcal 
+	# source	wateq4f.dat
+Ag+ + 4I- = AgI4-3
+	log_k	14.08
+	# source	wateq4f.dat
+Fe+2 + 2HS- = Fe(HS)2
+	log_k	8.95
+	# source	wateq4f.dat
+Fe+2 + 3HS- = Fe(HS)3-
+	log_k	10.987
+	# source	wateq4f.dat
+H3AsO3 = H2AsO3- + H+
+	log_k	-9.15
+	-delta_h	27.54 kJ 
+	# source	wateq4f.dat
+H3AsO3 = HAsO3-2 + 2H+
+	log_k	-23.85
+	-delta_h	59.41 kJ 
+	# source	wateq4f.dat
+H3AsO3 = AsO3-3 + 3H+
+	log_k	-39.55
+	-delta_h	84.73 kJ 
+	# source	wateq4f.dat
+H3AsO3 + H+ = H4AsO3+
+	log_k	-0.305
+	# source	wateq4f.dat
+H3AsO4 = H2AsO4- + H+
+	log_k	-2.3
+	-delta_h	-7.066 kJ 
+	# source	wateq4f.dat
+H3AsO4 = HAsO4-2 + 2H+
+	log_k	-9.46
+	-delta_h	-3.846 kJ 
+	# source	wateq4f.dat
+H3AsO4 = AsO4-3 + 3H+
+	log_k	-21.11
+	-delta_h	14.354 kJ 
+	# source	wateq4f.dat
+H3AsO4 + H2 = H3AsO3 + H2O
+	log_k	22.5
+	-delta_h	-117.480344 kJ 
+	# source	wateq4f.dat
+3H3AsO3 + 6HS- + 5H+ = As3S4(HS)2- + 9H2O
+	log_k	72.314
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+H3AsO3 + 2HS- + H+ = AsS(OH)(HS)- + 2H2O
+	log_k	18.038
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+HS- = S2-2 + H+
+	log_k	-14.528
+	-delta_h	11.4 kcal 
+	gamma	6.5 0.0 
+	-no_check
+	# source	wateq4f.dat
+HS- = S3-2 + H+
+	log_k	-13.282
+	-delta_h	10.4 kcal 
+	gamma	8.0 0.0 
+	-no_check
+	# source	wateq4f.dat
+HS- = S4-2 + H+
+	log_k	-9.829
+	-delta_h	9.7 kcal 
+	gamma	10.0 0.0 
+	-no_check
+	# source	wateq4f.dat
+HS- = S5-2 + H+
+	log_k	-9.595
+	-delta_h	9.3 kcal 
+	gamma	12.0 0.0 
+	-no_check
+	# source	wateq4f.dat
+HS- = S6-2 + H+
+	log_k	-9.881
+	gamma	14.0 0.0 
+	-no_check
+	# source	wateq4f.dat
+Ag+ + 2HS- = Ag(S4)2-3 + 2H+
+	log_k	0.991
+	gamma	22.0 0.0 
+	-no_check
+	# source	wateq4f.dat
+Ag+ + 2HS- = Ag(S4)S5-3 + 2H+
+	log_k	0.68
+	gamma	24.0 0.0 
+	-no_check
+	# source	wateq4f.dat
+Ag+ + 2HS- = AgHS(S4)-2 + H+
+	log_k	10.43
+	gamma	15.0 0.0 
+	-no_check
+	# source	wateq4f.dat
+Cu+2 + HCO3- = CuHCO3+
+	log_k	2.7
+	# source	wateq4f.dat
+Zn+2 + HCO3- = ZnHCO3+
+	log_k	2.1
+	# source	wateq4f.dat
+Zn+2 + CO3-2 = ZnCO3
+	log_k	5.3
+	# source	wateq4f.dat
+Zn+2 + 2CO3-2 = Zn(CO3)2-2
+	log_k	9.63
+	# source	wateq4f.dat
+Cd+2 + HCO3- = CdHCO3+
+	log_k	1.5
+	# source	wateq4f.dat
+Cd+2 + CO3-2 = CdCO3
+	log_k	2.9
+	# source	wateq4f.dat
+Cd+2 + 2SO4-2 = Cd(SO4)2-2
+	log_k	3.5
+	# source	wateq4f.dat
+Pb+2 + HCO3- = PbHCO3+
+	log_k	2.9
+	# source	wateq4f.dat
+Ni+2 + 2Cl- = NiCl2
+	log_k	0.96
+	# source	wateq4f.dat
+Ni+2 + HCO3- = NiHCO3+
+	log_k	2.14
+	# source	wateq4f.dat
+Ni+2 + CO3-2 = NiCO3
+	log_k	6.87
+	# source	wateq4f.dat
+Ni+2 + 2CO3-2 = Ni(CO3)2-2
+	log_k	10.11
+	# source	wateq4f.dat
+Ni+2 + 2SO4-2 = Ni(SO4)2-2
+	log_k	1.02
+	# source	wateq4f.dat
+H+ + Fulvate-2 = HFulvate-
+	log_k	4.27
+	# source	wateq4f.dat
+H+ + Humate-2 = HHumate-
+	log_k	4.27
+	# source	wateq4f.dat
+Fe+3 + Fulvate-2 = FeFulvate+
+	log_k	9.4
+	# source	wateq4f.dat
+Fe+3 + Humate-2 = FeHumate+
+	log_k	9.4
+	# source	wateq4f.dat
+Cu+2 + Fulvate-2 = CuFulvate
+	log_k	6.2
+	# source	wateq4f.dat
+Cu+2 + Humate-2 = CuHumate
+	log_k	6.2
+	# source	wateq4f.dat
+Cd+2 + Fulvate-2 = CdFulvate
+	log_k	3.5
+	# source	wateq4f.dat
+Cd+2 + Humate-2 = CdHumate
+	log_k	3.5
+	# source	wateq4f.dat
+Ag+ + Fulvate-2 = AgFulvate-
+	log_k	2.4
+	# source	wateq4f.dat
+Ag+ + Humate-2 = AgHumate-
+	log_k	2.4
+	# source	wateq4f.dat
+2H+ + 2F- = H2F2
+	log_k	6.768
+	# source	wateq4f.dat
+Na+ + F- = NaF
+	log_k	-0.24
+	# source	wateq4f.dat
+Fe+2 + Cl- = FeCl+
+	log_k	0.14
+	gamma	5.0 0.0 
+	# source	wateq4f.dat
+Ba+2 + SO4-2 = BaSO4
+	log_k	2.7
+	# source	wateq4f.dat
+SeO3-2 + 7H+ + 6e- = HSe- + 3H2O
+	log_k	42.514
+	# source	wateq4f.dat
+HSe- + H+ = H2Se
+	log_k	3.8
+	-delta_h	-5.3 kcal 
+	# source	wateq4f.dat
+SeO4-2 + 2H+ + 2e- = SeO3-2 + H2O
+	log_k	30.256
+	# source	wateq4f.dat
+SeO3-2 + 2H+ = H2SeO3
+	log_k	11.25
+	# source	wateq4f.dat
+SeO3-2 + H+ = HSeO3-
+	log_k	8.5
+	# source	wateq4f.dat
+SeO4-2 + H+ = HSeO4-
+	log_k	1.66
+	-delta_h	4.91 kcal 
+	# source	wateq4f.dat
+Fe+2 + HCO3- = FeHCO3+
+	log_k	2.0
+	# source	wateq4f.dat
+Fe+2 + CO3-2 = FeCO3
+	log_k	4.38
+	# source	wateq4f.dat
+Mn+2 + CO3-2 = MnCO3
+	log_k	4.9
+	# source	wateq4f.dat
+Ba+2 + HCO3- = BaHCO3+
+	log_k	0.982
+	-delta_h	5.56 kcal 
+	# source	wateq4f.dat
+Ba+2 + CO3-2 = BaCO3
+	log_k	2.71
+	-delta_h	3.55 kcal 
+	# source	wateq4f.dat
+Sr+2 + SO4-2 = SrSO4
+	log_k	2.29
+	-delta_h	2.08 kcal 
+	# source	wateq4f.dat
+UO2+2 + 4H+ + 2e- = U+4 + 2H2O
+	log_k	9.04
+	-delta_h	-34.43 kcal 
+	# source	wateq4f.dat
+U+4 + e- = U+3
+	log_k	-8.796
+	-delta_h	24.4 kcal 
+	# source	wateq4f.dat
+U+4 + H2O = UOH+3 + H+
+	log_k	-0.54
+	-delta_h	11.21 kcal 
+	# source	wateq4f.dat
+U+4 + 2H2O = U(OH)2+2 + 2H+
+	log_k	-2.27
+	-delta_h	17.73 kcal 
+	# source	wateq4f.dat
+U+4 + 3H2O = U(OH)3+ + 3H+
+	log_k	-4.935
+	-delta_h	22.645 kcal 
+	# source	wateq4f.dat
+U+4 + 4H2O = U(OH)4 + 4H+
+	log_k	-8.498
+	-delta_h	24.76 kcal 
+	# source	wateq4f.dat
+6U+4 + 15H2O = U6(OH)15+9 + 15H+
+	log_k	-17.2
+	# source	wateq4f.dat
+U+4 + F- = UF+3
+	log_k	9.3
+	-delta_h	-1.3 kcal 
+	# source	wateq4f.dat
+U+4 + 2F- = UF2+2
+	log_k	16.22
+	-delta_h	-0.8 kcal 
+	# source	wateq4f.dat
+U+4 + 3F- = UF3+
+	log_k	21.6
+	-delta_h	0.1 kcal 
+	# source	wateq4f.dat
+U+4 + 4F- = UF4
+	log_k	25.5
+	-delta_h	-0.87 kcal 
+	# source	wateq4f.dat
+U+4 + 5F- = UF5-
+	log_k	27.01
+	-delta_h	4.85 kcal 
+	# source	wateq4f.dat
+U+4 + 6F- = UF6-2
+	log_k	29.1
+	-delta_h	3.3 kcal 
+	# source	wateq4f.dat
+U+4 + Cl- = UCl+3
+	log_k	1.72
+	-delta_h	-4.54 kcal 
+	# source	wateq4f.dat
+U+4 + SO4-2 = USO4+2
+	log_k	6.58
+	-delta_h	1.9 kcal 
+	# source	wateq4f.dat
+U+4 + 2SO4-2 = U(SO4)2
+	log_k	10.5
+	-delta_h	7.8 kcal 
+	# source	wateq4f.dat
+U+4 + 4CO3-2 = U(CO3)4-4
+	log_k	32.9
+	# source	wateq4f.dat
+U+4 + 5CO3-2 = U(CO3)5-6
+	log_k	34.0
+	-delta_h	20.0 kcal 
+	# source	wateq4f.dat
+UO2+2 + e- = UO2+
+	log_k	1.49
+	-delta_h	-3.3 kcal 
+	# source	wateq4f.dat
+UO2+2 + H2O = UO2OH+ + H+
+	log_k	-5.2
+	-delta_h	11.015 kcal 
+	# source	wateq4f.dat
+2UO2+2 + 2H2O = (UO2)2(OH)2+2 + 2H+
+	log_k	-5.62
+	-delta_h	10.23 kcal 
+	# source	wateq4f.dat
+3UO2+2 + 5H2O = (UO2)3(OH)5+ + 5H+
+	log_k	-15.55
+	-delta_h	25.075 kcal 
+	# source	wateq4f.dat
+UO2+2 + CO3-2 = UO2CO3
+	log_k	9.63
+	-delta_h	1.2 kcal 
+	# source	wateq4f.dat
+UO2+2 + 2CO3-2 = UO2(CO3)2-2
+	log_k	17.0
+	-delta_h	4.42 kcal 
+	# source	wateq4f.dat
+UO2+2 + 3CO3-2 = UO2(CO3)3-4
+	log_k	21.63
+	-delta_h	-9.13 kcal 
+	# source	wateq4f.dat
+UO2+2 + F- = UO2F+
+	log_k	5.09
+	-delta_h	0.41 kcal 
+	# source	wateq4f.dat
+UO2+2 + 2F- = UO2F2
+	log_k	8.62
+	-delta_h	0.5 kcal 
+	# source	wateq4f.dat
+UO2+2 + 3F- = UO2F3-
+	log_k	10.9
+	-delta_h	0.56 kcal 
+	# source	wateq4f.dat
+UO2+2 + 4F- = UO2F4-2
+	log_k	11.7
+	-delta_h	0.07 kcal 
+	# source	wateq4f.dat
+UO2+2 + Cl- = UO2Cl+
+	log_k	0.17
+	-delta_h	1.9 kcal 
+	# source	wateq4f.dat
+UO2+2 + SO4-2 = UO2SO4
+	log_k	3.15
+	-delta_h	4.7 kcal 
+	# source	wateq4f.dat
+UO2+2 + 2SO4-2 = UO2(SO4)2-2
+	log_k	4.14
+	-delta_h	8.4 kcal 
+	# source	wateq4f.dat
+UO2+2 + PO4-3 + H+ = UO2HPO4
+	log_k	20.21
+	-delta_h	-2.1 kcal 
+	# source	wateq4f.dat
+UO2+2 + 2PO4-3 + 2H+ = UO2(HPO4)2-2
+	log_k	43.441
+	-delta_h	-11.8 kcal 
+	# source	wateq4f.dat
+UO2+2 + PO4-3 + 2H+ = UO2H2PO4+
+	log_k	22.87
+	-delta_h	-3.7 kcal 
+	# source	wateq4f.dat
+UO2+2 + 2PO4-3 + 4H+ = UO2(H2PO4)2
+	log_k	44.38
+	-delta_h	-16.5 kcal 
+	# source	wateq4f.dat
+UO2+2 + 3PO4-3 + 6H+ = UO2(H2PO4)3-
+	log_k	66.245
+	-delta_h	-28.6 kcal 
+	# source	wateq4f.dat
+U+4 + Br- = UBr+3
+	log_k	1.5
+	# source	wateq4f.dat
+U+4 + I- = UI+3
+	log_k	1.3
+	# source	wateq4f.dat
+U+4 + NO3- = UNO3+3
+	log_k	1.47
+	# source	wateq4f.dat
+U+4 + 2NO3- = U(NO3)2+2
+	log_k	2.3
+	# source	wateq4f.dat
+UO2+2 + 3H2O = UO2(OH)3- + 3H+
+	log_k	-19.2
+	# source	wateq4f.dat
+UO2+2 + 4H2O = UO2(OH)4-2 + 4H+
+	log_k	-33.0
+	# source	wateq4f.dat
+2UO2+2 + H2O = (UO2)2OH+3 + H+
+	log_k	-2.7
+	# source	wateq4f.dat
+3UO2+2 + 4H2O = (UO2)3(OH)4+2 + 4H+
+	log_k	-11.9
+	# source	wateq4f.dat
+3UO2+2 + 7H2O = (UO2)3(OH)7- + 7H+
+	log_k	-31.0
+	# source	wateq4f.dat
+4UO2+2 + 7H2O = (UO2)4(OH)7+ + 7H+
+	log_k	-21.9
+	# source	wateq4f.dat
+UO2+2 + 2Cl- = UO2Cl2
+	log_k	-1.1
+	-delta_h	3.6 kcal 
+	# source	wateq4f.dat
+UO2+2 + Br- = UO2Br+
+	log_k	0.22
+	# source	wateq4f.dat
+UO2+2 + NO3- = UO2NO3+
+	log_k	0.3
+	# source	wateq4f.dat
+UO2+2 + PO4-3 + 3H+ = UO2H3PO4+2
+	log_k	22.813
+	# source	wateq4f.dat
+3UO2+2 + 6CO3-2 = (UO2)3(CO3)6-6
+	log_k	54.0
+	# source	wateq4f.dat
+UO2+2 + PO4-3 = UO2PO4-
+	log_k	13.69
+	# source	wateq4f.dat
+UO2+ + 3CO3-2 = UO2(CO3)3-5
+	log_k	7.43
+	-delta_h	3.33 kcal 
+	# source	wateq4f.dat
+
+PHASES
+CO2(g)
+	CO2 = CO2
+	log_k	-1.468
+	-delta_h	-4.776 kcal 
+	-analytic	108.3865 0.01985076 -6919.53 -40.45154 669365.0 
+	# source	wateq4f.dat
+O2(g)
+	O2 = O2
+	log_k	-2.8983
+	-analytic	-7.5001e+000 7.8981e-003 0.0000e+000 0.0000e+000 2.0027e+005 
+	# source	wateq4f.dat
+H2(g)
+	H2 = H2
+	log_k	-3.15
+	-delta_h	-1.759 kcal 
+	# source	wateq4f.dat
+N2(g)
+	N2 = N2
+	log_k	-3.26
+	-delta_h	-1.358 kcal 
+	# source	wateq4f.dat
+H2S(g)
+	H2S = H2S
+	log_k	-0.997
+	-delta_h	-4.570 kcal 
+	# source	wateq4f.dat
+CH4(g)
+	CH4 = CH4
+	log_k	-2.86
+	-delta_h	-3.373 kcal 
+	# source	wateq4f.dat
+NH3(g)
+	NH3 = NH3
+	log_k	1.77
+	-delta_h	-8.170 kcal 
+	# source	wateq4f.dat

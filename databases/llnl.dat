@@ -49,9 +49,6 @@ NAMED_EXPRESSIONS
 
 
 SOLUTION_MASTER_SPECIES
-
-#element species        alk     gfw_formula     element_gfw
-
 Acetate  HAcetate       0.0     Acetate        59.
 Ag	 Ag+		0.0	Ag		107.8682
 Ag(1)	 Ag+		0	Ag

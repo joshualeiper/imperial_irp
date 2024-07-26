@@ -8,6 +8,8 @@ dependencies:
   - pandas
   - matplotlib
   - jupyter
+  - mysql-connector-python
   - pip
   - pip:
     - phreeqpy
+    - sqlalchemy

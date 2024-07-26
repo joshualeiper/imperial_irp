@@ -122,6 +122,7 @@ Glycine		Glycine-	1.0	74.059	74.059
 Salicylate	Salicylate-2	1.0	136.107	136.107
 Glutamate	Glutamate-2	1.0	145.115	145.115
 Phthalate	Phthalate-2	1.0	164.117	164.117
+
 SOLUTION_SPECIES
 e- = e-
 	log_k 0
@@ -10374,7 +10375,7 @@ Sulfur
 	S + H+ + 2e- = HS-
 	log_k	-2.1449
 	delta_h	-16.3	kJ
-Semetal(hex
+Semetal(hex)
 	Se + H+ + 2e- = HSe-
 	log_k	-7.7084
 	delta_h	15.9	kJ

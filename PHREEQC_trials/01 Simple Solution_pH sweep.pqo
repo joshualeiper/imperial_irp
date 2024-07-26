@@ -1,0 +1,46 @@
+   Input file: \\wsl.localhost\Ubuntu\home\jjl122\repos\irp-jjl122\PHREEQC_trials\01 Simple Solution_pH sweep.pqi
+  Output file: \\wsl.localhost\Ubuntu\home\jjl122\repos\irp-jjl122\PHREEQC_trials\01 Simple Solution_pH sweep.pqo
+Database file: \\wsl.localhost\Ubuntu\home\jjl122\repos\irp-jjl122\master_database.dat
+
+------------------
+Reading data base.
+------------------
+
+	NAMED_EXPRESSIONS
+	SOLUTION_MASTER_SPECIES
+	SOLUTION_SPECIES
+	PHASES
+------------------------------------
+Reading input data for simulation 1.
+------------------------------------
+
+	DATABASE \\wsl.localhost\Ubuntu\home\jjl122\repos\irp-jjl122\master_database.dat
+	TITLE 01_SIMPLE_SOLUTION
+	SOLUTION_MASTER_SPECIES
+	As(+5)	H2AsO4-		0.0	As	74.92
+	END
+-----
+TITLE
+-----
+
+ 01_SIMPLE_SOLUTION
+
+ERROR: Every primary master species for a redox element
+	must also be a secondary master species.
+	H3AsO4 is the primary master species for element As.
+	Another entry in SOLUTION_MASTER_SPECIES is needed.
+	Define species H3AsO4 as a secondary master species for a valence state.
+	For example: 
+	As(0)	H3AsO4 alk gfw
+ERROR: Every primary master species for a redox element
+	must also be a secondary master species.
+	H3AsO4 is the primary master species for element As.
+	Another entry in SOLUTION_MASTER_SPECIES is needed.
+	Define species H3AsO4 as a secondary master species for a valence state.
+	For example: 
+	As(0)	H3AsO4 alk gfw
+ERROR: Calculations terminating due to input errors.
+------------------------------
+End of Run after 0.03 Seconds.
+------------------------------
+
