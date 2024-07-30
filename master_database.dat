@@ -13,1481 +13,6716 @@ NAMED_EXPRESSIONS
 
 SOLUTION_MASTER_SPECIES
 #element	master species	alkalinity	gfw|formula	gfw of element	source
-Ag	Ag+	0.0	107.868	107.868	#wateq4f.dat
-Al	Al+3	0.0	26.9815	26.9815	#wateq4f.dat
-Alkalinity	CO3-2	1.0	50.05	50.05	#wateq4f.dat
-As	H3AsO4	-1.0	74.9216	74.9216	#wateq4f.dat
-As(+3)	H3AsO3	0.0	74.9216	74.9216	#wateq4f.dat
-As(+5)	H3AsO4	-1.0	74.9216	None	#wateq4f.dat
-B	H3BO3	0.0	10.81	10.81	#wateq4f.dat
-Ba	Ba+2	0.0	137.34	137.34	#wateq4f.dat
-Br	Br-	0.0	79.904	79.904	#wateq4f.dat
-C	CO3-2	2.0	61.0173	12.0111	#wateq4f.dat
-C(+4)	CO3-2	2.0	61.0173	None	#wateq4f.dat
-C(-4)	CH4	0.0	16.042	None	#wateq4f.dat
-Ca	Ca+2	0.0	40.08	40.08	#wateq4f.dat
-Cd	Cd+2	0.0	112.4	112.4	#wateq4f.dat
-Cl	Cl-	0.0	35.453	35.453	#wateq4f.dat
-Cs	Cs+	0.0	132.905	132.905	#wateq4f.dat
-Cu	Cu+2	0.0	63.546	63.546	#wateq4f.dat
-Cu(+1)	Cu+1	0.0	63.546	None	#wateq4f.dat
-Cu(+2)	Cu+2	0.0	63.546	None	#wateq4f.dat
-E	e-	0.0	0.0	0.0	#wateq4f.dat
-F	F-	0.0	18.9984	18.9984	#wateq4f.dat
-Fe	Fe+2	0.0	55.847	55.847	#wateq4f.dat
-Fe(+2)	Fe+2	0.0	55.847	None	#wateq4f.dat
-Fe(+3)	Fe+3	-2.0	55.847	None	#wateq4f.dat
-Fulvate	Fulvate-2	0.0	650.	650.	#wateq4f.dat
-H	H+	-1.	1.008	1.008	#wateq4f.dat
-H(0)	H2	0.0	1.008	None	#wateq4f.dat
-H(+1)	H+	-1.	1.008	None	#wateq4f.dat
-Humate	Humate-2	0.0	2000.	2000.	#wateq4f.dat
-I	I-	0.0	126.9044	126.9044	#wateq4f.dat
-K	K+	0.0	39.102	39.102	#wateq4f.dat
-Li	Li+	0.0	6.939	6.939	#wateq4f.dat
-Mg	Mg+2	0.0	24.312	24.312	#wateq4f.dat
-Mn	Mn+2	0.0	54.938	54.938	#wateq4f.dat
-Mn(+2)	Mn+2	0.0	54.938	None	#wateq4f.dat
-Mn(+3)	Mn+3	0.0	54.938	None	#wateq4f.dat
-Mn(+6)	MnO4-2	0.0	54.938	None	#wateq4f.dat
-Mn(+7)	MnO4-	0.0	54.938	None	#wateq4f.dat
-N	NO3-	0.0	14.0067	14.0067	#wateq4f.dat
-N(-3)	NH4+	0.0	14.0067	None	#wateq4f.dat
-N(0)	N2	0.0	14.0067	None	#wateq4f.dat
-N(+3)	NO2-	0.0	14.0067	None	#wateq4f.dat
-N(+5)	NO3-	0.0	14.0067	None	#wateq4f.dat
-Na	Na+	0.0	22.9898	22.9898	#wateq4f.dat
-Ni	Ni+2	0.0	58.71	58.71	#wateq4f.dat
-O	H2O	0.0	16.00	16.00	#wateq4f.dat
-O(-2)	H2O	0.0	18.016	None	#wateq4f.dat
-O(0)	O2	0.0	16.00	None	#wateq4f.dat
-P	PO4-3	2.0	30.9738	30.9738	#wateq4f.dat
-Pb	Pb+2	0.0	207.19	207.19	#wateq4f.dat
-Rb	Rb+	0.0	85.47	85.47	#wateq4f.dat
-S	SO4-2	0.0	96.0616	32.064	#wateq4f.dat
-S(-2)	H2S	0.0	32.064	None	#wateq4f.dat
-S(+6)	SO4-2	0.0	96.0616	None	#wateq4f.dat
-Se	SeO4-2	0.0	78.96	78.96	#wateq4f.dat
-Se(-2)	HSe-	0.0	78.96	None	#wateq4f.dat
-Se(+4)	SeO3-2	0.0	78.96	None	#wateq4f.dat
-Se(+6)	SeO4-2	0.0	78.96	None	#wateq4f.dat
-Si	H4SiO4	0.0	60.0843	28.0843	#wateq4f.dat
-Sr	Sr+2	0.0	87.62	87.62	#wateq4f.dat
-Zn	Zn+2	0.0	65.37	65.37	#wateq4f.dat
-U	UO2+2	0.0	238.0290	238.0290	#wateq4f.dat
-U(+3)	U+3	0.0	238.0290	238.0290	#wateq4f.dat
-U(+4)	U+4	0.0	238.0290	238.0290	#wateq4f.dat
-U(+5)	UO2+	0.0	238.0290	238.0290	#wateq4f.dat
-U(+6)	UO2+2	0.0	238.0290	238.0290	#wateq4f.dat
+Alkalinity	CO3-2	1	Ca0.5(CO3)0.5	50.05	#pitzer.dat	False
+B	B(OH)3	0	B	10.81	#pitzer.dat	False
+Ba	Ba+2	0	Ba	137.33	#pitzer.dat	False
+Br	Br-	0	Br	79.904	#pitzer.dat	False
+C	CO3-2	2	HCO3	12.0111	#pitzer.dat	False
+C(+4)	CO3-2	2	HCO3	12.0111	#pitzer.dat	False
+Ca	Ca+2	0	Ca	40.08	#pitzer.dat	False
+Cl	Cl-	0	Cl	35.453	#pitzer.dat	False
+E	e-	0	0.0	0.0	#pitzer.dat	False
+Fe	Fe+2	0	Fe	55.847	#pitzer.dat	False
+H	H+	-1	H	1.008	#pitzer.dat	False
+H(+1)	H+	-1	0.0	None	#pitzer.dat	False
+K	K+	0	K	39.0983	#pitzer.dat	False
+Li	Li+	0	Li	6.941	#pitzer.dat	False
+Mg	Mg+2	0	Mg	24.305	#pitzer.dat	False
+#Mn(+2)	Mn+2	0	Mn	54.938	#pitzer.dat	False
+Na	Na+	0	Na	22.9898	#pitzer.dat	False
+O	H2O	0	O	16.00	#pitzer.dat	False
+O(-2)	H2O	0	0.0	None	#pitzer.dat	False
+S	SO4-2	0	SO4	32.064	#pitzer.dat	False
+S(+6)	SO4-2	0	SO4	None	#pitzer.dat	False
+Si	H4SiO4	0	SiO2	28.0843	#pitzer.dat	False
+Sr	Sr+2	0	Sr	87.62	#pitzer.dat	False
+Hdg	Hdg	0	Hdg	2.016	#pitzer.dat	False
+Oxg	Oxg	0	Oxg	32	#pitzer.dat	False
+Mtg	Mtg	0.0	Mtg	16.032	#pitzer.dat	False
+Sg	H2Sg	1.0	H2Sg	34.08	#pitzer.dat	False
+Ntg	Ntg	0	Ntg	28.0134	#pitzer.dat	False
+O(0)	O2	0	O	None	#minteq.v4.dat	False
+Ag	Ag+	0.0	Ag	107.868	#minteq.v4.dat	False
+Al	Al+3	0.0	Al	26.9815	#minteq.v4.dat	False
+As	H3AsO4	-1.0	As	74.9216	#minteq.v4.dat	False
+As(+3)	H3AsO3	0.0	As	None	#minteq.v4.dat	False
+As(+5)	H3AsO4	-1.0	As	None	#minteq.v4.dat	False
+Be	Be+2	0.0	Be	9.0122	#minteq.v4.dat	False
+Cyanide	Cyanide-	1.0	Cyanide	26.0177	#minteq.v4.dat	False
+Dom_a	Dom_a	0.0	C	12.0111	#minteq.v4.dat	False
+Dom_b	Dom_b	0.0	C	12.0111	#minteq.v4.dat	False
+Dom_c	Dom_c	0.0	C	12.0111	#minteq.v4.dat	False
+Cd	Cd+2	0.0	Cd	112.41	#minteq.v4.dat	False
+Co	Co+3	-1.0	Co	58.9332	#minteq.v4.dat	False
+Co(+2)	Co+2	0.0	Co	None	#minteq.v4.dat	False
+Co(+3)	Co+3	-1.0	Co	None	#minteq.v4.dat	False
+Cr	CrO4-2	1.0	Cr	51.996	#minteq.v4.dat	False
+Cr(+2)	Cr+2	0.0	Cr	None	#minteq.v4.dat	False
+Cr(+3)	Cr(OH)2+	0.0	Cr	None	#minteq.v4.dat	False
+Cr(+6)	CrO4-2	1.0	Cr	None	#minteq.v4.dat	False
+Cu	Cu+2	0.0	Cu	63.546	#minteq.v4.dat	False
+Cu(+1)	Cu+	0.0	Cu	None	#minteq.v4.dat	False
+Cu(+2)	Cu+2	0.0	Cu	None	#minteq.v4.dat	False
+F	F-	0.0	F	18.9984	#minteq.v4.dat	False
+Fe	Fe+3	-2.0	Fe	55.847	#minteq.v4.dat	False
+Fe(+2)	Fe+2	0.0	Fe	None	#minteq.v4.dat	False
+Fe(+3)	Fe+3	-2.0	Fe	None	#minteq.v4.dat	False
+H(0)	H2	0	H	None	#minteq.v4.dat	False
+Hg	Hg(OH)2	0.0	Hg	200.59	#minteq.v4.dat	False
+Hg(0)	Hg	0.0	Hg	None	#minteq.v4.dat	False
+Hg(+1)	Hg2+2	0.0	Hg	None	#minteq.v4.dat	False
+Hg(+2)	Hg(OH)2	0.0	Hg	None	#minteq.v4.dat	False
+I	I-	0.0	I	126.904	#minteq.v4.dat	False
+Mn	Mn+3	0.0	Mn	54.938	#minteq.v4.dat	False
+Mn(+2)	Mn+2	0.0	Mn	None	#minteq.v4.dat	False
+Mn(+3)	Mn+3	0.0	Mn	None	#minteq.v4.dat	False
+Mn(+6)	MnO4-2	0.0	Mn	None	#minteq.v4.dat	False
+Mn(+7)	MnO4-	0.0	Mn	None	#minteq.v4.dat	False
+Mo	MoO4-2	0.0	Mo	95.94	#minteq.v4.dat	False
+N	NO3-	0.0	N	14.0067	#minteq.v4.dat	False
+N(-3)	NH4+	0.0	N	None	#minteq.v4.dat	False
+N(+3)	NO2-	0.0	N	None	#minteq.v4.dat	False
+N(+5)	NO3-	0.0	N	None	#minteq.v4.dat	False
+Ni	Ni+2	0.0	Ni	58.69	#minteq.v4.dat	False
+P	PO4-3	2.0	P	30.9738	#minteq.v4.dat	False
+Pb	Pb+2	0.0	Pb	207.2	#minteq.v4.dat	False
+S(-2)	HS-	1.0	S	None	#minteq.v4.dat	False
+Sb	Sb(OH)6-	0.0	Sb	121.75	#minteq.v4.dat	False
+Sb(+3)	Sb(OH)3	0.0	Sb	None	#minteq.v4.dat	False
+Sb(+5)	Sb(OH)6-	0.0	Sb	None	#minteq.v4.dat	False
+Se	SeO4-2	0.0	Se	78.96	#minteq.v4.dat	False
+Se(-2)	HSe-	0.0	Se	None	#minteq.v4.dat	False
+Se(+4)	HSeO3-	0.0	Se	None	#minteq.v4.dat	False
+Se(+6)	SeO4-2	0.0	Se	None	#minteq.v4.dat	False
+Sn	Sn(OH)6-2	0.0	Sn	118.71	#minteq.v4.dat	False
+Sn(+2)	Sn(OH)2	0.0	Sn	None	#minteq.v4.dat	False
+Sn(+4)	Sn(OH)6-2	0.0	Sn	None	#minteq.v4.dat	False
+Tl	Tl(OH)3	0.0	Tl	204.383	#minteq.v4.dat	False
+Tl(+1)	Tl+	0.0	Tl	None	#minteq.v4.dat	False
+Tl(+3)	Tl(OH)3	0.0	Tl	None	#minteq.v4.dat	False
+U	UO2+2	0.0	U	238.029	#minteq.v4.dat	False
+U(+3)	U+3	0.0	U	None	#minteq.v4.dat	False
+U(+4)	U+4	-4.0	U	None	#minteq.v4.dat	False
+U(+5)	UO2+	0.0	U	None	#minteq.v4.dat	False
+U(+6)	UO2+2	0.0	U	None	#minteq.v4.dat	False
+V	VO2+	-2.0	V	50.94	#minteq.v4.dat	False
+V(+2)	V+2	0.0	V	None	#minteq.v4.dat	False
+V(+3)	V+3	-3.0	V	None	#minteq.v4.dat	False
+V(+4)	VO+2	0.0	V	None	#minteq.v4.dat	False
+V(+5)	VO2+	-2.0	V	None	#minteq.v4.dat	False
+Zn	Zn+2	0.0	Zn	65.39	#minteq.v4.dat	False
+Benzoate	Benzoate-	0.0	121.116	121.116	#minteq.v4.dat	False
+Phenylacetate	Phenylacetate-	0.0	135.142	135.142	#minteq.v4.dat	False
+Isophthalate	Isophthalate-2	0.0	164.117	164.117	#minteq.v4.dat	False
+Diethylamine	Diethylamine	1.0	73.138	73.138	#minteq.v4.dat	False
+Butylamine	Butylamine	1.0	73.138	73.138	#minteq.v4.dat	False
+Methylamine	Methylamine	1.0	31.057	31.057	#minteq.v4.dat	False
+Dimethylamine	Dimethylamine	1.0	45.084	45.084	#minteq.v4.dat	False
+Hexylamine	Hexylamine	1.0	101.192	101.192	#minteq.v4.dat	False
+Ethylenediamine	Ethylenediamine	2.0	60.099	60.099	#minteq.v4.dat	False
+Propylamine	Propylamine	1.0	59.111	59.111	#minteq.v4.dat	False
+Isopropylamine	Isopropylamine	1.0	59.111	59.111	#minteq.v4.dat	False
+Trimethylamine	Trimethylamine	1.0	59.111	59.111	#minteq.v4.dat	False
+Citrate	Citrate-3	2.0	189.102	189.102	#minteq.v4.dat	False
+Nta	Nta-3	1.0	188.117	188.117	#minteq.v4.dat	False
+Edta	Edta-4	2.0	288.214	288.214	#minteq.v4.dat	False
+Propionate	Propionate-	1.0	73.072	73.072	#minteq.v4.dat	False
+Butyrate	Butyrate-	1.0	87.098	87.098	#minteq.v4.dat	False
+Isobutyrate	Isobutyrate-	1.0	87.098	87.098	#minteq.v4.dat	False
+Two_picoline	Two_picoline	1.0	93.128	93.128	#minteq.v4.dat	False
+Three_picoline	Three_picoline	1.0	93.128	93.128	#minteq.v4.dat	False
+Four_picoline	Four_picoline	1.0	93.128	93.128	#minteq.v4.dat	False
+Formate	Formate-	0.0	45.018	45.018	#minteq.v4.dat	False
+Isovalerate	Isovalerate-	1.0	101.125	101.125	#minteq.v4.dat	False
+Valerate	Valerate-	1.0	101.125	101.125	#minteq.v4.dat	False
+Acetate	Acetate-	1.0	59.045	59.045	#minteq.v4.dat	False
+Tartarate	Tartarate-2	0.0	148.072	148.072	#minteq.v4.dat	False
+Glycine	Glycine-	1.0	74.059	74.059	#minteq.v4.dat	False
+Salicylate	Salicylate-2	1.0	136.107	136.107	#minteq.v4.dat	False
+Glutamate	Glutamate-2	1.0	145.115	145.115	#minteq.v4.dat	False
+Phthalate	Phthalate-2	1.0	164.117	164.117	#minteq.v4.dat	False
 
 SOLUTION_SPECIES
-H+ = H+
-	log_k	0.0
-	gamma	9.0 0.0 
-	# source	wateq4f.dat
-e- = e-
-	log_k	0.0
-	# source	wateq4f.dat
-H2O = H2O
-	log_k	0.0
-	# source	wateq4f.dat
-Ag+ = Ag+
-	log_k	0.0
-	# source	wateq4f.dat
-Al+3 = Al+3
-	log_k	0.0
-	gamma	9.0 0.0 
-	# source	wateq4f.dat
-H3AsO4 = H3AsO4
-	log_k	0.0
-	# source	wateq4f.dat
-H3BO3 = H3BO3
-	log_k	0.0
-	# source	wateq4f.dat
-Ba+2 = Ba+2
-	log_k	0.0
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Br- = Br-
-	log_k	0.0
-	# source	wateq4f.dat
-CO3-2 = CO3-2
-	log_k	0.0
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Ca+2 = Ca+2
-	log_k	0.0
-	gamma	5.0 0.165 
-	# source	wateq4f.dat
-Cd+2 = Cd+2
-	log_k	0.0
-	# source	wateq4f.dat
-Cl- = Cl-
-	log_k	0.0
-	gamma	3.5 0.015 
-	# source	wateq4f.dat
-Cs+ = Cs+
-	log_k	0.0
-	# source	wateq4f.dat
-Cu+2 = Cu+2
-	log_k	0.0
-	gamma	6.0 0.0 
-	# source	wateq4f.dat
-F- = F-
-	log_k	0.0
-	gamma	3.5 0.0 
-	# source	wateq4f.dat
-Fe+2 = Fe+2
-	log_k	0.0
-	gamma	6.0 0.0 
-	# source	wateq4f.dat
-Fulvate-2 = Fulvate-2
-	log_k	0.0
-	# source	wateq4f.dat
-Humate-2 = Humate-2
-	log_k	0.0
-	# source	wateq4f.dat
-I- = I-
-	log_k	0.0
-	# source	wateq4f.dat
-K+ = K+
-	log_k	0.0
-	gamma	3.5 0.015 
-	# source	wateq4f.dat
-Li+ = Li+
-	log_k	0.0
-	gamma	6.0 0.0 
-	# source	wateq4f.dat
-Mg+2 = Mg+2
-	log_k	0.0
-	gamma	5.5 0.200 
-	# source	wateq4f.dat
-Mn+2 = Mn+2
-	log_k	0.0
-	gamma	6.0 0.0 
-	# source	wateq4f.dat
-NO3- = NO3-
-	log_k	0.0
-	gamma	3.0 0.0 
-	# source	wateq4f.dat
-Na+ = Na+
-	log_k	0.0
-	gamma	4.0 0.075 
-	# source	wateq4f.dat
-Ni+2 = Ni+2
-	log_k	0.0
-	# source	wateq4f.dat
-PO4-3 = PO4-3
-	log_k	0.0
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Pb+2 = Pb+2
-	log_k	0.0
-	# source	wateq4f.dat
-Rb+ = Rb+
-	log_k	0.0
-	# source	wateq4f.dat
-SO4-2 = SO4-2
-	log_k	0.0
-	gamma	5.0 -0.040 
-	# source	wateq4f.dat
-SeO4-2 = SeO4-2
-	log_k	0.0
-	# source	wateq4f.dat
-H4SiO4 = H4SiO4
-	log_k	0.0
-	# source	wateq4f.dat
-Sr+2 = Sr+2
-	log_k	0.0
-	gamma	5.26 0.121 
-	# source	wateq4f.dat
-UO2+2 = UO2+2
-	log_k	0.0
-	# source	wateq4f.dat
-Zn+2 = Zn+2
-	log_k	0.0
-	gamma	6.0 0.0 
-	# source	wateq4f.dat
-Fe+2 = Fe+3 + e-
-	log_k	-13.02
-	-delta_h	9.680 kcal 
-	gamma	9.0 0.0 
-	# source	wateq4f.dat
-Fe+3 + H2O = FeOH+2 + H+
-	log_k	-2.19
-	-delta_h	10.4 kcal 
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Fe+2 + H2O = FeOH+ + H+
-	log_k	-9.5
-	-delta_h	13.2 kcal 
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Fe+2 + 3H2O = Fe(OH)3- + 3H+
-	log_k	-31.0
-	-delta_h	30.3 kcal 
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Fe+3 + SO4-2 = FeSO4+
-	log_k	4.04
-	-delta_h	3.91 kcal 
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Fe+3 + Cl- = FeCl+2
-	log_k	1.48
-	-delta_h	5.6 kcal 
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Fe+3 + 2Cl- = FeCl2+
-	log_k	2.13
-	# source	wateq4f.dat
-Fe+3 + 3Cl- = FeCl3
-	log_k	1.13
-	# source	wateq4f.dat
-Fe+2 + SO4-2 = FeSO4
-	log_k	2.25
-	-delta_h	3.23 kcal 
-	# source	wateq4f.dat
+B(OH)3 = B(OH)3
+	log_k 0.0
+CO3-2 + H+ = HCO3-
+	log_k	10.3393
+	-delta_h	-3.561 kcal 
+	dw	1.18e-09 0.0 1.43 1e-10 
+	Vm	8.54 0.0 -11.7 0.0 1.6 0.0 0.0 116.0 0.0 1.0 
+	# source	pitzer.dat
+CO3-2 + 2 H+ = CO2 + H2O
+	log_k	16.6767
+	-delta_h	-5.738 kcal 
+	dw	1.92e-09 
+	Vm	7.29 0.92 2.07 -1.23 -1.6 
+	# source	pitzer.dat
+SO4-2 + H+ = HSO4-
+	log_k	1.979
+	-delta_h	4.91 kcal 
+	dw	1.33e-09 
+	Vm	8.2 9.259 2.1108 -3.1618 1.1748 0.0 -0.3 15.0 0.0 1.0 
+	# source	pitzer.dat
+H2Sg = HSg- + H+
+	log_k	-6.994
+	-delta_h	5.30 kcal 
+	dw	1.73e-09 
+	Vm	5.0119 4.9799 3.4765 -2.9849 1.441 
+	# source	pitzer.dat
+B(OH)3 + H2O = B(OH)4- + H+
+	log_k	-9.239
+	-delta_h	0 kcal 
+	# source	pitzer.dat
+3B(OH)3 = B3O3(OH)4- + 2H2O + H+
+	log_k	-7.528
+	-delta_h	0 kcal 
+	# source	pitzer.dat
+4B(OH)3 = B4O5(OH)4-2 + 3H2O + 2H+
+	log_k	-16.134
+	-delta_h	0 kcal 
+	# source	pitzer.dat
+Ca+2 + B(OH)3 + H2O = CaB(OH)4+ + H+
+	log_k	-7.589
+	-delta_h	0 kcal 
+	# source	pitzer.dat
+Mg+2 + B(OH)3 + H2O = MgB(OH)4+ + H+
+	log_k	-7.84
+	-delta_h	0 kcal 
+	# source	pitzer.dat
+Mg+2 + H2O = MgOH+ + H+
+	log_k	-11.809
+	-delta_h	15.419 kcal 
+	# source	pitzer.dat
+Mg+2 + CO3-2 = MgCO3
+	log_k	2.928
+	-delta_h	2.535 kcal 
+	dw	4.21e-10 
+	Vm	-0.5837 -9.2067 9.3687 -2.3984 -0.03 
+	# source	pitzer.dat
 H4SiO4 = H3SiO4- + H+
 	log_k	-9.83
-	-delta_h	6.12 kcal 
-	gamma	4.0 0.0 
-	# source	wateq4f.dat
-H4SiO4 = H2SiO4-2 + 2H+
+	Vm	7.94 1.0881 5.3224 -2.824 1.4767 
+	# source	pitzer.dat
+H4SiO4 = H2SiO4-2 + 2 H+
 	log_k	-23.0
-	-delta_h	17.6 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-H+ + PO4-3 = HPO4-2
-	log_k	12.346
-	-delta_h	-3.53 kcal 
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-2H+ + PO4-3 = H2PO4-
-	log_k	19.553
-	-delta_h	-4.52 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Mg+2 + F- = MgF+
-	log_k	1.82
-	-delta_h	3.2 kcal 
-	gamma	4.5 0.0 
-	# source	wateq4f.dat
-Ca+2 + SO4-2 = CaSO4
-	log_k	2.3
-	-delta_h	1.65 kcal 
-	# source	wateq4f.dat
-Mg+2 + H2O = MgOH+ + H+
-	log_k	-11.44
-	-delta_h	15.952 kcal 
-	gamma	6.5 0.0 
-	# source	wateq4f.dat
-H3BO3 = H2BO3- + H+
-	log_k	-9.24
-	-delta_h	3.224 kcal 
-	gamma	2.5 0.0 
-	# source	wateq4f.dat
-NH4+ = NH3 + H+
-	log_k	-9.252
-	-delta_h	12.48 kcal 
-	gamma	2.5 0.0 
-	# source	wateq4f.dat
-Na+ + HPO4-2 = NaHPO4-
-	log_k	0.29
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-K+ + HPO4-2 = KHPO4-
-	log_k	0.29
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Mg+2 + HPO4-2 = MgHPO4
-	log_k	2.87
-	-delta_h	3.3 kcal 
-	# source	wateq4f.dat
-Ca+2 + HPO4-2 = CaHPO4
-	log_k	2.739
-	-delta_h	3.3 kcal 
-	# source	wateq4f.dat
-CO3-2 + 10 H+ + 8 e- = CH4 + 3 H2O
-	log_k	41.071
-	-delta_h	-61.039 kcal 
-	# source	wateq4f.dat
-CO3-2 + 2 H+ = CO2 + H2O
-	log_k	16.681
-	-delta_h	-5.738 kcal 
-	# source	wateq4f.dat
-H+ + CO3-2 = HCO3-
-	log_k	10.329
-	-delta_h	-3.561 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Na+ + CO3-2 = NaCO3-
-	log_k	1.27
-	-delta_h	8.91 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Na+ + HCO3- = NaHCO3
-	log_k	-0.25
-	# source	wateq4f.dat
-Na+ + SO4-2 = NaSO4-
-	log_k	0.7
-	-delta_h	1.12 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-K+ + SO4-2 = KSO4-
-	log_k	0.85
-	-delta_h	2.25 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Mg+2 + CO3-2 = MgCO3
-	log_k	2.98
-	-delta_h	2.713 kcal 
-	# source	wateq4f.dat
-Mg+2 + HCO3- = MgHCO3+
-	log_k	1.07
-	-delta_h	0.79 kcal 
-	gamma	4.0 0.0 
-	# source	wateq4f.dat
-Mg+2 + SO4-2 = MgSO4
-	log_k	2.37
-	-delta_h	4.55 kcal 
-	# source	wateq4f.dat
-Ca+2 + H2O = CaOH+ + H+
-	log_k	-12.78
-	gamma	6.0 0.0 
-	# source	wateq4f.dat
-Ca+2 + HCO3- = CaHCO3+
-	log_k	1.106
-	-delta_h	2.69 kcal 
-	gamma	6.0 0.0 
-	# source	wateq4f.dat
-Ca+2 + CO3-2 = CaCO3
-	log_k	3.224
-	-delta_h	3.545 kcal 
-	# source	wateq4f.dat
-Sr+2 + HCO3- = SrHCO3+
-	log_k	1.18
-	-delta_h	6.05 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Al+3 + H2O = AlOH+2 + H+
-	log_k	-5.0
-	-delta_h	11.49 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Al+3 + 2H2O = Al(OH)2+ + 2H+
-	log_k	-10.1
-	-delta_h	26.9 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Al+3 + 3H2O = Al(OH)3 + 3H+
-	log_k	-16.9
-	-delta_h	39.89 kcal 
-	# source	wateq4f.dat
-Al+3 + 4H2O = Al(OH)4- + 4H+
-	log_k	-22.7
-	-delta_h	42.3 kcal 
-	gamma	4.5 0.0 
-	# source	wateq4f.dat
-Al+3 + F- = AlF+2
-	log_k	7.0
-	-delta_h	1.06 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Al+3 + 2F- = AlF2+
-	log_k	12.7
-	-delta_h	1.98 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Al+3 + 3F- = AlF3
-	log_k	16.8
-	-delta_h	2.16 kcal 
-	# source	wateq4f.dat
-Al+3 + 4F- = AlF4-
-	log_k	19.4
-	-delta_h	2.2 kcal 
-	gamma	4.5 0.0 
-	# source	wateq4f.dat
-Al+3 + SO4-2 = AlSO4+
-	log_k	3.5
-	-delta_h	2.29 kcal 
-	gamma	4.5 0.0 
-	# source	wateq4f.dat
-Al+3 + 2SO4-2 = Al(SO4)2-
-	log_k	5.0
-	-delta_h	3.11 kcal 
-	gamma	4.5 0.0 
-	# source	wateq4f.dat
-H+ + SO4-2 = HSO4-
-	log_k	1.988
-	-delta_h	3.85 kcal 
-	gamma	4.5 0.0 
-	# source	wateq4f.dat
-SO4-2 + 10H+ + 8e- = H2S + 4H2O
-	log_k	40.644
-	-delta_h	-65.44 kcal 
-	# source	wateq4f.dat
-H2S = HS- + H+
-	log_k	-6.994
-	-delta_h	5.3 kcal 
-	gamma	3.5 0.0 
-	# source	wateq4f.dat
-HS- = S-2 + H+
-	log_k	-12.918
-	-delta_h	12.1 kcal 
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
+	# source	pitzer.dat
+e- = e-
+	log_k	0.0
+	# source	minteq.v4.dat
+H2O = H2O
+	log_k	0.0
+	# source	minteq.v4.dat
+Ag+ = Ag+
+	log_k	0.0
+	# source	minteq.v4.dat
+Al+3 = Al+3
+	log_k	0.0
+	# source	minteq.v4.dat
+H3AsO4 = H3AsO4
+	log_k	0.0
+	# source	minteq.v4.dat
+H3BO3 = H3BO3
+	log_k	0.0
+	# source	minteq.v4.dat
+Ba+2 = Ba+2
+	log_k	0.0
+	# source	minteq.v4.dat
+Be+2 = Be+2
+	log_k	0.0
+	# source	minteq.v4.dat
+Br- = Br-
+	log_k	0.0
+	# source	minteq.v4.dat
+CO3-2 = CO3-2
+	log_k	0.0
+	# source	minteq.v4.dat
+Cyanide- = Cyanide-
+	log_k	0.0
+	# source	minteq.v4.dat
+Dom_a = Dom_a
+	log_k	0.0
+	# source	minteq.v4.dat
+Dom_b = Dom_b
+	log_k	0.0
+	# source	minteq.v4.dat
+Dom_c = Dom_c
+	log_k	0.0
+	# source	minteq.v4.dat
+Ca+2 = Ca+2
+	log_k	0.0
+	# source	minteq.v4.dat
+Cd+2 = Cd+2
+	log_k	0.0
+	# source	minteq.v4.dat
+Cl- = Cl-
+	log_k	0.0
+	# source	minteq.v4.dat
+Co+3 = Co+3
+	log_k	0.0
+	# source	minteq.v4.dat
+CrO4-2 = CrO4-2
+	log_k	0.0
+	# source	minteq.v4.dat
+Cu+2 = Cu+2
+	log_k	0.0
+	# source	minteq.v4.dat
+F- = F-
+	log_k	0.0
+	# source	minteq.v4.dat
+Fe+3 = Fe+3
+	log_k	0.0
+	# source	minteq.v4.dat
+H+ = H+
+	log_k	0.0
+	# source	minteq.v4.dat
+Hg(OH)2 = Hg(OH)2
+	log_k	0.0
+	# source	minteq.v4.dat
+I- = I-
+	log_k	0.0
+	# source	minteq.v4.dat
+K+ = K+
+	log_k	0.0
+	# source	minteq.v4.dat
+Li+ = Li+
+	log_k	0.0
+	# source	minteq.v4.dat
+Mg+2 = Mg+2
+	log_k	0.0
+	# source	minteq.v4.dat
+Mn+3 = Mn+3
+	log_k	0.0
+	# source	minteq.v4.dat
+MoO4-2 = MoO4-2
+	log_k	0.0
+	# source	minteq.v4.dat
+NO3- = NO3-
+	log_k	0.0
+	# source	minteq.v4.dat
+Na+ = Na+
+	log_k	0.0
+	# source	minteq.v4.dat
+Ni+2 = Ni+2
+	log_k	0.0
+	# source	minteq.v4.dat
+PO4-3 = PO4-3
+	log_k	0.0
+	# source	minteq.v4.dat
+Pb+2 = Pb+2
+	log_k	0.0
+	# source	minteq.v4.dat
+SO4-2 = SO4-2
+	log_k	0.0
+	# source	minteq.v4.dat
+Sb(OH)6- = Sb(OH)6-
+	log_k	0.0
+	# source	minteq.v4.dat
+SeO4-2 = SeO4-2
+	log_k	0.0
+	# source	minteq.v4.dat
+H4SiO4 = H4SiO4
+	log_k	0.0
+	# source	minteq.v4.dat
+Sn(OH)6-2 = Sn(OH)6-2
+	log_k	0.0
+	# source	minteq.v4.dat
+Sr+2 = Sr+2
+	log_k	0.0
+	# source	minteq.v4.dat
+Tl(OH)3 = Tl(OH)3
+	log_k	0.0
+	# source	minteq.v4.dat
+UO2+2 = UO2+2
+	log_k	0.0
+	# source	minteq.v4.dat
+VO2+ = VO2+
+	log_k	0.0
+	# source	minteq.v4.dat
+Benzoate- = Benzoate-
+	log_k	0.0
+	# source	minteq.v4.dat
+Phenylacetate- = Phenylacetate-
+	log_k	0.0
+	# source	minteq.v4.dat
+Isophthalate-2 = Isophthalate-2
+	log_k	0.0
+	# source	minteq.v4.dat
+Zn+2 = Zn+2
+	log_k	0.0
+	# source	minteq.v4.dat
+Diethylamine = Diethylamine
+	log_k	0.0
+	# source	minteq.v4.dat
+Butylamine = Butylamine
+	log_k	0.0
+	# source	minteq.v4.dat
+Methylamine = Methylamine
+	log_k	0.0
+	# source	minteq.v4.dat
+Dimethylamine = Dimethylamine
+	log_k	0.0
+	# source	minteq.v4.dat
+Hexylamine = Hexylamine
+	log_k	0.0
+	# source	minteq.v4.dat
+Ethylenediamine = Ethylenediamine
+	log_k	0.0
+	# source	minteq.v4.dat
+Propylamine = Propylamine
+	log_k	0.0
+	# source	minteq.v4.dat
+Isopropylamine = Isopropylamine
+	log_k	0.0
+	# source	minteq.v4.dat
+Trimethylamine = Trimethylamine
+	log_k	0.0
+	# source	minteq.v4.dat
+Citrate-3 = Citrate-3
+	log_k	0.0
+	# source	minteq.v4.dat
+Nta-3 = Nta-3
+	log_k	0.0
+	# source	minteq.v4.dat
+Edta-4 = Edta-4
+	log_k	0.0
+	# source	minteq.v4.dat
+Propionate- = Propionate-
+	log_k	0.0
+	# source	minteq.v4.dat
+Butyrate- = Butyrate-
+	log_k	0.0
+	# source	minteq.v4.dat
+Isobutyrate- = Isobutyrate-
+	log_k	0.0
+	# source	minteq.v4.dat
+Two_picoline = Two_picoline
+	log_k	0.0
+	# source	minteq.v4.dat
+Three_picoline = Three_picoline
+	log_k	0.0
+	# source	minteq.v4.dat
+Four_picoline = Four_picoline
+	log_k	0.0
+	# source	minteq.v4.dat
+Formate- = Formate-
+	log_k	0.0
+	# source	minteq.v4.dat
+Isovalerate- = Isovalerate-
+	log_k	0.0
+	# source	minteq.v4.dat
+Valerate- = Valerate-
+	log_k	0.0
+	# source	minteq.v4.dat
+Acetate- = Acetate-
+	log_k	0.0
+	# source	minteq.v4.dat
+Tartarate-2 = Tartarate-2
+	log_k	0.0
+	# source	minteq.v4.dat
+Glycine- = Glycine-
+	log_k	0.0
+	# source	minteq.v4.dat
+Salicylate-2 = Salicylate-2
+	log_k	0.0
+	# source	minteq.v4.dat
+Glutamate-2 = Glutamate-2
+	log_k	0.0
+	# source	minteq.v4.dat
+Phthalate-2 = Phthalate-2
+	log_k	0.0
+	# source	minteq.v4.dat
+Fe+3 + e- = Fe+2
+	log_k	13.032
+	-delta_h	-42.7 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H3AsO4 + 2e- + 2H+ = H3AsO3 + H2O
+	log_k	18.898
+	-delta_h	-125.6 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sb(OH)6- + 2e- + 3H+ = Sb(OH)3 + 3H2O
+	log_k	24.31
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+UO2+2 + 3e- + 4H+ = U+3 + 2H2O
+	log_k	0.42
+	-delta_h	-42 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+UO2+2 + 2e- + 4H+ = U+4 + 2H2O
+	log_k	9.216
+	-delta_h	-144.1 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+UO2+2 + e- = UO2+
+	log_k	2.785
+	-delta_h	-13.8 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+e- + Mn+3 = Mn+2
+	log_k	25.35
+	-delta_h	-107.8 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+3 + e- = Co+2
+	log_k	32.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + e- = Cu+
+	log_k	2.69
+	-delta_h	6.9 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+V+3 + e- = V+2
+	log_k	-4.31
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO+2 + e- + 2H+ = V+3 + H2O
+	log_k	5.696
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO2+ + e- + 2H+ = VO+2 + H2O
+	log_k	16.903
+	-delta_h	-122.7 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+SO4-2 + 9H+ + 8e- = HS- + 4H2O
+	log_k	33.66
+	-delta_h	-60.14 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)6-2 + 2e- + 4H+ = Sn(OH)2 + 4H2O
+	log_k	19.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl(OH)3 + 2e- + 3H+ = Tl+ + 3H2O
+	log_k	45.55
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+HSeO3- + 6e- + 6H+ = HSe- + 3H2O
+	log_k	44.86
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+SeO4-2 + 2e- + 3H+ = HSeO3- + H2O
+	log_k	36.308
+	-delta_h	-201.2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+0.5Hg2+2 + e- = Hg
+	log_k	6.5667
+	-delta_h	-45.735 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Hg(OH)2 + 4H+ + 2e- = Hg2+2 + 4H2O
+	log_k	43.185
+	-delta_h	-63.59 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2H+ + e- = Cr+2 + 2H2O
+	log_k	2.947
+	-delta_h	6.36 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+CrO4-2 + 6H+ + 3e- = Cr(OH)2+ + 2H2O
+	log_k	67.376
+	-delta_h	-103 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 2H2O = O2 + 4H+ + 4e-
-	log_k	-86.08
-	-delta_h	134.79 kcal 
-	# source	wateq4f.dat
+	log_k	-85.9951
+	# source	minteq.v4.dat
 2 H+ + 2 e- = H2
 	log_k	-3.15
 	-delta_h	-1.759 kcal 
-	# source	wateq4f.dat
-Fe+3 + 2H2O = Fe(OH)2+ + 2H+
-	log_k	-5.67
-	-delta_h	17.1 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Fe+3 + 3H2O = Fe(OH)3 + 3H+
-	log_k	-12.56
-	-delta_h	24.8 kcal 
-	# source	wateq4f.dat
-Fe+3 + 4H2O = Fe(OH)4- + 4H+
-	log_k	-21.6
-	-delta_h	31.9 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Fe+2 + 2H2O = Fe(OH)2 + 2H+
-	log_k	-20.57
-	-delta_h	28.565 kcal 
-	# source	wateq4f.dat
-Fe+2 + H2PO4- = FeH2PO4+
-	log_k	2.7
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Ca+2 + PO4-3 = CaPO4-
-	log_k	6.459
-	-delta_h	3.1 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Ca+2 + H2PO4- = CaH2PO4+
-	log_k	1.408
-	-delta_h	3.4 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Mg+2 + PO4-3 = MgPO4-
-	log_k	6.589
-	-delta_h	3.1 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Mg+2 + H2PO4- = MgH2PO4+
-	log_k	1.513
-	-delta_h	3.4 kcal 
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Li+ + SO4-2 = LiSO4-
-	log_k	0.64
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-2 NO3- + 12 H+ + 10 e- = N2 + 6 H2O
-	log_k	207.08
-	-delta_h	-312.130 kcal 
-	# source	wateq4f.dat
-NO3- + 10H+ + 8e- = NH4+ + 3H2O
+	# source	minteq.v4.dat
+NO3- + 2 H+ + 2 e- = NO2- + H2O
+	log_k	28.57
+	-delta_h	-43.760 kcal 
+	gamma	3.0000 0.0000 
+	# source	minteq.v4.dat
+NO3- + 10 H+ + 8 e- = NH4+ + 3 H2O
 	log_k	119.077
 	-delta_h	-187.055 kcal 
-	# source	wateq4f.dat
-Sr+2 + H2O = SrOH+ + H+
-	log_k	-13.29
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Ba+2 + H2O = BaOH+ + H+
-	log_k	-13.47
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-NH4+ + SO4-2 = NH4SO4-
-	log_k	1.11
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Sr+2 + CO3-2 = SrCO3
-	log_k	2.81
-	-delta_h	5.22 kcal 
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Fe+2 + HPO4-2 = FeHPO4
-	log_k	3.6
-	# source	wateq4f.dat
-Fe+3 + HPO4-2 = FeHPO4+
-	log_k	5.43
-	-delta_h	5.76 kcal 
-	gamma	5.5 0.0 
-	# source	wateq4f.dat
-Fe+2 + HSO4- = FeHSO4+
-	log_k	1.08
-	# source	wateq4f.dat
+	gamma	2.5000 0.0000 
+	# source	minteq.v4.dat
+Mn+2 + 4H2O = MnO4- + 8H+ + 5e-
+	log_k	-127.794
+	-delta_h	822.67 kJ 
+	gamma	3 0 
+	# source	minteq.v4.dat
+Mn+2 + 4H2O = MnO4-2 + 8H+ + 4e-
+	log_k	-118.422
+	-delta_h	711.07 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+HS- = S-2 + H+
+	log_k	-17.3
+	-delta_h	49.4 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+HSe- = Se-2 + H+
+	log_k	-15.0
+	-delta_h	48.116 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl(OH)3 + 3H+ = Tl+3 + 3H2O
+	log_k	3.291
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ = Hg+2 + 2H2O
+	log_k	6.194
+	-delta_h	-39.72 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2H+ = Cr+3 + 2H2O
+	log_k	9.5688
+	-delta_h	-129.62 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 H2O = OH- + H+
-	log_k	-14.0
-	-delta_h	13.362 kcal 
-	gamma	3.5 0.0 
-	# source	wateq4f.dat
-Fe+3 + H2PO4- = FeH2PO4+2
-	log_k	5.43
-	gamma	5.4 0.0 
-	# source	wateq4f.dat
-Fe+3 + HSO4- = FeHSO4+2
-	log_k	2.48
-	# source	wateq4f.dat
-Ca+2 + F- = CaF+
-	log_k	0.94
-	-delta_h	4.12 kcal 
-	gamma	5.5 0.0 
-	# source	wateq4f.dat
+	log_k	-13.997
+	-delta_h	55.81 kJ 
+	gamma	3.5 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 2H+ = Sn+2 + 2H2O
+	log_k	7.094
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + H+ = SnOH+ + H2O
+	log_k	3.697
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + H2O = Sn(OH)3- + H+
+	log_k	-9.497
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Sn(OH)2 + 2H+ = Sn2(OH)2+2 + 2H2O
+	log_k	9.394
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+3Sn(OH)2 + 2H+ = Sn3(OH)4+2 + 2H2O
+	log_k	14.394
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 = HSnO2- + H+
+	log_k	-8.9347
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)6-2 + 6H+ = Sn+4 + 6H2O
+	log_k	21.2194
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)6-2 = SnO3-2 + 3H2O
+	log_k	-2.2099
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + H2O = PbOH+ + H+
+	log_k	-7.597
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 2H2O = Pb(OH)2 + 2H+
+	log_k	-17.094
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 3H2O = Pb(OH)3- + 3H+
+	log_k	-28.091
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Pb+2 + H2O = Pb2OH+3 + H+
+	log_k	-6.397
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+3Pb+2 + 4H2O = Pb3(OH)4+2 + 4H+
+	log_k	-23.888
+	-delta_h	115.24 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 4H2O = Pb(OH)4-2 + 4H+
+	log_k	-39.699
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+4Pb+2 + 4H2O = Pb4(OH)4+4 + 4H+
+	log_k	-19.988
+	-delta_h	88.24 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 H3BO3 + F- = BF(OH)3-
-	log_k	-0.4
-	-delta_h	1.85 kcal 
-	gamma	2.5 0.0 
-	# source	wateq4f.dat
-H3BO3 + H+ + 2F- = BF2(OH)2- + H2O
+	log_k	-0.399
+	-delta_h	7.7404 kJ 
+	gamma	2.5 0 
+	# source	minteq.v4.dat
+H3BO3 + 2F- + H+ = BF2(OH)2- + H2O
 	log_k	7.63
-	-delta_h	1.618 kcal 
-	gamma	2.5 0.0 
-	# source	wateq4f.dat
-H3BO3 + 2H+ + 3F- = BF3OH- + 2H2O
-	log_k	13.67
-	-delta_h	-1.614 kcal 
-	gamma	2.5 0.0 
-	# source	wateq4f.dat
-H3BO3 + 3H+ + 4F- = BF4- + 3H2O
-	log_k	20.28
-	-delta_h	-1.846 kcal 
-	gamma	2.5 0.0 
-	# source	wateq4f.dat
-Fe+3 + F- = FeF+2
-	log_k	6.2
-	-delta_h	2.7 kcal 
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Fe+3 + 2F- = FeF2+
-	log_k	10.8
-	-delta_h	4.8 kcal 
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Fe+3 + 3F- = FeF3
-	log_k	14.0
-	-delta_h	5.4 kcal 
-	# source	wateq4f.dat
-Ca+2 + HSO4- = CaHSO4+
-	log_k	1.08
-	# source	wateq4f.dat
-Mn+2 = Mn+3 + e-
-	log_k	-25.51
-	-delta_h	25.8 kcal 
-	gamma	9.0 0.0 
-	# source	wateq4f.dat
-Mn+2 + Cl- = MnCl+
-	log_k	0.61
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Mn+2 + 2Cl- = MnCl2
-	log_k	0.25
-	# source	wateq4f.dat
-Mn+2 + 3Cl- = MnCl3-
-	log_k	-0.31
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
+	-delta_h	6.8408 kJ 
+	gamma	2.5 0 
+	# source	minteq.v4.dat
+H3BO3 + 3F- + 2H+ = BF3OH- + 2H2O
+	log_k	13.22
+	-delta_h	-20.4897 kJ 
+	gamma	2.5 0 
+	# source	minteq.v4.dat
+Al+3 + H2O = AlOH+2 + H+
+	log_k	-4.997
+	-delta_h	47.81 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+Al+3 + 2H2O = Al(OH)2+ + 2H+
+	log_k	-10.094
+	-delta_h	0 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+Al+3 + 3H2O = Al(OH)3 + 3H+
+	log_k	-16.791
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Al+3 + 4H2O = Al(OH)4- + 4H+
+	log_k	-22.688
+	-delta_h	173.24 kJ 
+	gamma	4.5 0 
+	# source	minteq.v4.dat
+Tl+ + H2O = TlOH + H+
+	log_k	-13.207
+	-delta_h	56.81 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl(OH)3 + 2H+ = TlOH+2 + 2H2O
+	log_k	2.694
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl(OH)3 + H+ = Tl(OH)2+ + H2O
+	log_k	1.897
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl(OH)3 + H2O = Tl(OH)4- + H+
+	log_k	-11.697
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + H2O = ZnOH+ + H+
+	log_k	-8.997
+	-delta_h	55.81 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2H2O = Zn(OH)2 + 2H+
+	log_k	-17.794
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 3H2O = Zn(OH)3- + 3H+
+	log_k	-28.091
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 4H2O = Zn(OH)4-2 + 4H+
+	log_k	-40.488
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + H2O = CdOH+ + H+
+	log_k	-10.097
+	-delta_h	54.81 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2H2O = Cd(OH)2 + 2H+
+	log_k	-20.294
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 3H2O = Cd(OH)3- + 3H+
+	log_k	-32.505
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 4H2O = Cd(OH)4-2 + 4H+
+	log_k	-47.288
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Cd+2 + H2O = Cd2OH+3 + H+
+	log_k	-9.397
+	-delta_h	45.81 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + H+ = HgOH+ + H2O
+	log_k	2.797
+	-delta_h	-18.91 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + H2O = Hg(OH)3- + H+
+	log_k	-14.897
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + H2O = CuOH+ + H+
+	log_k	-7.497
+	-delta_h	35.81 kJ 
+	gamma	4 0 
+	# source	minteq.v4.dat
+Cu+2 + 2H2O = Cu(OH)2 + 2H+
+	log_k	-16.194
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 3H2O = Cu(OH)3- + 3H+
+	log_k	-26.879
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 4H2O = Cu(OH)4-2 + 4H+
+	log_k	-39.98
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Cu+2 + 2H2O = Cu2(OH)2+2 + 2H+
+	log_k	-10.594
+	-delta_h	76.62 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + H2O = AgOH + H+
+	log_k	-11.997
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2H2O = Ag(OH)2- + 2H+
+	log_k	-24.004
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + H2O = NiOH+ + H+
+	log_k	-9.897
+	-delta_h	51.81 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2H2O = Ni(OH)2 + 2H+
+	log_k	-18.994
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 3H2O = Ni(OH)3- + 3H+
+	log_k	-29.991
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + H2O = CoOH+ + H+
+	log_k	-9.697
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2H2O = Co(OH)2 + 2H+
+	log_k	-18.794
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 3H2O = Co(OH)3- + 3H+
+	log_k	-31.491
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 4H2O = Co(OH)4-2 + 4H+
+	log_k	-46.288
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Co+2 + H2O = Co2OH+3 + H+
+	log_k	-10.997
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+4Co+2 + 4H2O = Co4(OH)4+4 + 4H+
+	log_k	-30.488
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2H2O = CoOOH- + 3H+
+	log_k	-32.0915
+	-delta_h	260.454 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+3 + H2O = CoOH+2 + H+
+	log_k	-1.291
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + H2O = FeOH+ + H+
+	log_k	-9.397
+	-delta_h	55.81 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Fe+2 + 2H2O = Fe(OH)2 + 2H+
+	log_k	-20.494
+	-delta_h	119.62 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + 3H2O = Fe(OH)3- + 3H+
+	log_k	-28.991
+	-delta_h	126.43 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Fe+3 + H2O = FeOH+2 + H+
+	log_k	-2.187
+	-delta_h	41.81 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Fe+3 + 2H2O = Fe(OH)2+ + 2H+
+	log_k	-4.594
+	-delta_h	0 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+Fe+3 + 3H2O = Fe(OH)3 + 3H+
+	log_k	-12.56
+	-delta_h	103.8 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + 4H2O = Fe(OH)4- + 4H+
+	log_k	-21.588
+	-delta_h	0 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+2Fe+3 + 2H2O = Fe2(OH)2+4 + 2H+
+	log_k	-2.854
+	-delta_h	57.62 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+3Fe+3 + 4H2O = Fe3(OH)4+5 + 4H+
+	log_k	-6.288
+	-delta_h	65.24 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 Mn+2 + H2O = MnOH+ + H+
-	log_k	-10.59
-	-delta_h	14.4 kcal 
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
+	log_k	-10.597
+	-delta_h	55.81 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
 Mn+2 + 3H2O = Mn(OH)3- + 3H+
 	log_k	-34.8
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Mn+2 + F- = MnF+
-	log_k	0.84
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Mn+2 + SO4-2 = MnSO4
-	log_k	2.25
-	-delta_h	3.37 kcal 
-	# source	wateq4f.dat
-Mn+2 + 2NO3- = Mn(NO3)2
-	log_k	0.6
-	-delta_h	-0.396 kcal 
-	# source	wateq4f.dat
-Mn+2 + HCO3- = MnHCO3+
-	log_k	1.95
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Mn+2 + 4H2O = MnO4- + 8H+ + 5e-
-	log_k	-127.824
-	-delta_h	176.62 kcal 
-	gamma	3.0 0.0 
-	# source	wateq4f.dat
-Mn+2 + 4H2O = MnO4-2 + 8H+ + 4e-
-	log_k	-118.44
-	-delta_h	150.02 kcal 
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-H4SiO4 + 4H+ + 6F- = SiF6-2 + 4H2O
-	log_k	30.18
-	-delta_h	-16.26 kcal 
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-H+ + F- = HF
-	log_k	3.18
-	-delta_h	3.18 kcal 
-	# source	wateq4f.dat
-H+ + 2F- = HF2-
-	log_k	3.76
-	-delta_h	4.55 kcal 
-	gamma	3.5 0.0 
-	# source	wateq4f.dat
-Cu+ + 2Cl- = CuCl2-
-	log_k	5.5
-	-delta_h	-0.42 kcal 
-	gamma	4.0 0.0 
-	# source	wateq4f.dat
-Cu+ + 3Cl- = CuCl3-2
-	log_k	5.7
-	-delta_h	0.26 kcal 
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Cu+2 + e- = Cu+
-	log_k	2.72
-	-delta_h	1.65 kcal 
-	gamma	2.5 0.0 
-	# source	wateq4f.dat
-Cu+2 + CO3-2 = CuCO3
-	log_k	6.73
-	# source	wateq4f.dat
-Cu+2 + 2CO3-2 = Cu(CO3)2-2
-	log_k	9.83
-	# source	wateq4f.dat
-Cu+2 + Cl- = CuCl+
-	log_k	0.43
-	-delta_h	8.65 kcal 
-	gamma	4.0 0.0 
-	# source	wateq4f.dat
-Cu+2 + 2Cl- = CuCl2
-	log_k	0.16
-	-delta_h	10.56 kcal 
-	# source	wateq4f.dat
-Cu+2 + 3Cl- = CuCl3-
-	log_k	-2.29
-	-delta_h	13.69 kcal 
-	gamma	4.0 0.0 
-	# source	wateq4f.dat
-Cu+2 + 4Cl- = CuCl4-2
-	log_k	-4.59
-	-delta_h	17.78 kcal 
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Cu+2 + F- = CuF+
-	log_k	1.26
-	-delta_h	1.62 kcal 
-	# source	wateq4f.dat
-Cu+2 + H2O = CuOH+ + H+
-	log_k	-8.0
-	gamma	4.0 0.0 
-	# source	wateq4f.dat
-Cu+2 + 2H2O = Cu(OH)2 + 2H+
-	log_k	-13.68
-	# source	wateq4f.dat
-Cu+2 + 3H2O = Cu(OH)3- + 3H+
-	log_k	-26.9
-	# source	wateq4f.dat
-Cu+2 + 4H2O = Cu(OH)4-2 + 4H+
-	log_k	-39.6
-	# source	wateq4f.dat
-2Cu+2 + 2H2O = Cu2(OH)2+2 + 2H+
-	log_k	-10.359
-	-delta_h	17.539 kcal 
-	# source	wateq4f.dat
-Cu+2 + SO4-2 = CuSO4
-	log_k	2.31
-	-delta_h	1.22 kcal 
-	# source	wateq4f.dat
-Cu+2 + 3HS- = Cu(HS)3-
-	log_k	25.9
-	# source	wateq4f.dat
-Zn+2 + Cl- = ZnCl+
-	log_k	0.43
-	-delta_h	7.79 kcal 
-	gamma	4.0 0.0 
-	# source	wateq4f.dat
-Zn+2 + 2Cl- = ZnCl2
-	log_k	0.45
-	-delta_h	8.5 kcal 
-	# source	wateq4f.dat
-Zn+2 + 3Cl- = ZnCl3-
-	log_k	0.5
-	-delta_h	9.56 kcal 
-	gamma	4.0 0.0 
-	# source	wateq4f.dat
-Zn+2 + 4Cl- = ZnCl4-2
-	log_k	0.2
-	-delta_h	10.96 kcal 
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Zn+2 + F- = ZnF+
-	log_k	1.15
-	-delta_h	2.22 kcal 
-	# source	wateq4f.dat
-Zn+2 + H2O = ZnOH+ + H+
-	log_k	-8.96
-	-delta_h	13.4 kcal 
-	# source	wateq4f.dat
-Zn+2 + 2H2O = Zn(OH)2 + 2H+
-	log_k	-16.9
-	# source	wateq4f.dat
-Zn+2 + 3H2O = Zn(OH)3- + 3H+
-	log_k	-28.4
-	# source	wateq4f.dat
-Zn+2 + 4H2O = Zn(OH)4-2 + 4H+
-	log_k	-41.2
-	# source	wateq4f.dat
-Zn+2 + H2O + Cl- = ZnOHCl + H+
-	log_k	-7.48
-	# source	wateq4f.dat
-Zn+2 + 2HS- = Zn(HS)2
-	log_k	14.94
-	# source	wateq4f.dat
-Zn+2 + 3HS- = Zn(HS)3-
-	log_k	16.1
-	# source	wateq4f.dat
-Zn+2 + SO4-2 = ZnSO4
-	log_k	2.37
-	-delta_h	1.36 kcal 
-	# source	wateq4f.dat
-Zn+2 + 2SO4-2 = Zn(SO4)2-2
-	log_k	3.28
-	# source	wateq4f.dat
-Cd+2 + Cl- = CdCl+
-	log_k	1.98
-	-delta_h	0.59 kcal 
-	# source	wateq4f.dat
-Cd+2 + 2Cl- = CdCl2
-	log_k	2.6
-	-delta_h	1.24 kcal 
-	# source	wateq4f.dat
-Cd+2 + 3Cl- = CdCl3-
-	log_k	2.4
-	-delta_h	3.9 kcal 
-	# source	wateq4f.dat
-Cd+2 + F- = CdF+
-	log_k	1.1
-	# source	wateq4f.dat
-Cd+2 + 2F- = CdF2
-	log_k	1.5
-	# source	wateq4f.dat
-Cd+2 + 2CO3-2 = Cd(CO3)2-2
-	log_k	6.4
-	# source	wateq4f.dat
-Cd+2 + H2O = CdOH+ + H+
-	log_k	-10.08
-	-delta_h	13.1 kcal 
-	# source	wateq4f.dat
-Cd+2 + 2H2O = Cd(OH)2 + 2H+
-	log_k	-20.35
-	# source	wateq4f.dat
-Cd+2 + 3H2O = Cd(OH)3- + 3H+
-	log_k	-33.3
-	# source	wateq4f.dat
-Cd+2 + 4H2O = Cd(OH)4-2 + 4H+
-	log_k	-47.35
-	# source	wateq4f.dat
-2Cd+2 + H2O = Cd2OH+3 + H+
-	log_k	-9.39
-	-delta_h	10.9 kcal 
-	# source	wateq4f.dat
-Cd+2 + H2O + Cl- = CdOHCl + H+
-	log_k	-7.404
-	-delta_h	4.355 kcal 
-	# source	wateq4f.dat
-Cd+2 + NO3- = CdNO3+
-	log_k	0.4
-	-delta_h	-5.2 kcal 
-	# source	wateq4f.dat
-Cd+2 + SO4-2 = CdSO4
-	log_k	2.46
-	-delta_h	1.08 kcal 
-	# source	wateq4f.dat
-Cd+2 + HS- = CdHS+
-	log_k	10.17
-	# source	wateq4f.dat
-Cd+2 + 2HS- = Cd(HS)2
-	log_k	16.53
-	# source	wateq4f.dat
-Cd+2 + 3HS- = Cd(HS)3-
-	log_k	18.71
-	# source	wateq4f.dat
-Cd+2 + 4HS- = Cd(HS)4-2
-	log_k	20.9
-	# source	wateq4f.dat
-Fe+3 + 2SO4-2 = Fe(SO4)2-
-	log_k	5.38
-	-delta_h	4.6 kcal 
-	# source	wateq4f.dat
-2Fe+3 + 2H2O = Fe2(OH)2+4 + 2H+
-	log_k	-2.95
-	-delta_h	13.5 kcal 
-	# source	wateq4f.dat
-3Fe+3 + 4H2O = Fe3(OH)4+5 + 4H+
-	log_k	-6.3
-	-delta_h	14.3 kcal 
-	# source	wateq4f.dat
-Pb+2 + Cl- = PbCl+
-	log_k	1.6
-	-delta_h	4.38 kcal 
-	# source	wateq4f.dat
-Pb+2 + 2Cl- = PbCl2
-	log_k	1.8
-	-delta_h	1.08 kcal 
-	# source	wateq4f.dat
-Pb+2 + 3Cl- = PbCl3-
-	log_k	1.7
-	-delta_h	2.17 kcal 
-	# source	wateq4f.dat
-Pb+2 + 4Cl- = PbCl4-2
-	log_k	1.38
-	-delta_h	3.53 kcal 
-	# source	wateq4f.dat
-Pb+2 + 2CO3-2 = Pb(CO3)2-2
-	log_k	10.64
-	# source	wateq4f.dat
-Pb+2 + F- = PbF+
-	log_k	1.25
-	# source	wateq4f.dat
-Pb+2 + 2F- = PbF2
-	log_k	2.56
-	# source	wateq4f.dat
-Pb+2 + 3F- = PbF3-
-	log_k	3.42
-	# source	wateq4f.dat
-Pb+2 + 4F- = PbF4-2
-	log_k	3.1
-	# source	wateq4f.dat
-Pb+2 + H2O = PbOH+ + H+
-	log_k	-7.71
-	# source	wateq4f.dat
-Pb+2 + 2H2O = Pb(OH)2 + 2H+
-	log_k	-17.12
-	# source	wateq4f.dat
-Pb+2 + 3H2O = Pb(OH)3- + 3H+
-	log_k	-28.06
-	# source	wateq4f.dat
-2Pb+2 + H2O = Pb2OH+3 + H+
-	log_k	-6.36
-	# source	wateq4f.dat
-Pb+2 + NO3- = PbNO3+
-	log_k	1.17
-	# source	wateq4f.dat
-Pb+2 + SO4-2 = PbSO4
-	log_k	2.75
-	# source	wateq4f.dat
-Pb+2 + 2HS- = Pb(HS)2
-	log_k	15.27
-	# source	wateq4f.dat
-Pb+2 + 3HS- = Pb(HS)3-
-	log_k	16.57
-	# source	wateq4f.dat
-3Pb+2 + 4H2O = Pb3(OH)4+2 + 4H+
-	log_k	-23.88
-	-delta_h	26.5 kcal 
-	# source	wateq4f.dat
-Fe+2 + F- = FeF+
-	log_k	1.0
-	# source	wateq4f.dat
-Al+3 + HSO4- = AlHSO4+2
-	log_k	0.46
-	# source	wateq4f.dat
-NO3- + 2H+ + 2e- = NO2- + H2O
-	log_k	28.57
-	-delta_h	-43.76 kcal 
-	# source	wateq4f.dat
-Ni+2 + Br- = NiBr+
-	log_k	0.5
-	# source	wateq4f.dat
-Ni+2 + Cl- = NiCl+
-	log_k	0.4
-	# source	wateq4f.dat
-Ni+2 + F- = NiF+
-	log_k	1.3
-	# source	wateq4f.dat
-Ni+2 + H2O = NiOH+ + H+
-	log_k	-9.86
-	-delta_h	12.42 kcal 
-	# source	wateq4f.dat
-Ni+2 + 2H2O = Ni(OH)2 + 2H+
-	log_k	-19.0
-	# source	wateq4f.dat
-Ni+2 + 3H2O = Ni(OH)3- + 3H+
-	log_k	-30.0
-	# source	wateq4f.dat
-Ni+2 + SO4-2 = NiSO4
-	log_k	2.29
-	-delta_h	1.52 kcal 
-	# source	wateq4f.dat
-Ag+ + Br- = AgBr
-	log_k	4.24
-	# source	wateq4f.dat
-Ag+ + 2Br- = AgBr2-
-	log_k	7.28
-	# source	wateq4f.dat
-Ag+ + Cl- = AgCl
-	log_k	3.27
-	-delta_h	-2.68 kcal 
-	# source	wateq4f.dat
-Ag+ + 2Cl- = AgCl2-
-	log_k	5.27
-	-delta_h	-3.93 kcal 
-	# source	wateq4f.dat
-Ag+ + 3Cl- = AgCl3-2
-	log_k	5.29
-	# source	wateq4f.dat
-Ag+ + 4Cl- = AgCl4-3
-	log_k	5.51
-	# source	wateq4f.dat
-Ag+ + F- = AgF
-	log_k	0.36
-	-delta_h	-2.83 kcal 
-	# source	wateq4f.dat
-Ag+ + HS- = AgHS
-	log_k	14.05
-	# source	wateq4f.dat
-Ag+ + 2HS- = Ag(HS)2-
-	log_k	18.45
-	# source	wateq4f.dat
-Ag+ + I- = AgI
-	log_k	6.6
-	# source	wateq4f.dat
-Ag+ + 2I- = AgI2-
-	log_k	10.68
-	# source	wateq4f.dat
-Ag+ + H2O = AgOH + H+
-	log_k	-12.0
-	# source	wateq4f.dat
-Ag+ + 2H2O = Ag(OH)2- + 2H+
-	log_k	-24.0
-	# source	wateq4f.dat
-Ag+ + SO4-2 = AgSO4-
-	log_k	1.29
-	-delta_h	1.49 kcal 
-	# source	wateq4f.dat
-Ag+ + NO3- = AgNO3
-	log_k	-0.29
-	# source	wateq4f.dat
-Ag+ + 2NO2- = Ag(NO2)2-
-	log_k	2.22
-	# source	wateq4f.dat
-Zn+2 + Br- = ZnBr+
-	log_k	-0.58
-	# source	wateq4f.dat
-Zn+2 + 2Br- = ZnBr2
-	log_k	-0.98
-	# source	wateq4f.dat
-Zn+2 + I- = ZnI+
-	log_k	-2.91
-	# source	wateq4f.dat
-Zn+2 + 2I- = ZnI2
-	log_k	-1.69
-	# source	wateq4f.dat
-Cd+2 + Br- = CdBr+
-	log_k	2.17
-	-delta_h	-0.81 kcal 
-	# source	wateq4f.dat
-Cd+2 + 2Br- = CdBr2
-	log_k	2.9
-	# source	wateq4f.dat
-Cd+2 + I- = CdI+
-	log_k	2.15
-	-delta_h	-2.37 kcal 
-	# source	wateq4f.dat
-Cd+2 + 2I- = CdI2
-	log_k	3.59
-	# source	wateq4f.dat
-Pb+2 + Br- = PbBr+
-	log_k	1.77
-	-delta_h	2.88 kcal 
-	# source	wateq4f.dat
-Pb+2 + 2Br- = PbBr2
-	log_k	1.44
-	# source	wateq4f.dat
-Pb+2 + I- = PbI+
-	log_k	1.94
-	# source	wateq4f.dat
-Pb+2 + 2I- = PbI2
-	log_k	3.2
-	# source	wateq4f.dat
-Pb+2 + CO3-2 = PbCO3
-	log_k	7.24
-	# source	wateq4f.dat
-Pb+2 + 4H2O = Pb(OH)4-2 + 4H+
-	log_k	-39.7
-	# source	wateq4f.dat
-Pb+2 + 2SO4-2 = Pb(SO4)2-2
-	log_k	3.47
-	# source	wateq4f.dat
-Ag+ + 3Br- = AgBr3-2
-	log_k	8.71
-	# source	wateq4f.dat
-Ag+ + 3I- = AgI3-2
-	log_k	13.37
-	-delta_h	-27.03 kcal 
-	# source	wateq4f.dat
-Ag+ + 4I- = AgI4-3
-	log_k	14.08
-	# source	wateq4f.dat
-Fe+2 + 2HS- = Fe(HS)2
-	log_k	8.95
-	# source	wateq4f.dat
-Fe+2 + 3HS- = Fe(HS)3-
-	log_k	10.987
-	# source	wateq4f.dat
-H3AsO3 = H2AsO3- + H+
-	log_k	-9.15
-	-delta_h	27.54 kJ 
-	# source	wateq4f.dat
-H3AsO3 = HAsO3-2 + 2H+
-	log_k	-23.85
-	-delta_h	59.41 kJ 
-	# source	wateq4f.dat
-H3AsO3 = AsO3-3 + 3H+
-	log_k	-39.55
-	-delta_h	84.73 kJ 
-	# source	wateq4f.dat
-H3AsO3 + H+ = H4AsO3+
-	log_k	-0.305
-	# source	wateq4f.dat
-H3AsO4 = H2AsO4- + H+
-	log_k	-2.3
-	-delta_h	-7.066 kJ 
-	# source	wateq4f.dat
-H3AsO4 = HAsO4-2 + 2H+
-	log_k	-9.46
-	-delta_h	-3.846 kJ 
-	# source	wateq4f.dat
-H3AsO4 = AsO4-3 + 3H+
-	log_k	-21.11
-	-delta_h	14.354 kJ 
-	# source	wateq4f.dat
-H3AsO4 + H2 = H3AsO3 + H2O
-	log_k	22.5
-	-delta_h	-117.480344 kJ 
-	# source	wateq4f.dat
-3H3AsO3 + 6HS- + 5H+ = As3S4(HS)2- + 9H2O
-	log_k	72.314
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-H3AsO3 + 2HS- + H+ = AsS(OH)(HS)- + 2H2O
-	log_k	18.038
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-HS- = S2-2 + H+
-	log_k	-14.528
-	-delta_h	11.4 kcal 
-	gamma	6.5 0.0 
-	-no_check
-	# source	wateq4f.dat
-HS- = S3-2 + H+
-	log_k	-13.282
-	-delta_h	10.4 kcal 
-	gamma	8.0 0.0 
-	-no_check
-	# source	wateq4f.dat
-HS- = S4-2 + H+
-	log_k	-9.829
-	-delta_h	9.7 kcal 
-	gamma	10.0 0.0 
-	-no_check
-	# source	wateq4f.dat
-HS- = S5-2 + H+
-	log_k	-9.595
-	-delta_h	9.3 kcal 
-	gamma	12.0 0.0 
-	-no_check
-	# source	wateq4f.dat
-HS- = S6-2 + H+
-	log_k	-9.881
-	gamma	14.0 0.0 
-	-no_check
-	# source	wateq4f.dat
-Ag+ + 2HS- = Ag(S4)2-3 + 2H+
-	log_k	0.991
-	gamma	22.0 0.0 
-	-no_check
-	# source	wateq4f.dat
-Ag+ + 2HS- = Ag(S4)S5-3 + 2H+
-	log_k	0.68
-	gamma	24.0 0.0 
-	-no_check
-	# source	wateq4f.dat
-Ag+ + 2HS- = AgHS(S4)-2 + H+
-	log_k	10.43
-	gamma	15.0 0.0 
-	-no_check
-	# source	wateq4f.dat
-Cu+2 + HCO3- = CuHCO3+
-	log_k	2.7
-	# source	wateq4f.dat
-Zn+2 + HCO3- = ZnHCO3+
-	log_k	2.1
-	# source	wateq4f.dat
-Zn+2 + CO3-2 = ZnCO3
-	log_k	5.3
-	# source	wateq4f.dat
-Zn+2 + 2CO3-2 = Zn(CO3)2-2
-	log_k	9.63
-	# source	wateq4f.dat
-Cd+2 + HCO3- = CdHCO3+
-	log_k	1.5
-	# source	wateq4f.dat
-Cd+2 + CO3-2 = CdCO3
-	log_k	2.9
-	# source	wateq4f.dat
-Cd+2 + 2SO4-2 = Cd(SO4)2-2
-	log_k	3.5
-	# source	wateq4f.dat
-Pb+2 + HCO3- = PbHCO3+
-	log_k	2.9
-	# source	wateq4f.dat
-Ni+2 + 2Cl- = NiCl2
-	log_k	0.96
-	# source	wateq4f.dat
-Ni+2 + HCO3- = NiHCO3+
-	log_k	2.14
-	# source	wateq4f.dat
-Ni+2 + CO3-2 = NiCO3
-	log_k	6.87
-	# source	wateq4f.dat
-Ni+2 + 2CO3-2 = Ni(CO3)2-2
-	log_k	10.11
-	# source	wateq4f.dat
-Ni+2 + 2SO4-2 = Ni(SO4)2-2
-	log_k	1.02
-	# source	wateq4f.dat
-H+ + Fulvate-2 = HFulvate-
-	log_k	4.27
-	# source	wateq4f.dat
-H+ + Humate-2 = HHumate-
-	log_k	4.27
-	# source	wateq4f.dat
-Fe+3 + Fulvate-2 = FeFulvate+
-	log_k	9.4
-	# source	wateq4f.dat
-Fe+3 + Humate-2 = FeHumate+
-	log_k	9.4
-	# source	wateq4f.dat
-Cu+2 + Fulvate-2 = CuFulvate
-	log_k	6.2
-	# source	wateq4f.dat
-Cu+2 + Humate-2 = CuHumate
-	log_k	6.2
-	# source	wateq4f.dat
-Cd+2 + Fulvate-2 = CdFulvate
-	log_k	3.5
-	# source	wateq4f.dat
-Cd+2 + Humate-2 = CdHumate
-	log_k	3.5
-	# source	wateq4f.dat
-Ag+ + Fulvate-2 = AgFulvate-
-	log_k	2.4
-	# source	wateq4f.dat
-Ag+ + Humate-2 = AgHumate-
-	log_k	2.4
-	# source	wateq4f.dat
-2H+ + 2F- = H2F2
-	log_k	6.768
-	# source	wateq4f.dat
-Na+ + F- = NaF
-	log_k	-0.24
-	# source	wateq4f.dat
-Fe+2 + Cl- = FeCl+
-	log_k	0.14
-	gamma	5.0 0.0 
-	# source	wateq4f.dat
-Ba+2 + SO4-2 = BaSO4
-	log_k	2.7
-	# source	wateq4f.dat
-SeO3-2 + 7H+ + 6e- = HSe- + 3H2O
-	log_k	42.514
-	# source	wateq4f.dat
-HSe- + H+ = H2Se
-	log_k	3.8
-	-delta_h	-5.3 kcal 
-	# source	wateq4f.dat
-SeO4-2 + 2H+ + 2e- = SeO3-2 + H2O
-	log_k	30.256
-	# source	wateq4f.dat
-SeO3-2 + 2H+ = H2SeO3
-	log_k	11.25
-	# source	wateq4f.dat
-SeO3-2 + H+ = HSeO3-
-	log_k	8.5
-	# source	wateq4f.dat
-SeO4-2 + H+ = HSeO4-
-	log_k	1.66
-	-delta_h	4.91 kcal 
-	# source	wateq4f.dat
-Fe+2 + HCO3- = FeHCO3+
-	log_k	2.0
-	# source	wateq4f.dat
-Fe+2 + CO3-2 = FeCO3
-	log_k	4.38
-	# source	wateq4f.dat
-Mn+2 + CO3-2 = MnCO3
-	log_k	4.9
-	# source	wateq4f.dat
-Ba+2 + HCO3- = BaHCO3+
-	log_k	0.982
-	-delta_h	5.56 kcal 
-	# source	wateq4f.dat
-Ba+2 + CO3-2 = BaCO3
-	log_k	2.71
-	-delta_h	3.55 kcal 
-	# source	wateq4f.dat
-Sr+2 + SO4-2 = SrSO4
-	log_k	2.29
-	-delta_h	2.08 kcal 
-	# source	wateq4f.dat
-UO2+2 + 4H+ + 2e- = U+4 + 2H2O
-	log_k	9.04
-	-delta_h	-34.43 kcal 
-	# source	wateq4f.dat
-U+4 + e- = U+3
-	log_k	-8.796
-	-delta_h	24.4 kcal 
-	# source	wateq4f.dat
+	-delta_h	0 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Mn+2 + 4H2O = Mn(OH)4-2 + 4H+
+	log_k	-48.288
+	-delta_h	0 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + H+ = Cr(OH)+2 + H2O
+	log_k	5.9118
+	-delta_h	-77.91 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + H2O = Cr(OH)3 + H+
+	log_k	-8.4222
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2H2O = Cr(OH)4- + 2H+
+	log_k	-17.8192
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ = CrO2- + 2H+
+	log_k	-17.7456
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+V+2 + H2O = VOH+ + H+
+	log_k	-6.487
+	-delta_h	59.81 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+V+3 + H2O = VOH+2 + H+
+	log_k	-2.297
+	-delta_h	43.81 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+V+3 + 2H2O = V(OH)2+ + 2H+
+	log_k	-6.274
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+V+3 + 3H2O = V(OH)3 + 3H+
+	log_k	-3.0843
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2V+3 + 2H2O = V2(OH)2+4 + 2H+
+	log_k	-3.794
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2V+3 + 3H2O = V2(OH)3+3 + 3H+
+	log_k	-10.1191
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO+2 + 2H2O = V(OH)3+ + H+
+	log_k	-5.697
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2VO+2 + 2H2O = H2V2O4+2 + 2H+
+	log_k	-6.694
+	-delta_h	53.62 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 U+4 + H2O = UOH+3 + H+
-	log_k	-0.54
-	-delta_h	11.21 kcal 
-	# source	wateq4f.dat
+	log_k	-0.597
+	-delta_h	47.81 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 U+4 + 2H2O = U(OH)2+2 + 2H+
 	log_k	-2.27
-	-delta_h	17.73 kcal 
-	# source	wateq4f.dat
+	-delta_h	74.1823 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 U+4 + 3H2O = U(OH)3+ + 3H+
 	log_k	-4.935
-	-delta_h	22.645 kcal 
-	# source	wateq4f.dat
+	-delta_h	94.7467 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 U+4 + 4H2O = U(OH)4 + 4H+
 	log_k	-8.498
-	-delta_h	24.76 kcal 
-	# source	wateq4f.dat
+	-delta_h	103.596 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+U+4 + 5H2O = U(OH)5- + 5H+
+	log_k	-13.12
+	-delta_h	115.374 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 6U+4 + 15H2O = U6(OH)15+9 + 15H+
-	log_k	-17.2
-	# source	wateq4f.dat
+	log_k	-17.155
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+UO2+2 + H2O = UO2OH+ + H+
+	log_k	-5.897
+	-delta_h	47.81 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2UO2+2 + 2H2O = (UO2)2(OH)2+2 + 2H+
+	log_k	-5.574
+	-delta_h	41.82 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+3UO2+2 + 5H2O = (UO2)3(OH)5+ + 5H+
+	log_k	-15.585
+	-delta_h	108.05 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + H2O = BeOH+ + H+
+	log_k	-5.397
+	-delta_h	0 kJ 
+	gamma	6.5 0 
+	# source	minteq.v4.dat
+Be+2 + 2H2O = Be(OH)2 + 2H+
+	log_k	-13.594
+	-delta_h	0 kJ 
+	gamma	6.5 0 
+	# source	minteq.v4.dat
+Be+2 + 3H2O = Be(OH)3- + 3H+
+	log_k	-23.191
+	-delta_h	0 kJ 
+	gamma	6.5 0 
+	# source	minteq.v4.dat
+Be+2 + 4H2O = Be(OH)4-2 + 4H+
+	log_k	-37.388
+	-delta_h	0 kJ 
+	gamma	6.5 0 
+	# source	minteq.v4.dat
+2Be+2 + H2O = Be2OH+3 + H+
+	log_k	-3.177
+	-delta_h	0 kJ 
+	gamma	6.5 0 
+	# source	minteq.v4.dat
+3Be+2 + 3H2O = Be3(OH)3+3 + 3H+
+	log_k	-8.8076
+	-delta_h	0 kJ 
+	gamma	6.5 0 
+	# source	minteq.v4.dat
+Ca+2 + H2O = CaOH+ + H+
+	log_k	-12.697
+	-delta_h	64.11 kJ 
+	gamma	6 0 
+	# source	minteq.v4.dat
+Sr+2 + H2O = SrOH+ + H+
+	log_k	-13.177
+	-delta_h	60.81 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Ba+2 + H2O = BaOH+ + H+
+	log_k	-13.357
+	-delta_h	60.81 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+H+ + F- = HF
+	log_k	3.17
+	-delta_h	13.3 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + 2F- = HF2-
+	log_k	3.75
+	-delta_h	17.4 kJ 
+	gamma	3.5 0 
+	# source	minteq.v4.dat
+2F- + 2H+ = H2F2
+	log_k	6.768
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sb(OH)3 + F- + H+ = SbOF + 2H2O
+	log_k	6.1864
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sb(OH)3 + F- + H+ = Sb(OH)2F + H2O
+	log_k	6.1937
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H4SiO4 + 4H+ + 6F- = SiF6-2 + 4H2O
+	log_k	30.18
+	-delta_h	-68 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 2H+ + F- = SnF+ + 2H2O
+	log_k	11.582
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 2H+ + 2F- = SnF2 + 2H2O
+	log_k	14.386
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 2H+ + 3F- = SnF3- + 2H2O
+	log_k	17.206
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)6-2 + 6H+ + 6F- = SnF6-2 + 6H2O
+	log_k	33.5844
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + F- = PbF+
+	log_k	1.848
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 2F- = PbF2
+	log_k	3.142
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 3F- = PbF3-
+	log_k	3.42
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 4F- = PbF4-2
+	log_k	3.1
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H3BO3 + 3H+ + 4F- = BF4- + 3H2O
+	log_k	19.912
+	-delta_h	-18.67 kJ 
+	gamma	2.5 0 
+	# source	minteq.v4.dat
+Al+3 + F- = AlF+2
+	log_k	7.0
+	-delta_h	4.6 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+Al+3 + 2F- = AlF2+
+	log_k	12.6
+	-delta_h	8.3 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+Al+3 + 3F- = AlF3
+	log_k	16.7
+	-delta_h	8.7 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Al+3 + 4F- = AlF4-
+	log_k	19.4
+	-delta_h	8.7 kJ 
+	gamma	4.5 0 
+	# source	minteq.v4.dat
+Tl+ + F- = TlF
+	log_k	0.1
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + F- = ZnF+
+	log_k	1.3
+	-delta_h	11 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + F- = CdF+
+	log_k	1.2
+	-delta_h	5 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2F- = CdF2
+	log_k	1.5
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + F- = HgF+ + 2H2O
+	log_k	7.763
+	-delta_h	-35.72 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + F- = CuF+
+	log_k	1.8
+	-delta_h	13 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + F- = AgF
+	log_k	0.4
+	-delta_h	12 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + F- = NiF+
+	log_k	1.4
+	-delta_h	7.1 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + F- = CoF+
+	log_k	1.5
+	-delta_h	9.2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + F- = FeF+2
+	log_k	6.04
+	-delta_h	10 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Fe+3 + 2F- = FeF2+
+	log_k	10.4675
+	-delta_h	17 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Fe+3 + 3F- = FeF3
+	log_k	13.617
+	-delta_h	29 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + F- = MnF+
+	log_k	1.6
+	-delta_h	11 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2H+ + F- = CrF+2 + 2H2O
+	log_k	14.7688
+	-delta_h	-70.2452 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO+2 + F- = VOF+
+	log_k	3.778
+	-delta_h	7.9 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO+2 + 2F- = VOF2
+	log_k	6.352
+	-delta_h	14 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO+2 + 3F- = VOF3-
+	log_k	7.902
+	-delta_h	20 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO+2 + 4F- = VOF4-2
+	log_k	8.508
+	-delta_h	26 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO2+ + F- = VO2F
+	log_k	3.244
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO2+ + 2F- = VO2F2-
+	log_k	5.804
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO2+ + 3F- = VO2F3-2
+	log_k	6.9
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO2+ + 4F- = VO2F4-3
+	log_k	6.592
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 U+4 + F- = UF+3
 	log_k	9.3
-	-delta_h	-1.3 kcal 
-	# source	wateq4f.dat
+	-delta_h	21.1292 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 U+4 + 2F- = UF2+2
-	log_k	16.22
-	-delta_h	-0.8 kcal 
-	# source	wateq4f.dat
+	log_k	16.4
+	-delta_h	30.1248 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 U+4 + 3F- = UF3+
 	log_k	21.6
-	-delta_h	0.1 kcal 
-	# source	wateq4f.dat
+	-delta_h	29.9156 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 U+4 + 4F- = UF4
-	log_k	25.5
-	-delta_h	-0.87 kcal 
-	# source	wateq4f.dat
+	log_k	23.64
+	-delta_h	19.2464 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 U+4 + 5F- = UF5-
-	log_k	27.01
-	-delta_h	4.85 kcal 
-	# source	wateq4f.dat
+	log_k	25.238
+	-delta_h	20.2924 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 U+4 + 6F- = UF6-2
-	log_k	29.1
-	-delta_h	3.3 kcal 
-	# source	wateq4f.dat
+	log_k	27.718
+	-delta_h	13.8072 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+UO2+2 + F- = UO2F+
+	log_k	5.14
+	-delta_h	1 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+UO2+2 + 2F- = UO2F2
+	log_k	8.6
+	-delta_h	2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+UO2+2 + 3F- = UO2F3-
+	log_k	11.0
+	-delta_h	2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+UO2+2 + 4F- = UO2F4-2
+	log_k	11.9
+	-delta_h	0.4 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + F- = BeF+
+	log_k	5.249
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + 2F- = BeF2
+	log_k	9.1285
+	-delta_h	-4 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + 3F- = BeF3-
+	log_k	11.9085
+	-delta_h	-8 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + F- = MgF+
+	log_k	2.05
+	-delta_h	13 kJ 
+	gamma	4.5 0 
+	# source	minteq.v4.dat
+Ca+2 + F- = CaF+
+	log_k	1.038
+	-delta_h	14 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Sr+2 + F- = SrF+
+	log_k	0.548
+	-delta_h	16 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Na+ + F- = NaF
+	log_k	-0.2
+	-delta_h	12 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 2H+ + Cl- = SnCl+ + 2H2O
+	log_k	8.734
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 2H+ + 2Cl- = SnCl2 + 2H2O
+	log_k	9.524
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 2H+ + 3Cl- = SnCl3- + 2H2O
+	log_k	8.3505
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Cl- = PbCl+
+	log_k	1.55
+	-delta_h	8.7 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 2Cl- = PbCl2
+	log_k	2.2
+	-delta_h	12 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 3Cl- = PbCl3-
+	log_k	1.8
+	-delta_h	4 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 4Cl- = PbCl4-2
+	log_k	1.46
+	-delta_h	14.7695 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + Cl- = TlCl
+	log_k	0.51
+	-delta_h	-6.2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + 2Cl- = TlCl2-
+	log_k	0.28
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl(OH)3 + 3H+ + Cl- = TlCl+2 + 3H2O
+	log_k	11.011
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl(OH)3 + 3H+ + 2Cl- = TlCl2+ + 3H2O
+	log_k	16.771
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl(OH)3 + 3H+ + 3Cl- = TlCl3 + 3H2O
+	log_k	19.791
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl(OH)3 + 3H+ + 4Cl- = TlCl4- + 3H2O
+	log_k	21.591
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl(OH)3 + Cl- + 2H+ = TlOHCl+ + 2H2O
+	log_k	10.629
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Cl- = ZnCl+
+	log_k	0.4
+	-delta_h	5.4 kJ 
+	gamma	4 0 
+	# source	minteq.v4.dat
+Zn+2 + 2Cl- = ZnCl2
+	log_k	0.6
+	-delta_h	37 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 3Cl- = ZnCl3-
+	log_k	0.5
+	-delta_h	39.999 kJ 
+	gamma	4 0 
+	# source	minteq.v4.dat
+Zn+2 + 4Cl- = ZnCl4-2
+	log_k	0.199
+	-delta_h	45.8566 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Zn+2 + H2O + Cl- = ZnOHCl + H+
+	log_k	-7.48
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Cl- = CdCl+
+	log_k	1.98
+	-delta_h	1 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Cl- = CdCl2
+	log_k	2.6
+	-delta_h	3 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 3Cl- = CdCl3-
+	log_k	2.4
+	-delta_h	10 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + H2O + Cl- = CdOHCl + H+
+	log_k	-7.404
+	-delta_h	18.2213 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + Cl- = HgCl+ + 2H2O
+	log_k	13.494
+	-delta_h	-62.72 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + 2Cl- = HgCl2 + 2H2O
+	log_k	20.194
+	-delta_h	-92.42 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + 3Cl- = HgCl3- + 2H2O
+	log_k	21.194
+	-delta_h	-94.02 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + 4Cl- = HgCl4-2 + 2H2O
+	log_k	21.794
+	-delta_h	-100.72 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + Cl- + I- + 2H+ = HgClI + 2H2O
+	log_k	25.532
+	-delta_h	-135.3 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + H+ + Cl- = HgClOH + H2O
+	log_k	10.444
+	-delta_h	-42.72 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Cl- = CuCl+
+	log_k	0.2
+	-delta_h	8.3 kJ 
+	gamma	4 0 
+	# source	minteq.v4.dat
+Cu+2 + 2Cl- = CuCl2
+	log_k	-0.26
+	-delta_h	44.183 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 3Cl- = CuCl3-
+	log_k	-2.29
+	-delta_h	57.279 kJ 
+	gamma	4 0 
+	# source	minteq.v4.dat
+Cu+2 + 4Cl- = CuCl4-2
+	log_k	-4.59
+	-delta_h	32.5515 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Cu+ + 2Cl- = CuCl2-
+	log_k	5.42
+	-delta_h	-1.7573 kJ 
+	gamma	4 0 
+	# source	minteq.v4.dat
+Cu+ + 3Cl- = CuCl3-2
+	log_k	4.75
+	-delta_h	1.0878 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Cu+ + Cl- = CuCl
+	log_k	3.1
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Cl- = AgCl
+	log_k	3.31
+	-delta_h	-12 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Cl- = AgCl2-
+	log_k	5.25
+	-delta_h	-16 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 3Cl- = AgCl3-2
+	log_k	5.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 4Cl- = AgCl4-3
+	log_k	5.51
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Cl- = NiCl+
+	log_k	0.408
+	-delta_h	2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2Cl- = NiCl2
+	log_k	-1.89
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Cl- = CoCl+
+	log_k	0.539
+	-delta_h	2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+3 + Cl- = CoCl+2
+	log_k	2.3085
+	-delta_h	16 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + Cl- = FeCl+2
+	log_k	1.48
+	-delta_h	23 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Fe+3 + 2Cl- = FeCl2+
+	log_k	2.13
+	-delta_h	0 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Fe+3 + 3Cl- = FeCl3
+	log_k	1.13
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + Cl- = MnCl+
+	log_k	0.1
+	-delta_h	0 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Mn+2 + 2Cl- = MnCl2
+	log_k	0.25
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + 3Cl- = MnCl3-
+	log_k	-0.31
+	-delta_h	0 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2H+ + Cl- = CrCl+2 + 2H2O
+	log_k	9.6808
+	-delta_h	-103.62 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2Cl- + 2H+ = CrCl2+ + 2H2O
+	log_k	8.658
+	-delta_h	-39.2208 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2Cl- + H+ = CrOHCl2 + H2O
+	log_k	2.9627
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO+2 + Cl- = VOCl+
+	log_k	0.448
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 U+4 + Cl- = UCl+3
-	log_k	1.72
-	-delta_h	-4.54 kcal 
-	# source	wateq4f.dat
+	log_k	1.7
+	-delta_h	-20 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+UO2+2 + Cl- = UO2Cl+
+	log_k	0.21
+	-delta_h	16 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + Cl- = BeCl+
+	log_k	0.2009
+	-delta_h	0 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 2H+ + Br- = SnBr+ + 2H2O
+	log_k	8.254
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 2H+ + 2Br- = SnBr2 + 2H2O
+	log_k	8.794
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 2H+ + 3Br- = SnBr3- + 2H2O
+	log_k	7.48
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Br- = PbBr+
+	log_k	1.7
+	-delta_h	8 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 2Br- = PbBr2
+	log_k	2.6
+	-delta_h	-4 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + Br- = TlBr
+	log_k	0.91
+	-delta_h	-12 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + 2Br- = TlBr2-
+	log_k	-0.384
+	-delta_h	12.36 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + Br- + Cl- = TlBrCl-
+	log_k	0.8165
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + I- + Br- = TlIBr-
+	log_k	2.185
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl(OH)3 + 3H+ + Br- = TlBr+2 + 3H2O
+	log_k	12.803
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl(OH)3 + 3H+ + 2Br- = TlBr2+ + 3H2O
+	log_k	20.711
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl(OH)3 + 3Br- + 3H+ = TlBr3 + 3H2O
+	log_k	27.0244
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl(OH)3 + 4Br- + 3H+ = TlBr4- + 3H2O
+	log_k	31.1533
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Br- = ZnBr+
+	log_k	-0.07
+	-delta_h	1 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2Br- = ZnBr2
+	log_k	-0.98
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Br- = CdBr+
+	log_k	2.15
+	-delta_h	-3 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Br- = CdBr2
+	log_k	3.0
+	-delta_h	-3 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + Br- = HgBr+ + 2H2O
+	log_k	15.803
+	-delta_h	-81.92 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + 2Br- = HgBr2 + 2H2O
+	log_k	24.2725
+	-delta_h	-127.12 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + 3Br- = HgBr3- + 2H2O
+	log_k	26.7025
+	-delta_h	-138.82 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + 4Br- = HgBr4-2 + 2H2O
+	log_k	27.933
+	-delta_h	-153.72 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + Br- + Cl- + 2H+ = HgBrCl + 2H2O
+	log_k	22.1811
+	-delta_h	-113.77 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + Br- + I- + 2H+ = HgBrI + 2H2O
+	log_k	27.3133
+	-delta_h	-151.27 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + Br- + 3I- + 2H+ = HgBrI3-2 + 2H2O
+	log_k	34.2135
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2Br- + 2I- + 2H+ = HgBr2I2-2 + 2H2O
+	log_k	32.3994
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 3Br- + I- + 2H+ = HgBr3I-2 + 2H2O
+	log_k	30.1528
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + H+ + Br- = HgBrOH + H2O
+	log_k	12.433
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Br- = AgBr
+	log_k	4.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Br- = AgBr2-
+	log_k	7.5
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 3Br- = AgBr3-2
+	log_k	8.1
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Br- = NiBr+
+	log_k	0.5
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + Br- + 2H+ = CrBr+2 + 2H2O
+	log_k	7.5519
+	-delta_h	-46.9068 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + Br- = BeBr+
+	log_k	0.1009
+	-delta_h	0 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Pb+2 + I- = PbI+
+	log_k	2.0
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 2I- = PbI2
+	log_k	3.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + I- = TlI
+	log_k	1.4279
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + 2I- = TlI2-
+	log_k	1.8588
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl(OH)3 + 4I- + 3H+ = TlI4- + 3H2O
+	log_k	34.7596
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + I- = ZnI+
+	log_k	-2.0427
+	-delta_h	-4 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2I- = ZnI2
+	log_k	-1.69
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + I- = CdI+
+	log_k	2.28
+	-delta_h	-9.6 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2I- = CdI2
+	log_k	3.92
+	-delta_h	-12 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + I- = HgI+ + 2H2O
+	log_k	19.603
+	-delta_h	-111.22 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + 2I- = HgI2 + 2H2O
+	log_k	30.8225
+	-delta_h	-182.72 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + 3I- = HgI3- + 2H2O
+	log_k	34.6025
+	-delta_h	-194.22 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + 4I- = HgI4-2 + 2H2O
+	log_k	36.533
+	-delta_h	-220.72 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + I- = AgI
+	log_k	6.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2I- = AgI2-
+	log_k	11.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 3I- = AgI3-2
+	log_k	12.6
+	-delta_h	-122 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 4I- = AgI4-3
+	log_k	14.229
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + I- + 2H+ = CrI+2 + 2H2O
+	log_k	4.8289
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + HS- = H2S
+	log_k	7.02
+	-delta_h	-22 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 2HS- = Pb(HS)2
+	log_k	15.27
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 3HS- = Pb(HS)3-
+	log_k	16.57
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + HS- = TlHS
+	log_k	2.474
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Tl+ + HS- = Tl2HS+
+	log_k	5.974
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Tl+ + 3HS- + H2O = Tl2OH(HS)3-2 + H+
+	log_k	1.0044
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Tl+ + 2HS- + 2H2O = Tl2(OH)2(HS)2-2 + 2H+
+	log_k	-11.0681
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2HS- = Zn(HS)2
+	log_k	12.82
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 3HS- = Zn(HS)3-
+	log_k	16.1
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 3HS- = ZnS(HS)2-2 + H+
+	log_k	6.12
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2HS- + 2HS- = Zn(HS)4-2
+	log_k	14.64
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2HS- = ZnS(HS)- + H+
+	log_k	6.81
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + HS- = CdHS+
+	log_k	8.008
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2HS- = Cd(HS)2
+	log_k	15.212
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 3HS- = Cd(HS)3-
+	log_k	17.112
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 4HS- = Cd(HS)4-2
+	log_k	19.308
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2HS- = HgS2-2 + 2H2O
+	log_k	29.414
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + 2HS- = Hg(HS)2 + 2H2O
+	log_k	44.516
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + H+ + 2HS- = HgHS2- + 2H2O
+	log_k	38.122
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 3HS- = Cu(HS)3-
+	log_k	25.899
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + HS- = AgHS
+	log_k	13.8145
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2HS- = Ag(HS)2-
+	log_k	17.9145
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + 2HS- = Fe(HS)2
+	log_k	8.95
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + 3HS- = Fe(HS)3-
+	log_k	10.987
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+HS- = S2-2 + H+
+	log_k	-11.7828
+	-delta_h	46.4 kJ 
+	gamma	0 0 
+	-no_check
+	# source	minteq.v4.dat
+HS- = S3-2 + H+
+	log_k	-10.7667
+	-delta_h	42.2 kJ 
+	gamma	0 0 
+	-no_check
+	# source	minteq.v4.dat
+HS- = S4-2 + H+
+	log_k	-9.9608
+	-delta_h	39.3 kJ 
+	gamma	0 0 
+	-no_check
+	# source	minteq.v4.dat
+HS- = S5-2 + H+
+	log_k	-9.3651
+	-delta_h	37.6 kJ 
+	gamma	0 0 
+	-no_check
+	# source	minteq.v4.dat
+HS- = S6-2 + H+
+	log_k	-9.881
+	-delta_h	0 kJ 
+	gamma	0 0 
+	-no_check
+	# source	minteq.v4.dat
+2Sb(OH)3 + 4HS- + 2H+ = Sb2S4-2 + 6H2O
+	log_k	49.3886
+	-delta_h	-321.78 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + 2HS- = Cu(S4)2-3 + 2H+
+	log_k	3.39
+	-delta_h	0 kJ 
+	gamma	23 0 
+	-no_check
+	# source	minteq.v4.dat
+Cu+ + 2HS- = CuS4S5-3 + 2H+
+	log_k	2.66
+	-delta_h	0 kJ 
+	gamma	25 0 
+	-no_check
+	# source	minteq.v4.dat
+Ag+ + 2HS- = Ag(S4)2-3 + 2H+
+	log_k	0.991
+	-delta_h	0 kJ 
+	gamma	22 0 
+	-no_check
+	# source	minteq.v4.dat
+Ag+ + 2HS- = AgS4S5-3 + 2H+
+	log_k	0.68
+	-delta_h	0 kJ 
+	gamma	24 0 
+	-no_check
+	# source	minteq.v4.dat
+Ag+ + 2HS- = Ag(HS)S4-2 + H+
+	log_k	10.431
+	-delta_h	0 kJ 
+	gamma	15 0 
+	-no_check
+	# source	minteq.v4.dat
+H+ + SO4-2 = HSO4-
+	log_k	1.99
+	-delta_h	22 kJ 
+	gamma	4.5 0 
+	# source	minteq.v4.dat
+NH4+ + SO4-2 = NH4SO4-
+	log_k	1.03
+	-delta_h	0 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Pb+2 + SO4-2 = PbSO4
+	log_k	2.69
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 2SO4-2 = Pb(SO4)2-2
+	log_k	3.47
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Al+3 + SO4-2 = AlSO4+
+	log_k	3.89
+	-delta_h	28 kJ 
+	gamma	4.5 0 
+	# source	minteq.v4.dat
+Al+3 + 2SO4-2 = Al(SO4)2-
+	log_k	4.92
+	-delta_h	11.9 kJ 
+	gamma	4.5 0 
+	# source	minteq.v4.dat
+Tl+ + SO4-2 = TlSO4-
+	log_k	1.37
+	-delta_h	-0.8 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + SO4-2 = ZnSO4
+	log_k	2.34
+	-delta_h	6.2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2SO4-2 = Zn(SO4)2-2
+	log_k	3.28
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + SO4-2 = CdSO4
+	log_k	2.37
+	-delta_h	8.7 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2SO4-2 = Cd(SO4)2-2
+	log_k	3.5
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + SO4-2 = HgSO4 + 2H2O
+	log_k	8.612
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + SO4-2 = CuSO4
+	log_k	2.36
+	-delta_h	8.7 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + SO4-2 = AgSO4-
+	log_k	1.3
+	-delta_h	6.2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + SO4-2 = NiSO4
+	log_k	2.3
+	-delta_h	5.8 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2SO4-2 = Ni(SO4)2-2
+	log_k	0.82
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + SO4-2 = CoSO4
+	log_k	2.3
+	-delta_h	6.2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + SO4-2 = FeSO4
+	log_k	2.39
+	-delta_h	8 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + SO4-2 = FeSO4+
+	log_k	4.05
+	-delta_h	25 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Fe+3 + 2SO4-2 = Fe(SO4)2-
+	log_k	5.38
+	-delta_h	19.2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + SO4-2 = MnSO4
+	log_k	2.25
+	-delta_h	8.7 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2H+ + SO4-2 = CrSO4+ + 2H2O
+	log_k	12.9371
+	-delta_h	-98.62 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + H+ + SO4-2 = CrOHSO4 + H2O
+	log_k	8.2871
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Cr(OH)2+ + SO4-2 + 2H+ = Cr2(OH)2SO4+2 + 2H2O
+	log_k	16.155
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Cr(OH)2+ + 2SO4-2 + 2H+ = Cr2(OH)2(SO4)2 + 2H2O
+	log_k	17.9288
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 U+4 + SO4-2 = USO4+2
-	log_k	6.58
-	-delta_h	1.9 kcal 
-	# source	wateq4f.dat
+	log_k	6.6
+	-delta_h	8 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 U+4 + 2SO4-2 = U(SO4)2
 	log_k	10.5
-	-delta_h	7.8 kcal 
-	# source	wateq4f.dat
-U+4 + 4CO3-2 = U(CO3)4-4
-	log_k	32.9
-	# source	wateq4f.dat
-U+4 + 5CO3-2 = U(CO3)5-6
-	log_k	34.0
-	-delta_h	20.0 kcal 
-	# source	wateq4f.dat
-UO2+2 + e- = UO2+
-	log_k	1.49
-	-delta_h	-3.3 kcal 
-	# source	wateq4f.dat
-UO2+2 + H2O = UO2OH+ + H+
-	log_k	-5.2
-	-delta_h	11.015 kcal 
-	# source	wateq4f.dat
-2UO2+2 + 2H2O = (UO2)2(OH)2+2 + 2H+
-	log_k	-5.62
-	-delta_h	10.23 kcal 
-	# source	wateq4f.dat
-3UO2+2 + 5H2O = (UO2)3(OH)5+ + 5H+
-	log_k	-15.55
-	-delta_h	25.075 kcal 
-	# source	wateq4f.dat
-UO2+2 + CO3-2 = UO2CO3
-	log_k	9.63
-	-delta_h	1.2 kcal 
-	# source	wateq4f.dat
-UO2+2 + 2CO3-2 = UO2(CO3)2-2
-	log_k	17.0
-	-delta_h	4.42 kcal 
-	# source	wateq4f.dat
-UO2+2 + 3CO3-2 = UO2(CO3)3-4
-	log_k	21.63
-	-delta_h	-9.13 kcal 
-	# source	wateq4f.dat
-UO2+2 + F- = UO2F+
-	log_k	5.09
-	-delta_h	0.41 kcal 
-	# source	wateq4f.dat
-UO2+2 + 2F- = UO2F2
-	log_k	8.62
-	-delta_h	0.5 kcal 
-	# source	wateq4f.dat
-UO2+2 + 3F- = UO2F3-
-	log_k	10.9
-	-delta_h	0.56 kcal 
-	# source	wateq4f.dat
-UO2+2 + 4F- = UO2F4-2
-	log_k	11.7
-	-delta_h	0.07 kcal 
-	# source	wateq4f.dat
-UO2+2 + Cl- = UO2Cl+
-	log_k	0.17
-	-delta_h	1.9 kcal 
-	# source	wateq4f.dat
+	-delta_h	33 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 UO2+2 + SO4-2 = UO2SO4
-	log_k	3.15
-	-delta_h	4.7 kcal 
-	# source	wateq4f.dat
+	log_k	3.18
+	-delta_h	20 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 UO2+2 + 2SO4-2 = UO2(SO4)2-2
-	log_k	4.14
-	-delta_h	8.4 kcal 
-	# source	wateq4f.dat
-UO2+2 + PO4-3 + H+ = UO2HPO4
-	log_k	20.21
-	-delta_h	-2.1 kcal 
-	# source	wateq4f.dat
-UO2+2 + 2PO4-3 + 2H+ = UO2(HPO4)2-2
-	log_k	43.441
-	-delta_h	-11.8 kcal 
-	# source	wateq4f.dat
-UO2+2 + PO4-3 + 2H+ = UO2H2PO4+
-	log_k	22.87
-	-delta_h	-3.7 kcal 
-	# source	wateq4f.dat
-UO2+2 + 2PO4-3 + 4H+ = UO2(H2PO4)2
-	log_k	44.38
-	-delta_h	-16.5 kcal 
-	# source	wateq4f.dat
-UO2+2 + 3PO4-3 + 6H+ = UO2(H2PO4)3-
-	log_k	66.245
-	-delta_h	-28.6 kcal 
-	# source	wateq4f.dat
-U+4 + Br- = UBr+3
-	log_k	1.5
-	# source	wateq4f.dat
-U+4 + I- = UI+3
-	log_k	1.3
-	# source	wateq4f.dat
-U+4 + NO3- = UNO3+3
-	log_k	1.47
-	# source	wateq4f.dat
-U+4 + 2NO3- = U(NO3)2+2
+	log_k	4.3
+	-delta_h	38 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+V+3 + SO4-2 = VSO4+
+	log_k	2.674
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO+2 + SO4-2 = VOSO4
+	log_k	2.44
+	-delta_h	17 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO2+ + SO4-2 = VO2SO4-
+	log_k	1.378
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + SO4-2 = BeSO4
+	log_k	2.19
+	-delta_h	29 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + 2SO4-2 = Be(SO4)2-2
+	log_k	2.596
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + SO4-2 = MgSO4
+	log_k	2.26
+	-delta_h	5.8 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + SO4-2 = CaSO4
+	log_k	2.36
+	-delta_h	7.1 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + SO4-2 = SrSO4
 	log_k	2.3
-	# source	wateq4f.dat
-UO2+2 + 3H2O = UO2(OH)3- + 3H+
-	log_k	-19.2
-	# source	wateq4f.dat
-UO2+2 + 4H2O = UO2(OH)4-2 + 4H+
-	log_k	-33.0
-	# source	wateq4f.dat
-2UO2+2 + H2O = (UO2)2OH+3 + H+
-	log_k	-2.7
-	# source	wateq4f.dat
-3UO2+2 + 4H2O = (UO2)3(OH)4+2 + 4H+
-	log_k	-11.9
-	# source	wateq4f.dat
-3UO2+2 + 7H2O = (UO2)3(OH)7- + 7H+
-	log_k	-31.0
-	# source	wateq4f.dat
-4UO2+2 + 7H2O = (UO2)4(OH)7+ + 7H+
-	log_k	-21.9
-	# source	wateq4f.dat
-UO2+2 + 2Cl- = UO2Cl2
-	log_k	-1.1
-	-delta_h	3.6 kcal 
-	# source	wateq4f.dat
-UO2+2 + Br- = UO2Br+
-	log_k	0.22
-	# source	wateq4f.dat
+	-delta_h	8 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Li+ + SO4-2 = LiSO4-
+	log_k	0.64
+	-delta_h	0 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+Na+ + SO4-2 = NaSO4-
+	log_k	0.73
+	-delta_h	1 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+K+ + SO4-2 = KSO4-
+	log_k	0.85
+	-delta_h	4.1 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+HSe- + H+ = H2Se
+	log_k	3.89
+	-delta_h	3.3 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Ag+ + HSe- = Ag2Se + H+
+	log_k	34.911
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + H2O + 2HSe- = AgOH(Se)2-4 + 3H+
+	log_k	-20.509
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + HSe- = MnSe + H+
+	log_k	-5.385
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+HSeO3- = SeO3-2 + H+
+	log_k	-8.4
+	-delta_h	5.02 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+HSeO3- + H+ = H2SeO3
+	log_k	2.63
+	-delta_h	6.2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2HSeO3- = Cd(SeO3)2-2 + 2H+
+	log_k	-10.884
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + HSeO3- = AgSeO3- + H+
+	log_k	-5.592
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2HSeO3- = Ag(SeO3)2-3 + 2H+
+	log_k	-13.04
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + HSeO3- = FeHSeO3+2
+	log_k	3.422
+	-delta_h	25 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+SeO4-2 + H+ = HSeO4-
+	log_k	1.7
+	-delta_h	23 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + SeO4-2 = ZnSeO4
+	log_k	2.19
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2SeO4-2 = Zn(SeO4)2-2
+	log_k	2.196
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + SeO4-2 = CdSeO4
+	log_k	2.27
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + SeO4-2 = NiSeO4
+	log_k	2.67
+	-delta_h	14 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + SeO4-2 = CoSeO4
+	log_k	2.7
+	-delta_h	12 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + SeO4-2 = MnSeO4
+	log_k	2.43
+	-delta_h	14 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+NH4+ = NH3 + H+
+	log_k	-9.244
+	-delta_h	52 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + NH4+ = AgNH3+ + H+
+	log_k	-5.934
+	-delta_h	-72 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2NH4+ = Ag(NH3)2+ + 2H+
+	log_k	-11.268
+	-delta_h	-160 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + H+ + NH4+ = HgNH3+2 + 2H2O
+	log_k	5.75
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2NH4+ = Hg(NH3)2+2 + 2H2O
+	log_k	5.506
+	-delta_h	-246.72 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 3NH4+ = Hg(NH3)3+2 + 2H2O + H+
+	log_k	-3.138
+	-delta_h	-312.72 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 4NH4+ = Hg(NH3)4+2 + 2H2O + 2H+
+	log_k	-11.482
+	-delta_h	-379.72 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + NH4+ = CuNH3+2 + H+
+	log_k	-5.234
+	-delta_h	-72 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + NH4+ = NiNH3+2 + H+
+	log_k	-6.514
+	-delta_h	-67 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2NH4+ = Ni(NH3)2+2 + 2H+
+	log_k	-13.598
+	-delta_h	-111.6 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + NH4+ = Co(NH3)+2 + H+
+	log_k	-7.164
+	-delta_h	-65 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2NH4+ = Co(NH3)2+2 + 2H+
+	log_k	-14.778
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 3NH4+ = Co(NH3)3+2 + 3H+
+	log_k	-22.922
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 4NH4+ = Co(NH3)4+2 + 4H+
+	log_k	-31.446
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 5NH4+ = Co(NH3)5+2 + 5H+
+	log_k	-40.47
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+3 + 6NH4+ + H2O = Co(NH3)6OH+2 + 7H+
+	log_k	-43.7148
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+3 + 5NH4+ + Cl- = Co(NH3)5Cl+2 + 5H+
+	log_k	-17.9584
+	-delta_h	113.38 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+3 + 6NH4+ + Cl- = Co(NH3)6Cl+2 + 6H+
+	log_k	-33.9179
+	-delta_h	104.34 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+3 + 6NH4+ + Br- = Co(NH3)6Br+2 + 6H+
+	log_k	-33.8884
+	-delta_h	110.57 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+3 + 6NH4+ + I- = Co(NH3)6I+2 + 6H+
+	log_k	-33.4808
+	-delta_h	115.44 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+3 + 6NH4+ + SO4-2 = Co(NH3)6SO4+ + 6H+
+	log_k	-28.9926
+	-delta_h	124.5 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 6NH4+ = Cr(NH3)6+3 + 2H2O + 4H+
+	log_k	-32.8952
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 5NH4+ = Cr(NH3)5OH+2 + 4H+ + H2O
+	log_k	-30.2759
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 6NH4+ + Cl- = Cr(NH3)6Cl+2 + 2H2O + 4H+
+	log_k	-31.7932
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 6NH4+ + Br- = Cr(NH3)6Br+2 + 4H+ + 2H2O
+	log_k	-31.887
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 6NH4+ + I- = Cr(NH3)6I+2 + 4H+ + 2H2O
+	log_k	-32.008
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + NH4+ = CaNH3+2 + H+
+	log_k	-9.144
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + 2NH4+ = Ca(NH3)2+2 + 2H+
+	log_k	-18.788
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + NH4+ = SrNH3+2 + H+
+	log_k	-9.344
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + NH4+ = BaNH3+2 + H+
+	log_k	-9.444
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + NO2- = TlNO2
+	log_k	0.83
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + NO2- = AgNO2
+	log_k	2.32
+	-delta_h	-29 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2NO2- = Ag(NO2)2-
+	log_k	2.51
+	-delta_h	-46 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + NO2- = CuNO2+
+	log_k	2.02
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2NO2- = Cu(NO2)2
+	log_k	3.03
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + NO2- = CoNO2+
+	log_k	0.848
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 2H+ + NO3- = SnNO3+ + 2H2O
+	log_k	7.942
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + NO3- = PbNO3+
+	log_k	1.17
+	-delta_h	2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 2NO3- = Pb(NO3)2
+	log_k	1.4
+	-delta_h	-6.6 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + NO3- = TlNO3
+	log_k	0.33
+	-delta_h	-2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl(OH)3 + NO3- + 3H+ = TlNO3+2 + 3H2O
+	log_k	7.0073
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + NO3- = CdNO3+
+	log_k	0.5
+	-delta_h	-21 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2NO3- = Cd(NO3)2
+	log_k	0.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + NO3- = HgNO3+ + 2H2O
+	log_k	5.7613
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + 2NO3- = Hg(NO3)2 + 2H2O
+	log_k	5.38
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + NO3- = CuNO3+
+	log_k	0.5
+	-delta_h	-4.1 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2NO3- = Cu(NO3)2
+	log_k	-0.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + NO3- = ZnNO3+
+	log_k	0.4
+	-delta_h	-4.6 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2NO3- = Zn(NO3)2
+	log_k	-0.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + NO3- = AgNO3
+	log_k	-0.1
+	-delta_h	22.6 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + NO3- = NiNO3+
+	log_k	0.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + NO3- = CoNO3+
+	log_k	0.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2NO3- = Co(NO3)2
+	log_k	0.5085
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + NO3- = FeNO3+2
+	log_k	1.0
+	-delta_h	-37 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + NO3- = MnNO3+
+	log_k	0.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + 2NO3- = Mn(NO3)2
+	log_k	0.6
+	-delta_h	-1.6569 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + NO3- + 2H+ = CrNO3+2 + 2H2O
+	log_k	8.2094
+	-delta_h	-65.4378 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 UO2+2 + NO3- = UO2NO3+
 	log_k	0.3
-	# source	wateq4f.dat
-UO2+2 + PO4-3 + 3H+ = UO2H3PO4+2
-	log_k	22.813
-	# source	wateq4f.dat
-3UO2+2 + 6CO3-2 = (UO2)3(CO3)6-6
-	log_k	54.0
-	# source	wateq4f.dat
+	-delta_h	-12 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO2+ + NO3- = VO2NO3
+	log_k	-0.296
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + NO3- = CaNO3+
+	log_k	0.5
+	-delta_h	-5.4 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + NO3- = SrNO3+
+	log_k	0.6
+	-delta_h	-10 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + NO3- = BaNO3+
+	log_k	0.7
+	-delta_h	-13 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Cyanide- = HCyanide
+	log_k	9.21
+	-delta_h	-43.63 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Cyanide- = CdCyanide+
+	log_k	6.01
+	-delta_h	-30 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Cyanide- = Cd(Cyanide)2
+	log_k	11.12
+	-delta_h	-54.3 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 3Cyanide- = Cd(Cyanide)3-
+	log_k	15.65
+	-delta_h	-90.3 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 4Cyanide- = Cd(Cyanide)4-2
+	log_k	17.92
+	-delta_h	-112 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + Cyanide- = HgCyanide+ + 2H2O
+	log_k	23.194
+	-delta_h	-136.72 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + 2Cyanide- = Hg(Cyanide)2 + 2H2O
+	log_k	38.944
+	-delta_h	154.28 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + 3Cyanide- = Hg(Cyanide)3- + 2H2O
+	log_k	42.504
+	-delta_h	-262.72 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + 4Cyanide- = Hg(Cyanide)4-2 + 2H2O
+	log_k	45.164
+	-delta_h	-288.72 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + 2Cyanide- = Cu(Cyanide)2-
+	log_k	21.9145
+	-delta_h	-121 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + 3Cyanide- = Cu(Cyanide)3-2
+	log_k	27.2145
+	-delta_h	-167.4 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + 4Cyanide- = Cu(Cyanide)4-3
+	log_k	28.7145
+	-delta_h	-214.2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Cyanide- = Ag(Cyanide)2-
+	log_k	20.48
+	-delta_h	-137 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 3Cyanide- = Ag(Cyanide)3-2
+	log_k	21.7
+	-delta_h	-140 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + H2O + Cyanide- = Ag(Cyanide)OH- + H+
+	log_k	-0.777
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 4Cyanide- = Ni(Cyanide)4-2
+	log_k	30.2
+	-delta_h	-180 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 4Cyanide- + H+ = NiH(Cyanide)4-
+	log_k	36.0289
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 4Cyanide- + 2H+ = NiH2Cyanide4
+	log_k	40.7434
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 4Cyanide- + 3H+ = NiH3(Cyanide)4+
+	log_k	43.3434
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 3Cyanide- = Co(Cyanide)3-
+	log_k	14.312
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 5Cyanide- = Co(Cyanide)5-3
+	log_k	23.0
+	-delta_h	-257 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + 6Cyanide- = Fe(Cyanide)6-4
+	log_k	35.4
+	-delta_h	-358 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Fe+2 + 6Cyanide- = HFe(Cyanide)6-3
+	log_k	39.71
+	-delta_h	-356 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2H+ + Fe+2 + 6Cyanide- = H2Fe(Cyanide)6-2
+	log_k	42.11
+	-delta_h	-352 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + 6Cyanide- = Fe(Cyanide)6-3
+	log_k	43.6
+	-delta_h	-293 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Fe+3 + 6Cyanide- = Fe2(Cyanide)6
+	log_k	47.6355
+	-delta_h	-218 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + Fe+3 + 6Cyanide- + 2H+ = SnFe(Cyanide)6- + 2H2O
+	log_k	53.54
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+NH4+ + Fe+2 + 6Cyanide- = NH4Fe(Cyanide)6-3
+	log_k	37.7
+	-delta_h	-354 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + Fe+2 + 6Cyanide- = TlFe(Cyanide)6-3
+	log_k	38.4
+	-delta_h	-365.5 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Fe+3 + 6Cyanide- = MgFe(Cyanide)6-
+	log_k	46.39
+	-delta_h	-290 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Fe+2 + 6Cyanide- = MgFe(Cyanide)6-2
+	log_k	39.21
+	-delta_h	-346 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Fe+3 + 6Cyanide- = CaFe(Cyanide)6-
+	log_k	46.43
+	-delta_h	-291 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Fe+2 + 6Cyanide- = CaFe(Cyanide)6-2
+	log_k	39.1
+	-delta_h	-347 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Ca+2 + Fe+2 + 6Cyanide- = Ca2Fe(Cyanide)6
+	log_k	40.6
+	-delta_h	-350.201 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + Fe+3 + 6Cyanide- = SrFe(Cyanide)6-
+	log_k	46.45
+	-delta_h	-292 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + Fe+2 + 6Cyanide- = SrFe(Cyanide)6-2
+	log_k	39.1
+	-delta_h	-350 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Fe+2 + 6Cyanide- = BaFe(Cyanide)6-2
+	log_k	39.19
+	-delta_h	-342 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Fe+3 + 6Cyanide- = BaFe(Cyanide)6-
+	log_k	46.48
+	-delta_h	-292 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Na+ + Fe+2 + 6Cyanide- = NaFe(Cyanide)6-3
+	log_k	37.6
+	-delta_h	-354 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+K+ + Fe+2 + 6Cyanide- = KFe(Cyanide)6-3
+	log_k	37.75
+	-delta_h	-353.9 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+K+ + Fe+3 + 6Cyanide- = KFe(Cyanide)6-2
+	log_k	45.04
+	-delta_h	-291 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + PO4-3 = HPO4-2
+	log_k	12.375
+	-delta_h	-15 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+2H+ + PO4-3 = H2PO4-
+	log_k	19.573
+	-delta_h	-18 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+3H+ + PO4-3 = H3PO4
+	log_k	21.721
+	-delta_h	-10.1 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + H+ + PO4-3 = CoHPO4
+	log_k	15.4128
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + 2H+ + PO4-3 = FeH2PO4+
+	log_k	22.273
+	-delta_h	0 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+Fe+2 + H+ + PO4-3 = FeHPO4
+	log_k	15.975
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + 2H+ + PO4-3 = FeH2PO4+2
+	log_k	23.8515
+	-delta_h	0 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+Fe+3 + H+ + PO4-3 = FeHPO4+
+	log_k	22.292
+	-delta_h	-30.5432 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 4H+ + PO4-3 = CrH2PO4+2 + 2H2O
+	log_k	31.9068
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+U+4 + PO4-3 + H+ = UHPO4+2
+	log_k	24.443
+	-delta_h	31.38 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+U+4 + 2PO4-3 + 2H+ = U(HPO4)2
+	log_k	46.833
+	-delta_h	7.1128 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+U+4 + 3PO4-3 + 3H+ = U(HPO4)3-2
+	log_k	67.564
+	-delta_h	-32.6352 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+U+4 + 4PO4-3 + 4H+ = U(HPO4)4-4
+	log_k	88.483
+	-delta_h	-110.876 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+UO2+2 + H+ + PO4-3 = UO2HPO4
+	log_k	19.655
+	-delta_h	-8.7864 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+UO2+2 + 2PO4-3 + 2H+ = UO2(HPO4)2-2
+	log_k	42.988
+	-delta_h	-47.6934 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+UO2+2 + 2H+ + PO4-3 = UO2H2PO4+
+	log_k	22.833
+	-delta_h	-15.4808 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+UO2+2 + 2PO4-3 + 4H+ = UO2(H2PO4)2
+	log_k	44.7
+	-delta_h	-69.036 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+UO2+2 + 3PO4-3 + 6H+ = UO2(H2PO4)3-
+	log_k	66.245
+	-delta_h	-119.662 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 UO2+2 + PO4-3 = UO2PO4-
-	log_k	13.69
-	# source	wateq4f.dat
-UO2+ + 3CO3-2 = UO2(CO3)3-5
-	log_k	7.43
-	-delta_h	3.33 kcal 
-	# source	wateq4f.dat
+	log_k	13.25
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + PO4-3 = MgPO4-
+	log_k	4.654
+	-delta_h	12.9704 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+Mg+2 + 2H+ + PO4-3 = MgH2PO4+
+	log_k	21.2561
+	-delta_h	-4.6861 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+Mg+2 + H+ + PO4-3 = MgHPO4
+	log_k	15.175
+	-delta_h	-3 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + H+ + PO4-3 = CaHPO4
+	log_k	15.035
+	-delta_h	-3 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + PO4-3 = CaPO4-
+	log_k	6.46
+	-delta_h	12.9704 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+Ca+2 + 2H+ + PO4-3 = CaH2PO4+
+	log_k	20.923
+	-delta_h	-6 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+Sr+2 + H+ + PO4-3 = SrHPO4
+	log_k	14.8728
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + 2H+ + PO4-3 = SrH2PO4+
+	log_k	20.4019
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Na+ + H+ + PO4-3 = NaHPO4-
+	log_k	13.445
+	-delta_h	0 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+K+ + H+ + PO4-3 = KHPO4-
+	log_k	13.255
+	-delta_h	0 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+H3AsO3 = AsO3-3 + 3H+
+	log_k	-34.744
+	-delta_h	84.726 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H3AsO3 = HAsO3-2 + 2H+
+	log_k	-21.33
+	-delta_h	59.4086 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H3AsO3 = H2AsO3- + H+
+	log_k	-9.29
+	-delta_h	27.41 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H3AsO3 + H+ = H4AsO3+
+	log_k	-0.305
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H3AsO4 = AsO4-3 + 3H+
+	log_k	-20.7
+	-delta_h	12.9 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H3AsO4 = HAsO4-2 + 2H+
+	log_k	-9.2
+	-delta_h	-4.1 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H3AsO4 = H2AsO4- + H+
+	log_k	-2.24
+	-delta_h	-7.1 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sb(OH)3 + H2O = Sb(OH)4- + H+
+	log_k	-12.0429
+	-delta_h	69.8519 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sb(OH)3 + H+ = Sb(OH)2+ + H2O
+	log_k	1.3853
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sb(OH)3 = HSbO2 + H2O
+	log_k	-0.0105
+	-delta_h	-0.13 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sb(OH)3 = SbO2- + H2O + H+
+	log_k	-11.8011
+	-delta_h	70.1866 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sb(OH)3 + H+ = SbO+ + 2H2O
+	log_k	0.9228
+	-delta_h	8.2425 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sb(OH)6- = SbO3- + 3H2O
+	log_k	2.9319
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sb(OH)6- + 2H+ = SbO2+ + 4H2O
+	log_k	2.3895
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + CO3-2 = HCO3-
+	log_k	10.329
+	-delta_h	-14.6 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+2H+ + CO3-2 = H2CO3
+	log_k	16.681
+	-delta_h	-23.76 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 2CO3-2 = Pb(CO3)2-2
+	log_k	9.938
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + CO3-2 = PbCO3
+	log_k	6.478
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + CO3-2 + H+ = PbHCO3+
+	log_k	13.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + CO3-2 = ZnCO3
+	log_k	4.76
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + H+ + CO3-2 = ZnHCO3+
+	log_k	11.829
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + CO3-2 = HgCO3 + 2H2O
+	log_k	18.272
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + 2CO3-2 = Hg(CO3)2-2 + 2H2O
+	log_k	21.772
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 3H+ + CO3-2 = HgHCO3+ + 2H2O
+	log_k	22.542
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + CO3-2 = CdCO3
+	log_k	4.3578
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + H+ + CO3-2 = CdHCO3+
+	log_k	10.6863
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2CO3-2 = Cd(CO3)2-2
+	log_k	7.2278
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + CO3-2 = CuCO3
+	log_k	6.77
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + H+ + CO3-2 = CuHCO3+
+	log_k	12.129
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2CO3-2 = Cu(CO3)2-2
+	log_k	10.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + CO3-2 = NiCO3
+	log_k	4.5718
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + H+ + CO3-2 = NiHCO3+
+	log_k	12.4199
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + CO3-2 = CoCO3
+	log_k	4.228
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + H+ + CO3-2 = CoHCO3+
+	log_k	12.2199
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + H+ + CO3-2 = FeHCO3+
+	log_k	11.429
+	-delta_h	0 kJ 
+	gamma	6 0 
+	# source	minteq.v4.dat
+Mn+2 + H+ + CO3-2 = MnHCO3+
+	log_k	11.629
+	-delta_h	-10.6 kJ 
+	gamma	5 0 
+	# source	minteq.v4.dat
+UO2+2 + CO3-2 = UO2CO3
+	log_k	9.6
+	-delta_h	4 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+UO2+2 + 2CO3-2 = UO2(CO3)2-2
+	log_k	16.9
+	-delta_h	16 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+UO2+2 + 3CO3-2 = UO2(CO3)3-4
+	log_k	21.6
+	-delta_h	-40 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + CO3-2 = BeCO3
+	log_k	6.2546
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + H+ + CO3-2 = MgHCO3+
+	log_k	11.339
+	-delta_h	-10.6 kJ 
+	gamma	4 0 
+	# source	minteq.v4.dat
+Ca+2 + H+ + CO3-2 = CaHCO3+
+	log_k	11.599
+	-delta_h	5.4 kJ 
+	gamma	6 0 
+	# source	minteq.v4.dat
+CO3-2 + Ca+2 = CaCO3
+	log_k	3.2
+	-delta_h	16 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + CO3-2 = SrCO3
+	log_k	2.81
+	-delta_h	20 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + H+ + CO3-2 = SrHCO3+
+	log_k	11.539
+	-delta_h	10.4 kJ 
+	gamma	6 0 
+	# source	minteq.v4.dat
+Ba+2 + CO3-2 = BaCO3
+	log_k	2.71
+	-delta_h	16 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + H+ + CO3-2 = BaHCO3+
+	log_k	11.309
+	-delta_h	10.4 kJ 
+	gamma	6 0 
+	# source	minteq.v4.dat
+Na+ + CO3-2 = NaCO3-
+	log_k	1.27
+	-delta_h	-20.35 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+Na+ + H+ + CO3-2 = NaHCO3
+	log_k	10.079
+	-delta_h	-28.3301 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H4SiO4 = H2SiO4-2 + 2H+
+	log_k	-23.04
+	-delta_h	61 kJ 
+	gamma	5.4 0 
+	# source	minteq.v4.dat
+UO2+2 + H4SiO4 = UO2H3SiO4+ + H+
+	log_k	-1.9111
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H3BO3 = H2BO3- + H+
+	log_k	-9.236
+	-delta_h	13 kJ 
+	gamma	2.5 0 
+	# source	minteq.v4.dat
+2H3BO3 = H5(BO3)2- + H+
+	log_k	-9.306
+	-delta_h	8.4 kJ 
+	gamma	2.5 0 
+	# source	minteq.v4.dat
+3H3BO3 = H8(BO3)3- + H+
+	log_k	-7.306
+	-delta_h	29.4 kJ 
+	gamma	2.5 0 
+	# source	minteq.v4.dat
+Ag+ + H3BO3 = AgH2BO3 + H+
+	log_k	-8.036
+	-delta_h	0 kJ 
+	gamma	2.5 0 
+	# source	minteq.v4.dat
+Mg+2 + H3BO3 = MgH2BO3+ + H+
+	log_k	-7.696
+	-delta_h	13 kJ 
+	gamma	2.5 0 
+	# source	minteq.v4.dat
+Ca+2 + H3BO3 = CaH2BO3+ + H+
+	log_k	-7.476
+	-delta_h	17 kJ 
+	gamma	2.5 0 
+	# source	minteq.v4.dat
+Sr+2 + H3BO3 = SrH2BO3+ + H+
+	log_k	-7.686
+	-delta_h	17 kJ 
+	gamma	2.5 0 
+	# source	minteq.v4.dat
+Ba+2 + H3BO3 = BaH2BO3+ + H+
+	log_k	-7.746
+	-delta_h	17 kJ 
+	gamma	2.5 0 
+	# source	minteq.v4.dat
+Na+ + H3BO3 = NaH2BO3 + H+
+	log_k	-9.036
+	-delta_h	0 kJ 
+	gamma	2.5 0 
+	# source	minteq.v4.dat
+CrO4-2 + H+ = HCrO4-
+	log_k	6.51
+	-delta_h	2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+CrO4-2 + 2H+ = H2CrO4
+	log_k	6.4188
+	-delta_h	39 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2CrO4-2 + 2H+ = Cr2O7-2 + H2O
+	log_k	14.56
+	-delta_h	-15 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+CrO4-2 + Cl- + 2H+ = CrO3Cl- + H2O
+	log_k	7.3086
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+CrO4-2 + SO4-2 + 2H+ = CrO3SO4-2 + H2O
+	log_k	8.9937
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+CrO4-2 + 4H+ + PO4-3 = CrO3H2PO4- + H2O
+	log_k	29.3634
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+CrO4-2 + 3H+ + PO4-3 = CrO3HPO4-2 + H2O
+	log_k	26.6806
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+CrO4-2 + Na+ = NaCrO4-
+	log_k	0.6963
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+K+ + CrO4-2 = KCrO4-
+	log_k	0.57
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+MoO4-2 + H+ = HMoO4-
+	log_k	4.2988
+	-delta_h	20 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+MoO4-2 + 2H+ = H2MoO4
+	log_k	8.1636
+	-delta_h	-26 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+7MoO4-2 + 8H+ = Mo7O24-6 + 4H2O
+	log_k	52.99
+	-delta_h	-228 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+7MoO4-2 + 9H+ = HMo7O24-5 + 4H2O
+	log_k	59.3768
+	-delta_h	-218 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+7MoO4-2 + 10H+ = H2Mo7O24-4 + 4H2O
+	log_k	64.159
+	-delta_h	-215 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+7MoO4-2 + 11H+ = H3Mo7O24-3 + 4H2O
+	log_k	67.405
+	-delta_h	-217 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+6MoO4-2 + Al+3 + 6H+ = AlMo6O21-3 + 3H2O
+	log_k	54.9925
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+MoO4-2 + 2Ag+ = Ag2MoO4
+	log_k	-0.4219
+	-delta_h	-1.18 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO2+ + 2H2O = VO4-3 + 4H+
+	log_k	-30.2
+	-delta_h	-25 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO2+ + 2H2O = HVO4-2 + 3H+
+	log_k	-15.9
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO2+ + 2H2O = H2VO4- + 2H+
+	log_k	-7.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+VO2+ + 2H2O = H3VO4 + H+
+	log_k	-3.3
+	-delta_h	44.4759 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2VO2+ + 3H2O = V2O7-4 + 6H+
+	log_k	-31.24
+	-delta_h	-28 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2VO2+ + 3H2O = HV2O7-3 + 5H+
+	log_k	-20.67
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2VO2+ + 3H2O = H3V2O7- + 3H+
+	log_k	-3.79
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+3VO2+ + 3H2O = V3O9-3 + 6H+
+	log_k	-15.88
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+4VO2+ + 4H2O = V4O12-4 + 8H+
+	log_k	-20.56
+	-delta_h	-87 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+10VO2+ + 8H2O = V10O28-6 + 16H+
+	log_k	-24.0943
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+10VO2+ + 8H2O = HV10O28-5 + 15H+
+	log_k	-15.9076
+	-delta_h	90.0397 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+10VO2+ + 8H2O = H2V10O28-4 + 14H+
+	log_k	-10.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Benzoate- + H+ = H(Benzoate)
+	log_k	4.202
+	-delta_h	-0.4602 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Benzoate- + Pb+2 = Pb(Benzoate)+
+	log_k	2.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Benzoate- + Al+3 = Al(Benzoate)+2
+	log_k	2.05
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Benzoate- + Al+3 + H2O = AlOH(Benzoate)+ + H+
+	log_k	-0.56
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Benzoate- + Zn+2 = Zn(Benzoate)+
+	log_k	1.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Benzoate- + Cd+2 = Cd(Benzoate)+
+	log_k	1.8
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Benzoate- + Cd+2 = Cd(Benzoate)2
+	log_k	1.82
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Benzoate- + Cu+2 = Cu(Benzoate)+
+	log_k	2.19
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Benzoate- + Ag+ = Ag(Benzoate)
+	log_k	0.91
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Benzoate- + Ni+2 = Ni(Benzoate)+
+	log_k	1.86
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Benzoate- = Co(Benzoate)+
+	log_k	1.0537
+	-delta_h	12 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Benzoate- + Mn+2 = Mn(Benzoate)+
+	log_k	2.06
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Benzoate- + Mg+2 = Mg(Benzoate)+
+	log_k	1.26
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Benzoate- + Ca+2 = Ca(Benzoate)+
+	log_k	1.55
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Phenylacetate- + H+ = H(Phenylacetate)
+	log_k	4.31
+	-delta_h	2.1757 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Phenylacetate- + Zn+2 = Zn(Phenylacetate)+
+	log_k	1.57
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Phenylacetate- + Cu+2 = Cu(Phenylacetate)+
+	log_k	1.97
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Phenylacetate- = Co(Phenylacetate)+
+	log_k	0.591
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2Phenylacetate- = Co(Phenylacetate)2
+	log_k	0.4765
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Isophthalate-2 + H+ = H(Isophthalate)-
+	log_k	4.5
+	-delta_h	1.6736 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Isophthalate-2 + 2H+ = H2(Isophthalate)
+	log_k	8.0
+	-delta_h	1.6736 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Isophthalate-2 + Pb+2 = Pb(Isophthalate)
+	log_k	2.99
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Isophthalate-2 + Pb+2 = Pb(Isophthalate)2-2
+	log_k	4.18
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Isophthalate-2 + Pb+2 + H+ = PbH(Isophthalate)+
+	log_k	6.69
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Isophthalate-2 + Cd+2 = Cd(Isophthalate)
+	log_k	2.15
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Isophthalate-2 + Cd+2 = Cd(Isophthalate)2-2
+	log_k	2.99
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Isophthalate-2 + Cd+2 + H+ = CdH(Isophthalate)+
+	log_k	5.73
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Isophthalate-2 + Ca+2 = Ca(Isophthalate)
+	log_k	2.0
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Isophthalate-2 + Ba+2 = Ba(Isophthalate)
+	log_k	1.55
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Diethylamine = H(Diethylamine)+
+	log_k	10.933
+	-delta_h	-53.1368 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Diethylamine = Zn(Diethylamine)+2
+	log_k	2.74
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2Diethylamine = Zn(Diethylamine)2+2
+	log_k	5.27
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 3Diethylamine = Zn(Diethylamine)3+2
+	log_k	7.71
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 4Diethylamine = Zn(Diethylamine)4+2
+	log_k	9.84
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Diethylamine = Cd(Diethylamine)+2
+	log_k	2.73
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Diethylamine = Cd(Diethylamine)2+2
+	log_k	4.86
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 3Diethylamine = Cd(Diethylamine)3+2
+	log_k	6.37
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 4Diethylamine = Cd(Diethylamine)4+2
+	log_k	7.32
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Diethylamine = Ag(Diethylamine)+
+	log_k	2.98
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Diethylamine = Ag(Diethylamine)2+
+	log_k	6.38
+	-delta_h	-44.7688 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Diethylamine = Ni(Diethylamine)+2
+	log_k	2.78
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2Diethylamine = Ni(Diethylamine)2+2
+	log_k	4.97
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 3Diethylamine = Ni(Diethylamine)3+2
+	log_k	6.72
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 4Diethylamine = Ni(Diethylamine)4+2
+	log_k	7.93
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 5Diethylamine = Ni(Diethylamine)5+2
+	log_k	8.87
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Butylamine = H(Butylamine)+
+	log_k	10.64
+	-delta_h	-58.2831 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + Butylamine + 2H+ = Hg(Butylamine)+2 + 2H2O
+	log_k	14.84
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2Butylamine + 2H+ = Hg(Butylamine)2+2 + 2H2O
+	log_k	24.24
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 3Butylamine + 2H+ = Hg(Butylamine)3+2 + 2H2O
+	log_k	25.1
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 4Butylamine + 2H+ = Hg(Butylamine)4+2 + 2H2O
+	log_k	26.1
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Butylamine = Ag(Butylamine)+
+	log_k	3.42
+	-delta_h	-16.736 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Butylamine = Ag(Butylamine)2+
+	log_k	7.47
+	-delta_h	-52.7184 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Methylamine = H(Methylamine)+
+	log_k	10.64
+	-delta_h	-55.2288 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Methylamine = Cd(Methylamine)+2
+	log_k	2.75
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Methylamine = Cd(Methylamine)2+2
+	log_k	4.81
+	-delta_h	-29.288 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 3Methylamine = Cd(Methylamine)3+2
+	log_k	5.94
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 4Methylamine = Cd(Methylamine)4+2
+	log_k	6.55
+	-delta_h	-58.576 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + Methylamine + 2H+ = Hg(Methylamine)+2 + 2H2O
+	log_k	14.76
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2Methylamine + 2H+ = Hg(Methylamine)2+2 + 2H2O
+	log_k	23.96
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 3Methylamine + 2H+ = Hg(Methylamine)3+2 + 2H2O
+	log_k	24.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 4Methylamine + 2H+ = Hg(Methylamine)4+2 + 2H2O
+	log_k	24.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Methylamine = Cu(Methylamine)+2
+	log_k	4.11
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2Methylamine = Cu(Methylamine)2+2
+	log_k	7.51
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 3Methylamine = Cu(Methylamine)3+2
+	log_k	10.21
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 4Methylamine = Cu(Methylamine)4+2
+	log_k	12.08
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Methylamine = Ag(Methylamine)+
+	log_k	3.07
+	-delta_h	-12.552 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Methylamine = Ag(Methylamine)2+
+	log_k	6.89
+	-delta_h	-48.9528 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Methylamine = Ni(Methylamine)+2
+	log_k	2.23
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Dimethylamine = H(Dimethylamine)+
+	log_k	10.774
+	-delta_h	-50.208 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Dimethylamine = Ag(Dimethylamine)2+
+	log_k	5.37
+	-delta_h	-40.5848 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Dimethylamine = Ni(Dimethylamine)+2
+	log_k	1.47
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Hexylamine = H(Hexylamine)+
+	log_k	10.63
+	-delta_h	-58.576 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Hexylamine = Ag(Hexylamine)+
+	log_k	3.54
+	-delta_h	-25.104 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Hexylamine = Ag(Hexylamine)2+
+	log_k	7.55
+	-delta_h	-53.1368 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Ethylenediamine = H(Ethylenediamine)+
+	log_k	9.928
+	-delta_h	-49.7896 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2H+ + Ethylenediamine = H2(Ethylenediamine)+2
+	log_k	16.776
+	-delta_h	-95.3952 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Ethylenediamine = Pb(Ethylenediamine)+2
+	log_k	5.04
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 2Ethylenediamine = Pb(Ethylenediamine)2+2
+	log_k	8.5
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Ethylenediamine = Zn(Ethylenediamine)+2
+	log_k	5.66
+	-delta_h	-29.288 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2Ethylenediamine = Zn(Ethylenediamine)2+2
+	log_k	10.6
+	-delta_h	-48.116 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 3Ethylenediamine = Zn(Ethylenediamine)3+2
+	log_k	13.9
+	-delta_h	-71.5464 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Ethylenediamine = Cd(Ethylenediamine)+2
+	log_k	5.41
+	-delta_h	-28.4512 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Ethylenediamine = Cd(Ethylenediamine)2+2
+	log_k	9.9
+	-delta_h	-55.6472 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 3Ethylenediamine = Cd(Ethylenediamine)3+2
+	log_k	11.6
+	-delta_h	-82.4248 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + Ethylenediamine + 2H+ = Hg(Ethylenediamine)+2 + 2H2O
+	log_k	20.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2Ethylenediamine + 2H+ = Hg(Ethylenediamine)2+2 + 2H2O
+	log_k	29.3
+	-delta_h	-173.218 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2Ethylenediamine + 3H+ = HgH(Ethylenediamine)2+3 + 2H2O
+	log_k	34.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + 2Ethylenediamine = Cu(Ethylenediamine)2+
+	log_k	11.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Ethylenediamine = Cu(Ethylenediamine)+2
+	log_k	10.5
+	-delta_h	-52.7184 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2Ethylenediamine = Cu(Ethylenediamine)2+2
+	log_k	19.6
+	-delta_h	-105.437 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Ethylenediamine = Ag(Ethylenediamine)+
+	log_k	4.6
+	-delta_h	-48.9528 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Ethylenediamine = Ag(Ethylenediamine)2+
+	log_k	7.5
+	-delta_h	-52.3 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Ethylenediamine + H+ = AgH(Ethylenediamine)+2
+	log_k	11.99
+	-delta_h	-75.312 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Ag+ + Ethylenediamine = Ag2(Ethylenediamine)+2
+	log_k	6.5
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Ag+ + 2Ethylenediamine = Ag2(Ethylenediamine)2+2
+	log_k	12.7
+	-delta_h	-97.0688 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Ethylenediamine + 2H+ = Ag(HEthylenediamine)2+3
+	log_k	24.0
+	-delta_h	-150.206 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Ethylenediamine + H+ = AgH(Ethylenediamine)2+2
+	log_k	8.4
+	-delta_h	-47.6976 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Ethylenediamine = Ni(Ethylenediamine)+2
+	log_k	7.32
+	-delta_h	-37.656 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2Ethylenediamine = Ni(Ethylenediamine)2+2
+	log_k	13.5
+	-delta_h	-76.5672 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 3Ethylenediamine = Ni(Ethylenediamine)3+2
+	log_k	17.6
+	-delta_h	-117.152 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Ethylenediamine = Co(Ethylenediamine)+2
+	log_k	5.5
+	-delta_h	-28 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2Ethylenediamine = Co(Ethylenediamine)2+2
+	log_k	10.1
+	-delta_h	-58.5 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 3Ethylenediamine = Co(Ethylenediamine)3+2
+	log_k	13.2
+	-delta_h	-92.8 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+3 + 2Ethylenediamine = Co(Ethylenediamine)2+3
+	log_k	34.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+3 + 3Ethylenediamine = Co(Ethylenediamine)3+3
+	log_k	48.69
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + Ethylenediamine = Fe(Ethylenediamine)+2
+	log_k	4.26
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + 2Ethylenediamine = Fe(Ethylenediamine)2+2
+	log_k	7.73
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + 3Ethylenediamine = Fe(Ethylenediamine)3+2
+	log_k	10.17
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + Ethylenediamine = Mn(Ethylenediamine)+2
+	log_k	2.74
+	-delta_h	-11.7152 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + 2Ethylenediamine = Mn(Ethylenediamine)2+2
+	log_k	4.8
+	-delta_h	-25.104 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2Ethylenediamine + 2H+ = Cr(Ethylenediamine)2+3 + 2H2O
+	log_k	22.57
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 3Ethylenediamine + 2H+ = Cr(Ethylenediamine)3+3 + 2H2O
+	log_k	29.0
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Ethylenediamine = Mg(Ethylenediamine)+2
+	log_k	0.37
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Ethylenediamine = Ca(Ethylenediamine)+2
+	log_k	0.11
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Propylamine = H(Propylamine)+
+	log_k	10.566
+	-delta_h	-57.53 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Propylamine = Zn(Propylamine)+2
+	log_k	2.42
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2Propylamine = Zn(Propylamine)2+2
+	log_k	4.85
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 3Propylamine = Zn(Propylamine)3+2
+	log_k	7.38
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 4Propylamine = Zn(Propylamine)4+2
+	log_k	9.49
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Propylamine = Cd(Propylamine)+2
+	log_k	2.62
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Propylamine = Cd(Propylamine)2+2
+	log_k	4.64
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 3Propylamine = Cd(Propylamine)3+2
+	log_k	6.03
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Propylamine = Ag(Propylamine)+
+	log_k	3.45
+	-delta_h	-12.552 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Propylamine = Ag(Propylamine)2+
+	log_k	7.44
+	-delta_h	-53.1368 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Propylamine = Ni(Propylamine)+2
+	log_k	2.81
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2Propylamine = Ni(Propylamine)2+2
+	log_k	5.02
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 3Propylamine = Ni(Propylamine)3+2
+	log_k	6.79
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 4Propylamine = Ni(Propylamine)4+2
+	log_k	8.31
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Isopropylamine = H(Isopropylamine)+
+	log_k	10.67
+	-delta_h	-58.3668 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Isopropylamine = Zn(Isopropylamine)+2
+	log_k	2.37
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2Isopropylamine = Zn(Isopropylamine)2+2
+	log_k	4.67
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 3Isopropylamine = Zn(Isopropylamine)3+2
+	log_k	7.14
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 4Isopropylamine = Zn(Isopropylamine)4+2
+	log_k	9.44
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Isopropylamine = Cd(Isopropylamine)+2
+	log_k	2.55
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Isopropylamine = Cd(Isopropylamine)2+2
+	log_k	4.57
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 3Isopropylamine = Cd(Isopropylamine)3+2
+	log_k	6.07
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 4Isopropylamine = Cd(Isopropylamine)4+2
+	log_k	6.9
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + Isopropylamine + 2H+ = Hg(Isopropylamine)+2 + 2H2O
+	log_k	14.85
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2Isopropylamine + 2H+ = Hg(Isopropylamine)2+2 + 2H2O
+	log_k	24.37
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Isopropylamine = Ag(Isopropylamine)+
+	log_k	3.67
+	-delta_h	-23.8488 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Isopropylamine = Ag(Isopropylamine)2+
+	log_k	7.77
+	-delta_h	-59.8312 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Isopropylamine = Ni(Isopropylamine)+2
+	log_k	2.71
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2Isopropylamine = Ni(Isopropylamine)2+2
+	log_k	4.86
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 3Isopropylamine = Ni(Isopropylamine)3+2
+	log_k	6.57
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 4Isopropylamine = Ni(Isopropylamine)4+2
+	log_k	7.83
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 5Isopropylamine = Ni(Isopropylamine)5+2
+	log_k	8.43
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Trimethylamine = H(Trimethylamine)+
+	log_k	9.8
+	-delta_h	-36.8192 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Trimethylamine = Ag(Trimethylamine)+
+	log_k	1.701
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Citrate-3 = H(Citrate)-2
+	log_k	6.396
+	-delta_h	3.3472 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2H+ + Citrate-3 = H2(Citrate)-
+	log_k	11.157
+	-delta_h	1.297 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+3H+ + Citrate-3 = H3(Citrate)
+	log_k	14.285
+	-delta_h	-2.7614 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Citrate-3 = Pb(Citrate)-
+	log_k	7.27
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 2Citrate-3 = Pb(Citrate)2-4
+	log_k	6.53
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Al+3 + Citrate-3 = Al(Citrate)
+	log_k	9.97
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Al+3 + 2Citrate-3 = Al(Citrate)2-3
+	log_k	14.8
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Al+3 + Citrate-3 + H+ = AlH(Citrate)+
+	log_k	12.85
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + Citrate-3 = Tl(Citrate)-2
+	log_k	1.48
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Citrate-3 = Zn(Citrate)-
+	log_k	6.21
+	-delta_h	8.368 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2Citrate-3 = Zn(Citrate)2-4
+	log_k	7.4
+	-delta_h	25.104 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Citrate-3 + H+ = ZnH(Citrate)
+	log_k	10.2
+	-delta_h	3.3472 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Citrate-3 + 2H+ = ZnH2(Citrate)+
+	log_k	12.84
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Citrate-3 = Cd(Citrate)-
+	log_k	4.98
+	-delta_h	8.368 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Citrate-3 + H+ = CdH(Citrate)
+	log_k	9.44
+	-delta_h	3.3472 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Citrate-3 + 2H+ = CdH2(Citrate)+
+	log_k	12.9
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Citrate-3 = Cd(Citrate)2-4
+	log_k	5.9
+	-delta_h	20.92 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + Citrate-3 + 2H+ = Hg(Citrate)- + 2H2O
+	log_k	18.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Citrate-3 = Cu(Citrate)-
+	log_k	7.57
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2Citrate-3 = Cu(Citrate)2-4
+	log_k	8.9
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Citrate-3 + H+ = CuH(Citrate)
+	log_k	10.87
+	-delta_h	11.7152 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Citrate-3 + 2H+ = CuH2(Citrate)+
+	log_k	13.23
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Cu+2 + 2Citrate-3 = Cu2(Citrate)2-2
+	log_k	16.9
+	-delta_h	41.84 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Citrate-3 = Ni(Citrate)-
+	log_k	6.59
+	-delta_h	16.736 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Citrate-3 + H+ = NiH(Citrate)
+	log_k	10.5
+	-delta_h	15.8992 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Citrate-3 + 2H+ = NiH2(Citrate)+
+	log_k	13.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2Citrate-3 = Ni(Citrate)2-4
+	log_k	8.77
+	-delta_h	12.552 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2Citrate-3 + H+ = NiH(Citrate)2-3
+	log_k	14.9
+	-delta_h	32.6352 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Citrate-3 = Co(Citrate)-
+	log_k	6.1867
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + H+ + Citrate-3 = CoHCitrate
+	log_k	10.4438
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2H+ + Citrate-3 = CoH2Citrate+
+	log_k	12.7859
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + Citrate-3 = Fe(Citrate)-
+	log_k	6.1
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + Citrate-3 + H+ = FeH(Citrate)
+	log_k	10.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + Citrate-3 = Fe(Citrate)
+	log_k	13.1
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + Citrate-3 + H+ = FeH(Citrate)+
+	log_k	14.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + Citrate-3 = Mn(Citrate)-
+	log_k	4.28
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + Citrate-3 + H+ = MnH(Citrate)
+	log_k	9.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + Citrate-3 = Be(Citrate)-
+	log_k	5.534
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + H+ + Citrate-3 = BeH(Citrate)
+	log_k	9.442
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Citrate-3 = Ca(Citrate)-
+	log_k	4.87
+	-delta_h	-8.368 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Citrate-3 + H+ = CaH(Citrate)
+	log_k	9.26
+	-delta_h	-0.8368 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Citrate-3 + 2H+ = CaH2(Citrate)+
+	log_k	12.257
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Citrate-3 = Mg(Citrate)-
+	log_k	4.89
+	-delta_h	8.368 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Citrate-3 + H+ = MgH(Citrate)
+	log_k	8.91
+	-delta_h	3.3472 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Citrate-3 + 2H+ = MgH2(Citrate)+
+	log_k	12.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + Citrate-3 = Sr(Citrate)-
+	log_k	4.3367
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + H+ + Citrate-3 = SrH(Citrate)
+	log_k	8.9738
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + 2H+ + Citrate-3 = SrH2(Citrate)+
+	log_k	12.4859
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Citrate-3 = Ba(Citrate)-
+	log_k	4.1
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Citrate-3 + H+ = BaH(Citrate)
+	log_k	8.74
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Citrate-3 + 2H+ = BaH2(Citrate)+
+	log_k	12.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Na+ + Citrate-3 = Na(Citrate)-2
+	log_k	1.03
+	-delta_h	-2.8033 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Na+ + Citrate-3 = Na2(Citrate)-
+	log_k	1.5
+	-delta_h	-5.1045 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Na+ + Citrate-3 + H+ = NaH(Citrate)-
+	log_k	6.45
+	-delta_h	-3.5982 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+K+ + Citrate-3 = K(Citrate)-2
+	log_k	1.1
+	-delta_h	5.4392 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Nta-3 = H(Nta)-2
+	log_k	10.278
+	-delta_h	-18.828 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2H+ + Nta-3 = H2(Nta)-
+	log_k	13.22
+	-delta_h	-17.9912 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+3H+ + Nta-3 = H3(Nta)
+	log_k	15.22
+	-delta_h	-16.3176 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+4H+ + Nta-3 = H4(Nta)+
+	log_k	16.22
+	-delta_h	-16.3176 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Nta-3 = Pb(Nta)-
+	log_k	12.7
+	-delta_h	-15.8992 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Nta-3 + H+ = PbH(Nta)
+	log_k	15.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Al+3 + Nta-3 = Al(Nta)
+	log_k	13.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Al+3 + Nta-3 + H+ = AlH(Nta)+
+	log_k	15.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Al+3 + Nta-3 + H2O = AlOH(Nta)- + H+
+	log_k	8.0
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + Nta-3 = Tl(Nta)-2
+	log_k	5.39
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Nta-3 = Zn(Nta)-
+	log_k	11.95
+	-delta_h	-3.7656 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2Nta-3 = Zn(Nta)2-4
+	log_k	14.88
+	-delta_h	-15.0624 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Nta-3 + H2O = ZnOH(Nta)-2 + H+
+	log_k	1.46
+	-delta_h	46.4424 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Nta-3 = Cd(Nta)-
+	log_k	11.07
+	-delta_h	-16.736 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Nta-3 = Cd(Nta)2-4
+	log_k	15.03
+	-delta_h	-38.0744 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Nta-3 + H2O = CdOH(Nta)-2 + H+
+	log_k	-0.61
+	-delta_h	29.288 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + Nta-3 + 2H+ = Hg(Nta)- + 2H2O
+	log_k	21.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Nta-3 = Cu(Nta)-
+	log_k	14.4
+	-delta_h	-7.9496 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2Nta-3 = Cu(Nta)2-4
+	log_k	18.1
+	-delta_h	-37.2376 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Nta-3 + H+ = CuH(Nta)
+	log_k	16.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Nta-3 + H2O = CuOH(Nta)-2 + H+
+	log_k	4.8
+	-delta_h	25.5224 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Nta-3 = Ag(Nta)-2
+	log_k	6.0
+	-delta_h	-26.3592 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Nta-3 = Ni(Nta)-
+	log_k	12.79
+	-delta_h	-10.0416 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2Nta-3 = Ni(Nta)2-4
+	log_k	16.96
+	-delta_h	-32.6352 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Nta-3 + H2O = NiOH(Nta)-2 + H+
+	log_k	1.5
+	-delta_h	15.0624 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Nta-3 = Co(Nta)-
+	log_k	11.6667
+	-delta_h	-0.4 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2Nta-3 = Co(Nta)2-4
+	log_k	14.9734
+	-delta_h	-20 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Nta-3 + H2O = CoOH(Nta)-2 + H+
+	log_k	0.4378
+	-delta_h	45.6 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + Nta-3 = Fe(Nta)-
+	log_k	10.19
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + 2Nta-3 = Fe(Nta)2-4
+	log_k	12.62
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + Nta-3 + H+ = FeH(Nta)
+	log_k	12.29
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + Nta-3 + H2O = FeOH(Nta)-2 + H+
+	log_k	-1.06
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + Nta-3 = Fe(Nta)
+	log_k	17.8
+	-delta_h	13.3888 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + 2Nta-3 = Fe(Nta)2-3
+	log_k	25.9
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + Nta-3 + H2O = FeOH(Nta)- + H+
+	log_k	13.23
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + Nta-3 = Mn(Nta)-
+	log_k	8.573
+	-delta_h	5.8576 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + 2Nta-3 = Mn(Nta)2-4
+	log_k	11.58
+	-delta_h	-17.1544 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + Nta-3 + 2H+ = Cr(Nta) + 2H2O
+	log_k	21.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2Nta-3 + 2H+ = Cr(Nta)2-3 + 2H2O
+	log_k	29.5
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+MoO4-2 + 2H+ + Nta-3 = MoO3(Nta)-3 + H2O
+	log_k	19.5434
+	-delta_h	-69 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+MoO4-2 + 3H+ + Nta-3 = MoO3H(Nta)-2 + H2O
+	log_k	23.3954
+	-delta_h	-71 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+MoO4-2 + 4H+ + Nta-3 = MoO3H2(Nta)- + H2O
+	log_k	25.3534
+	-delta_h	-71 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + Nta-3 = Be(Nta)-
+	log_k	9.0767
+	-delta_h	25 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Nta-3 = Mg(Nta)-
+	log_k	6.5
+	-delta_h	17.9912 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Nta-3 = Ca(Nta)-
+	log_k	7.608
+	-delta_h	-5.6902 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + 2Nta-3 = Ca(Nta)2-4
+	log_k	8.81
+	-delta_h	-32.6352 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + Nta-3 = Sr(Nta)-
+	log_k	6.2767
+	-delta_h	-2.2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Nta-3 = Ba(Nta)-
+	log_k	5.875
+	-delta_h	-6.025 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Edta-4 = H(Edta)-3
+	log_k	10.948
+	-delta_h	-23.4304 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2H+ + Edta-4 = H2(Edta)-2
+	log_k	17.221
+	-delta_h	-41.0032 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+3H+ + Edta-4 = H3(Edta)-
+	log_k	20.34
+	-delta_h	-35.564 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+4H+ + Edta-4 = H4(Edta)
+	log_k	22.5
+	-delta_h	-34.3088 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+5H+ + Edta-4 = H5(Edta)+
+	log_k	24.0
+	-delta_h	-32.2168 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 2H+ + Edta-4 = Sn(Edta)-2 + 2H2O
+	log_k	27.026
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 3H+ + Edta-4 = SnH(Edta)- + 2H2O
+	log_k	29.934
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 4H+ + Edta-4 = SnH2(Edta) + 2H2O
+	log_k	31.638
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Edta-4 = Pb(Edta)-2
+	log_k	19.8
+	-delta_h	-54.8104 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Edta-4 + H+ = PbH(Edta)-
+	log_k	23.0
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Edta-4 + 2H+ = PbH2(Edta)
+	log_k	24.9
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Al+3 + Edta-4 = Al(Edta)-
+	log_k	19.1
+	-delta_h	52.7184 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Al+3 + Edta-4 + H+ = AlH(Edta)
+	log_k	21.8
+	-delta_h	36.4008 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Al+3 + Edta-4 + H2O = AlOH(Edta)-2 + H+
+	log_k	12.8
+	-delta_h	73.6384 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + Edta-4 = Tl(Edta)-3
+	log_k	7.27
+	-delta_h	-43.5136 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + Edta-4 + H+ = TlH(Edta)-2
+	log_k	13.68
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Edta-4 = Zn(Edta)-2
+	log_k	18.0
+	-delta_h	-19.2464 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Edta-4 + H+ = ZnH(Edta)-
+	log_k	21.4
+	-delta_h	-28.4512 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Edta-4 + H2O = ZnOH(Edta)-3 + H+
+	log_k	5.8
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Edta-4 = Cd(Edta)-2
+	log_k	18.2
+	-delta_h	-38.0744 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Edta-4 + H+ = CdH(Edta)-
+	log_k	21.5
+	-delta_h	-39.748 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + Edta-4 + 2H+ = Hg(Edta)-2 + 2H2O
+	log_k	29.3
+	-delta_h	-125.102 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + Edta-4 + 3H+ = HgH(Edta)- + 2H2O
+	log_k	32.9
+	-delta_h	-128.449 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Edta-4 = Cu(Edta)-2
+	log_k	20.5
+	-delta_h	-34.7272 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Edta-4 + H+ = CuH(Edta)-
+	log_k	24.0
+	-delta_h	-43.0952 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Edta-4 + 2H+ = CuH2(Edta)
+	log_k	26.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Edta-4 + H2O = CuOH(Edta)-3 + H+
+	log_k	8.5
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Edta-4 = Ag(Edta)-3
+	log_k	8.08
+	-delta_h	-31.38 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Edta-4 + H+ = AgH(Edta)-2
+	log_k	15.21
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Edta-4 = Ni(Edta)-2
+	log_k	20.1
+	-delta_h	-30.9616 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Edta-4 + H+ = NiH(Edta)-
+	log_k	23.6
+	-delta_h	-38.4928 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Edta-4 + H2O = NiOH(Edta)-3 + H+
+	log_k	7.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Edta-4 = Co(Edta)-2
+	log_k	18.1657
+	-delta_h	-15 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Edta-4 + H+ = CoH(Edta)-
+	log_k	21.5946
+	-delta_h	-22.9 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Edta-4 + 2H+ = CoH2(Edta)
+	log_k	23.4986
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+3 + Edta-4 = Co(Edta)-
+	log_k	43.9735
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+3 + Edta-4 + H+ = CoH(Edta)
+	log_k	47.168
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + Edta-4 = Fe(Edta)-2
+	log_k	16.0
+	-delta_h	-16.736 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + Edta-4 + H+ = FeH(Edta)-
+	log_k	19.06
+	-delta_h	-27.6144 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + Edta-4 + H2O = FeOH(Edta)-3 + H+
+	log_k	6.5
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + Edta-4 + 2H2O = Fe(OH)2(Edta)-4 + 2H+
+	log_k	-4.0
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + Edta-4 = Fe(Edta)-
+	log_k	27.7
+	-delta_h	-11.2968 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + Edta-4 + H+ = FeH(Edta)
+	log_k	29.2
+	-delta_h	-11.7152 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + Edta-4 + H2O = FeOH(Edta)-2 + H+
+	log_k	19.9
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + Edta-4 + 2H2O = Fe(OH)2(Edta)-3 + 2H+
+	log_k	9.85
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + Edta-4 = Mn(Edta)-2
+	log_k	15.6
+	-delta_h	-19.2464 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + Edta-4 + H+ = MnH(Edta)-
+	log_k	19.1
+	-delta_h	-24.2672 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr+2 + Edta-4 = Cr(Edta)-2
+	log_k	15.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr+2 + Edta-4 + H+ = CrH(Edta)-
+	log_k	19.1
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + Edta-4 + 2H+ = Cr(Edta)- + 2H2O
+	log_k	35.5
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + Edta-4 + 3H+ = CrH(Edta) + 2H2O
+	log_k	37.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + Edta-4 + H+ = CrOH(Edta)-2 + H2O
+	log_k	27.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + Edta-4 = Be(Edta)-2
+	log_k	11.4157
+	-delta_h	41 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Edta-4 = Mg(Edta)-2
+	log_k	10.57
+	-delta_h	13.8072 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Edta-4 + H+ = MgH(Edta)-
+	log_k	14.97
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Edta-4 = Ca(Edta)-2
+	log_k	12.42
+	-delta_h	-25.5224 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Edta-4 + H+ = CaH(Edta)-
+	log_k	15.9
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + Edta-4 = Sr(Edta)-2
+	log_k	10.4357
+	-delta_h	-17 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + Edta-4 + H+ = SrH(Edta)-
+	log_k	14.7946
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Edta-4 = Ba(Edta)-2
+	log_k	7.72
+	-delta_h	-20.5016 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Na+ + Edta-4 = Na(Edta)-3
+	log_k	2.7
+	-delta_h	-5.8576 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+K+ + Edta-4 = K(Edta)-3
+	log_k	1.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Propionate- = H(Propionate)
+	log_k	4.874
+	-delta_h	0.66 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Propionate- = Pb(Propionate)+
+	log_k	2.64
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 2Propionate- = Pb(Propionate)2
+	log_k	3.1765
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Propionate- = Zn(Propionate)+
+	log_k	1.4389
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2Propionate- = Zn(Propionate)2
+	log_k	1.842
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Propionate- = Cd(Propionate)+
+	log_k	1.598
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Propionate- = Cd(Propionate)2
+	log_k	2.472
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + Propionate- = Hg(Propionate)+ + 2H2O
+	log_k	10.594
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Propionate- = Cu(Propionate)+
+	log_k	2.22
+	-delta_h	4.1 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2Propionate- = Cu(Propionate)2
+	log_k	3.5
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Propionate- = Ni(Propionate)+
+	log_k	0.908
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Propionate- = Co(Propionate)+
+	log_k	0.671
+	-delta_h	4.6 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2Propionate- = Co(Propionate)2
+	log_k	0.5565
+	-delta_h	16 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + Propionate- = Fe(Propionate)+2
+	log_k	4.012
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2H+ + Propionate- = Cr(Propionate)+2 + 2H2O
+	log_k	15.0773
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2H+ + 2Propionate- = Cr(Propionate)2+ + 2H2O
+	log_k	17.9563
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2H+ + 3Propionate- = Cr(Propionate)3 + 2H2O
+	log_k	20.8858
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Propionate- = Mg(Propionate)+
+	log_k	0.9689
+	-delta_h	4.2677 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Propionate- = Ca(Propionate)+
+	log_k	0.9289
+	-delta_h	3.3472 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + Propionate- = Sr(Propionate)+
+	log_k	0.8589
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Propionate- = Ba(Propionate)+
+	log_k	0.7689
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + 2Propionate- = Ba(Propionate)2
+	log_k	0.9834
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Butyrate- = H(Butyrate)
+	log_k	4.819
+	-delta_h	2.8 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Butyrate- = Pb(Butyrate)+
+	log_k	2.101
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Butyrate- = Zn(Butyrate)+
+	log_k	1.4289
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + Butyrate- = Hg(Butyrate)+ + 2H2O
+	log_k	10.3529
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Butyrate- = Cu(Butyrate)+
+	log_k	2.14
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Butyrate- = Ni(Butyrate)+
+	log_k	0.691
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Butyrate- = Co(Butyrate)+
+	log_k	0.591
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2Butyrate- = Co(Butyrate)2
+	log_k	0.7765
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Butyrate- = Mg(Butyrate)+
+	log_k	0.9589
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Butyrate- = Ca(Butyrate)+
+	log_k	0.9389
+	-delta_h	3.3472 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + Butyrate- = Sr(Butyrate)+
+	log_k	0.7889
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Butyrate- = Ba(Butyrate)+
+	log_k	0.7389
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + 2Butyrate- = Ba(Butyrate)2
+	log_k	0.88
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Isobutyrate- = H(Isobutyrate)
+	log_k	4.849
+	-delta_h	3.2217 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Isobutyrate- = Zn(Isobutyrate)+
+	log_k	1.44
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Isobutyrate- = Cu(Isobutyrate)+
+	log_k	2.17
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2Isobutyrate- = Cu(Isobutyrate)2
+	log_k	3.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + Isobutyrate- = Fe(Isobutyrate)+2
+	log_k	4.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Isobutyrate- = Ca(Isobutyrate)+
+	log_k	0.51
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Two_picoline = H(Two_picoline)+
+	log_k	5.95
+	-delta_h	-25.5224 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Two_picoline = Cu(Two_picoline)+2
+	log_k	1.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2Two_picoline = Cu(Two_picoline)2+2
+	log_k	2.8
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + Two_picoline = Cu(Two_picoline)+
+	log_k	5.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + 2Two_picoline = Cu(Two_picoline)2+
+	log_k	7.65
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + 3Two_picoline = Cu(Two_picoline)3+
+	log_k	8.5
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Two_picoline = Ag(Two_picoline)+
+	log_k	2.32
+	-delta_h	-24.2672 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Two_picoline = Ag(Two_picoline)2+
+	log_k	4.68
+	-delta_h	-42.6768 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Two_picoline = Ni(Two_picoline)+2
+	log_k	0.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Three_picoline = H(Three_picoline)+
+	log_k	5.7
+	-delta_h	-23.8488 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Three_picoline = Zn(Three_picoline)+2
+	log_k	1.0
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2Three_picoline = Zn(Three_picoline)2+2
+	log_k	2.1
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 3Three_picoline = Zn(Three_picoline)3+2
+	log_k	2.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 4Three_picoline = Zn(Three_picoline)4+2
+	log_k	3.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Three_picoline = Cd(Three_picoline)+2
+	log_k	1.42
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Three_picoline = Cd(Three_picoline)2+2
+	log_k	2.27
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 3Three_picoline = Cd(Three_picoline)3+2
+	log_k	3.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 4Three_picoline = Cd(Three_picoline)4+2
+	log_k	4.0
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + Three_picoline = Cu(Three_picoline)+
+	log_k	5.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + 2Three_picoline = Cu(Three_picoline)2+
+	log_k	7.78
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + 3Three_picoline = Cu(Three_picoline)3+
+	log_k	8.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + 4Three_picoline = Cu(Three_picoline)4+
+	log_k	9.0
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Three_picoline = Cu(Three_picoline)+2
+	log_k	2.77
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2Three_picoline = Cu(Three_picoline)2+2
+	log_k	4.8
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 3Three_picoline = Cu(Three_picoline)3+2
+	log_k	6.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 4Three_picoline = Cu(Three_picoline)4+2
+	log_k	7.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Three_picoline = Ag(Three_picoline)+
+	log_k	2.2
+	-delta_h	-21.7568 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Three_picoline = Ag(Three_picoline)2+
+	log_k	4.46
+	-delta_h	-49.7896 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Three_picoline = Ni(Three_picoline)+2
+	log_k	1.87
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2Three_picoline = Ni(Three_picoline)2+2
+	log_k	3.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 3Three_picoline = Ni(Three_picoline)3+2
+	log_k	4.1
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 4Three_picoline = Ni(Three_picoline)4+2
+	log_k	4.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Three_picoline = Co(Three_picoline)+2
+	log_k	1.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2Three_picoline = Co(Three_picoline)2+2
+	log_k	2.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 3Three_picoline = Co(Three_picoline)3+2
+	log_k	2.5
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Four_picoline = H(Four_picoline)+
+	log_k	6.03
+	-delta_h	-25.3132 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Four_picoline = Zn(Four_picoline)+2
+	log_k	1.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2Four_picoline = Zn(Four_picoline)2+2
+	log_k	2.11
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 3Four_picoline = Zn(Four_picoline)3+2
+	log_k	2.85
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Four_picoline = Cd(Four_picoline)+2
+	log_k	1.59
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Four_picoline = Cd(Four_picoline)2+2
+	log_k	2.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 3Four_picoline = Cd(Four_picoline)3+2
+	log_k	3.18
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 4Four_picoline = Cd(Four_picoline)4+2
+	log_k	4.0
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + Four_picoline = Cu(Four_picoline)+
+	log_k	5.65
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + 2Four_picoline = Cu(Four_picoline)2+
+	log_k	8.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + 3Four_picoline = Cu(Four_picoline)3+
+	log_k	8.8
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + 4Four_picoline = Cu(Four_picoline)4+
+	log_k	9.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Four_picoline = Cu(Four_picoline)+2
+	log_k	2.88
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2Four_picoline = Cu(Four_picoline)2+2
+	log_k	5.16
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 3Four_picoline = Cu(Four_picoline)3+2
+	log_k	6.77
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 4Four_picoline = Cu(Four_picoline)4+2
+	log_k	8.08
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 5Four_picoline = Cu(Four_picoline)5+2
+	log_k	8.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Four_picoline = Ag(Four_picoline)+
+	log_k	2.03
+	-delta_h	-25.5224 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Four_picoline = Ag(Four_picoline)2+
+	log_k	4.39
+	-delta_h	-53.5552 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Four_picoline = Ni(Four_picoline)+2
+	log_k	2.11
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2Four_picoline = Ni(Four_picoline)2+2
+	log_k	3.59
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 3Four_picoline = Ni(Four_picoline)3+2
+	log_k	4.34
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 4Four_picoline = Ni(Four_picoline)4+2
+	log_k	4.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Four_picoline = Co(Four_picoline)+2
+	log_k	1.56
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2Four_picoline = Co(Four_picoline)2+2
+	log_k	2.51
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 3Four_picoline = Co(Four_picoline)3+2
+	log_k	2.94
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 4Four_picoline = Co(Four_picoline)4+2
+	log_k	3.17
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Formate- = H(Formate)
+	log_k	3.745
+	-delta_h	0.1674 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Formate- = Pb(Formate)+
+	log_k	2.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Formate- = Zn(Formate)+
+	log_k	1.44
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Formate- = Cd(Formate)+
+	log_k	1.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + Formate- + 2H+ = Hg(Formate)+ + 2H2O
+	log_k	9.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Formate- = Cu(Formate)+
+	log_k	2.0
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Formate- = Ni(Formate)+
+	log_k	1.22
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Formate- = Co(Formate)+
+	log_k	1.209
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2Formate- = Co(Formate)2
+	log_k	1.1365
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr+2 + Formate- = Cr(Formate)+
+	log_k	1.07
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Formate- = Mg(Formate)+
+	log_k	1.43
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Formate- = Ca(Formate)+
+	log_k	1.43
+	-delta_h	4.184 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + Formate- = Sr(Formate)+
+	log_k	1.39
+	-delta_h	4 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Formate- = Ba(Formate)+
+	log_k	1.38
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Isovalerate- = H(Isovalerate)
+	log_k	4.781
+	-delta_h	4.5606 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Isovalerate- = Zn(Isovalerate)+
+	log_k	1.39
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Isovalerate- = Cu(Isovalerate)+
+	log_k	2.08
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Isovalerate- = Ca(Isovalerate)+
+	log_k	0.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Valerate- = H(Valerate)
+	log_k	4.843
+	-delta_h	2.887 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Valerate- = Cu(Valerate)+
+	log_k	2.12
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Valerate- = Ca(Valerate)+
+	log_k	0.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Valerate- = Ba(Valerate)+
+	log_k	-0.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Acetate- = H(Acetate)
+	log_k	4.757
+	-delta_h	0.41 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 2H+ + Acetate- = Sn(Acetate)+ + 2H2O
+	log_k	10.0213
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 2H+ + 2Acetate- = Sn(Acetate)2 + 2H2O
+	log_k	12.32
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 2H+ + 3Acetate- = Sn(Acetate)3- + 2H2O
+	log_k	13.55
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Acetate- = Pb(Acetate)+
+	log_k	2.68
+	-delta_h	-0.4 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 2Acetate- = Pb(Acetate)2
+	log_k	4.08
+	-delta_h	-0.8 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + Acetate- = Tl(Acetate)
+	log_k	-0.11
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Acetate- = Zn(Acetate)+
+	log_k	1.58
+	-delta_h	8.3 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2Acetate- = Zn(Acetate)2
+	log_k	2.6434
+	-delta_h	22 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Acetate- = Cd(Acetate)+
+	log_k	1.93
+	-delta_h	9.6 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Acetate- = Cd(Acetate)2
+	log_k	2.86
+	-delta_h	15 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + Acetate- = Hg(Acetate)+ + 2H2O
+	log_k	10.494
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2H+ + 2Acetate- = Hg(Acetate)2 + 2H2O
+	log_k	13.83
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Acetate- = Cu(Acetate)+
+	log_k	2.21
+	-delta_h	7.1 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2Acetate- = Cu(Acetate)2
+	log_k	3.4
+	-delta_h	12 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 3Acetate- = Cu(Acetate)3-
+	log_k	3.9434
+	-delta_h	6.2 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Acetate- = Ag(Acetate)
+	log_k	0.73
+	-delta_h	3 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Acetate- = Ag(Acetate)2-
+	log_k	0.64
+	-delta_h	3 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Acetate- = Ni(Acetate)+
+	log_k	1.37
+	-delta_h	8.7 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2Acetate- = Ni(Acetate)2
+	log_k	2.1
+	-delta_h	10 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Acetate- = Co(Acetate)+
+	log_k	1.38
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2Acetate- = Co(Acetate)2
+	log_k	0.7565
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + Acetate- = Fe(Acetate)+
+	log_k	1.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + Acetate- = Fe(Acetate)+2
+	log_k	4.0234
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + 2Acetate- = Fe(Acetate)2+
+	log_k	7.5723
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + 3Acetate- = Fe(Acetate)3
+	log_k	9.5867
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + Acetate- = Mn(Acetate)+
+	log_k	1.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr+2 + Acetate- = Cr(Acetate)+
+	log_k	1.8
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr+2 + 2Acetate- = Cr(Acetate)2
+	log_k	2.92
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2H+ + Acetate- = Cr(Acetate)+2 + 2H2O
+	log_k	15.0073
+	-delta_h	-125.62 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2H+ + 2Acetate- = Cr(Acetate)2+ + 2H2O
+	log_k	17.9963
+	-delta_h	-117.62 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2H+ + 3Acetate- = Cr(Acetate)3 + 2H2O
+	log_k	20.7858
+	-delta_h	-96.62 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + Acetate- = Be(Acetate)+
+	log_k	2.0489
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + 2Acetate- = Be(Acetate)2
+	log_k	3.0034
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Acetate- = Mg(Acetate)+
+	log_k	1.27
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Acetate- = Ca(Acetate)+
+	log_k	1.18
+	-delta_h	4 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + Acetate- = Sr(Acetate)+
+	log_k	1.14
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Acetate- = Ba(Acetate)+
+	log_k	1.07
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Na+ + Acetate- = Na(Acetate)
+	log_k	-0.18
+	-delta_h	12 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+K+ + Acetate- = K(Acetate)
+	log_k	-0.1955
+	-delta_h	4.184 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Tartarate-2 = H(Tartarate)-
+	log_k	4.366
+	-delta_h	-0.7531 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2H+ + Tartarate-2 = H2(Tartarate)
+	log_k	7.402
+	-delta_h	-3.6819 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sn(OH)2 + 2H+ + Tartarate-2 = Sn(Tartarate) + 2H2O
+	log_k	13.1518
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Tartarate-2 = Pb(Tartarate)
+	log_k	3.98
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Al+3 + 2Tartarate-2 = Al(Tartarate)2-
+	log_k	9.37
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + Tartarate-2 = Tl(Tartarate)-
+	log_k	1.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + Tartarate-2 + H+ = TlH(Tartarate)
+	log_k	4.8
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Tartarate-2 = Zn(Tartarate)
+	log_k	3.43
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2Tartarate-2 = Zn(Tartarate)2-2
+	log_k	5.5
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Tartarate-2 + H+ = ZnH(Tartarate)+
+	log_k	5.9
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Tartarate-2 = Cd(Tartarate)
+	log_k	2.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Tartarate-2 = Cd(Tartarate)2-2
+	log_k	4.1
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + Tartarate-2 + 2H+ = Hg(Tartarate) + 2H2O
+	log_k	14.0
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Tartarate-2 = Cu(Tartarate)
+	log_k	3.97
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Tartarate-2 + H+ = CuH(Tartarate)+
+	log_k	6.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Tartarate-2 = Ni(Tartarate)
+	log_k	3.46
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Tartarate-2 + H+ = NiH(Tartarate)+
+	log_k	5.89
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Tartarate-2 = Co(Tartarate)
+	log_k	3.05
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2Tartarate-2 = Co(Tartarate)2-2
+	log_k	4.0
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + H+ + Tartarate-2 = CoH(Tartarate)+
+	log_k	5.754
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + Tartarate-2 = Fe(Tartarate)
+	log_k	3.1
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + Tartarate-2 = Fe(Tartarate)+
+	log_k	7.78
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + Tartarate-2 = Mn(Tartarate)
+	log_k	3.38
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + Tartarate-2 + H+ = MnH(Tartarate)+
+	log_k	6.0
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Tartarate-2 = Mg(Tartarate)
+	log_k	2.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Tartarate-2 + H+ = MgH(Tartarate)+
+	log_k	5.75
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + Tartarate-2 = Be(Tartarate)
+	log_k	2.768
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + 2Tartarate-2 = Be(Tartarate)2-2
+	log_k	4.008
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Tartarate-2 = Ca(Tartarate)
+	log_k	2.8
+	-delta_h	-8.368 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Tartarate-2 + H+ = CaH(Tartarate)+
+	log_k	5.86
+	-delta_h	-9.1211 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + Tartarate-2 = Sr(Tartarate)
+	log_k	2.55
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + H+ + Tartarate-2 = SrH(Tartarate)+
+	log_k	5.8949
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Tartarate-2 = Ba(Tartarate)
+	log_k	2.54
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Tartarate-2 + H+ = BaH(Tartarate)+
+	log_k	5.77
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Na+ + Tartarate-2 = Na(Tartarate)-
+	log_k	0.9
+	-delta_h	-0.8368 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Na+ + Tartarate-2 + H+ = NaH(Tartarate)
+	log_k	4.58
+	-delta_h	-2.8451 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+K+ + Tartarate-2 = K(Tartarate)-
+	log_k	0.8
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Glycine- = H(Glycine)
+	log_k	9.778
+	-delta_h	-44.3504 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2H+ + Glycine- = H2(Glycine)+
+	log_k	12.128
+	-delta_h	-48.4507 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Glycine- = Pb(Glycine)+
+	log_k	5.47
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 2Glycine- = Pb(Glycine)2
+	log_k	8.86
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Tl+ + Glycine- = Tl(Glycine)
+	log_k	1.72
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Glycine- = Zn(Glycine)+
+	log_k	5.38
+	-delta_h	-11.7152 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2Glycine- = Zn(Glycine)2
+	log_k	9.81
+	-delta_h	-24.2672 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 3Glycine- = Zn(Glycine)3-
+	log_k	12.3
+	-delta_h	-39.748 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Glycine- = Cd(Glycine)+
+	log_k	4.69
+	-delta_h	-8.7864 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Glycine- = Cd(Glycine)2
+	log_k	8.4
+	-delta_h	-22.5936 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 3Glycine- = Cd(Glycine)3-
+	log_k	10.7
+	-delta_h	-35.9824 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + Glycine- + 2H+ = Hg(Glycine)+ + 2H2O
+	log_k	17.0
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2Glycine- + 2H+ = Hg(Glycine)2 + 2H2O
+	log_k	25.8
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+ + 2Glycine- = Cu(Glycine)2-
+	log_k	10.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Glycine- = Cu(Glycine)+
+	log_k	8.57
+	-delta_h	-25.104 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2Glycine- = Cu(Glycine)2
+	log_k	15.7
+	-delta_h	-54.8104 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Glycine- = Ag(Glycine)
+	log_k	3.51
+	-delta_h	-19.2464 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Glycine- = Ag(Glycine)2-
+	log_k	6.89
+	-delta_h	-48.116 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Glycine- = Ni(Glycine)+
+	log_k	6.15
+	-delta_h	-18.828 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2Glycine- = Ni(Glycine)2
+	log_k	11.12
+	-delta_h	-38.0744 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 3Glycine- = Ni(Glycine)3-
+	log_k	14.63
+	-delta_h	-62.3416 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Glycine- = Co(Glycine)+
+	log_k	5.07
+	-delta_h	-12 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2Glycine- = Co(Glycine)2
+	log_k	9.07
+	-delta_h	-26 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 3Glycine- = Co(Glycine)3-
+	log_k	11.6
+	-delta_h	-41 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Glycine- + H2O = CoOH(Glycine) + H+
+	log_k	-5.02
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + Glycine- = Fe(Glycine)+
+	log_k	4.31
+	-delta_h	-15.0624 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + 2Glycine- = Fe(Glycine)2
+	log_k	8.29
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + Glycine- = Fe(Glycine)+2
+	log_k	9.38
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + Glycine- + H+ = FeH(Glycine)+3
+	log_k	11.55
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + Glycine- = Mn(Glycine)+
+	log_k	3.19
+	-delta_h	-1.2552 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + 2Glycine- = Mn(Glycine)2
+	log_k	5.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + Glycine- + 2H+ = Cr(Glycine)+2 + 2H2O
+	log_k	18.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2Glycine- + 2H+ = Cr(Glycine)2+ + 2H2O
+	log_k	25.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 3Glycine- + 2H+ = Cr(Glycine)3 + 2H2O
+	log_k	31.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Glycine- = Mg(Glycine)+
+	log_k	2.08
+	-delta_h	4.184 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Glycine- = Ca(Glycine)+
+	log_k	1.39
+	-delta_h	-4.184 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Glycine- + H+ = CaH(Glycine)+2
+	log_k	10.1
+	-delta_h	-35.9824 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + Glycine- = Sr(Glycine)+
+	log_k	0.91
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Glycine- = Ba(Glycine)+
+	log_k	0.77
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Salicylate-2 = H(Salicylate)-
+	log_k	13.7
+	-delta_h	-35.7732 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2H+ + Salicylate-2 = H2(Salicylate)
+	log_k	16.8
+	-delta_h	-38.7857 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Salicylate-2 = Zn(Salicylate)
+	log_k	7.71
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Salicylate-2 + H+ = ZnH(Salicylate)+
+	log_k	15.5
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Salicylate-2 = Cd(Salicylate)
+	log_k	6.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Salicylate-2 + H+ = CdH(Salicylate)+
+	log_k	16.0
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Salicylate-2 = Cu(Salicylate)
+	log_k	11.3
+	-delta_h	-17.9912 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2Salicylate-2 = Cu(Salicylate)2-2
+	log_k	19.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Salicylate-2 + H+ = CuH(Salicylate)+
+	log_k	14.8
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Salicylate-2 = Ni(Salicylate)
+	log_k	8.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2Salicylate-2 = Ni(Salicylate)2-2
+	log_k	12.64
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Salicylate-2 = Co(Salicylate)
+	log_k	7.4289
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2Salicylate-2 = Co(Salicylate)2-2
+	log_k	11.8
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + Salicylate-2 = Fe(Salicylate)
+	log_k	7.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+2 + 2Salicylate-2 = Fe(Salicylate)2-2
+	log_k	11.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + Salicylate-2 = Fe(Salicylate)+
+	log_k	17.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Fe+3 + 2Salicylate-2 = Fe(Salicylate)2-
+	log_k	29.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + Salicylate-2 = Mn(Salicylate)
+	log_k	6.5
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + 2Salicylate-2 = Mn(Salicylate)2-2
+	log_k	10.1
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + Salicylate-2 = Be(Salicylate)
+	log_k	13.3889
+	-delta_h	-31.7732 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + 2Salicylate-2 = Be(Salicylate)2-2
+	log_k	23.25
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Salicylate-2 = Mg(Salicylate)
+	log_k	5.76
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Salicylate-2 + H+ = MgH(Salicylate)+
+	log_k	15.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Salicylate-2 = Ca(Salicylate)
+	log_k	4.05
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Salicylate-2 + H+ = CaH(Salicylate)+
+	log_k	14.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Salicylate-2 + H+ = BaH(Salicylate)+
+	log_k	13.9
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Glutamate-2 = H(Glutamate)-
+	log_k	9.96
+	-delta_h	-41.0032 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2H+ + Glutamate-2 = H2(Glutamate)
+	log_k	14.26
+	-delta_h	-43.5136 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+3H+ + Glutamate-2 = H3(Glutamate)+
+	log_k	16.42
+	-delta_h	-46.8608 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Glutamate-2 = Pb(Glutamate)
+	log_k	6.43
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 2Glutamate-2 = Pb(Glutamate)2-2
+	log_k	8.61
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Glutamate-2 + H+ = PbH(Glutamate)+
+	log_k	14.08
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Al+3 + Glutamate-2 + H+ = AlH(Glutamate)+2
+	log_k	13.07
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Glutamate-2 = Zn(Glutamate)
+	log_k	6.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2Glutamate-2 = Zn(Glutamate)2-2
+	log_k	9.13
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 3Glutamate-2 = Zn(Glutamate)3-4
+	log_k	9.8
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Glutamate-2 = Cd(Glutamate)
+	log_k	4.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Glutamate-2 = Cd(Glutamate)2-2
+	log_k	7.59
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + Glutamate-2 + 2H+ = Hg(Glutamate) + 2H2O
+	log_k	19.8
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Hg(OH)2 + 2Glutamate-2 + 2H+ = Hg(Glutamate)2-2 + 2H2O
+	log_k	26.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Glutamate-2 = Cu(Glutamate)
+	log_k	9.17
+	-delta_h	-20.92 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2Glutamate-2 = Cu(Glutamate)2-2
+	log_k	15.78
+	-delta_h	-48.116 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Glutamate-2 + H+ = CuH(Glutamate)+
+	log_k	13.3
+	-delta_h	-28.0328 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + Glutamate-2 = Ag(Glutamate)-
+	log_k	4.22
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ag+ + 2Glutamate-2 = Ag(Glutamate)2-3
+	log_k	7.36
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2Ag+ + Glutamate-2 = Ag2(Glutamate)
+	log_k	3.4
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Glutamate-2 = Ni(Glutamate)
+	log_k	6.47
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + 2Glutamate-2 = Ni(Glutamate)2-2
+	log_k	10.7
+	-delta_h	-30.9616 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Glutamate-2 = Co(Glutamate)
+	log_k	5.4178
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + 2Glutamate-2 = Co(Glutamate)2-2
+	log_k	8.7178
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + Glutamate-2 = Mn(Glutamate)
+	log_k	4.95
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + 2Glutamate-2 = Mn(Glutamate)2-2
+	log_k	8.48
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + Glutamate-2 + 2H+ = Cr(Glutamate)+ + 2H2O
+	log_k	22.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2Glutamate-2 + 2H+ = Cr(Glutamate)2- + 2H2O
+	log_k	30.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + Glutamate-2 + 3H+ = CrH(Glutamate)+2 + 2H2O
+	log_k	25.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Glutamate-2 = Mg(Glutamate)
+	log_k	2.8
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Glutamate-2 = Ca(Glutamate)
+	log_k	2.06
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Glutamate-2 + H+ = CaH(Glutamate)+
+	log_k	11.13
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Sr+2 + Glutamate-2 = Sr(Glutamate)
+	log_k	2.2278
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Glutamate-2 = Ba(Glutamate)
+	log_k	2.14
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+H+ + Phthalate-2 = H(Phthalate)-
+	log_k	5.408
+	-delta_h	2.1757 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+2H+ + Phthalate-2 = H2(Phthalate)
+	log_k	8.358
+	-delta_h	4.8534 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Phthalate-2 = Pb(Phthalate)
+	log_k	4.26
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + 2Phthalate-2 = Pb(Phthalate)2-2
+	log_k	4.83
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Pb+2 + Phthalate-2 + H+ = PbH(Phthalate)+
+	log_k	6.98
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Al+3 + Phthalate-2 = Al(Phthalate)+
+	log_k	4.56
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Al+3 + 2Phthalate-2 = Al(Phthalate)2-
+	log_k	7.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + Phthalate-2 = Zn(Phthalate)
+	log_k	2.91
+	-delta_h	13.3888 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Zn+2 + 2Phthalate-2 = Zn(Phthalate)2-2
+	log_k	4.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Phthalate-2 = Cd(Phthalate)
+	log_k	3.43
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + Phthalate-2 + H+ = CdH(Phthalate)+
+	log_k	6.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cd+2 + 2Phthalate-2 = Cd(Phthalate)2-2
+	log_k	3.7
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Phthalate-2 = Cu(Phthalate)
+	log_k	4.02
+	-delta_h	8.368 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + Phthalate-2 + H+ = CuH(Phthalate)+
+	log_k	7.1
+	-delta_h	3.8493 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cu+2 + 2Phthalate-2 = Cu(Phthalate)2-2
+	log_k	5.3
+	-delta_h	15.8992 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Phthalate-2 = Ni(Phthalate)
+	log_k	2.95
+	-delta_h	7.5312 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ni+2 + Phthalate-2 + H+ = NiH(Phthalate)+
+	log_k	6.6
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + Phthalate-2 = Co(Phthalate)
+	log_k	2.83
+	-delta_h	7.9 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Co+2 + H+ + Phthalate-2 = CoH(Phthalate)+
+	log_k	7.227
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mn+2 + Phthalate-2 = Mn(Phthalate)
+	log_k	2.74
+	-delta_h	10.0416 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + Phthalate-2 + 2H+ = Cr(Phthalate)+ + 2H2O
+	log_k	16.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 2Phthalate-2 + 2H+ = Cr(Phthalate)2- + 2H2O
+	log_k	21.2
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Cr(OH)2+ + 3Phthalate-2 + 2H+ = Cr(Phthalate)3-3 + 2H2O
+	log_k	23.3
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + Phthalate-2 = Be(Phthalate)
+	log_k	4.8278
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Be+2 + 2Phthalate-2 = Be(Phthalate)2-2
+	log_k	6.5478
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Mg+2 + Phthalate-2 = Mg(Phthalate)
+	log_k	2.49
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Phthalate-2 = Ca(Phthalate)
+	log_k	2.45
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ca+2 + Phthalate-2 + H+ = CaH(Phthalate)+
+	log_k	6.43
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Ba+2 + Phthalate-2 = Ba(Phthalate)
+	log_k	2.33
+	-delta_h	0 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+Na+ + Phthalate-2 = Na(Phthalate)-
+	log_k	0.8
+	-delta_h	4.184 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
+K+ + Phthalate-2 = K(Phthalate)-
+	log_k	0.7
+	-delta_h	3.7656 kJ 
+	gamma	0 0 
+	# source	minteq.v4.dat
 
-PHASES
-CO2(g)
-	CO2 = CO2
-	log_k	-1.468
-	-delta_h	-4.776 kcal 
-	-analytic	108.3865 0.01985076 -6919.53 -40.45154 669365.0 
-	# source	wateq4f.dat
-O2(g)
-	O2 = O2
-	log_k	-2.8983
-	-analytic	-7.5001e+000 7.8981e-003 0.0000e+000 0.0000e+000 2.0027e+005 
-	# source	wateq4f.dat
-H2(g)
-	H2 = H2
-	log_k	-3.15
-	-delta_h	-1.759 kcal 
-	# source	wateq4f.dat
-N2(g)
-	N2 = N2
-	log_k	-3.26
-	-delta_h	-1.358 kcal 
-	# source	wateq4f.dat
-H2S(g)
-	H2S = H2S
-	log_k	-0.997
-	-delta_h	-4.570 kcal 
-	# source	wateq4f.dat
-CH4(g)
-	CH4 = CH4
-	log_k	-2.86
-	-delta_h	-3.373 kcal 
-	# source	wateq4f.dat
-NH3(g)
-	NH3 = NH3
-	log_k	1.77
-	-delta_h	-8.170 kcal 
-	# source	wateq4f.dat
+Hdg = Hdg
+	log_k	0.0
+	# source	was_missing
+Oxg = Oxg
+	log_k	0.0
+	# source	was_missing
+Mtg = Mtg
+	log_k	0.0
+	# source	was_missing
+H2Sg = H2Sg
+	log_k	0.0
+	# source	was_missing
+Ntg = Ntg
+	log_k	0.0
+	# source	was_missing
+
+END

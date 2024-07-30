@@ -22,10 +22,12 @@ def main():
     """
     Main function for the program.
     """
-
     db_list = p.phreeqc_database_list('databases/test_data')
     mst = ct.compile_master_solution_table(db_list)
     sp = ct.compile_solution_species_table(db_list)
+    # Fill in missing log_k = 0.0 equations
+    missing = ct.MissingSolutionSpecies(mst, sp)
+    sp = missing.sp
     phases = ct.compile_phase_table(db_list)
     with open('master_database.dat', 'w', encoding='utf-8') as f:
         f.write(NAMED_EXPRESSIONS)

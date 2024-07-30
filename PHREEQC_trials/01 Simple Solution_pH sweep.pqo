@@ -9,38 +9,37 @@ Reading data base.
 	NAMED_EXPRESSIONS
 	SOLUTION_MASTER_SPECIES
 	SOLUTION_SPECIES
-	PHASES
-------------------------------------
-Reading input data for simulation 1.
-------------------------------------
-
-	DATABASE \\wsl.localhost\Ubuntu\home\jjl122\repos\irp-jjl122\master_database.dat
-	TITLE 01_SIMPLE_SOLUTION
-	SOLUTION_MASTER_SPECIES
-	As(+5)	H2AsO4-		0.0	As	74.92
 	END
------
-TITLE
------
-
- 01_SIMPLE_SOLUTION
-
-ERROR: Every primary master species for a redox element
-	must also be a secondary master species.
-	H3AsO4 is the primary master species for element As.
-	Another entry in SOLUTION_MASTER_SPECIES is needed.
-	Define species H3AsO4 as a secondary master species for a valence state.
-	For example: 
-	As(0)	H3AsO4 alk gfw
-ERROR: Every primary master species for a redox element
-	must also be a secondary master species.
-	H3AsO4 is the primary master species for element As.
-	Another entry in SOLUTION_MASTER_SPECIES is needed.
-	Define species H3AsO4 as a secondary master species for a valence state.
-	For example: 
-	As(0)	H3AsO4 alk gfw
+ERROR: Could not reduce equation to secondary master species, AgH2BO3.
+ERROR: Non-master species in secondary reaction, AgH2BO3.
+ERROR: Could not reduce equation to secondary master species, BF(OH)3-.
+ERROR: Non-master species in secondary reaction, BF(OH)3-.
+ERROR: Could not reduce equation to secondary master species, BF2(OH)2-.
+ERROR: Non-master species in secondary reaction, BF2(OH)2-.
+ERROR: Could not reduce equation to secondary master species, BF3OH-.
+ERROR: Non-master species in secondary reaction, BF3OH-.
+ERROR: Could not reduce equation to secondary master species, BF4-.
+ERROR: Non-master species in secondary reaction, BF4-.
+ERROR: Could not reduce equation to secondary master species, BaH2BO3+.
+ERROR: Non-master species in secondary reaction, BaH2BO3+.
+ERROR: Could not reduce equation to secondary master species, CaH2BO3+.
+ERROR: Non-master species in secondary reaction, CaH2BO3+.
+ERROR: Could not reduce equation to secondary master species, H2BO3-.
+ERROR: Non-master species in secondary reaction, H2BO3-.
+ERROR: Could not reduce equation to secondary master species, H3BO3.
+ERROR: Non-master species in secondary reaction, H3BO3.
+ERROR: Could not reduce equation to secondary master species, H5(BO3)2-.
+ERROR: Non-master species in secondary reaction, H5(BO3)2-.
+ERROR: Could not reduce equation to secondary master species, H8(BO3)3-.
+ERROR: Non-master species in secondary reaction, H8(BO3)3-.
+ERROR: Could not reduce equation to secondary master species, MgH2BO3+.
+ERROR: Non-master species in secondary reaction, MgH2BO3+.
+ERROR: Could not reduce equation to secondary master species, NaH2BO3.
+ERROR: Non-master species in secondary reaction, NaH2BO3.
+ERROR: Could not reduce equation to secondary master species, SrH2BO3+.
+ERROR: Non-master species in secondary reaction, SrH2BO3+.
 ERROR: Calculations terminating due to input errors.
-------------------------------
-End of Run after 0.03 Seconds.
-------------------------------
+-------------------------------
+End of Run after 0.095 Seconds.
+-------------------------------
 
