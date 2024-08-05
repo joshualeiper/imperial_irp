@@ -38,7 +38,8 @@ def compile_master_solution_table(list_of_databases: list, ignore=None) -> pd.Da
         result += parser_dat.MasterSolutionParser(database)
     result.data_frame = result.data_frame.dropna(axis=0, subset=['element', 'species', 'gfw_formula'])
     result.data_frame['element'] = result.data_frame['element'].apply(replace_elements)
-    result.data_frame = result.data_frame.drop_duplicates(subset=['element', 'species'])
+    result.data_frame['alk'] = result.data_frame['alk'].astype(float)
+    result.data_frame = result.data_frame.drop_duplicates(subset=['element', 'species', 'alk'])
     result.data_frame['source'] = result.data_frame['source'].apply(lambda x: f'#{x}')
     return result.data_frame
 
