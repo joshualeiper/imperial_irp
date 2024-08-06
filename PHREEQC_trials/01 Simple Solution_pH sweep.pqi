@@ -1,4 +1,4 @@
-DATABASE \\wsl.localhost\Ubuntu\home\jjl122\repos\irp-jjl122\master_database.dat
+DATABASE \\wsl.localhost\Ubuntu\home\jjl122\repos\irp-jjl122\master_database\master_database.dat
 TITLE 01_SIMPLE_SOLUTION
 
 SOLUTION_MASTER_SPECIES

@@ -1,6 +1,6 @@
    Input file: \\wsl.localhost\Ubuntu\home\jjl122\repos\irp-jjl122\PHREEQC_trials\01 Simple Solution_pH sweep.pqi
   Output file: \\wsl.localhost\Ubuntu\home\jjl122\repos\irp-jjl122\PHREEQC_trials\01 Simple Solution_pH sweep.pqo
-Database file: \\wsl.localhost\Ubuntu\home\jjl122\repos\irp-jjl122\master_database.dat
+Database file: \\wsl.localhost\Ubuntu\home\jjl122\repos\irp-jjl122\master_database\master_database.dat
 
 ------------------
 Reading data base.
@@ -9,642 +9,842 @@ Reading data base.
 	NAMED_EXPRESSIONS
 	SOLUTION_MASTER_SPECIES
 	SOLUTION_SPECIES
-	PHASES
-ERROR: Could not reduce equation to primary master species, H2AsO3-.
-ERROR: Could not reduce equation to primary master species, Co+3.
-ERROR: Could not reduce equation to primary master species, Hg.
-ERROR: Could not reduce equation to primary master species, Hg2+2.
-ERROR: Could not reduce equation to primary master species, Mn+3.
-ERROR: Could not reduce equation to primary master species, NO2-.
-ERROR: Could not reduce equation to primary master species, NO3-.
-ERROR: Could not reduce equation to primary master species, Sb(OH)6-.
-ERROR: Could not reduce equation to primary master species, HSe-.
-ERROR: Could not reduce equation to primary master species, SeO4-2.
-ERROR: Could not reduce equation to primary master species, Sn+4.
-ERROR: Could not reduce equation to primary master species, Tl+3.
-ERROR: Could not reduce equation to primary master species, VO2+.
-ERROR: Could not reduce equation to secondary master species, Acetate-.
-ERROR: Non-master species in secondary reaction, Acetate-.
-ERROR: Could not reduce equation to secondary master species, Ag(Acetate).
-ERROR: Non-master species in secondary reaction, Ag(Acetate).
-ERROR: Could not reduce equation to secondary master species, Ag(Acetate)2-.
-ERROR: Non-master species in secondary reaction, Ag(Acetate)2-.
-ERROR: Could not reduce equation to secondary master species, AgH2BO3.
-ERROR: Non-master species in secondary reaction, AgH2BO3.
-ERROR: Could not reduce equation to secondary master species, AsO3-3.
-ERROR: Non-master species in secondary reaction, AsO3-3.
-ERROR: Could not reduce equation to secondary master species, AsO4-3.
-ERROR: Non-master species in secondary reaction, AsO4-3.
-ERROR: Could not reduce equation to secondary master species, BF(OH)3-.
-ERROR: Non-master species in secondary reaction, BF(OH)3-.
-ERROR: Could not reduce equation to secondary master species, BF2(OH)2-.
-ERROR: Non-master species in secondary reaction, BF2(OH)2-.
-ERROR: Could not reduce equation to secondary master species, BF3OH-.
-ERROR: Non-master species in secondary reaction, BF3OH-.
-ERROR: Could not reduce equation to secondary master species, BF4-.
-ERROR: Non-master species in secondary reaction, BF4-.
-ERROR: Could not reduce equation to secondary master species, Ba(Acetate)+.
-ERROR: Non-master species in secondary reaction, Ba(Acetate)+.
-ERROR: Could not reduce equation to secondary master species, BaCO3.
-ERROR: Non-master species in secondary reaction, BaCO3.
-ERROR: Could not reduce equation to secondary master species, BaH2BO3+.
-ERROR: Non-master species in secondary reaction, BaH2BO3+.
-ERROR: Could not reduce equation to secondary master species, BaHCO3+.
-ERROR: Non-master species in secondary reaction, BaHCO3+.
-ERROR: Could not reduce equation to secondary master species, Be(Acetate)+.
-ERROR: Non-master species in secondary reaction, Be(Acetate)+.
-ERROR: Could not reduce equation to secondary master species, Be(Acetate)2.
-ERROR: Non-master species in secondary reaction, Be(Acetate)2.
-ERROR: Could not reduce equation to secondary master species, BeCO3.
-ERROR: Non-master species in secondary reaction, BeCO3.
-ERROR: Could not reduce equation to secondary master species, CO3-2.
-ERROR: Non-master species in secondary reaction, CO3-2.
-ERROR: Could not reduce equation to secondary master species, Ca(Acetate)+.
-ERROR: Non-master species in secondary reaction, Ca(Acetate)+.
-ERROR: Could not reduce equation to secondary master species, CaCO3.
-ERROR: Non-master species in secondary reaction, CaCO3.
-ERROR: Could not reduce equation to secondary master species, CaH2BO3+.
-ERROR: Non-master species in secondary reaction, CaH2BO3+.
-ERROR: Could not reduce equation to secondary master species, CaH2PO4+.
-ERROR: Non-master species in secondary reaction, CaH2PO4+.
-ERROR: Could not reduce equation to secondary master species, CaHCO3+.
-ERROR: Non-master species in secondary reaction, CaHCO3+.
-ERROR: Could not reduce equation to secondary master species, CaHPO4.
-ERROR: Non-master species in secondary reaction, CaHPO4.
-ERROR: Could not reduce equation to secondary master species, CaPO4-.
-ERROR: Non-master species in secondary reaction, CaPO4-.
-ERROR: Could not reduce equation to secondary master species, Cd(Acetate)+.
-ERROR: Non-master species in secondary reaction, Cd(Acetate)+.
-ERROR: Could not reduce equation to secondary master species, Cd(Acetate)2.
-ERROR: Non-master species in secondary reaction, Cd(Acetate)2.
-ERROR: Could not reduce equation to secondary master species, Cd(CO3)2-2.
-ERROR: Non-master species in secondary reaction, Cd(CO3)2-2.
-ERROR: Could not reduce equation to secondary master species, CdCO3.
-ERROR: Non-master species in secondary reaction, CdCO3.
-ERROR: Could not reduce equation to secondary master species, CdHCO3+.
-ERROR: Non-master species in secondary reaction, CdHCO3+.
-ERROR: Could not reduce equation to secondary master species, Co(Acetate)+.
-ERROR: Non-master species in secondary reaction, Co(Acetate)+.
-ERROR: Could not reduce equation to secondary master species, Co(Acetate)2.
-ERROR: Non-master species in secondary reaction, Co(Acetate)2.
-ERROR: Could not reduce equation to secondary master species, CoCO3.
-ERROR: Non-master species in secondary reaction, CoCO3.
-ERROR: Could not reduce equation to secondary master species, CoHCO3+.
-ERROR: Non-master species in secondary reaction, CoHCO3+.
-ERROR: Could not reduce equation to secondary master species, CoHPO4.
-ERROR: Non-master species in secondary reaction, CoHPO4.
-ERROR: Could not reduce equation to secondary master species, Cr(Acetate)+.
-ERROR: Non-master species in secondary reaction, Cr(Acetate)+.
-ERROR: Could not reduce equation to secondary master species, Cr(Acetate)+2.
-ERROR: Non-master species in secondary reaction, Cr(Acetate)+2.
-ERROR: Could not reduce equation to secondary master species, Cr(Acetate)2.
-ERROR: Non-master species in secondary reaction, Cr(Acetate)2.
-ERROR: Could not reduce equation to secondary master species, Cr(Acetate)2+.
-ERROR: Non-master species in secondary reaction, Cr(Acetate)2+.
-ERROR: Could not reduce equation to secondary master species, Cr(Acetate)3.
-ERROR: Non-master species in secondary reaction, Cr(Acetate)3.
-ERROR: Could not reduce equation to secondary master species, CrH2PO4+2.
-ERROR: Non-master species in secondary reaction, CrH2PO4+2.
-ERROR: Could not reduce equation to secondary master species, CrO3H2PO4-.
-ERROR: Non-master species in secondary reaction, CrO3H2PO4-.
-ERROR: Could not reduce equation to secondary master species, CrO3HPO4-2.
-ERROR: Non-master species in secondary reaction, CrO3HPO4-2.
-ERROR: Could not reduce equation to secondary master species, Cu(Acetate)+.
-ERROR: Non-master species in secondary reaction, Cu(Acetate)+.
-ERROR: Could not reduce equation to secondary master species, Cu(Acetate)2.
-ERROR: Non-master species in secondary reaction, Cu(Acetate)2.
-ERROR: Could not reduce equation to secondary master species, Cu(Acetate)3-.
-ERROR: Non-master species in secondary reaction, Cu(Acetate)3-.
-ERROR: Could not reduce equation to secondary master species, Cu(CO3)2-2.
-ERROR: Non-master species in secondary reaction, Cu(CO3)2-2.
-ERROR: Could not reduce equation to secondary master species, CuCO3.
-ERROR: Non-master species in secondary reaction, CuCO3.
-ERROR: Could not reduce equation to secondary master species, CuHCO3+.
-ERROR: Non-master species in secondary reaction, CuHCO3+.
-ERROR: Could not reduce equation to secondary master species, Fe(Acetate)+.
-ERROR: Non-master species in secondary reaction, Fe(Acetate)+.
-ERROR: Could not reduce equation to secondary master species, Fe(Acetate)+2.
-ERROR: Non-master species in secondary reaction, Fe(Acetate)+2.
-ERROR: Could not reduce equation to secondary master species, Fe(Acetate)2+.
-ERROR: Non-master species in secondary reaction, Fe(Acetate)2+.
-ERROR: Could not reduce equation to secondary master species, Fe(Acetate)3.
-ERROR: Non-master species in secondary reaction, Fe(Acetate)3.
-ERROR: Could not reduce equation to secondary master species, FeH2PO4+.
-ERROR: Non-master species in secondary reaction, FeH2PO4+.
-ERROR: Could not reduce equation to secondary master species, FeH2PO4+2.
-ERROR: Non-master species in secondary reaction, FeH2PO4+2.
-ERROR: Could not reduce equation to secondary master species, FeHCO3+.
-ERROR: Non-master species in secondary reaction, FeHCO3+.
-ERROR: Could not reduce equation to secondary master species, FeHPO4.
-ERROR: Non-master species in secondary reaction, FeHPO4.
-ERROR: Could not reduce equation to secondary master species, FeHPO4+.
-ERROR: Non-master species in secondary reaction, FeHPO4+.
-ERROR: Could not reduce equation to secondary master species, H(Acetate).
-ERROR: Non-master species in secondary reaction, H(Acetate).
-ERROR: Could not reduce equation to secondary master species, H2BO3-.
-ERROR: Non-master species in secondary reaction, H2BO3-.
-ERROR: Could not reduce equation to secondary master species, H2CO3.
-ERROR: Non-master species in secondary reaction, H2CO3.
-ERROR: Could not reduce equation to secondary master species, H2PO4-.
-ERROR: Non-master species in secondary reaction, H2PO4-.
-ERROR: Could not reduce equation to secondary master species, H2SiO4-2.
-ERROR: Non-master species in secondary reaction, H2SiO4-2.
-ERROR: Could not reduce equation to secondary master species, H3AsO3.
-ERROR: Non-master species in secondary reaction, H3AsO3.
-ERROR: Could not reduce equation to secondary master species, H3AsO4.
-ERROR: Non-master species in secondary reaction, H3AsO4.
-ERROR: Could not reduce equation to secondary master species, H3BO3.
-ERROR: Non-master species in secondary reaction, H3BO3.
-ERROR: Could not reduce equation to secondary master species, H3PO4.
-ERROR: Non-master species in secondary reaction, H3PO4.
-ERROR: Could not reduce equation to secondary master species, H3SiO4-.
-ERROR: Non-master species in secondary reaction, H3SiO4-.
-ERROR: Could not reduce equation to secondary master species, H4AsO3+.
-ERROR: Non-master species in secondary reaction, H4AsO3+.
-ERROR: Could not reduce equation to secondary master species, H4SiO4.
-ERROR: Non-master species in secondary reaction, H4SiO4.
-ERROR: Could not reduce equation to secondary master species, H5(BO3)2-.
-ERROR: Non-master species in secondary reaction, H5(BO3)2-.
-ERROR: Could not reduce equation to secondary master species, H8(BO3)3-.
-ERROR: Non-master species in secondary reaction, H8(BO3)3-.
-ERROR: Could not reduce equation to secondary master species, HAsO3-2.
-ERROR: Non-master species in secondary reaction, HAsO3-2.
-ERROR: Could not reduce equation to secondary master species, HAsO4-2.
-ERROR: Non-master species in secondary reaction, HAsO4-2.
-ERROR: Could not reduce equation to secondary master species, HSnO2-.
-ERROR: Non-master species in secondary reaction, HSnO2-.
-ERROR: Could not reduce equation to secondary master species, Hg(Acetate)+.
-ERROR: Non-master species in secondary reaction, Hg(Acetate)+.
-ERROR: Could not reduce equation to secondary master species, Hg(Acetate)2.
-ERROR: Non-master species in secondary reaction, Hg(Acetate)2.
-ERROR: Could not reduce equation to secondary master species, Hg(Butylamine)+2.
-ERROR: Non-master species in secondary reaction, Hg(Butylamine)+2.
-ERROR: Could not reduce equation to secondary master species, Hg(Butylamine)2+2.
-ERROR: Non-master species in secondary reaction, Hg(Butylamine)2+2.
-ERROR: Could not reduce equation to secondary master species, Hg(Butylamine)3+2.
-ERROR: Non-master species in secondary reaction, Hg(Butylamine)3+2.
-ERROR: Could not reduce equation to secondary master species, Hg(Butylamine)4+2.
-ERROR: Non-master species in secondary reaction, Hg(Butylamine)4+2.
-ERROR: Could not reduce equation to secondary master species, Hg(Butyrate)+.
-ERROR: Non-master species in secondary reaction, Hg(Butyrate)+.
-ERROR: Could not reduce equation to secondary master species, Hg(CO3)2-2.
-ERROR: Non-master species in secondary reaction, Hg(CO3)2-2.
-ERROR: Could not reduce equation to secondary master species, Hg(Citrate)-.
-ERROR: Non-master species in secondary reaction, Hg(Citrate)-.
-ERROR: Could not reduce equation to secondary master species, Hg(Cyanide)2.
-ERROR: Non-master species in secondary reaction, Hg(Cyanide)2.
-ERROR: Could not reduce equation to secondary master species, Hg(Cyanide)3-.
-ERROR: Non-master species in secondary reaction, Hg(Cyanide)3-.
-ERROR: Could not reduce equation to secondary master species, Hg(Cyanide)4-2.
-ERROR: Non-master species in secondary reaction, Hg(Cyanide)4-2.
-ERROR: Could not reduce equation to secondary master species, Hg(Edta)-2.
-ERROR: Non-master species in secondary reaction, Hg(Edta)-2.
-ERROR: Could not reduce equation to secondary master species, Hg(Ethylenediamine)+2.
-ERROR: Non-master species in secondary reaction, Hg(Ethylenediamine)+2.
-ERROR: Could not reduce equation to secondary master species, Hg(Ethylenediamine)2+2.
-ERROR: Non-master species in secondary reaction, Hg(Ethylenediamine)2+2.
-ERROR: Could not reduce equation to secondary master species, Hg(Formate)+.
-ERROR: Non-master species in secondary reaction, Hg(Formate)+.
-ERROR: Could not reduce equation to secondary master species, Hg(Glutamate).
-ERROR: Non-master species in secondary reaction, Hg(Glutamate).
-ERROR: Could not reduce equation to secondary master species, Hg(Glutamate)2-2.
-ERROR: Non-master species in secondary reaction, Hg(Glutamate)2-2.
-ERROR: Could not reduce equation to secondary master species, Hg(Glycine)+.
-ERROR: Non-master species in secondary reaction, Hg(Glycine)+.
-ERROR: Could not reduce equation to secondary master species, Hg(Glycine)2.
-ERROR: Non-master species in secondary reaction, Hg(Glycine)2.
-ERROR: Could not reduce equation to secondary master species, Hg(HS)2.
-ERROR: Non-master species in secondary reaction, Hg(HS)2.
-ERROR: Could not reduce equation to secondary master species, Hg(Isopropylamine)+2.
-ERROR: Non-master species in secondary reaction, Hg(Isopropylamine)+2.
-ERROR: Could not reduce equation to secondary master species, Hg(Isopropylamine)2+2.
-ERROR: Non-master species in secondary reaction, Hg(Isopropylamine)2+2.
-ERROR: Could not reduce equation to secondary master species, Hg(Methylamine)+2.
-ERROR: Non-master species in secondary reaction, Hg(Methylamine)+2.
-ERROR: Could not reduce equation to secondary master species, Hg(Methylamine)2+2.
-ERROR: Non-master species in secondary reaction, Hg(Methylamine)2+2.
-ERROR: Could not reduce equation to secondary master species, Hg(Methylamine)3+2.
-ERROR: Non-master species in secondary reaction, Hg(Methylamine)3+2.
-ERROR: Could not reduce equation to secondary master species, Hg(Methylamine)4+2.
-ERROR: Non-master species in secondary reaction, Hg(Methylamine)4+2.
-ERROR: Could not reduce equation to secondary master species, Hg(NH3)2+2.
-ERROR: Non-master species in secondary reaction, Hg(NH3)2+2.
-ERROR: Could not reduce equation to secondary master species, Hg(NH3)3+2.
-ERROR: Non-master species in secondary reaction, Hg(NH3)3+2.
-ERROR: Could not reduce equation to secondary master species, Hg(NH3)4+2.
-ERROR: Non-master species in secondary reaction, Hg(NH3)4+2.
-ERROR: Could not reduce equation to secondary master species, Hg(NO3)2.
-ERROR: Non-master species in secondary reaction, Hg(NO3)2.
-ERROR: Could not reduce equation to secondary master species, Hg(Nta)-.
-ERROR: Non-master species in secondary reaction, Hg(Nta)-.
-ERROR: Could not reduce equation to secondary master species, Hg(OH)2.
-ERROR: Non-master species in secondary reaction, Hg(OH)2.
-ERROR: Could not reduce equation to secondary master species, Hg(OH)3-.
-ERROR: Non-master species in secondary reaction, Hg(OH)3-.
-ERROR: Could not reduce equation to secondary master species, Hg(Propionate)+.
-ERROR: Non-master species in secondary reaction, Hg(Propionate)+.
-ERROR: Could not reduce equation to secondary master species, Hg(Tartarate).
-ERROR: Non-master species in secondary reaction, Hg(Tartarate).
-ERROR: Could not reduce equation to secondary master species, HgBr+.
-ERROR: Non-master species in secondary reaction, HgBr+.
-ERROR: Could not reduce equation to secondary master species, HgBr2.
-ERROR: Non-master species in secondary reaction, HgBr2.
-ERROR: Could not reduce equation to secondary master species, HgBr2I2-2.
-ERROR: Non-master species in secondary reaction, HgBr2I2-2.
-ERROR: Could not reduce equation to secondary master species, HgBr3-.
-ERROR: Non-master species in secondary reaction, HgBr3-.
-ERROR: Could not reduce equation to secondary master species, HgBr3I-2.
-ERROR: Non-master species in secondary reaction, HgBr3I-2.
-ERROR: Could not reduce equation to secondary master species, HgBr4-2.
-ERROR: Non-master species in secondary reaction, HgBr4-2.
-ERROR: Could not reduce equation to secondary master species, HgBrCl.
-ERROR: Non-master species in secondary reaction, HgBrCl.
-ERROR: Could not reduce equation to secondary master species, HgBrI.
-ERROR: Non-master species in secondary reaction, HgBrI.
-ERROR: Could not reduce equation to secondary master species, HgBrI3-2.
-ERROR: Non-master species in secondary reaction, HgBrI3-2.
-ERROR: Could not reduce equation to secondary master species, HgBrOH.
-ERROR: Non-master species in secondary reaction, HgBrOH.
-ERROR: Could not reduce equation to secondary master species, HgCO3.
-ERROR: Non-master species in secondary reaction, HgCO3.
-ERROR: Could not reduce equation to secondary master species, HgCl+.
-ERROR: Non-master species in secondary reaction, HgCl+.
-ERROR: Could not reduce equation to secondary master species, HgCl2.
-ERROR: Non-master species in secondary reaction, HgCl2.
-ERROR: Could not reduce equation to secondary master species, HgCl3-.
-ERROR: Non-master species in secondary reaction, HgCl3-.
-ERROR: Could not reduce equation to secondary master species, HgCl4-2.
-ERROR: Non-master species in secondary reaction, HgCl4-2.
-ERROR: Could not reduce equation to secondary master species, HgClI.
-ERROR: Non-master species in secondary reaction, HgClI.
-ERROR: Could not reduce equation to secondary master species, HgClOH.
-ERROR: Non-master species in secondary reaction, HgClOH.
-ERROR: Could not reduce equation to secondary master species, HgCyanide+.
-ERROR: Non-master species in secondary reaction, HgCyanide+.
-ERROR: Could not reduce equation to secondary master species, HgF+.
-ERROR: Non-master species in secondary reaction, HgF+.
-ERROR: Could not reduce equation to secondary master species, HgH(Edta)-.
-ERROR: Non-master species in secondary reaction, HgH(Edta)-.
-ERROR: Could not reduce equation to secondary master species, HgH(Ethylenediamine)2+3.
-ERROR: Non-master species in secondary reaction, HgH(Ethylenediamine)2+3.
-ERROR: Could not reduce equation to secondary master species, HgHCO3+.
-ERROR: Non-master species in secondary reaction, HgHCO3+.
-ERROR: Could not reduce equation to secondary master species, HgHS2-.
-ERROR: Non-master species in secondary reaction, HgHS2-.
-ERROR: Could not reduce equation to secondary master species, HgI+.
-ERROR: Non-master species in secondary reaction, HgI+.
-ERROR: Could not reduce equation to secondary master species, HgI2.
-ERROR: Non-master species in secondary reaction, HgI2.
-ERROR: Could not reduce equation to secondary master species, HgI3-.
-ERROR: Non-master species in secondary reaction, HgI3-.
-ERROR: Could not reduce equation to secondary master species, HgI4-2.
-ERROR: Non-master species in secondary reaction, HgI4-2.
-ERROR: Could not reduce equation to secondary master species, HgNH3+2.
-ERROR: Non-master species in secondary reaction, HgNH3+2.
-ERROR: Could not reduce equation to secondary master species, HgNO3+.
-ERROR: Non-master species in secondary reaction, HgNO3+.
-ERROR: Could not reduce equation to secondary master species, HgOH+.
-ERROR: Non-master species in secondary reaction, HgOH+.
-ERROR: Could not reduce equation to secondary master species, HgS2-2.
-ERROR: Non-master species in secondary reaction, HgS2-2.
-ERROR: Could not reduce equation to secondary master species, HgSO4.
-ERROR: Non-master species in secondary reaction, HgSO4.
-ERROR: Could not reduce equation to secondary master species, K(Acetate).
-ERROR: Non-master species in secondary reaction, K(Acetate).
-ERROR: Could not reduce equation to secondary master species, KHPO4-.
-ERROR: Non-master species in secondary reaction, KHPO4-.
-ERROR: Could not reduce equation to secondary master species, Mg(Acetate)+.
-ERROR: Non-master species in secondary reaction, Mg(Acetate)+.
-ERROR: Could not reduce equation to secondary master species, MgCO3.
-ERROR: Non-master species in secondary reaction, MgCO3.
-ERROR: Could not reduce equation to secondary master species, MgH2BO3+.
-ERROR: Non-master species in secondary reaction, MgH2BO3+.
-ERROR: Could not reduce equation to secondary master species, MgH2PO4+.
-ERROR: Non-master species in secondary reaction, MgH2PO4+.
-ERROR: Could not reduce equation to secondary master species, MgHCO3+.
-ERROR: Non-master species in secondary reaction, MgHCO3+.
-ERROR: Could not reduce equation to secondary master species, MgHPO4.
-ERROR: Non-master species in secondary reaction, MgHPO4.
-ERROR: Could not reduce equation to secondary master species, MgPO4-.
-ERROR: Non-master species in secondary reaction, MgPO4-.
-ERROR: Could not reduce equation to secondary master species, Mn(Acetate)+.
-ERROR: Non-master species in secondary reaction, Mn(Acetate)+.
-ERROR: Could not reduce equation to secondary master species, MnHCO3+.
-ERROR: Non-master species in secondary reaction, MnHCO3+.
-ERROR: Could not reduce equation to secondary master species, Na(Acetate).
-ERROR: Non-master species in secondary reaction, Na(Acetate).
-ERROR: Could not reduce equation to secondary master species, NaCO3-.
-ERROR: Non-master species in secondary reaction, NaCO3-.
-ERROR: Could not reduce equation to secondary master species, NaH2BO3.
-ERROR: Non-master species in secondary reaction, NaH2BO3.
-ERROR: Could not reduce equation to secondary master species, NaHCO3.
-ERROR: Non-master species in secondary reaction, NaHCO3.
-ERROR: Could not reduce equation to secondary master species, NaHPO4-.
-ERROR: Non-master species in secondary reaction, NaHPO4-.
-ERROR: Could not reduce equation to secondary master species, Ni(Acetate)+.
-ERROR: Non-master species in secondary reaction, Ni(Acetate)+.
-ERROR: Could not reduce equation to secondary master species, Ni(Acetate)2.
-ERROR: Non-master species in secondary reaction, Ni(Acetate)2.
-ERROR: Could not reduce equation to secondary master species, NiCO3.
-ERROR: Non-master species in secondary reaction, NiCO3.
-ERROR: Could not reduce equation to secondary master species, NiHCO3+.
-ERROR: Non-master species in secondary reaction, NiHCO3+.
-ERROR: Could not reduce equation to secondary master species, PO4-3.
-ERROR: Non-master species in secondary reaction, PO4-3.
-ERROR: Could not reduce equation to secondary master species, Pb(Acetate)+.
-ERROR: Non-master species in secondary reaction, Pb(Acetate)+.
-ERROR: Could not reduce equation to secondary master species, Pb(Acetate)2.
-ERROR: Non-master species in secondary reaction, Pb(Acetate)2.
-ERROR: Could not reduce equation to secondary master species, Pb(CO3)2-2.
-ERROR: Non-master species in secondary reaction, Pb(CO3)2-2.
-ERROR: Could not reduce equation to secondary master species, PbCO3.
-ERROR: Non-master species in secondary reaction, PbCO3.
-ERROR: Could not reduce equation to secondary master species, PbHCO3+.
-ERROR: Non-master species in secondary reaction, PbHCO3+.
-ERROR: Could not reduce equation to secondary master species, SiF6-2.
-ERROR: Non-master species in secondary reaction, SiF6-2.
-ERROR: Could not reduce equation to secondary master species, Sn(Acetate)+.
-ERROR: Non-master species in secondary reaction, Sn(Acetate)+.
-ERROR: Could not reduce equation to secondary master species, Sn(Acetate)2.
-ERROR: Non-master species in secondary reaction, Sn(Acetate)2.
-ERROR: Could not reduce equation to secondary master species, Sn(Acetate)3-.
-ERROR: Non-master species in secondary reaction, Sn(Acetate)3-.
-ERROR: Could not reduce equation to secondary master species, Sn(Edta)-2.
-ERROR: Non-master species in secondary reaction, Sn(Edta)-2.
-ERROR: Could not reduce equation to secondary master species, Sn(OH)2.
-ERROR: Non-master species in secondary reaction, Sn(OH)2.
-ERROR: Could not reduce equation to secondary master species, Sn(OH)3-.
-ERROR: Non-master species in secondary reaction, Sn(OH)3-.
-ERROR: Could not reduce equation to secondary master species, Sn(OH)6-2.
-ERROR: Non-master species in secondary reaction, Sn(OH)6-2.
-ERROR: Could not reduce equation to secondary master species, Sn(Tartarate).
-ERROR: Non-master species in secondary reaction, Sn(Tartarate).
-ERROR: Could not reduce equation to secondary master species, Sn2(OH)2+2.
-ERROR: Non-master species in secondary reaction, Sn2(OH)2+2.
-ERROR: Could not reduce equation to secondary master species, Sn3(OH)4+2.
-ERROR: Non-master species in secondary reaction, Sn3(OH)4+2.
-ERROR: Could not reduce equation to secondary master species, SnBr+.
-ERROR: Non-master species in secondary reaction, SnBr+.
-ERROR: Could not reduce equation to secondary master species, SnBr2.
-ERROR: Non-master species in secondary reaction, SnBr2.
-ERROR: Could not reduce equation to secondary master species, SnBr3-.
-ERROR: Non-master species in secondary reaction, SnBr3-.
-ERROR: Could not reduce equation to secondary master species, SnCl+.
-ERROR: Non-master species in secondary reaction, SnCl+.
-ERROR: Could not reduce equation to secondary master species, SnCl2.
-ERROR: Non-master species in secondary reaction, SnCl2.
-ERROR: Could not reduce equation to secondary master species, SnCl3-.
-ERROR: Non-master species in secondary reaction, SnCl3-.
-ERROR: Could not reduce equation to secondary master species, SnF+.
-ERROR: Non-master species in secondary reaction, SnF+.
-ERROR: Could not reduce equation to secondary master species, SnF2.
-ERROR: Non-master species in secondary reaction, SnF2.
-ERROR: Could not reduce equation to secondary master species, SnF3-.
-ERROR: Non-master species in secondary reaction, SnF3-.
-ERROR: Could not reduce equation to secondary master species, SnF6-2.
-ERROR: Non-master species in secondary reaction, SnF6-2.
-ERROR: Could not reduce equation to secondary master species, SnFe(Cyanide)6-.
-ERROR: Non-master species in secondary reaction, SnFe(Cyanide)6-.
-ERROR: Could not reduce equation to secondary master species, SnH(Edta)-.
-ERROR: Non-master species in secondary reaction, SnH(Edta)-.
-ERROR: Could not reduce equation to secondary master species, SnH2(Edta).
-ERROR: Non-master species in secondary reaction, SnH2(Edta).
-ERROR: Could not reduce equation to secondary master species, SnNO3+.
-ERROR: Non-master species in secondary reaction, SnNO3+.
-ERROR: Could not reduce equation to secondary master species, SnO3-2.
-ERROR: Non-master species in secondary reaction, SnO3-2.
-ERROR: Could not reduce equation to secondary master species, SnOH+.
-ERROR: Non-master species in secondary reaction, SnOH+.
-ERROR: Could not reduce equation to secondary master species, Sr(Acetate)+.
-ERROR: Non-master species in secondary reaction, Sr(Acetate)+.
-ERROR: Could not reduce equation to secondary master species, SrCO3.
-ERROR: Non-master species in secondary reaction, SrCO3.
-ERROR: Could not reduce equation to secondary master species, SrH2BO3+.
-ERROR: Non-master species in secondary reaction, SrH2BO3+.
-ERROR: Could not reduce equation to secondary master species, SrH2PO4+.
-ERROR: Non-master species in secondary reaction, SrH2PO4+.
-ERROR: Could not reduce equation to secondary master species, SrHCO3+.
-ERROR: Non-master species in secondary reaction, SrHCO3+.
-ERROR: Could not reduce equation to secondary master species, SrHPO4.
-ERROR: Non-master species in secondary reaction, SrHPO4.
-ERROR: Could not reduce equation to secondary master species, Tl(Acetate).
-ERROR: Non-master species in secondary reaction, Tl(Acetate).
-ERROR: Could not reduce equation to secondary master species, Tl(OH)2+.
-ERROR: Non-master species in secondary reaction, Tl(OH)2+.
-ERROR: Could not reduce equation to secondary master species, Tl(OH)3.
-ERROR: Non-master species in secondary reaction, Tl(OH)3.
-ERROR: Could not reduce equation to secondary master species, Tl(OH)4-.
-ERROR: Non-master species in secondary reaction, Tl(OH)4-.
-ERROR: Could not reduce equation to secondary master species, TlBr+2.
-ERROR: Non-master species in secondary reaction, TlBr+2.
-ERROR: Could not reduce equation to secondary master species, TlBr2+.
-ERROR: Non-master species in secondary reaction, TlBr2+.
-ERROR: Could not reduce equation to secondary master species, TlBr3.
-ERROR: Non-master species in secondary reaction, TlBr3.
-ERROR: Could not reduce equation to secondary master species, TlBr4-.
-ERROR: Non-master species in secondary reaction, TlBr4-.
-ERROR: Could not reduce equation to secondary master species, TlCl+2.
-ERROR: Non-master species in secondary reaction, TlCl+2.
-ERROR: Could not reduce equation to secondary master species, TlCl2+.
-ERROR: Non-master species in secondary reaction, TlCl2+.
-ERROR: Could not reduce equation to secondary master species, TlCl3.
-ERROR: Non-master species in secondary reaction, TlCl3.
-ERROR: Could not reduce equation to secondary master species, TlCl4-.
-ERROR: Non-master species in secondary reaction, TlCl4-.
-ERROR: Could not reduce equation to secondary master species, TlI4-.
-ERROR: Non-master species in secondary reaction, TlI4-.
-ERROR: Could not reduce equation to secondary master species, TlNO3+2.
-ERROR: Non-master species in secondary reaction, TlNO3+2.
-ERROR: Could not reduce equation to secondary master species, TlOH+2.
-ERROR: Non-master species in secondary reaction, TlOH+2.
-ERROR: Could not reduce equation to secondary master species, TlOHCl+.
-ERROR: Non-master species in secondary reaction, TlOHCl+.
-ERROR: Could not reduce equation to secondary master species, U(HPO4)2.
-ERROR: Non-master species in secondary reaction, U(HPO4)2.
-ERROR: Could not reduce equation to secondary master species, U(HPO4)3-2.
-ERROR: Non-master species in secondary reaction, U(HPO4)3-2.
-ERROR: Could not reduce equation to secondary master species, U(HPO4)4-4.
-ERROR: Non-master species in secondary reaction, U(HPO4)4-4.
-ERROR: Could not reduce equation to secondary master species, UHPO4+2.
-ERROR: Non-master species in secondary reaction, UHPO4+2.
-ERROR: Could not reduce equation to secondary master species, UO2(CO3)2-2.
-ERROR: Non-master species in secondary reaction, UO2(CO3)2-2.
-ERROR: Could not reduce equation to secondary master species, UO2(CO3)3-4.
-ERROR: Non-master species in secondary reaction, UO2(CO3)3-4.
-ERROR: Could not reduce equation to secondary master species, UO2(H2PO4)2.
-ERROR: Non-master species in secondary reaction, UO2(H2PO4)2.
-ERROR: Could not reduce equation to secondary master species, UO2(H2PO4)3-.
-ERROR: Non-master species in secondary reaction, UO2(H2PO4)3-.
-ERROR: Could not reduce equation to secondary master species, UO2(HPO4)2-2.
-ERROR: Non-master species in secondary reaction, UO2(HPO4)2-2.
-ERROR: Could not reduce equation to secondary master species, UO2CO3.
-ERROR: Non-master species in secondary reaction, UO2CO3.
-ERROR: Could not reduce equation to secondary master species, UO2H2PO4+.
-ERROR: Non-master species in secondary reaction, UO2H2PO4+.
-ERROR: Could not reduce equation to secondary master species, UO2H3SiO4+.
-ERROR: Non-master species in secondary reaction, UO2H3SiO4+.
-ERROR: Could not reduce equation to secondary master species, UO2HPO4.
-ERROR: Non-master species in secondary reaction, UO2HPO4.
-ERROR: Could not reduce equation to secondary master species, UO2PO4-.
-ERROR: Non-master species in secondary reaction, UO2PO4-.
-ERROR: Could not reduce equation to secondary master species, Zn(Acetate)+.
-ERROR: Non-master species in secondary reaction, Zn(Acetate)+.
-ERROR: Could not reduce equation to secondary master species, Zn(Acetate)2.
-ERROR: Non-master species in secondary reaction, Zn(Acetate)2.
-ERROR: Could not reduce equation to secondary master species, ZnCO3.
-ERROR: Non-master species in secondary reaction, ZnCO3.
-ERROR: Could not reduce equation to secondary master species, ZnHCO3+.
-ERROR: Non-master species in secondary reaction, ZnHCO3+.
-ERROR: Could not reduce equation to secondary master species, (UO2)3(PO4)2.
-ERROR: Could not reduce equation to secondary master species, (VO)3(PO4)2.
-ERROR: Could not reduce equation to secondary master species, Ag2CO3.
-ERROR: Could not reduce equation to secondary master species, Ag3AsO3.
-ERROR: Could not reduce equation to secondary master species, Ag3AsO4.
-ERROR: Could not reduce equation to secondary master species, Ag3PO4.
-ERROR: Could not reduce equation to secondary master species, AlAsO4:2H2O.
-ERROR: Could not reduce equation to secondary master species, Aragonite.
-ERROR: Could not reduce equation to secondary master species, Arsenolite.
-ERROR: Could not reduce equation to secondary master species, Artinite.
-ERROR: Could not reduce equation to secondary master species, As2O5.
-ERROR: Could not reduce equation to secondary master species, AsI3.
-ERROR: Could not reduce equation to secondary master species, Autunite.
-ERROR: Could not reduce equation to secondary master species, Avicennite.
-ERROR: Could not reduce equation to secondary master species, Azurite.
-ERROR: Could not reduce equation to secondary master species, Ba3(AsO4)2.
-ERROR: Could not reduce equation to secondary master species, BaHPO4.
-ERROR: Could not reduce equation to secondary master species, Bassetite.
-ERROR: Could not reduce equation to secondary master species, Ca3(AsO4)2:4H2O.
-ERROR: Could not reduce equation to secondary master species, Ca3(PO4)2(beta).
-ERROR: Could not reduce equation to secondary master species, Ca4H(PO4)3:3H2O.
-ERROR: Could not reduce equation to secondary master species, CaHPO4.
-ERROR: Could not reduce equation to secondary master species, CaHPO4:2H2O.
-ERROR: Could not reduce equation to secondary master species, Calcite.
-ERROR: Could not reduce equation to secondary master species, Cd(BO2)2.
-ERROR: Could not reduce equation to secondary master species, Cd3(PO4)2.
-ERROR: Could not reduce equation to secondary master species, Cerussite.
-ERROR: Could not reduce equation to secondary master species, CH4(g).
-ERROR: Could not reduce equation to secondary master species, Chalcedony.
-ERROR: Could not reduce equation to secondary master species, Chrysotile.
-ERROR: Could not reduce equation to secondary master species, Cinnabar.
-ERROR: Could not reduce equation to secondary master species, Claudetite.
-ERROR: Could not reduce equation to secondary master species, Co(BO2)2.
-ERROR: Could not reduce equation to secondary master species, CO2(g).
-ERROR: Could not reduce equation to secondary master species, Co3(AsO4)2.
-ERROR: Could not reduce equation to secondary master species, Co3(PO4)2.
-ERROR: Could not reduce equation to secondary master species, Coccinite.
-ERROR: Could not reduce equation to secondary master species, CoCO3.
-ERROR: Could not reduce equation to secondary master species, CoHPO4.
-ERROR: Could not reduce equation to secondary master species, Cristobalite.
-ERROR: Could not reduce equation to secondary master species, Cu3(AsO4)2:2H2O.
-ERROR: Could not reduce equation to secondary master species, Cu3(PO4)2.
-ERROR: Could not reduce equation to secondary master species, Cu3(PO4)2:3H2O.
-ERROR: Could not reduce equation to secondary master species, CuCO3.
-ERROR: Could not reduce equation to secondary master species, Dolomite(disordered).
-ERROR: Could not reduce equation to secondary master species, Dolomite(ordered).
-ERROR: Could not reduce equation to secondary master species, FCO3Apatite.
-ERROR: Could not reduce equation to secondary master species, FeAsO4:2H2O.
-ERROR: Could not reduce equation to secondary master species, Greenalite.
-ERROR: Could not reduce equation to secondary master species, H-Autunite.
-ERROR: Could not reduce equation to secondary master species, H2Sn(OH)6.
-ERROR: Could not reduce equation to secondary master species, Halloysite.
-ERROR: Could not reduce equation to secondary master species, Hg(CH3)2(g).
-ERROR: Could not reduce equation to secondary master species, Hg(OH)2.
-ERROR: Could not reduce equation to secondary master species, Hg2CO3.
-ERROR: Could not reduce equation to secondary master species, Hg2HPO4.
-ERROR: Could not reduce equation to secondary master species, Hg3O2CO3.
-ERROR: Could not reduce equation to secondary master species, HgBr2.
-ERROR: Could not reduce equation to secondary master species, HgBr2(g).
-ERROR: Could not reduce equation to secondary master species, HgCl2.
-ERROR: Could not reduce equation to secondary master species, HgF2(g).
-ERROR: Could not reduce equation to secondary master species, HgI2(g).
-ERROR: Could not reduce equation to secondary master species, HgI2:2NH3.
-ERROR: Could not reduce equation to secondary master species, HgI2:6NH3.
-ERROR: Could not reduce equation to secondary master species, HgSe.
-ERROR: Could not reduce equation to secondary master species, HgSeO3.
-ERROR: Could not reduce equation to secondary master species, HgSO4.
-ERROR: Could not reduce equation to secondary master species, Hinsdalite.
-ERROR: Could not reduce equation to secondary master species, Huntite.
-ERROR: Could not reduce equation to secondary master species, Hydrocerussite.
-ERROR: Could not reduce equation to secondary master species, Hydromagnesite.
-ERROR: Could not reduce equation to secondary master species, Hydroxylapatite.
-ERROR: Could not reduce equation to secondary master species, Hydroxylpyromorphite.
-ERROR: Could not reduce equation to secondary master species, K-Autunite.
-ERROR: Could not reduce equation to secondary master species, Kaolinite.
-ERROR: Could not reduce equation to secondary master species, Magnesite.
-ERROR: Could not reduce equation to secondary master species, Malachite.
-ERROR: Could not reduce equation to secondary master species, Metacinnabar.
-ERROR: Could not reduce equation to secondary master species, Mg3(PO4)2.
-ERROR: Could not reduce equation to secondary master species, MgHPO4:3H2O.
-ERROR: Could not reduce equation to secondary master species, Mn3(AsO4)2:8H2O.
-ERROR: Could not reduce equation to secondary master species, Mn3(PO4)2.
-ERROR: Could not reduce equation to secondary master species, MnHPO4.
-ERROR: Could not reduce equation to secondary master species, Montroydite.
-ERROR: Could not reduce equation to secondary master species, Na-Autunite.
-ERROR: Could not reduce equation to secondary master species, Natron.
-ERROR: Could not reduce equation to secondary master species, Nesquehonite.
-ERROR: Could not reduce equation to secondary master species, Ni3(AsO4)2:8H2O.
-ERROR: Could not reduce equation to secondary master species, Ni3(PO4)2.
-ERROR: Could not reduce equation to secondary master species, NiCO3.
-ERROR: Could not reduce equation to secondary master species, Ningyoite.
-ERROR: Could not reduce equation to secondary master species, Orpiment.
-ERROR: Could not reduce equation to secondary master species, Otavite.
-ERROR: Could not reduce equation to secondary master species, Pb(BO2)2.
-ERROR: Could not reduce equation to secondary master species, Pb10(OH)6O(CO3)6.
-ERROR: Could not reduce equation to secondary master species, Pb2OCO3.
-ERROR: Could not reduce equation to secondary master species, Pb3(AsO4)2.
-ERROR: Could not reduce equation to secondary master species, Pb3(PO4)2.
-ERROR: Could not reduce equation to secondary master species, Pb3O2CO3.
-ERROR: Could not reduce equation to secondary master species, PbHPO4.
-ERROR: Could not reduce equation to secondary master species, Phosgenite.
-ERROR: Could not reduce equation to secondary master species, Plumbgummite.
-ERROR: Could not reduce equation to secondary master species, Przhevalskite.
-ERROR: Could not reduce equation to secondary master species, Pyromorphite.
-ERROR: Could not reduce equation to secondary master species, Quartz.
-ERROR: Could not reduce equation to secondary master species, Realgar.
-ERROR: Could not reduce equation to secondary master species, Rhodochrosite.
-ERROR: Could not reduce equation to secondary master species, Rutherfordine.
-ERROR: Could not reduce equation to secondary master species, Saleeite.
-ERROR: Could not reduce equation to secondary master species, Sepiolite.
-ERROR: Could not reduce equation to secondary master species, Sepiolite(A).
-ERROR: Could not reduce equation to secondary master species, Siderite.
-ERROR: Could not reduce equation to secondary master species, SiO2(am-gel).
-ERROR: Could not reduce equation to secondary master species, SiO2(am-ppt).
-ERROR: Could not reduce equation to secondary master species, Smithsonite.
-ERROR: Could not reduce equation to secondary master species, Sn(OH)2.
-ERROR: Could not reduce equation to secondary master species, Sn(OH)4.
-ERROR: Could not reduce equation to secondary master species, Sn(SO4)2.
-ERROR: Could not reduce equation to secondary master species, SnBr2.
-ERROR: Could not reduce equation to secondary master species, SnBr4.
-ERROR: Could not reduce equation to secondary master species, SnCl2.
-ERROR: Could not reduce equation to secondary master species, Snmetal(wht).
-ERROR: Could not reduce equation to secondary master species, SnO.
-ERROR: Could not reduce equation to secondary master species, SnO2.
-ERROR: Could not reduce equation to secondary master species, SnS.
-ERROR: Could not reduce equation to secondary master species, SnS2.
-ERROR: Could not reduce equation to secondary master species, SnSe.
-ERROR: Could not reduce equation to secondary master species, SnSe2.
-ERROR: Could not reduce equation to secondary master species, SnSO4.
-ERROR: Could not reduce equation to secondary master species, Sr-Autunite.
-ERROR: Could not reduce equation to secondary master species, SrHPO4.
-ERROR: Could not reduce equation to secondary master species, Strengite.
-ERROR: Could not reduce equation to secondary master species, Strontianite.
-ERROR: Could not reduce equation to secondary master species, Thermonatrite.
-ERROR: Could not reduce equation to secondary master species, Tl(OH)3.
-ERROR: Could not reduce equation to secondary master species, Tl2CO3.
-ERROR: Could not reduce equation to secondary master species, Torbernite.
-ERROR: Could not reduce equation to secondary master species, Tsumebite.
-ERROR: Could not reduce equation to secondary master species, U(HPO4)2:4H2O.
-ERROR: Could not reduce equation to secondary master species, UO2HPO4.
-ERROR: Could not reduce equation to secondary master species, Uramphite.
-ERROR: Could not reduce equation to secondary master species, Uranocircite.
-ERROR: Could not reduce equation to secondary master species, Vivianite.
-ERROR: Could not reduce equation to secondary master species, Witherite.
-ERROR: Could not reduce equation to secondary master species, Zn(BO2)2.
-ERROR: Could not reduce equation to secondary master species, Zn3(AsO4)2:2.5H2O.
-ERROR: Could not reduce equation to secondary master species, Zn3(PO4)2:4H2O.
-ERROR: Could not reduce equation to secondary master species, ZnCO3:1H2O.
-ERROR: Calculations terminating due to input errors.
+------------------------------------
+Reading input data for simulation 1.
+------------------------------------
+
+	DATABASE \\wsl.localhost\Ubuntu\home\jjl122\repos\irp-jjl122\master_database\master_database.dat
+	TITLE 01_SIMPLE_SOLUTION
+	SOLUTION_MASTER_SPECIES
+	As(+5)	H2AsO4-		0.0	As	74.92
+	END
+-----
+TITLE
+-----
+
+ 01_SIMPLE_SOLUTION
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 2.
+------------------------------------
+
+	SOLUTION_SPECIES
+	AsO4-3 + H+ = HAsO4-2
+	log_k		11.60
+	AsO4-3 + 2H+ = H2AsO4-
+	log_k		18.35
+	AsO4-3 + 3H+ = H3AsO4
+	log_k		20.60
+	END
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 3.
+------------------------------------
+
+	SELECTED_OUTPUT
+	file			output.xls
+	reset		true
+	molalities		AsO4-3   HAsO4-2   H2AsO4-   H3AsO4   
+	END
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 4.
+------------------------------------
+
+	SOLUTION 1
+	pH		3.0
+	Cl		0.1		mol/kgw
+	Na		0.1		mol/kgw
+	As(+5)	100		ug/kgw
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 1.	
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As(5)             1.335e-06   1.335e-06
+	Cl                1.000e-01   1.000e-01
+	Na                1.000e-01   1.000e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   3.000    
+                                       pe  =   4.000    
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.965e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =  -1.296e-03
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.295e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.65
+                               Iterations  =   4
+                                  Total H  = 1.110519e+02
+                                  Total O  = 5.552533e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   H+              1.280e-03   1.000e-03    -2.893    -3.000    -0.107      0.00
+   OH-             1.290e-11   1.008e-11   -10.889   -10.997    -0.107     (0)  
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     18.07
+As(5)         1.335e-06
+   H2AsO4-         1.178e-06   9.206e-07    -5.929    -6.036    -0.107     (0)  
+   H3AsO4          1.562e-07   1.598e-07    -6.806    -6.796     0.010     (0)  
+   HAsO4-2         4.287e-10   1.598e-10    -9.368    -9.796    -0.429     (0)  
+   AsO4-3          3.696e-18   4.015e-19   -17.432   -18.396    -0.964     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.901e-02   7.736e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.776e-04   1.000e-03    -3.010    -3.000     0.010     (0)  
+   HCl             1.616e-05   1.654e-05    -4.791    -4.781     0.010     (0)  
+Cl(1)         0.000e+00
+   HClO            0.000e+00   0.000e+00   -40.653   -40.643     0.010     (0)  
+   ClO-            0.000e+00   0.000e+00   -45.105   -45.212    -0.107     (0)  
+Cl(3)         0.000e+00
+   HClO2           0.000e+00   0.000e+00   -82.058   -82.048     0.010     (0)  
+   ClO2-           0.000e+00   0.000e+00   -82.110   -82.218    -0.107     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00  -105.262  -105.369    -0.107     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00  -132.710  -132.817    -0.107     (0)  
+H(0)          1.521e-17
+   H2              7.603e-18   7.779e-18   -17.119   -17.109     0.010     (0)  
+Na            1.000e-01
+   Na+             9.902e-02   7.738e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.776e-04   1.000e-03    -3.010    -3.000     0.010     (0)  
+   NaOH            1.209e-13   1.237e-13   -12.918   -12.908     0.010     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -58.008   -57.998     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 5.
+------------------------------------
+
+	SOLUTION 2
+	pH		4.0
+	Cl		0.1		mol/kgw
+	Na		0.1		mol/kgw
+	As(+5)	100		ug/kgw
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 2.	
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As(5)             1.335e-06   1.335e-06
+	Cl                1.000e-01   1.000e-01
+	Na                1.000e-01   1.000e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   4.000    
+                                       pe  =   4.000    
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.909e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =  -1.296e-04
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.282e-04
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.06
+                               Iterations  =   4
+                                  Total H  = 1.110508e+02
+                                  Total O  = 5.552533e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   H+              1.279e-04   1.000e-04    -3.893    -4.000    -0.107      0.00
+   OH-             1.289e-10   1.008e-10    -9.890    -9.997    -0.107     (0)  
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     18.07
+As(5)         1.335e-06
+   H2AsO4-         1.313e-06   1.026e-06    -5.882    -5.989    -0.107     (0)  
+   H3AsO4          1.741e-08   1.781e-08    -7.759    -7.749     0.010     (0)  
+   HAsO4-2         4.770e-09   1.781e-09    -8.321    -8.749    -0.428     (0)  
+   AsO4-3          4.105e-16   4.475e-17   -15.387   -16.349    -0.963     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.902e-02   7.741e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.787e-04   1.001e-03    -3.009    -2.999     0.010     (0)  
+   HCl             1.618e-06   1.655e-06    -5.791    -5.781     0.010     (0)  
+Cl(1)         2.227e-40
+   HClO            2.227e-40   2.278e-40   -39.652   -39.642     0.010     (0)  
+   ClO-            0.000e+00   0.000e+00   -43.105   -43.212    -0.107     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -78.110   -78.217    -0.107     (0)  
+   HClO2           0.000e+00   0.000e+00   -79.057   -79.047     0.010     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -99.262   -99.369    -0.107     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00  -124.709  -124.816    -0.107     (0)  
+H(0)          1.521e-19
+   H2              7.604e-20   7.779e-20   -19.119   -19.109     0.010     (0)  
+Na            1.000e-01
+   Na+             9.902e-02   7.741e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.787e-04   1.001e-03    -3.009    -2.999     0.010     (0)  
+   NaOH            1.209e-12   1.237e-12   -11.917   -11.907     0.010     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -54.008   -53.998     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 6.
+------------------------------------
+
+	SOLUTION 3
+	pH		5.0
+	Cl		0.1		mol/kgw
+	Na		0.1		mol/kgw
+	As(+5)	100		ug/kgw
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 3.	
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As(5)             1.335e-06   1.335e-06
+	Cl                1.000e-01   1.000e-01
+	Na                1.000e-01   1.000e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   5.000    
+                                       pe  =   4.000    
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.903e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =  -1.291e-05
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =   1.157e-05
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =   0.01
+                               Iterations  =   4
+                                  Total H  = 1.110507e+02
+                                  Total O  = 5.552533e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   H+              1.279e-05   1.000e-05    -4.893    -5.000    -0.107      0.00
+   OH-             1.289e-09   1.008e-09    -8.890    -8.997    -0.107     (0)  
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     18.07
+As(5)         1.335e-06
+   H2AsO4-         1.286e-06   1.006e-06    -5.891    -5.998    -0.107     (0)  
+   HAsO4-2         4.674e-08   1.746e-08    -7.330    -7.758    -0.428     (0)  
+   H3AsO4          1.706e-09   1.746e-09    -8.768    -8.758     0.010     (0)  
+   AsO4-3          4.021e-14   4.385e-15   -13.396   -14.358    -0.962     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.902e-02   7.741e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.788e-04   1.001e-03    -3.009    -2.999     0.010     (0)  
+   HCl             1.618e-07   1.655e-07    -6.791    -6.781     0.010     (0)  
+Cl(1)         2.227e-39
+   HClO            2.227e-39   2.278e-39   -38.652   -38.642     0.010     (0)  
+   ClO-            0.000e+00   0.000e+00   -41.105   -41.212    -0.107     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -74.110   -74.217    -0.107     (0)  
+   HClO2           0.000e+00   0.000e+00   -76.057   -76.047     0.010     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -93.262   -93.369    -0.107     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00  -116.709  -116.816    -0.107     (0)  
+H(0)          1.521e-21
+   H2              7.604e-22   7.779e-22   -21.119   -21.109     0.010     (0)  
+Na            1.000e-01
+   Na+             9.902e-02   7.741e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.788e-04   1.001e-03    -3.009    -2.999     0.010     (0)  
+   NaOH            1.210e-11   1.237e-11   -10.917   -10.907     0.010     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -50.008   -49.998     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 7.
+------------------------------------
+
+	SOLUTION 4
+	pH		6.0
+	Cl		0.1		mol/kgw
+	Na		0.1		mol/kgw
+	As(+5)	100		ug/kgw
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 4.	
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As(5)             1.335e-06   1.335e-06
+	Cl                1.000e-01   1.000e-01
+	Na                1.000e-01   1.000e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   6.000    
+                                       pe  =   4.000    
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.902e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =  -9.267e-07
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -4.080e-07
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =   4
+                                  Total H  = 1.110507e+02
+                                  Total O  = 5.552533e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   H+              1.279e-06   1.000e-06    -5.893    -6.000    -0.107      0.00
+   OH-             1.289e-08   1.008e-08    -7.890    -7.997    -0.107     (0)  
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     18.07
+As(5)         1.335e-06
+   H2AsO4-         9.789e-07   7.652e-07    -6.009    -6.116    -0.107     (0)  
+   HAsO4-2         3.557e-07   1.329e-07    -6.449    -6.877    -0.428     (0)  
+   H3AsO4          1.299e-10   1.329e-10    -9.887    -9.877     0.010     (0)  
+   AsO4-3          3.060e-12   3.337e-13   -11.514   -12.477    -0.962     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.902e-02   7.741e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.788e-04   1.001e-03    -3.009    -2.999     0.010     (0)  
+   HCl             1.618e-08   1.655e-08    -7.791    -7.781     0.010     (0)  
+Cl(1)         2.305e-38
+   HClO            2.227e-38   2.278e-38   -37.652   -37.642     0.010     (0)  
+   ClO-            7.858e-40   6.143e-40   -39.105   -39.212    -0.107     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -70.110   -70.217    -0.107     (0)  
+   HClO2           0.000e+00   0.000e+00   -73.057   -73.047     0.010     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -87.262   -87.369    -0.107     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00  -108.709  -108.816    -0.107     (0)  
+H(0)          1.521e-23
+   H2              7.604e-24   7.779e-24   -23.119   -23.109     0.010     (0)  
+Na            1.000e-01
+   Na+             9.902e-02   7.741e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.788e-04   1.001e-03    -3.009    -2.999     0.010     (0)  
+   NaOH            1.210e-10   1.237e-10    -9.917    -9.907     0.010     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -46.008   -45.998     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 8.
+------------------------------------
+
+	SOLUTION 5
+	pH		7.0
+	Cl		0.1		mol/kgw
+	Na		0.1		mol/kgw
+	As(+5)	100		ug/kgw
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 5.	
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As(5)             1.335e-06   1.335e-06
+	Cl                1.000e-01   1.000e-01
+	Na                1.000e-01   1.000e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   7.000    
+                                       pe  =   4.000    
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.902e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   1.047e-06
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -2.382e-06
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =   4
+                                  Total H  = 1.110507e+02
+                                  Total O  = 5.552533e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   OH-             1.289e-07   1.008e-07    -6.890    -6.997    -0.107     (0)  
+   H+              1.279e-07   1.000e-07    -6.893    -7.000    -0.107      0.00
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     18.07
+As(5)         1.335e-06
+   HAsO4-2         1.047e-06   3.909e-07    -5.980    -6.408    -0.428     (0)  
+   H2AsO4-         2.880e-07   2.252e-07    -6.541    -6.648    -0.107     (0)  
+   AsO4-3          9.004e-11   9.819e-12   -10.046   -11.008    -0.962     (0)  
+   H3AsO4          3.821e-12   3.909e-12   -11.418   -11.408     0.010     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.902e-02   7.741e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.788e-04   1.001e-03    -3.009    -2.999     0.010     (0)  
+   HCl             1.618e-09   1.655e-09    -8.791    -8.781     0.010     (0)  
+Cl(1)         3.013e-37
+   HClO            2.227e-37   2.278e-37   -36.652   -36.642     0.010     (0)  
+   ClO-            7.858e-38   6.143e-38   -37.105   -37.212    -0.107     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -66.110   -66.217    -0.107     (0)  
+   HClO2           0.000e+00   0.000e+00   -70.057   -70.047     0.010     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -81.262   -81.369    -0.107     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00  -100.709  -100.816    -0.107     (0)  
+H(0)          1.521e-25
+   H2              7.604e-26   7.779e-26   -25.119   -25.109     0.010     (0)  
+Na            1.000e-01
+   Na+             9.902e-02   7.741e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.788e-04   1.001e-03    -3.009    -2.999     0.010     (0)  
+   NaOH            1.210e-09   1.237e-09    -8.917    -8.907     0.010     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -42.008   -41.998     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 9.
+------------------------------------
+
+	SOLUTION 6
+	pH		8.0
+	Cl		0.1		mol/kgw
+	Na		0.1		mol/kgw
+	As(+5)	100		ug/kgw
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 6.	
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As(5)             1.335e-06   1.335e-06
+	Cl                1.000e-01   1.000e-01
+	Na                1.000e-01   1.000e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   8.000    
+                                       pe  =   4.000    
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.902e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   2.589e-06
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -3.923e-06
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =   4
+                                  Total H  = 1.110507e+02
+                                  Total O  = 5.552533e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   OH-             1.289e-06   1.008e-06    -5.890    -5.997    -0.107     (0)  
+   H+              1.279e-08   1.000e-08    -7.893    -8.000    -0.107      0.00
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     18.07
+As(5)         1.335e-06
+   HAsO4-2         1.298e-06   4.848e-07    -5.887    -6.314    -0.428     (0)  
+   H2AsO4-         3.572e-08   2.792e-08    -7.447    -7.554    -0.107     (0)  
+   AsO4-3          1.117e-09   1.218e-10    -8.952    -9.914    -0.962     (0)  
+   H3AsO4          4.738e-14   4.848e-14   -13.324   -13.314     0.010     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.902e-02   7.741e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.788e-04   1.001e-03    -3.009    -2.999     0.010     (0)  
+   HCl             1.618e-10   1.655e-10    -9.791    -9.781     0.010     (0)  
+Cl(1)         1.008e-35
+   ClO-            7.858e-36   6.143e-36   -35.105   -35.212    -0.107     (0)  
+   HClO            2.227e-36   2.278e-36   -35.652   -35.642     0.010     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -62.110   -62.217    -0.107     (0)  
+   HClO2           0.000e+00   0.000e+00   -67.057   -67.047     0.010     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -75.262   -75.369    -0.107     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00   -92.709   -92.816    -0.107     (0)  
+H(0)          1.521e-27
+   H2              7.604e-28   7.779e-28   -27.119   -27.109     0.010     (0)  
+Na            1.000e-01
+   Na+             9.902e-02   7.741e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.788e-04   1.001e-03    -3.009    -2.999     0.010     (0)  
+   NaOH            1.210e-08   1.237e-08    -7.917    -7.907     0.010     (0)  
+O(0)          1.964e-38
+   O2              9.819e-39   1.005e-38   -38.008   -37.998     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 10.
+-------------------------------------
+
+	SOLUTION 7
+	pH		9.0
+	Cl		0.1		mol/kgw
+	Na		0.1		mol/kgw
+	As(+5)	100		ug/kgw
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 7.	
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As(5)             1.335e-06   1.335e-06
+	Cl                1.000e-01   1.000e-01
+	Na                1.000e-01   1.000e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   9.000    
+                                       pe  =   4.000    
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.903e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   1.436e-05
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -1.569e-05
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.01
+                               Iterations  =   4
+                                  Total H  = 1.110507e+02
+                                  Total O  = 5.552534e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   OH-             1.289e-05   1.008e-05    -4.890    -4.997    -0.107     (0)  
+   H+              1.279e-09   1.000e-09    -8.893    -9.000    -0.107      0.00
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     18.07
+As(5)         1.335e-06
+   HAsO4-2         1.320e-06   4.929e-07    -5.880    -6.307    -0.428     (0)  
+   AsO4-3          1.135e-08   1.238e-09    -7.945    -8.907    -0.962     (0)  
+   H2AsO4-         3.632e-09   2.839e-09    -8.440    -8.547    -0.107     (0)  
+   H3AsO4          4.818e-16   4.929e-16   -15.317   -15.307     0.010     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.902e-02   7.741e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.788e-04   1.001e-03    -3.009    -2.999     0.010     (0)  
+   HCl             1.618e-11   1.655e-11   -10.791   -10.781     0.010     (0)  
+Cl(1)         8.081e-34
+   ClO-            7.858e-34   6.143e-34   -33.105   -33.212    -0.107     (0)  
+   HClO            2.227e-35   2.278e-35   -34.652   -34.642     0.010     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -58.110   -58.217    -0.107     (0)  
+   HClO2           0.000e+00   0.000e+00   -64.057   -64.047     0.010     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -69.262   -69.369    -0.107     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00   -84.709   -84.816    -0.107     (0)  
+H(0)          1.521e-29
+   H2              7.604e-30   7.779e-30   -29.119   -29.109     0.010     (0)  
+Na            1.000e-01
+   Na+             9.902e-02   7.741e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.788e-04   1.001e-03    -3.009    -2.999     0.010     (0)  
+   NaOH            1.210e-07   1.237e-07    -6.917    -6.907     0.010     (0)  
+O(0)          1.964e-34
+   O2              9.819e-35   1.005e-34   -34.008   -33.998     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 11.
+-------------------------------------
+
+	SOLUTION 8
+	pH		10.0
+	Cl		0.1		mol/kgw
+	Na		0.1		mol/kgw
+	As(+5)	100		ug/kgw
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 8.	
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As(5)             1.335e-06   1.335e-06
+	Cl                1.000e-01   1.000e-01
+	Na                1.000e-01   1.000e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =  10.000    
+                                       pe  =   4.000    
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.909e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   1.316e-04
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -1.329e-04
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.07
+                               Iterations  =   4
+                                  Total H  = 1.110508e+02
+                                  Total O  = 5.552546e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   OH-             1.289e-04   1.008e-04    -3.890    -3.997    -0.107     (0)  
+   H+              1.279e-10   1.000e-10    -9.893   -10.000    -0.107      0.00
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     18.07
+As(5)         1.335e-06
+   HAsO4-2         1.229e-06   4.588e-07    -5.911    -6.338    -0.428     (0)  
+   AsO4-3          1.057e-07   1.153e-08    -6.976    -7.938    -0.963     (0)  
+   H2AsO4-         3.381e-10   2.643e-10    -9.471    -9.578    -0.107     (0)  
+   H3AsO4          4.485e-18   4.588e-18   -17.348   -17.338     0.010     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.902e-02   7.741e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.787e-04   1.001e-03    -3.009    -2.999     0.010     (0)  
+   HCl             1.618e-12   1.655e-12   -11.791   -11.781     0.010     (0)  
+Cl(1)         7.880e-32
+   ClO-            7.858e-32   6.143e-32   -31.105   -31.212    -0.107     (0)  
+   HClO            2.227e-34   2.278e-34   -33.652   -33.642     0.010     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -54.110   -54.217    -0.107     (0)  
+   HClO2           0.000e+00   0.000e+00   -61.057   -61.047     0.010     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -63.262   -63.369    -0.107     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00   -76.709   -76.816    -0.107     (0)  
+H(0)          1.521e-31
+   H2              7.604e-32   7.779e-32   -31.119   -31.109     0.010     (0)  
+Na            1.000e-01
+   Na+             9.902e-02   7.741e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.787e-04   1.001e-03    -3.009    -2.999     0.010     (0)  
+   NaOH            1.209e-06   1.237e-06    -5.917    -5.907     0.010     (0)  
+O(0)          1.964e-30
+   O2              9.819e-31   1.005e-30   -30.008   -29.998     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 12.
+-------------------------------------
+
+	SOLUTION 9
+	pH		11.0
+	Cl		0.1		mol/kgw
+	Na		0.1		mol/kgw
+	As(+5)	100		ug/kgw
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 9.	
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	As(5)             1.335e-06   1.335e-06
+	Cl                1.000e-01   1.000e-01
+	Na                1.000e-01   1.000e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =  11.000    
+                                       pe  =   4.000    
+                        Activity of water  =   0.997
+                 Ionic strength (mol/kgw)  =   9.967e-02
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   1.304e-03
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -1.305e-03
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.65
+                               Iterations  =   4
+                                  Total H  = 1.110520e+02
+                                  Total O  = 5.552663e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma    cm³/mol
+
+   OH-             1.290e-03   1.008e-03    -2.889    -2.997    -0.107     (0)  
+   H+              1.280e-11   1.000e-11   -10.893   -11.000    -0.107      0.00
+   H2O             5.553e+01   9.966e-01     1.744    -0.001     0.000     18.07
+As(5)         1.335e-06
+   HAsO4-2         7.167e-07   2.672e-07    -6.145    -6.573    -0.429     (0)  
+   AsO4-3          6.180e-07   6.712e-08    -6.209    -7.173    -0.964     (0)  
+   H2AsO4-         1.969e-11   1.539e-11   -10.706   -10.813    -0.107     (0)  
+   H3AsO4          2.611e-20   2.672e-20   -19.583   -19.573     0.010     (0)  
+Cl(-1)        1.000e-01
+   Cl-             9.902e-02   7.738e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.777e-04   1.000e-03    -3.010    -3.000     0.010     (0)  
+   HCl             1.617e-13   1.654e-13   -12.791   -12.781     0.010     (0)  
+Cl(1)         7.860e-30
+   ClO-            7.858e-30   6.140e-30   -29.105   -29.212    -0.107     (0)  
+   HClO            2.225e-33   2.277e-33   -32.653   -32.643     0.010     (0)  
+Cl(3)         0.000e+00
+   ClO2-           0.000e+00   0.000e+00   -50.110   -50.217    -0.107     (0)  
+   HClO2           0.000e+00   0.000e+00   -58.058   -58.048     0.010     (0)  
+Cl(5)         0.000e+00
+   ClO3-           0.000e+00   0.000e+00   -57.262   -57.369    -0.107     (0)  
+Cl(7)         0.000e+00
+   ClO4-           0.000e+00   0.000e+00   -68.709   -68.817    -0.107     (0)  
+H(0)          1.521e-33
+   H2              7.603e-34   7.779e-34   -33.119   -33.109     0.010     (0)  
+Na            1.000e-01
+   Na+             9.901e-02   7.737e-02    -1.004    -1.111    -0.107     (0)  
+   NaCl            9.777e-04   1.000e-03    -3.010    -3.000     0.010     (0)  
+   NaOH            1.209e-05   1.237e-05    -4.918    -4.908     0.010     (0)  
+O(0)          1.963e-26
+   O2              9.817e-27   1.004e-26   -26.008   -25.998     0.010     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+-------------------------------------
+Reading input data for simulation 13.
+-------------------------------------
+
 -------------------------------
-End of Run after 0.564 Seconds.
+End of Run after 0.277 Seconds.
 -------------------------------
 

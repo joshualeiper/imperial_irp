@@ -39,7 +39,7 @@ def compile_master_solution_table(list_of_databases: list, ignore=None) -> pd.Da
     result.data_frame = result.data_frame.dropna(axis=0, subset=['element', 'species', 'gfw_formula'])
     result.data_frame['element'] = result.data_frame['element'].apply(replace_elements)
     result.data_frame['alk'] = result.data_frame['alk'].astype(float)
-    result.data_frame = result.data_frame.drop_duplicates(subset=['element', 'species', 'alk'])
+    result.data_frame = result.data_frame.drop_duplicates(subset=['element', 'species'])
     result.data_frame['source'] = result.data_frame['source'].apply(lambda x: f'#{x}')
     return result.data_frame
 
@@ -59,7 +59,7 @@ def compile_solution_species_table(list_of_databases: list, ignore=None) -> pd.D
     result = result.dropna(subset=['equation', 'log_k'])
 
     # drop duplicate rows
-    result = result.drop_duplicates(subset=['equation'])
+    # result = result.drop_duplicates(subset=['equation'])
 
     # convert log_k and llnl_gamma to float
     result['log_k'] = result['log_k'].apply(lambda x: float(x[0].strip(';')) if ';' in x[0] else float(x[0]))
@@ -72,7 +72,7 @@ def compile_solution_species_table(list_of_databases: list, ignore=None) -> pd.D
     # Change mulitple ---- to -4, --- to -3, -- to -2
     result['equation'] = result['equation'].apply(replace_charges)
 
-    # remove decimals from equations
+    # remove decimals from equations where possible
     result['equation'] = strfloat_to_strint(result['equation'])
 
     # clean vm column

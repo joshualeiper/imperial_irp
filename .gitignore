@@ -1,5 +1,7 @@
 exercises/anser_key/
 *.pyc
 master_database/__pycache__
-*.pqo
-
+*.csv
+*.dat
+*.txt
+PHREEQC_trials/01 Simple Solution_pH sweep.pqi
