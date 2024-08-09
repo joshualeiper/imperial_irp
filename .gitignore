@@ -5,4 +5,4 @@ master_database/__pycache__
 *.dat
 *.txt
 PHREEQC_trials/
-
+demo.sh
