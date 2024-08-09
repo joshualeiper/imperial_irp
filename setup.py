@@ -13,10 +13,5 @@ setup(
     author_email="jjl122@ic.ac.uk",
     description="A short description of your package",
     packages=find_packages(),
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-    ],
     # install_requires=scan_requirements(),
 )
