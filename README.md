@@ -29,4 +29,8 @@ conda env create -f environment.yml
 conda activate josh_2024
 ```
 
-You should now be ready to play with the code provided!
+Create a combined llnl + minteq database
+```bash
+python master_database/
+```
+The terminal should print a logging message that says "File processing complete". If this check to see if a file names master_database.dat has been created.
