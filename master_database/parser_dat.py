@@ -84,7 +84,7 @@ class BaseParser:
         data_dicts = [asdict(data) for data in parsed_data_list]
         result = pd.DataFrame(data_dicts)
         result["source"] = self.source
-        return result
+        return result.dropna(thresh=2)
 
     def parse_block(self, block: List[str]):
         """
