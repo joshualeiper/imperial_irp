@@ -4,4 +4,5 @@ master_database/__pycache__
 *.csv
 *.dat
 *.txt
-PHREEQC_trials/01 Simple Solution_pH sweep.pqi
+PHREEQC_trials/
+

@@ -52,17 +52,14 @@ def compile_solution_species_table(list_of_databases: list, ignore=None) -> pd.D
     for database in list_of_databases[1:]:
         result = pd.concat([result, parser_dat.SolutionParser(database).parse_file()])
 
-    # drop empty columns
-    result = result.dropna(axis=1, how='all')
-
     # drop rows with missing species or element
-    result = result.dropna(subset=['equation', 'log_k'])
+    result = result.dropna(subset=['equation'])
 
     # drop duplicate rows
     # result = result.drop_duplicates(subset=['equation'])
 
     # convert log_k and llnl_gamma to float
-    result['log_k'] = result['log_k'].apply(lambda x: float(x[0].strip(';')) if ';' in x[0] else float(x[0]))
+    result['log_k'] = result['log_k'].apply(log_k_to_float)
     if 'llnl_gamma' in result.columns:
         result['llnl_gamma'] = result['llnl_gamma'].apply(lambda x: float(x[0]) if x else None)
 
@@ -244,11 +241,12 @@ def expand_logk(row):
             elif 'delta_h' not in entry.lower():
                 delta_h_corrected.append(entry)
         delta_h_corrected = tuple(delta_h_corrected)
-        # try:
-        #     delta_h_corrected = (log_k_value[1], log_k_value[2], log_k_value[3])
-        #     print(delta_h_corrected)
-        # except IndexError:
-        #     delta_h_corrected = (log_k_value[1], log_k_value[2])
         return pd.Series([log_k_corrected, delta_h_corrected])
     else:
         return pd.Series([log_k_value, row['delta_h']])
+
+
+def log_k_to_float(x):
+    if x is not None:
+        return float(x[0].strip(';')) if ';' in x[0] else float(x[0])
+    return 0.0
