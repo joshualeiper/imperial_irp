@@ -116,10 +116,9 @@ def main():
     all_match_indexes = list(set(all_match_indexes))
     equations_add = sp.loc[all_match_indexes]
 
-    if db_list[i] == '#minteq.v4.dat':
-        drop_re = re.compile('Hg[(]OH[)]2|Sb[(]OH[)]6-')
-        drop_index = equations_add[equations_add['equation'].str.contains(drop_re)].index
-        equations_add = equations_add.drop(index=drop_index)
+    drop_re = re.compile('Hg[(]OH[)]2|Sb[(]OH[)]6-|H4[(]SiO4[)]|H2[(]PO4[)]-')
+    drop_index = equations_add[equations_add['equation'].str.contains(drop_re)].index
+    equations_add = equations_add.drop(index=drop_index)
 
     result_sp = pd.concat([result_sp, equations_add], ignore_index=True)
     result_mst = result_mst.sort_values(by=['element'])
