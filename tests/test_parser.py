@@ -1,48 +1,37 @@
 import pytest
 from master_database.parser_dat import SolutionParser, PhaseParser, MasterSolutionParser
 
+
 class TestPhreeqcParsers:
 
     @pytest.fixture(autouse=True)
     def setup(self):
         # Setup code for initializing file paths
         self.data_path = 'tests/test_database.dat'
-        self.data_path = 'tests/test_database.dat'
         self.master_file_path_1 = 'tests/test_database_1.dat'
-        self.master_file_path_2 = 'tests/test_database_2.dat'
-        parser = SolutionParser(self.data_path)
-        self.result = parser.parse_file()
+        soln_parser = SolutionParser(self.data_path)
+        self.soln_df = soln_parser.parse_file()
+        sms_parser = MasterSolutionParser(self.data_path)
+        self.sms_df = sms_parser.data_frame
 
-    def test_shape(self):
-        assert self.result.shape == (7, 15), f"Expected shape (7, 15), but got {self.result.shape}"
-    
-    def test_columns(self):
-        assert 'equation' in self.result.columns, "Expected column 'equation' not found"
-    
-    def test_first_row(self):
-        assert self.result.iloc[0, 0] == 'HAcetate =  HAcetate', "Unexpected equation in first row"
-        print(self.result.columns)
+    def test_soln_shape(self):
+        assert self.soln_df.shape == (7, 15), f"Expected shape (7, 15), but got {self.soln_df.shape}"
+
+    def test_soln_columns(self):
+        assert 'equation' in self.soln_df.columns, "Expected column 'equation' not found"
+
+    def test_soln_first_row(self):
+        assert self.soln_df.iloc[0, 0] == 'HAcetate =  HAcetate', "Unexpected equation in first row"
+        print(self.soln_df.columns)
+
     def test_vm_parse(self):
-        assert self.result['v_m'].notna().any(), "No 'vm' values found"
+        assert self.soln_df['v_m'].notna().any(), "No 'vm' values found"
+
+    def test_sms_shape(self):
+        print(self.sms_df.isnull().sum())
+        assert self.sms_df.shape == (28, 6), f"Expected shape (7, 6), but got {self.sms_df.shape}"
+
 """
-    def test_phase_parser(self):
-        parser = PhaseParser(self.data_path)
-        result = parser.parse_file()
-
-        assert result.shape == (4, 9), f"Expected shape (4, 9), but got {result.shape}"
-        assert 'phase_name' in result.columns, "Expected column 'phase_name' not found"
-        assert result['log_k'].notna().all(), "Some 'log_k' values are NaN"
-        assert result.loc[0, 'phase_name'] == 'H2O', "Unexpected phase name in first row"
-
-    def test_master_solution_parser(self):
-        parser = MasterSolutionParser(self.master_file_path)
-        result = parser.data_frame
-
-        assert result.shape == (7, 6), f"Expected shape (7, 6), but got {result.shape}"
-        assert 'element' in result.columns, "Expected column 'element' not found"
-        assert result['species'].notna().all(), "Some 'species' values are NaN"
-        assert result.loc[0, 'element'] == 'HAcetate', "Unexpected element in first row"
-
     def test_combined_master_solution_parser(self):
         parser1 = MasterSolutionParser(self.master_file_path_1)
         parser2 = MasterSolutionParser(self.master_file_path_2)

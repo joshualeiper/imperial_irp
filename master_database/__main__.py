@@ -11,7 +11,7 @@ from master_database.named_expressions import NAMED_EXPRESSIONS
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Define constants
-DB_PATH = 'databases/test_data'
+DB_PATH = './databases'
 RANK = {
     '#llnl.dat': 1,
     '#minteq.v4.dat': 2,
@@ -213,7 +213,9 @@ def main():
 
     with open('master_database.dat', 'w', encoding='utf-8') as file:
         file.write(NAMED_EXPRESSIONS)
-        file.write("SOLUTION_MASTER_SPECIES\n#element\tmaster species\talkalinity\tgfw|formula\tgfw of element\tsource\n")
+        file.write(
+            "SOLUTION_MASTER_SPECIES\n#element\tmaster species\talkalinity\tgfw|formula\tgfw of element\tsource\n"
+            )
         result_mst.apply(lambda row: cf.write_mst(row, file), axis=1)
         file.write("\nSOLUTION_SPECIES\n")
         result_sp.apply(lambda row: cf.write_sp(row, file), axis=1)

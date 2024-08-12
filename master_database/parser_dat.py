@@ -84,7 +84,7 @@ class BaseParser:
         data_dicts = [asdict(data) for data in parsed_data_list]
         result = pd.DataFrame(data_dicts)
         result["source"] = self.source
-        return result.dropna(thresh=2)
+        return result
 
     def parse_block(self, block: List[str]):
         """
@@ -311,8 +311,12 @@ def text_selection(text_file, start_block, end_block) -> list:
                 # remove comments
                 if "#" in line:
                     line = line.split("#")[0]
-                equations.append(line)
+                # strip the line of whitespace and check if it's not empty
+                cleaned_line = line.strip()
+                if cleaned_line:
+                    equations.append(cleaned_line)
     return equations
+
 
 
 def file_name(file_path: str) -> str:
