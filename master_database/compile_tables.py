@@ -46,7 +46,6 @@ def compile_solution_species_table(list_of_databases: list) -> pd.DataFrame:
         pd.DataFrame: The compiled solution species table.
 
     """
-    # Rest of the code...
     # init result
     result = parser_dat.SolutionParser(list_of_databases[0]).parse_file()
 
@@ -56,9 +55,6 @@ def compile_solution_species_table(list_of_databases: list) -> pd.DataFrame:
 
     # drop rows with missing species or element
     result = result.dropna(subset=['equation'])
-
-    # drop duplicate rows
-    # result = result.drop_duplicates(subset=['equation'])
 
     # convert log_k and llnl_gamma to float
     result['log_k'] = result['log_k'].apply(log_k_to_float)

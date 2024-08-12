@@ -304,7 +304,7 @@ def text_selection(text_file, start_block, end_block) -> list:
             if line.strip() == start_block:
                 read = True
                 continue
-            if end_block in line.strip() and read:
+            if (end_block in line.strip() or 'END' in line.strip()) and read:
                 read = False
                 break
             if read:
@@ -316,7 +316,6 @@ def text_selection(text_file, start_block, end_block) -> list:
                 if cleaned_line:
                     equations.append(cleaned_line)
     return equations
-
 
 
 def file_name(file_path: str) -> str:

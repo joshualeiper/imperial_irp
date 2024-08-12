@@ -11,6 +11,5 @@ dependencies:
   - mysql-connector-python
   - pip
   - pip:
-    - phreeqpy
-    - sqlalchemy
+    - git+https://github.com/Vitens/phreeqpython
     - -e .
