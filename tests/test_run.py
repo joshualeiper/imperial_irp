@@ -1,6 +1,27 @@
+import os
 from phreeqpython import PhreeqPython
+from master_database.__main__ import main
 
-pp = PhreeqPython('/home/jjl122/repos/irp-jjl122/master_database.dat')
+main()
+
+# Get the current working directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Get the directory above the current one
+parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
+
+# Define the file name you're looking for
+file_name = 'master_database.dat'
+
+# Create the full path to the file
+file_path = os.path.join(parent_dir, file_name)
+
+
+def test_file_exists():
+    assert os.path.exists(file_path), f"File {file_path} not found"
+
+
+pp = PhreeqPython(file_path)
 sol = {
     'pH': 3.0,
     'Cl': 0.02,
@@ -19,6 +40,7 @@ sol = {
     'pe': 5.92,
     'temperature': 25
 }
+
 
 def test_add_solution():
     try:

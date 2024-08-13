@@ -53,13 +53,8 @@ def compile_solution_species_table(list_of_databases: list) -> pd.DataFrame:
     for database in list_of_databases[1:]:
         result = pd.concat([result, parser_dat.SolutionParser(database).parse_file()])
 
-    # drop rows with missing species or element
-    result = result.dropna(subset=['equation'])
-
     # convert log_k and llnl_gamma to float
     result['log_k'] = result['log_k'].apply(log_k_to_float)
-    if 'llnl_gamma' in result.columns:
-        result['llnl_gamma'] = result['llnl_gamma'].apply(lambda x: float(x[0]) if x else None)
 
     # remove 1.0000 from equations
     result['equation'] = remove_ones(result['equation'])
@@ -203,10 +198,10 @@ def tuple_to_string(tup: tuple) -> str:
     return ' '.join(tup)
 
 
+# Might be unused
 def tuple_to_float(tup: tuple) -> Optional[float]:
     '''Converts a tuple to a float by taking the first element'''
     if tup and not isinstance(tup, float):
-        print('test')
         try:
             return float(tup[0])
         except ValueError:
@@ -241,12 +236,11 @@ def clean_vm(tup: tuple) -> Optional[tuple]:
     result = []
     if tup:
         for entry in tup:
-            if 'vm' not in entry.lower():
-                try:
-                    entry = float(entry)
-                    result.append(entry)
-                except ValueError:
-                    result.append(entry)
+            try:
+                entry = float(entry)
+                result.append(entry)
+            except ValueError:
+                pass
         return tuple(result)
     return None
 
@@ -264,13 +258,13 @@ def clean_dw(tup: tuple) -> Optional[tuple]:
     """
     result = []
     if tup:
+        print(tup)
         for entry in tup:
-            if 'dw' not in entry.lower():
-                try:
-                    entry = float(entry)
-                    result.append(entry)
-                except ValueError:
-                    result.append(entry)
+            try:
+                entry = float(entry)
+                result.append(entry)
+            except ValueError:
+                pass
         return tuple(result)
     return None
 
@@ -303,7 +297,7 @@ def expand_tc(row: pd.Series) -> pd.Series:
     pc_ex = re.compile(r'\W?[Pp]_?[Cc]')
     omega_ex = re.compile(r'\s?\W?[Oo]mega')
     t_c_combined = row['t_c']
-    t_c, p_c, omega = 0.0, 0.0, 0.0
+    t_c, p_c, omega = np.nan, np.nan, np.nan
     if t_c_combined and len(t_c_combined) > 1:
         for i, entry in enumerate(t_c_combined):
             if i == 0:
@@ -312,9 +306,9 @@ def expand_tc(row: pd.Series) -> pd.Series:
                 p_c = float(t_c_combined[i+1].strip(';'))
             elif omega_ex.search(entry):
                 omega = float(t_c_combined[i+1].strip(';'))
-        row['p_c'] = p_c
-        row['omega'] = omega
-        row['t_c'] = t_c
+    row['p_c'] = p_c
+    row['omega'] = omega
+    row['t_c'] = t_c
     return row
 
 

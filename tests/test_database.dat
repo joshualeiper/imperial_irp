@@ -39,7 +39,7 @@ U(4)     U+4            0.0     238.0290        238.0290
 U(5)     UO2+           0.0     238.0290        238.0290
 SOLUTION_SPECIES
 
-HAcetate =  HAcetate 
+HAcetate =  11.0000HAcetate 
 	-llnl_gamma	3.0000	
 	log_k 0
 	-delta_H	0	kJ/mol	# Calculated enthalpy of reaction	HAcetate
@@ -66,7 +66,7 @@ Mg+2 = Mg+2
      # Enthalpy of formation:                   #kJ/mol        
      -analytic 0E+0 0E+0 0E+0 0E+0 0E+0
 #PO4-3 primary master species
-        PO4-3 = PO4-3
+        PO4-3 = 11.000PO4-3
         log_k           0.0
         -gamma  5.0     0.0 
 
@@ -76,3 +76,11 @@ Mg+2 = Mg+2
         delta_h 17.6 kcal
         -analytical -294.0184   -0.07265        11204.49        108.18466       -1119669.0
         -gamma  5.4     0.0 
+PO4- = PO4-
+        log_k 1
+PO4-- = PO4--
+        log_k 1
+PO4--- = PO4---
+        log_k 0.0
+PO4---- = PO4----
+        log_k 0.0

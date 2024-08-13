@@ -1,5 +1,5 @@
 import pytest
-from master_database.parser_dat import SolutionParser, MasterSolutionParser
+from master_database.parser_dat import SolutionParser, MasterSolutionParser, phreeqc_database_list
 
 
 class TestPhreeqcParsers:
@@ -15,13 +15,13 @@ class TestPhreeqcParsers:
         self.sms_df = self.sms_parser.data_frame
 
     def test_soln_shape(self):
-        assert self.soln_df.shape == (7, 15), f"Expected shape (7, 15), but got {self.soln_df.shape}"
+        assert self.soln_df.shape == (11, 15), f"Expected shape (7, 15), but got {self.soln_df.shape}"
 
     def test_soln_columns(self):
         assert 'equation' in self.soln_df.columns, "Expected column 'equation' not found"
 
     def test_soln_first_row(self):
-        assert self.soln_df.iloc[0, 0] == 'HAcetate =  HAcetate', "Unexpected equation in first row"
+        assert self.soln_df.iloc[0, 0] == 'HAcetate =  11.0000HAcetate', "Unexpected equation in first row"
         print(self.soln_df.columns)
 
     def test_vm_parse(self):
@@ -46,3 +46,8 @@ class TestPhreeqcParsers:
         assert 'element' in combined_result.columns, "Expected column 'element' not found"
         assert combined_result['species'].notna().all(), "Some 'species' values are NaN"
         assert combined_result['source'].nunique() == 2, "Expected 2 unique sources in combined DataFrame"
+
+    def test_phreeqc_database_warning(self):
+        with pytest.warns(UserWarning):
+            phreeqc_database_list('tests')
+

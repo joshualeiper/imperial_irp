@@ -1,6 +1,7 @@
 """Parses phreeqc .dat files and returns pandas dataframes"""
 import re
 import os
+import warnings
 from dataclasses import dataclass, asdict
 from typing import List
 import pandas as pd
@@ -137,7 +138,6 @@ class SolutionParser(BaseParser):
             "millero": re.compile(r"^\s*[-]*Millero"),
             "activity_water": re.compile(r"^\s*[-]*activity[ _]*water"),
             "add_logk": re.compile(r"^\s*[-]*add[ _]*logk"),
-            # "llnl_gamma": re.compile(r"^\s*[-]*llnl[ _]*gamma"),
             "co2_llnl_gamma": re.compile(r"^\s*[-]*co2[ _]*llnl[ _]*gamma"),
             "erm_ddl": re.compile(r"^\s*[-]*erm[ _]*ddl"),
             "no_check": re.compile(r"^\s*[-]*no[ _]*check"),
@@ -329,5 +329,9 @@ def phreeqc_database_list(database_directory: str, ignore=None) -> list:
     for file in os.listdir(database_directory):
         if file.endswith(".dat") and not ignore:
             database_file_paths.append(os.path.join(database_directory, file))
+        elif file.endswith(".txt"):
+            warnings.warn(
+                f"File {file} is not a database file and will be ignored", UserWarning
+            )
 
     return database_file_paths
