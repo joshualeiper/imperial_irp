@@ -1,0 +1,78 @@
+lorum epsim Fayalitesdf
+Andersonf Asdfa
+DyFadf
+Asdfafas
+datads
+f Asdfaa fasdfasdf asdfsadf
+ 
+
+SOLUTION_MASTER_SPECIES
+
+Fe	Fe+2	0	Fe	55.847
+Fe(+2)	Fe+2	0	Fe
+Fe(+3)	Fe+3	-2.0	Fe
+Mn	Mn+2	0	Mn	54.938
+V	 VO+2		0.0	V		50.9415
+V(+3)	 V+3		0.0	V
+V(+4)	 VO+2		0.0	V
+V(+5)	 VO2+		0.0	V
+Diethylamine	Diethylamine	1.0	73.138	73.138
+Butylamine	Butylamine	1.0	73.138	73.138
+
+Methylamine	Methylamine	1.0	31.057	31.057
+Mn		Mn+2	 0	Mn		54.938
+Na		Na+	 0	Na		22.9898
+O		H2O	 0	O		16.00
+O(-2)		H2O	 0	0.0
+Ox            Ox-2           0            Ox            88.0196
+P             H2(PO4)-       1            P             30.9738
+Pa            Pa+4           0            Pa            231.0359
+Pa(+4)        Pa+4           0            Pa            231.0359
+Pa(+5)        PaO2+          0            Pa            231.0359
+Ba       Ba+2           0.0     137.34          137.34
+Br       Br-            0.0     79.904          79.904
+C        CO3-2          2.0     61.0173         12.0111
+C(+4)    CO3-2          2.0     61.0173
+U        UO2+2          0.0     238.0290        238.0290
+U(3)     U+3            0.0     238.0290        238.0290
+U(4)     U+4            0.0     238.0290        238.0290
+U(5)     UO2+           0.0     238.0290        238.0290
+SOLUTION_SPECIES
+
+HAcetate =  HAcetate 
+	-llnl_gamma	3.0000	
+	log_k 0
+	-delta_H	0	kJ/mol	# Calculated enthalpy of reaction	HAcetate
+#	Enthalpy of formation:	-116.1 kcal/mol
+
+UO2+2 + e- = UO2+
+	log_k	2.785
+	delta_h	-13.8	kJ
+	-gamma	0	0
+		#                  Id:	8928930
+		#        log K source:	MTQ3.11                       
+		#      Delta H source:	MTQ3.11                       
+		#T and ionic strength:	 
+K+ = K+
+ -gamma 3.5 0.015
+ -dw 1.96e-9  395  2.5  21
+ -Vm  3.322  -1.473  6.534  -2.712  9.06e-2  3.5  0  29.7  0  1 # ref. 1
+Mg+2 = Mg+2
+	-dw	 0.705e-9  111  2.4  13.7
+	-Vm  -1.410  -8.6  11.13  -2.39  1.332  5.5  1.29  -32.9  -5.86e-3  1 # ref. 1
+1.000H2O     = H2O
+     log_k     0.000     
+     delta_h   0.000     #kJ/mol        
+     # Enthalpy of formation:                   #kJ/mol        
+     -analytic 0E+0 0E+0 0E+0 0E+0 0E+0
+#PO4-3 primary master species
+        PO4-3 = PO4-3
+        log_k           0.0
+        -gamma  5.0     0.0 
+
+#H2SiO4-2            14
+        H4SiO4 = H2SiO4-2 + 2H+
+        log_k           -23.0
+        delta_h 17.6 kcal
+        -analytical -294.0184   -0.07265        11204.49        108.18466       -1119669.0
+        -gamma  5.4     0.0 

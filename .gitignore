@@ -2,7 +2,7 @@ exercises/anser_key/
 *.pyc
 master_database/__pycache__
 *.csv
-*.dat
+
 *.txt
 PHREEQC_trials/
 demo.sh
