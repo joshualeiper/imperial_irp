@@ -258,7 +258,6 @@ def clean_dw(tup: tuple) -> Optional[tuple]:
     """
     result = []
     if tup:
-        print(tup)
         for entry in tup:
             try:
                 entry = float(entry)
