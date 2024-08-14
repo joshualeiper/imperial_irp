@@ -50,4 +50,3 @@ class TestPhreeqcParsers:
     def test_phreeqc_database_warning(self):
         with pytest.warns(UserWarning):
             phreeqc_database_list('tests')
-
