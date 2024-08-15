@@ -53,6 +53,8 @@ def write_sp(row: pd.Series, file) -> None:
         value = row[attribute]
         match attribute:
             case 'equation':
+                if 'H3BO3' in value:
+                    print('Hit')
                 value = re.sub(r'\s+', ' ', value)
                 file.write(f"{value}\n")
             case 'log_k':

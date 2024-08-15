@@ -1,0 +1,2 @@
+         sim	       state	        soln	      dist_x	        time	        step	          pH	          pe	    reaction	        temp	         Alk	          mu	    mass_H2O	      charge	     pct_err	       m_Cl-	 m_Zn(Pdma)-	     m_ZnCl+	     m_ZnCl2	    m_ZnCl3-	    m_ZnOHCl	   m_ZnCl4-2	
+           4	      i_soln	           1	         -99	         -99	         -99	           3	        5.92	         -99	      25.000	 -0.00119296	   0.0305937	           1	    0.021175	     34.6078	  2.0000e-02	  6.5896e-13	  2.5387e-08	  5.7556e-10	  9.2082e-12	  2.8174e-13	  1.2785e-13	
