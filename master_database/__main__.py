@@ -2,6 +2,7 @@
 import re
 import logging
 import pandas as pd
+import importlib.resources as pkg_resources
 import master_database.compile_file as cf
 import master_database.compile_tables as ct
 import master_database.parser_dat as p
@@ -11,7 +12,7 @@ from master_database.named_expressions import NAMED_EXPRESSIONS
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Define constants
-DB_PATH = './databases'
+
 RANK = {
     '#llnl.dat': 1,
     '#minteq.v4.dat': 2,
@@ -176,7 +177,11 @@ def reorder_file_list(file_list: str, rank_dict: dict) -> list:
 
 def main():
     """Main function to compile the master database. """
-    db_list = p.phreeqc_database_list(DB_PATH)
+    db_path = pkg_resources.files('master_database.databases').name
+    # DB_PATH = './databases'
+    db_list = p.phreeqc_database_list(db_path)
+    # for dat in db_list:
+    #     logging.info("Processing %s", dat)
     mst = compile_and_rank_mst(db_list)
     soln_species = ct.compile_solution_species_table(db_list)
     db_list = reorder_file_list(db_list, RANK)

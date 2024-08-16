@@ -1,4 +1,6 @@
 import pytest
+import os
+import importlib.resources as pkg_resources
 from master_database.parser_dat import SolutionParser, MasterSolutionParser, phreeqc_database_list
 
 
@@ -6,13 +8,15 @@ class TestPhreeqcParsers:
 
     @pytest.fixture(autouse=True)
     def setup(self):
-        # Setup code for initializing file paths
-        self.data_path = 'tests/test_database.dat'
-        self.master_file_path_1 = 'tests/test_database_1.dat'
-        soln_parser = SolutionParser(self.data_path)
-        self.soln_df = soln_parser.parse_file()
-        self.sms_parser = MasterSolutionParser(self.data_path)
-        self.sms_df = self.sms_parser.data_frame
+        with pkg_resources.files('tests.testing_databases').joinpath('test_database.dat').open('r') as data_file:
+            self.data_path = data_file.name
+            soln_parser = SolutionParser(self.data_path)
+            self.soln_df = soln_parser.parse_file()
+
+        with pkg_resources.files('tests.testing_databases').joinpath('test_database_1.dat').open('r') as master_file_1:
+            self.master_file_path_1 = master_file_1.name
+            self.sms_parser = MasterSolutionParser(self.data_path)
+            self.sms_df = self.sms_parser.data_frame
 
     def test_soln_shape(self):
         assert self.soln_df.shape == (11, 15), f"Expected shape (7, 15), but got {self.soln_df.shape}"
@@ -48,5 +52,8 @@ class TestPhreeqcParsers:
         assert combined_result['source'].nunique() == 2, "Expected 2 unique sources in combined DataFrame"
 
     def test_phreeqc_database_warning(self):
+        # get file path using os module
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        db_path = os.path.join(current_dir, 'testing_databases')
         with pytest.warns(UserWarning):
-            phreeqc_database_list('tests')
+            phreeqc_database_list(db_path)

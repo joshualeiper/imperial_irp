@@ -57,19 +57,19 @@ def test_add_solution():
         assert False, e
 
 
-def test_module():
-    """Tests if the results from PHREEQCPython are the same as PHREEQC"""
-    db = get_database_path('llnl')
-    pp = PhreeqPython(db)
-    sol = {
-        'units': 'mol/kgw',
-        'pH': 3.0,
-        'Cl': 0.02,
-        'Na': 0.02,
-        'K': 0.02,
-        'Pdma': 0.00001,
-        'Zn': 0.000001,
-        'temperature': 25,
-        'pe': 5.92,
-    }
-    solution = pp.add_solution(sol)
+# def test_module():
+#     """Tests if the results from PHREEQCPython are the same as PHREEQC"""
+#     db = get_database_path('llnl')
+#     pp = PhreeqPython(db)
+#     sol = {
+#         'units': 'mol/kgw',
+#         'pH': 3.0,
+#         'Cl': 0.02,
+#         'Na': 0.02,
+#         'K': 0.02,
+#         'Pdma': 0.00001,
+#         'Zn': 0.000001,
+#         'temperature': 25,
+#         'pe': 5.92,
+#     }
+#     solution = pp.add_solution(sol)

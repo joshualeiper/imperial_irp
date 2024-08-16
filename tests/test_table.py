@@ -2,12 +2,13 @@ import pytest
 import os
 import numpy as np
 import pandas as pd
+import importlib.resources as pkg_resources
 import master_database.compile_tables as ct
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 DB_LIST = ['test_database.dat', 'test_database_1.dat']
-DB_LIST = [os.path.join(current_dir, x) for x in DB_LIST]
+DB_LIST = [pkg_resources.files('tests.testing_databases').joinpath(x) for x in DB_LIST]
 
 
 class TestSmsTable:
