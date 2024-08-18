@@ -1,4 +1,4 @@
-DATABASE \\wsl.localhost\Ubuntu\home\jjl122\repos\irp-jjl122\master_database\master_database.dat
+DATABASE \\wsl.localhost\Ubuntu\home\jjl122\repos\irp-jjl122\master_database.dat
 TITLE 01_SIMPLE_SOLUTION
 
 SOLUTION_MASTER_SPECIES
@@ -24,61 +24,61 @@ SOLUTION 1
 pH		3.0
 Cl		0.1		mol/kgw
 Na		0.1		mol/kgw
-As(+5)	100		ug/kgw
+As(+5)	0.0000030   mol/kgw
 END
 
 SOLUTION 2
 pH		4.0
 Cl		0.1		mol/kgw
 Na		0.1		mol/kgw
-As(+5)	100		ug/kgw
+As(+5)	0.0000030   mol/kgw
 END
 
 SOLUTION 3
 pH		5.0
 Cl		0.1		mol/kgw
 Na		0.1		mol/kgw
-As(+5)	100		ug/kgw
+As(+5)	0.0000030   mol/kgw
 END
 
 SOLUTION 4
 pH		6.0
 Cl		0.1		mol/kgw
 Na		0.1		mol/kgw
-As(+5)	100		ug/kgw
+As(+5)	0.0000030   mol/kgw
 END
 
 SOLUTION 5
 pH		7.0
 Cl		0.1		mol/kgw
 Na		0.1		mol/kgw
-As(+5)	100		ug/kgw
+As(+5)	0.0000030   mol/kgw
 END
 
 SOLUTION 6
 pH		8.0
 Cl		0.1		mol/kgw
 Na		0.1		mol/kgw
-As(+5)	100		ug/kgw
+As(+5)	0.0000030   mol/kgw
 END
 
 SOLUTION 7
 pH		9.0
 Cl		0.1		mol/kgw
 Na		0.1		mol/kgw
-As(+5)	100		ug/kgw
+As(+5)	0.0000030   mol/kgw
 END
 
 SOLUTION 8
 pH		10.0
 Cl		0.1		mol/kgw
 Na		0.1		mol/kgw
-As(+5)	100		ug/kgw
+As(+5)	0.0000030   mol/kgw
 END
 
 SOLUTION 9
 pH		11.0
 Cl		0.1		mol/kgw
 Na		0.1		mol/kgw
-As(+5)	100		ug/kgw
+As(+5)	0.0000030   mol/kgw
 END

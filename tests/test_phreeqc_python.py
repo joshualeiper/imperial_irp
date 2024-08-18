@@ -1,75 +1,96 @@
 import os
 import pandas as pd
-from phreeqpython import PhreeqPython
+import pytest
+import importlib.resources as pkg_resources
+import master_database
 from master_database.__main__ import main
-
-main()
-
-
-def get_database_path(db_name: str) -> str:
-    """PHREEQCPython requires the full path to the database.
-    This function returns the full path to the database."""
-
-    if not db_name.endswith('.dat'):
-        db_name += '.dat'
-
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-
-    if not os.path.exists(os.path.join(current_dir, 'testing_databases')):
-        raise FileNotFoundError("The testing_databases folder does not exist")
-    try:
-        return os.path.join(current_dir, 'testing_databases', db_name)
-    except FileNotFoundError:
-        raise FileNotFoundError(f"The database {db_name} does not exist in the testing_databases folder")
+from phreeqpython import PhreeqPython
+import sys
+from unittest.mock import patch
 
 
-def test_file_exists():
-    # Get the current working directory
-    current_dir = os.path.dirname(os.path.abspath(__file__))
+class TestPhreeqPython:
+    @pytest.fixture(autouse=True)
+    def setup_module(self):
+        self.file_dir = os.path.dirname(os.path.abspath(__file__))
+        self.master_database_path = os.path.join(self.file_dir, 'master_database.dat')
+        test_args = ["__main__.py", "--output", self.master_database_path]
+        with patch.object(sys, 'argv', test_args):
+            main()
 
-    # Get the directory above the current one
-    parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
+    def test_main(self):
+        """Test if master_database.dat is created"""
+        assert os.path.exists(self.master_database_path), f"File {self.master_database_path} not found"
 
-    # Define the file name you're looking for
-    file_name = 'master_database.dat'
+    def test_add_solution(self):
+        """Tests if the database compiles"""
+        pp = PhreeqPython(self.master_database_path)
+        sol = {
+            'pH': 3.0,
+            'Cl': 0.1,
+            'Na': 0.1,
+            'As(+5)': 0.00000303,
+            'units': 'mol/kgw',
+            'temperature': 25,
+        }
+        try:
+            pp.add_solution(sol)
+            assert True
+        except Exception as e:
+            assert False, e
 
-    # Create the full path to the file
-    file_path = os.path.join(parent_dir, file_name)
-    assert os.path.exists(file_path), f"File {file_path} not found"
 
-
-def test_add_solution():
-    """Tests if the database compiles"""
-    db = get_database_path('master_database')
+def test_module():
+    """Tests if the results from PHREEQCPython are the same as PHREEQC"""
+    db = pkg_resources.files('tests.testing_databases').joinpath('PdmaDatabase1.dat')
     pp = PhreeqPython(db)
     sol = {
-        'pH': 3.0,
-        'Cl': 0.1,
-        'Na': 0.1,
-        'As(+5)': 0.00000303,
         'units': 'mol/kgw',
+        'pH': 3.0,
+        'Cl': 0.02,
+        'Na': 0.02,
+        'K': 0.02,
+        'Pdma': 0.00001,
+        'Zn': 0.000001,
         'temperature': 25,
+        'pe': 5.92,
     }
-    try:
-        pp.add_solution(sol)
-        assert True
-    except Exception as e:
-        assert False, e
+    solution = pp.add_solution(sol)
+    val = 'ZnPdmaSpeciation.xls'
+    val = pkg_resources.files('tests').joinpath(val)
+    df_phreeqc = pd.read_csv(val, sep='\t')
+    df_phreeqc.columns = [c.replace('m_', '').strip() for c in df_phreeqc.columns]
+    df_pyphreeqc = pd.DataFrame(solution.species, index=[0])
+    df_val = pd.concat([df_phreeqc, df_pyphreeqc], axis=0)
+    df_val = df_val.dropna(axis=1, how='any')
+    pd.testing.assert_series_equal(df_val.iloc[0], df_val.iloc[1])
 
 
-# def test_module():
-#     """Tests if the results from PHREEQCPython are the same as PHREEQC"""
-#     db = get_database_path('llnl')
-#     pp = PhreeqPython(db)
-#     sol = {
-#         'units': 'mol/kgw',
-#         'pH': 3.0,
-#         'Cl': 0.02,
-#         'Na': 0.02,
-#         'K': 0.02,
-#         'Pdma': 0.00001,
-#         'Zn': 0.000001,
-#         'temperature': 25,
-#         'pe': 5.92,
-#     }
-#     solution = pp.add_solution(sol)
+def test_exampls():
+    db = pkg_resources.files('master_database.databases').joinpath('llnl.dat')
+    pp = PhreeqPython(db)
+    val = 'output.xls'
+    keep = ['AsO4-3', 'HAsO4-2', 'H2AsO4-', 'H3AsO4']
+    val_path = pkg_resources.files('tests').joinpath(val)
+    df_val = pd.read_csv(val_path, sep='\t')
+    df_val.columns = [c.replace('m_', '').strip() for c in df_val.columns]
+    df_val.set_index('pH', inplace=True)
+    df_val = df_val[keep]
+    result = pd.DataFrame()
+    for pH in df_val.index:
+        sol = {
+            'units': 'mol/kgw',
+            'pH': pH,
+            'Cl': 0.1,
+            'Na': 0.1,
+            'As(+5)': 0.0000030,
+        }
+        solution = pp.add_solution(sol)
+        temp_df = pd.DataFrame(solution.species, index=[pH])
+        result = pd.concat([result, temp_df])
+
+    result = result[keep]
+    result.index.name = 'pH'
+    result.head()
+
+    pd.testing.assert_frame_equal(result, df_val)

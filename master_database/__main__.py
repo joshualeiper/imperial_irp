@@ -1,6 +1,8 @@
 """Compile multiple databases into a single master database."""
 import re
 import logging
+import os
+import argparse
 import pandas as pd
 import importlib.resources as pkg_resources
 import master_database.compile_file as cf
@@ -215,12 +217,21 @@ def main():
     equations_add = equations_add.drop(index=drop_index)
     result_sp = pd.concat([result_sp, equations_add], ignore_index=True)
     result_mst = result_mst.sort_values(by=['element'])
+    
+    # Parse command line arguments
+    current_dir = os.path.dirname(os.path.realpath(__file__))
+    print(current_dir)
+    default_output = os.path.join(current_dir, 'master_database.dat')
+    parser = argparse.ArgumentParser(description='Compile multiple databases into a single master database.')
+    parser.add_argument('--output', '-o', type=str, default=default_output, help='Output file path')
+    args = parser.parse_args()
 
-    with open('master_database.dat', 'w', encoding='utf-8') as file:
+    # Save file
+    with open(args.output, 'w', encoding='utf-8') as file:
         file.write(NAMED_EXPRESSIONS)
         file.write(
             "SOLUTION_MASTER_SPECIES\n#element\tmaster species\talkalinity\tgfw|formula\tgfw of element\tsource\n"
-            )
+        )
         result_mst.apply(lambda row: cf.write_mst(row, file), axis=1)
         file.write("\nSOLUTION_SPECIES\n")
         result_sp.apply(lambda row: cf.write_sp(row, file), axis=1)
