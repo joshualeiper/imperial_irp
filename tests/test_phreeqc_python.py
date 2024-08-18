@@ -2,7 +2,6 @@ import os
 import pandas as pd
 import pytest
 import importlib.resources as pkg_resources
-import master_database
 from master_database.__main__ import main
 from phreeqpython import PhreeqPython
 import sys
