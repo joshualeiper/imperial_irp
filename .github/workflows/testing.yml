@@ -28,8 +28,9 @@ jobs:
       - name: Activate Conda environment
         run: source activate test-environment
 
-      - name: Install pytest via pip
-        run: pip install pytest
+      - name: Install dependencies
+        run: conda install --yes --file environment.yml
 
       - name: Run tests
+        run: pip install pytest
         run: pytest
