@@ -23,13 +23,13 @@ jobs:
           python-version: 3.x
 
       - name: Create Conda environment
-        run: conda create --name test-environment --file environment.yml
+        run: conda create --name test-environment python=3.x
 
       - name: Activate Conda environment
         run: source activate test-environment
 
-      - name: Install pytest via pip
-        run: pip install pytest
+      - name: Install dependencies from requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Run tests
         run: pytest
