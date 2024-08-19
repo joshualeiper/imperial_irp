@@ -128,7 +128,8 @@ def test_clean_vm():
     ]
     vm_expected_answer = (-9.66, 28.5, 80.0, -22.9, 1.89, 0, 1.09, 0, 0, 1)
 
-    clean_function_test('vm', ct.clean_vm, vm_samples, vm_expected_answer)
+    for sample in vm_samples:
+        assert ct.clean_tuple(sample, 'vm') == vm_expected_answer
 
 
 def test_clean_dw():
@@ -138,9 +139,10 @@ def test_clean_dw():
         ('-Dw', '0.955e-9', '0', '1.12', '2.84'),
         ('0.955e-9', '0', '1.12', '2.84')
     ]
-    dw_expected_answer = (0.955e-9, 0, 1.12, 2.84)
+    dw_expected_answer = (0.955e-9, 0.0, 1.12, 2.84)
 
-    clean_function_test('dw', ct.clean_dw, dw_samples, dw_expected_answer)
+    for sample in dw_samples:
+        assert ct.clean_tuple(sample, 'dw') == dw_expected_answer
 
 
 def test_strfloat_to_stringint_():

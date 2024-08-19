@@ -1,27 +1,13 @@
-"""Compile multiple databases into a single master database."""
-import re
 import logging
+import os
+import warnings
 import pandas as pd
-import master_database.write_dataframes as cf
 import master_database.clean_tables as ct
-import master_database.parser_dat as p
+import master_database.write_dataframes as cf
 from master_database.named_expressions import NAMED_EXPRESSIONS
 
-# Setup logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Define constants
-DB_PATH = 'databases/test_data'
-RANK = {
-    '#llnl.dat': 1,
-    '#minteq.v4.dat': 2,
-    '#phreeqc.dat': 3,
-    '#Tipping_Hurley.dat': 4,
-}
-TO_DROP = ['Hg', 'Sb(OH)6-']
-
-
-def compile_and_rank_mst(db_list: str) -> pd.DataFrame:
+def compile_and_rank_mst(db_list: str, rank: dict) -> pd.DataFrame:
     """
     Compile and rank the master solution table.
     Parameters
@@ -41,7 +27,7 @@ def compile_and_rank_mst(db_list: str) -> pd.DataFrame:
     The resulting table is then sorted by the 'priority' column.
     """
     mst = ct.compile_master_solution_table(db_list)
-    mst['priority'] = mst['source'].apply(lambda x: RANK[x] if x in RANK else 5)
+    mst['priority'] = mst['source'].apply(lambda x: rank[x] if x in rank else 5)
     return mst.sort_values(by=['priority'])
 
 
@@ -109,7 +95,8 @@ def process_missing_species(missing_species: pd.DataFrame) -> pd.DataFrame:
     pandas.DataFrame
         DataFrame with rows removed where species is in TO_DROP.
     """
-    missing_species = missing_species[~missing_species['species'].isin(TO_DROP)]
+    to_drop = ['Hg', 'Sb(OH)6-']
+    missing_species = missing_species[~missing_species['species'].isin(to_drop)]
     return missing_species
 
 
@@ -174,46 +161,12 @@ def reorder_file_list(file_list: str, rank_dict: dict) -> list:
     return sorted_file_paths
 
 
-def main():
-    """Main function to compile the master database. """
-    db_list = p.phreeqc_database_list(DB_PATH)
-    mst = compile_and_rank_mst(db_list)
-    soln_species = ct.compile_solution_species_table(db_list)
-    db_list = reorder_file_list(db_list, RANK)
-    result_mst = mst[mst['source'] == db_list[0]]
-    result_sp = soln_species[soln_species['source'] == remove_hash_from_source(db_list[0])]
-
-    all_match_indexes = []
-    for i in range(1, len(db_list)):
-        missing_species = get_missing_species(mst, result_mst, db_list[i])
-        if missing_species.empty:
-            logging.info("No missing species found in %s", db_list[i])
-            continue
-
-        if db_list[i] == '#minteq.v4.dat':
-            missing_species = process_missing_species(missing_species)
-
-        equations = soln_species[soln_species['source'] == remove_hash_from_source(db_list[i])]['equation']
-        missing_species['species'].apply(
-            lambda entry: find_and_collect_matches(
-                equations,
-                entry,
-                all_match_indexes,
-                )
-            )
-        result_mst = pd.concat([result_mst, missing_species], ignore_index=True)
-
-    all_match_indexes = list(set(all_match_indexes))
-    equations_add = soln_species.loc[all_match_indexes]
-    drop_re = re.compile('Hg[(]OH[)]2|Sb[(]OH[)]6-|H4[(]SiO4[)]|H2[(]PO4[)]-')
-    drop_index = equations_add[equations_add['equation'].str.contains(drop_re)].index
-    equations_add = equations_add.drop(index=drop_index)
-    result_sp = pd.concat([result_sp, equations_add], ignore_index=True)
-    result_mst = result_mst.sort_values(by=['element'])
-
-    with open('master_database.dat', 'w', encoding='utf-8') as file:
+def save_master_database(output_file, result_mst, result_sp):
+    with open(output_file, 'w', encoding='utf-8') as file:
         file.write(NAMED_EXPRESSIONS)
-        file.write("SOLUTION_MASTER_SPECIES\n#element\tmaster species\talkalinity\tgfw|formula\tgfw of element\tsource\n")
+        file.write(
+            "SOLUTION_MASTER_SPECIES\n#element\tmaster species\talkalinity\tgfw|formula\tgfw of element\tsource\n"
+        )
         result_mst.apply(lambda row: cf.write_mst(row, file), axis=1)
         file.write("\nSOLUTION_SPECIES\n")
         result_sp.apply(lambda row: cf.write_sp(row, file), axis=1)
@@ -221,5 +174,15 @@ def main():
     logging.info("File processing complete.")
 
 
-if __name__ == "__main__":
-    main()
+def phreeqc_database_list(database_directory: str, ignore=None) -> list:
+    """Returns a list of phreeqc database file paths"""
+    database_file_paths = []
+    for file in os.listdir(database_directory):
+        if file.endswith(".dat") and not ignore:
+            database_file_paths.append(os.path.join(database_directory, file))
+        elif file.endswith(".txt"):
+            warnings.warn(
+                f"File {file} is not a database file and will be ignored", UserWarning
+            )
+
+    return database_file_paths

@@ -1,6 +1,6 @@
 import pandas as pd
 from io import StringIO
-from master_database.compile_file import write_tuple, write_mst, write_sp
+from master_database.write_dataframes import write_tuple, write_mst, write_sp
 
 
 def test_write_tuple():

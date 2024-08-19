@@ -1,7 +1,6 @@
 """Parses phreeqc .dat files and returns pandas dataframes"""
 import re
 import os
-import warnings
 from dataclasses import dataclass, asdict
 from typing import List
 import pandas as pd
@@ -324,17 +323,3 @@ def file_name(file_path: str) -> str:
         return os.path.basename(file_path)
     else:
         raise FileNotFoundError(f"File {file_path} not found")
-
-
-def phreeqc_database_list(database_directory: str, ignore=None) -> list:
-    """Returns a list of phreeqc database file paths"""
-    database_file_paths = []
-    for file in os.listdir(database_directory):
-        if file.endswith(".dat") and not ignore:
-            database_file_paths.append(os.path.join(database_directory, file))
-        elif file.endswith(".txt"):
-            warnings.warn(
-                f"File {file} is not a database file and will be ignored", UserWarning
-            )
-
-    return database_file_paths

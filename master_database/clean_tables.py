@@ -1,6 +1,6 @@
 """Uses Solution and Master Solution parsers to compile tables from multiple databases"""
 import re
-from typing import Optional
+from typing import Optional, Tuple, Literal
 import numpy as np
 import pandas as pd
 from master_database import parser_dat
@@ -53,7 +53,7 @@ def compile_solution_species_table(list_of_databases: list) -> pd.DataFrame:
     for database in list_of_databases[1:]:
         result = pd.concat([result, parser_dat.SolutionParser(database).parse_file()])
 
-    # convert log_k and llnl_gamma to float
+    # convert log_k to float
     result['log_k'] = result['log_k'].apply(log_k_to_float)
 
     # remove 1.0000 from equations
@@ -67,11 +67,11 @@ def compile_solution_species_table(list_of_databases: list) -> pd.DataFrame:
 
     # clean vm column
     if 'v_m' in result.columns:
-        result['v_m'] = result['v_m'].apply(clean_vm)
+        result['v_m'] = result['v_m'].apply(lambda x: clean_tuple(x, 'vm'))
 
     # clean dw column
     if 'd_w' in result.columns:
-        result['d_w'] = result['d_w'].apply(clean_dw)
+        result['d_w'] = result['d_w'].apply(lambda x: clean_tuple(x, 'dw'))
 
     # reset index and drop index column
     result = result.reset_index().drop('index', axis=1)
@@ -111,7 +111,7 @@ def compile_phase_table(list_of_databases: list) -> pd.DataFrame:
 
     # clean up vm column
     if 'v_m' in result.columns:
-        result['v_m'] = result['v_m'].apply(clean_vm)
+        result['v_m'] = result['v_m'].apply(lambda x: clean_tuple(x, 'vm'))
 
     # breakup tc column
     result = result.apply(expand_tc, axis=1)
@@ -222,49 +222,30 @@ def strfloat_to_stringint(equation: pd.Series) -> pd.Series:
     return equation.str.replace(decimals, '', regex=True)
 
 
-def clean_vm(tup: tuple) -> Optional[tuple]:
+def clean_tuple(tup: tuple, filter_str: Literal['vm', 'dw']) -> Optional[Tuple[float, ...]]:
     """
-    Clean the given tuple by removing elements that contain 'vm' and converting numeric strings to floats.
+    Clean the input tuple by removing elements that contain a specified substring ('vm' or 'dw')
+    and converting numeric strings to floats. Retains numeric elements as they are.
 
     Parameters:
         tup (tuple): The input tuple to be cleaned.
+        filter_str (Literal['vm', 'dw']): The substring to filter out from the tuple. Only 'vm' or 'dw' are allowed.
 
     Returns:
-        tuple: The cleaned tuple.
-
+        tuple: The cleaned tuple, or None if the input tuple is empty or contains no valid elements.
     """
     result = []
     if tup:
         for entry in tup:
-            try:
-                entry = float(entry)
-                result.append(entry)
-            except ValueError:
-                pass
-        return tuple(result)
-    return None
-
-
-def clean_dw(tup: tuple) -> Optional[tuple]:
-    """
-    Clean the input tuple by removing elements that contain 'dw' and converting numeric strings to floats.
-
-    Parameters:
-        tup (tuple): The input tuple to be cleaned.
-
-    Returns:
-        tuple: The cleaned tuple.
-
-    """
-    result = []
-    if tup:
-        for entry in tup:
-            try:
-                entry = float(entry)
-                result.append(entry)
-            except ValueError:
-                pass
-        return tuple(result)
+            if isinstance(entry, (float)):
+                result.append(float(entry))
+            elif isinstance(entry, str) and filter_str not in entry:
+                try:
+                    entry = float(entry)
+                    result.append(entry)
+                except ValueError:
+                    pass
+        return tuple(result) if result else None
     return None
 
 
