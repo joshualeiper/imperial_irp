@@ -23,6 +23,7 @@ class TestPhreeqPython:
 
     def test_add_solution(self):
         """Tests if the database compiles"""
+        self.master_database_path = pkg_resources.files('tests').joinpath('master_database.dat')
         pp = PhreeqPython(self.master_database_path)
         sol = {
             'pH': 3.0,
