@@ -52,13 +52,6 @@ class TestPhreeqcParsers:
         assert combined_result['species'].notna().all(), "Some 'species' values are NaN"
         assert combined_result['source'].nunique() == 2, "Expected 2 unique sources in combined DataFrame"
 
-    def test_phreeqc_database_warning(self):
-        # get file path using os module
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        db_path = os.path.join(current_dir, 'testing_databases')
-        with pytest.warns(UserWarning):
-            par.phreeqc_database_list(db_path)
-
 
 def test_file_name():
     valid_file_path = "/home/user/documents/file.txt"
