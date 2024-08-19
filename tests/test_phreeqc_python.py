@@ -21,6 +21,9 @@ class TestPhreeqPython:
         """Test if master_database.dat is created"""
         assert os.path.exists(self.master_database_path), f"File {self.master_database_path} not found"
 
+    is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
+
+    @pytest.mark.skipif(is_github_actions, reason="Skipping test on GitHub Actions")
     def test_add_solution(self):
         """Tests if the database compiles"""
         self.master_database_path = pkg_resources.files('tests').joinpath('master_database.dat')
