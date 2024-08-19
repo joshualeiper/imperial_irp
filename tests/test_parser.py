@@ -1,5 +1,4 @@
 import pytest
-import os
 from unittest.mock import patch
 import importlib.resources as pkg_resources
 import master_database.parser_dat as par
