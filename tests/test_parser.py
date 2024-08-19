@@ -1,7 +1,8 @@
 import pytest
 import os
+from unittest.mock import patch
 import importlib.resources as pkg_resources
-from master_database.parser_dat import SolutionParser, MasterSolutionParser, phreeqc_database_list
+import master_database.parser_dat as par
 
 
 class TestPhreeqcParsers:
@@ -10,12 +11,12 @@ class TestPhreeqcParsers:
     def setup(self):
         with pkg_resources.files('tests.testing_databases').joinpath('test_database.dat').open('r') as data_file:
             self.data_path = data_file.name
-            soln_parser = SolutionParser(self.data_path)
+            soln_parser = par.SolutionParser(self.data_path)
             self.soln_df = soln_parser.parse_file()
 
         with pkg_resources.files('tests.testing_databases').joinpath('test_database_1.dat').open('r') as master_file_1:
             self.master_file_path_1 = master_file_1.name
-            self.sms_parser = MasterSolutionParser(self.data_path)
+            self.sms_parser = par.MasterSolutionParser(self.data_path)
             self.sms_df = self.sms_parser.data_frame
 
     def test_soln_shape(self):
@@ -42,7 +43,7 @@ class TestPhreeqcParsers:
         assert self.sms_df.iloc[0, 0] == 'Fe', "Unexpected species in first row"
 
     def test_combined_master_solution_parser(self):
-        parser1 = MasterSolutionParser(self.master_file_path_1)
+        parser1 = par.MasterSolutionParser(self.master_file_path_1)
         combined_result = parser1 + self.sms_parser
         combined_result = combined_result.data_frame
 
@@ -56,4 +57,16 @@ class TestPhreeqcParsers:
         current_dir = os.path.dirname(os.path.abspath(__file__))
         db_path = os.path.join(current_dir, 'testing_databases')
         with pytest.warns(UserWarning):
-            phreeqc_database_list(db_path)
+            par.phreeqc_database_list(db_path)
+
+
+def test_file_name():
+    valid_file_path = "/home/user/documents/file.txt"
+    with patch("os.path.isfile", return_value=True):
+        assert par.file_name(valid_file_path) == "file.txt"
+
+    invalid_file_path = "/non/existent/path/file.txt"
+    with patch("os.path.isfile", return_value=False):
+        with pytest.raises(FileNotFoundError) as excinfo:
+            par.file_name(invalid_file_path)
+        assert str(excinfo.value) == f"File {invalid_file_path} not found"

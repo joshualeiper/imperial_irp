@@ -270,7 +270,7 @@ class MasterSolutionParser:
         data_frame["source"] = self.source
         self.data_frame = data_frame
 
-    def __add__(self, other: pd.DataFrame) -> pd.DataFrame:
+    def __add__(self, other: 'MasterSolutionParser') -> 'MasterSolutionParser':
         """
         Combine the data from this parser with another MasterSolutionParser instance.
 
@@ -320,7 +320,10 @@ def text_selection(text_file, start_block, end_block) -> list:
 
 def file_name(file_path: str) -> str:
     """Extracts the file name from a file path"""
-    return os.path.basename(file_path)
+    if os.path.isfile(file_path):
+        return os.path.basename(file_path)
+    else:
+        raise FileNotFoundError(f"File {file_path} not found")
 
 
 def phreeqc_database_list(database_directory: str, ignore=None) -> list:

@@ -6,7 +6,7 @@ import argparse
 import pandas as pd
 import importlib.resources as pkg_resources
 import master_database.compile_file as cf
-import master_database.compile_tables as ct
+import master_database.clean_tables as ct
 import master_database.parser_dat as p
 from master_database.named_expressions import NAMED_EXPRESSIONS
 

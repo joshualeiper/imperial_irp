@@ -3,7 +3,7 @@ import os
 import numpy as np
 import pandas as pd
 import importlib.resources as pkg_resources
-import master_database.compile_tables as ct
+import master_database.clean_tables as ct
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
