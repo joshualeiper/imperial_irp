@@ -188,7 +188,6 @@ def replace_elements(value):
     >>> replace_elements("H(2)O + Na(1)Cl")
     'H(+2)O + Na(+1)Cl'
     """
-    # Find all matches of elements in the format 'Element(Number)'
     matches = re.findall(r'([A-Za-z]+)\((?!0\b)(\d+)\)', value)
     for match in matches:
         element, number = match
