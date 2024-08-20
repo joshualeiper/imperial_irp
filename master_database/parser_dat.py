@@ -20,7 +20,6 @@ class SolutionData:
     millero: List[float] = None
     activity_water: List[float] = None
     add_logk: List[float] = None
-    llnl_gamma: List[float] = None
     co2_llnl_gamma: List[float] = None
     erm_ddl: List[float] = None
     no_check: List[float] = None

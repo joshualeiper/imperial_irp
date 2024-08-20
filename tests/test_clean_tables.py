@@ -1,11 +1,11 @@
 import pytest
-import os
+import warnings
 import numpy as np
 import pandas as pd
 import importlib.resources as pkg_resources
 import master_database.clean_tables as ct
+from master_database.utils import save_master_database
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
 
 DB_LIST = ['test_database.dat', 'test_database_1.dat']
 DB_LIST = [pkg_resources.files('tests.testing_databases').joinpath(x) for x in DB_LIST]
@@ -150,3 +150,17 @@ def test_strfloat_to_stringint_():
     expected = pd.Series(['5', '789', '1000'])
     result = ct.strfloat_to_stringint(data)
     pd.testing.assert_series_equal(result, expected)
+
+
+def test_no_check():
+    '''Test if no_check is captured correctly'''
+
+    # The minteq database has a no_check column
+    db = pkg_resources.files('master_database.databases').joinpath('minteq.v4.dat')
+    db = ct.compile_solution_species_table([db])
+    assert 'no_check' in db.columns
+
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", UserWarning)
+        minteq_db = save_master_database(output_file=None, result_mst=None, result_sp=db)
+    assert 'no_check' in minteq_db, 'no_check not found in minteq database'

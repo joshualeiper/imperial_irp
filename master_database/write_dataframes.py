@@ -1,6 +1,5 @@
 ''' This module contains functions to write data to a file. '''
 import re
-import numpy as np
 import pandas as pd
 
 
@@ -53,8 +52,6 @@ def write_sp(row: pd.Series, file) -> None:
         value = row[attribute]
         match attribute:
             case 'equation':
-                if 'H3BO3' in value:
-                    print('Hit')
                 value = re.sub(r'\s+', ' ', value)
                 file.write(f"{value}\n")
             case 'log_k':
@@ -69,17 +66,15 @@ def write_sp(row: pd.Series, file) -> None:
                 write_tuple('Vm', value, file)
             case 'add_logk':
                 write_tuple('add_logk', value, file)
-            case 'llnl_gamma':
-                if value is not None and value != np.nan:
-                    file.write(f"\t-llnl_gamma\t{value}\n")
             case 'no_check':
-                if isinstance(value, tuple):
+                if value:
                     file.write("\t-no_check\n")
             case 'source':
                 file.write(f"\t# source\t{value}\n")
 
 
-def write_phase(row, file):
+# PHASES block not currently implemented
+def write_phase(row, file):  # pragma: no cover
     """
     Writes PHASES information to file.
 

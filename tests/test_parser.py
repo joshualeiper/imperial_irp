@@ -19,7 +19,7 @@ class TestPhreeqcParsers:
             self.sms_df = self.sms_parser.data_frame
 
     def test_soln_shape(self):
-        assert self.soln_df.shape == (11, 15), f"Expected shape (7, 15), but got {self.soln_df.shape}"
+        assert self.soln_df.shape == (11, 14), f"Expected shape (11, 14), but got {self.soln_df.shape}"
 
     def test_soln_columns(self):
         assert 'equation' in self.soln_df.columns, "Expected column 'equation' not found"

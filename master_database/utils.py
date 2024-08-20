@@ -1,5 +1,6 @@
 import logging
 import os
+import io
 import warnings
 import pandas as pd
 import master_database.clean_tables as ct
@@ -161,17 +162,35 @@ def reorder_file_list(file_list: str, rank_dict: dict) -> list:
     return sorted_file_paths
 
 
-def save_master_database(output_file, result_mst, result_sp):
-    with open(output_file, 'w', encoding='utf-8') as file:
-        file.write(NAMED_EXPRESSIONS)
-        file.write(
-            "SOLUTION_MASTER_SPECIES\n#element\tmaster species\talkalinity\tgfw|formula\tgfw of element\tsource\n"
-        )
-        result_mst.apply(lambda row: cf.write_mst(row, file), axis=1)
-        file.write("\nSOLUTION_SPECIES\n")
-        result_sp.apply(lambda row: cf.write_sp(row, file), axis=1)
+def save_master_database(output_file=None, result_mst: pd.DataFrame = None, result_sp: pd.DataFrame = None) -> str:
+    if result_mst is None and result_sp is None:
+        raise ValueError("At least one of result_mst or result_sp must be provided.")
 
-    logging.info("File processing complete.")
+    if result_mst is None or result_sp is None:
+        warnings.warn("Either solution master species or solution species is missing.", UserWarning)
+
+    with io.StringIO() as file:
+        file.write(NAMED_EXPRESSIONS)
+
+        if result_mst is not None:
+            file.write(
+                "SOLUTION_MASTER_SPECIES\n#element\tmaster species\talkalinity\tgfw|formula\tgfw of element\tsource\n"
+            )
+            result_mst.apply(lambda row: cf.write_mst(row, file), axis=1)
+
+        if result_sp is not None:
+            file.write("\nSOLUTION_SPECIES\n")
+            result_sp.apply(lambda row: cf.write_sp(row, file), axis=1)
+
+        logging.info("File processing complete.")
+        file_content = file.getvalue()
+
+    if output_file:
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write(file_content)
+
+    else:
+        return file_content
 
 
 def phreeqc_database_list(database_directory: str, ignore=None) -> list:

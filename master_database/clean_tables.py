@@ -73,13 +73,17 @@ def compile_solution_species_table(list_of_databases: list) -> pd.DataFrame:
     if 'd_w' in result.columns:
         result['d_w'] = result['d_w'].apply(lambda x: clean_tuple(x, 'dw'))
 
+    # convert no_check to boolean
+    result['no_check'] = result['no_check'].apply(lambda x: True if isinstance(x, tuple) else False)
+
     # reset index and drop index column
     result = result.reset_index().drop('index', axis=1)
 
     return result
 
 
-def compile_phase_table(list_of_databases: list) -> pd.DataFrame:
+# This function is not implemented yet, skip in testing
+def compile_phase_table(list_of_databases: list) -> pd.DataFrame:  # pragma: no cover
     """
     Compile phase table from a list of databases.
 
@@ -193,23 +197,6 @@ def replace_elements(value):
     return value
 
 
-def tuple_to_string(tup: tuple) -> str:
-    '''Converts a tuple to a string by joining all elements with a space'''
-    return ' '.join(tup)
-
-
-# Might be unused
-def tuple_to_float(tup: tuple) -> Optional[float]:
-    '''Converts a tuple to a float by taking the first element'''
-    if tup and not isinstance(tup, float):
-        try:
-            return float(tup[0])
-        except ValueError:
-            result = tup[0].split(';')
-            return float(result[0])
-    return None
-
-
 def remove_ones(equation: pd.Series) -> pd.Series:
     """Changes 1.0000 to 1 in the equation column"""
     ones = re.compile(r'\b1\.0000?\b\s?')
@@ -292,7 +279,26 @@ def expand_tc(row: pd.Series) -> pd.Series:
     return row
 
 
-def expand_logk(row: pd.Series) -> pd.Series:
+# function is only used in compile_phase_table, which is not implemented yet, skip in testing
+def tuple_to_string(tup: tuple) -> str:  # pragma: no cover
+    '''Converts a tuple to a string by joining all elements with a space'''
+    return ' '.join(tup)
+
+
+# function is only used in compile_phase_table, which is not implemented yet, skip in testing
+def tuple_to_float(tup: tuple) -> Optional[float]:  # pragma: no cover
+    '''Converts a tuple to a float by taking the first element'''
+    if tup and not isinstance(tup, float):
+        try:
+            return float(tup[0])
+        except ValueError:
+            result = tup[0].split(';')
+            return float(result[0])
+    return None
+
+
+# function is only used in compile_phase_table, which is not implemented yet, skip in testing
+def expand_logk(row: pd.Series) -> pd.Series:  # pragma: no cover
     """
     Expand the log_k value in the given row.
 

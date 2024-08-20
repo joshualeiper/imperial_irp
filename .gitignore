@@ -6,3 +6,5 @@ master_database/__pycache__
 *.txt
 PHREEQC_trials/
 demo.sh
+.coverage
+master_database/__pycache__/utils.cpython-310.pyc
