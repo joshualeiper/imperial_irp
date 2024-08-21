@@ -3,8 +3,8 @@ import warnings
 import numpy as np
 import pandas as pd
 import importlib.resources as pkg_resources
-import master_database.clean_tables as ct
-from master_database.utils import save_master_database
+import build_database.clean_tables as ct
+from build_database.utils import save_master_database
 
 
 DB_LIST = ['test_database.dat', 'test_database_1.dat']
@@ -156,7 +156,7 @@ def test_no_check():
     '''Test if no_check is captured correctly'''
 
     # The minteq database has a no_check column
-    db = pkg_resources.files('master_database.databases').joinpath('minteq.v4.dat')
+    db = pkg_resources.files('build_database.databases').joinpath('minteq.v4.dat')
     db = ct.compile_solution_species_table([db])
     assert 'no_check' in db.columns
 

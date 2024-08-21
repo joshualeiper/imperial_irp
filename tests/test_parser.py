@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import patch
 import importlib.resources as pkg_resources
-import master_database.parser_dat as par
+import build_database.parser_dat as par
 
 
 class TestPhreeqcParsers:

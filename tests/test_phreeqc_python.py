@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import pytest
 import importlib.resources as pkg_resources
-from master_database.__main__ import main
+from build_database.__main__ import main
 from phreeqpython import PhreeqPython
 import sys
 from unittest.mock import patch
@@ -70,7 +70,7 @@ def test_module():
 
 
 def test_exampls():
-    db = pkg_resources.files('master_database.databases').joinpath('llnl.dat')
+    db = pkg_resources.files('build_database.databases').joinpath('llnl.dat')
     pp = PhreeqPython(db)
     val = 'output.xls'
     keep = ['AsO4-3', 'HAsO4-2', 'H2AsO4-', 'H3AsO4']

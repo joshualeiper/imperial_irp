@@ -3,9 +3,9 @@ import os
 import io
 import warnings
 import pandas as pd
-import master_database.clean_tables as ct
-import master_database.write_dataframes as cf
-from master_database.named_expressions import NAMED_EXPRESSIONS
+import build_database.clean_tables as ct
+import build_database.write_dataframes as cf
+from build_database.named_expressions import NAMED_EXPRESSIONS
 
 
 def compile_and_rank_mst(db_list: str, rank: dict) -> pd.DataFrame:
