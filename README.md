@@ -40,6 +40,7 @@ All requirements are updated in the requirements.txt file in this library and en
   
 ## Installation Instructions
 [Install with Conda (recommended)](#create-conda-environment)
+
 [Install with PIP](#pip-install)
 
 In order to clone this repository, navigate to the folder where you want the project to live
@@ -70,6 +71,7 @@ ensure you are in the directory planned for the projec and run:
 Using the method may result in conflicts between numpy, pandas, and matplotlib version, throwing a ton of warnings upon database gerneration.
 ## Usage
 [Raw parsing tool](#parser)
+
 [Generate Master Database](database-generation)
 
 There are two main user-facing tools in the repo, a parsing tool for converting PHREEQC '.dat' files into csv and JSON formats, and a tool to generate a new Master database.
