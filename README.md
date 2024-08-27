@@ -177,3 +177,8 @@ references.md
 requirements.txt
 setup.py
 ```
+### Testing
+To run the testing framework, simply use the pytest command in the terminal
+```bash
+pytest tests/
+```
