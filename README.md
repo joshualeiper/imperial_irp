@@ -149,6 +149,8 @@ OR
 python __main__.py -o custom_output.dat
 ```
 This command compiles the databases and saves the output to `custom_output.dat`.
+
+For an examples of internal function and tools, please see the results [README](results/README.md)
 ## Project Structure
 A file tree of the project is:
 
