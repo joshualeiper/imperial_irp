@@ -151,7 +151,8 @@ python __main__.py -o custom_output.dat
 This command compiles the databases and saves the output to `custom_output.dat`.
 ## Project Structure
 A file tree of the project is:
-```bash
+
+
 IRP-JJL122/
 ├── build_database/
 │   ├── databases/
@@ -175,4 +176,4 @@ README.md
 references.md
 requirements.txt
 setup.py
-```
+
