@@ -93,7 +93,7 @@ def plot_source_hist(
     )
 
     if label:
-        ax.legend(loc="upper right", frameon=False)
+        ax.legend(loc="upper center", frameon=False)
 
     # Optional: Remove top and right spines for a cleaner look
     sns.despine(ax=ax)
