@@ -12,7 +12,7 @@ from build_database import utils
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
-def main():
+def main(verbose=False):
     """Main function to compile the master database. """
     data_b = pkg_resources.files('build_database.databases').name
     data_b = utils.phreeqc_database_list(data_b)
@@ -55,6 +55,12 @@ def main():
     equations_add = equations_add.drop(index=drop_index)
     result_sp = pd.concat([result_sp, equations_add], ignore_index=True)
     result_mst = result_mst.sort_values(by=['element'])
+    if verbose:
+        logging.info(f"Master database compiled with {len(result_mst)} elements and {len(result_sp)} equations.")
+        num_of_species_by_source = result_sp['source'].value_counts()
+        logging.info("Number of species by source:")
+        for source, num in num_of_species_by_source.items():
+            logging.info(f"{source}: {num}")
 
     # Parse command line arguments
     current_dir = os.path.dirname(os.path.realpath(__file__))

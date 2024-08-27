@@ -282,9 +282,6 @@ How often does this happen?
 ### Alkalinity Conflict
 
 
-
-
-
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
