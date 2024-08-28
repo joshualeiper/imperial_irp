@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 def main(verbose=False):
     """Main function to compile the master database. """
-    data_b = pkg_resources.files('build_database.databases').name
+    data_b = pkg_resources.files('build_database').joinpath('databases')
     data_b = utils.phreeqc_database_list(data_b)
     rank = {
         '#llnl.dat': 1,
@@ -22,6 +22,7 @@ def main(verbose=False):
         '#phreeqc.dat': 3,
         '#Tipping_Hurley.dat': 4,
     }
+
     mst = utils.compile_and_rank_mst(data_b, rank)
     soln_species = ct.compile_solution_species_table(data_b)
     db_list = utils.reorder_file_list(data_b, rank)
@@ -58,7 +59,7 @@ def main(verbose=False):
     if verbose:
         logging.info(f"Master database compiled with {len(result_mst)} elements and {len(result_sp)} equations.")
         num_of_species_by_source = result_sp['source'].value_counts()
-        logging.info("Number of species by source:")
+        logging.info("Number of elements by source:")
         for source, num in num_of_species_by_source.items():
             logging.info(f"{source}: {num}")
 
