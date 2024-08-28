@@ -20,6 +20,7 @@ class SolutionData:
     millero: List[float] = None
     activity_water: List[float] = None
     add_logk: List[float] = None
+    llnl_gamma: List[float] = None
     co2_llnl_gamma: List[float] = None
     erm_ddl: List[float] = None
     no_check: List[float] = None
@@ -131,6 +132,7 @@ class SolutionParser(BaseParser):
             "log_k": re.compile(r"^\s*[-]*log[ _]*k"),
             "delta_h": re.compile(r"\s*[-]*delta.*"),
             "analytic": re.compile(r"^\s*[-]*analytic"),
+            "llnl_gamma": re.compile(r"^\s*[-]*llnl[ _]*gamma"),
             "gamma": re.compile(r"^\s*[-]*gamma"),
             "d_w": re.compile(r"^\s*[-]*dw"),
             "v_m": re.compile(r"^\s*[-]*Vm"),
