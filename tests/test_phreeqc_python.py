@@ -13,6 +13,7 @@ class TestPhreeqPython:
     def setup_module(self):
         self.file_dir = os.path.dirname(os.path.abspath(__file__))
         self.master_database_path = os.path.join(self.file_dir, 'master_database.dat')
+        print(self.master_database_path)
         test_args = ["__main__.py", "--output", self.master_database_path]
         with patch.object(sys, 'argv', test_args):
             main()
