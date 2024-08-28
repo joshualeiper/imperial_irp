@@ -5,7 +5,7 @@ import warnings
 import pandas as pd
 import build_database.clean_tables as ct
 import build_database.write_dataframes as cf
-from build_database.named_expressions import NAMED_EXPRESSIONS
+import build_database.blocks as blocks
 
 
 def compile_and_rank_mst(db_list: str, rank: dict) -> pd.DataFrame:
@@ -170,7 +170,8 @@ def save_master_database(output_file=None, result_mst: pd.DataFrame = None, resu
         warnings.warn("Either solution master species or solution species is missing.", UserWarning)
 
     with io.StringIO() as file:
-        file.write(NAMED_EXPRESSIONS)
+        file.write(blocks.NAMED_EXPRESSIONS)
+        file.write("\n"+blocks.LLNL_AQUEOUS_MODEL_PARAMETERS+"\n")
 
         if result_mst is not None:
             file.write(
