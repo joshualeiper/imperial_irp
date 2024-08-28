@@ -66,6 +66,8 @@ def write_sp(row: pd.Series, file) -> None:
                 write_tuple('Vm', value, file)
             case 'add_logk':
                 write_tuple('add_logk', value, file)
+            case 'llnl_gamma':
+                file.write(f"\tllnl_gamma\t{value}\n")
             case 'no_check':
                 if value:
                     file.write("\t-no_check\n")
