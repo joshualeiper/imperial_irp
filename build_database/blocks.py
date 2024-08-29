@@ -1,3 +1,5 @@
+"""BLOCKS required for LLNL thermo database."""
+
 NAMED_EXPRESSIONS = """
 NAMED_EXPRESSIONS
 #

@@ -11,6 +11,7 @@ from unittest.mock import patch
 class TestPhreeqPython:
     @pytest.fixture(autouse=True)
     def setup_module(self):
+        """Run the main function to create the master database"""
         self.file_dir = os.path.dirname(os.path.abspath(__file__))
         self.master_database_path = os.path.join(self.file_dir, 'master_database.dat')
         print(self.master_database_path)
@@ -71,6 +72,7 @@ def test_module():
 
 
 def test_exampls():
+    """Tests if the results from PHREEQCPython are the same as PHREEQC"""
     db = pkg_resources.files('build_database.databases').joinpath('llnl.dat')
     pp = PhreeqPython(db)
     val = 'output.xls'

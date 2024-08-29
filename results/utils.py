@@ -100,4 +100,3 @@ def plot_source_hist(
 
     # Add a grid with reduced opacity for better readability
     ax.grid(True, which="both", linestyle="--", linewidth=0.5, alpha=0.7)
-

@@ -8,6 +8,7 @@ class TestPhreeqcParsers:
 
     @pytest.fixture(autouse=True)
     def setup(self):
+        """Compile the master solution table """
         with pkg_resources.files('tests.testing_databases').joinpath('test_database.dat').open('r') as data_file:
             self.data_path = data_file.name
             soln_parser = par.SolutionParser(self.data_path)

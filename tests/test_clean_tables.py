@@ -15,6 +15,7 @@ class TestSmsTable:
 
     @pytest.fixture(autouse=True)
     def setup(self):
+        """Compile the master solution table """
         self.result = ct.compile_master_solution_table(DB_LIST)
 
     def test_sms_shape(self):

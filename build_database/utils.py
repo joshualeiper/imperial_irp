@@ -163,6 +163,29 @@ def reorder_file_list(file_list: str, rank_dict: dict) -> list:
 
 
 def save_master_database(output_file=None, result_mst: pd.DataFrame = None, result_sp: pd.DataFrame = None) -> str:
+    """
+    Save the master database to a file or return the file content as a string.
+
+    Parameters:
+        output_file (str, optional): The path to the output file. If provided,
+        the master database will be saved to this file. Defaults to None.
+        result_mst (pd.DataFrame, optional): The DataFrame containing the solution master species data.
+        Defaults to None.
+        result_sp (pd.DataFrame, optional): The DataFrame containing the solution species data. Defaults to None.
+
+    Returns:
+        str: The content of the master database file if output_file is not provided.
+
+    Raises:
+        ValueError: If both result_mst and result_sp are None.
+        UserWarning: If either result_mst or result_sp is None.
+
+    Notes:
+        - If output_file is provided, the master database will be saved to the specified file.
+        - If output_file is not provided, the content of the master database file will be returned as a string.
+        - If either result_mst or result_sp is None, a warning will be raised.
+
+    """
     if result_mst is None and result_sp is None:
         raise ValueError("At least one of result_mst or result_sp must be provided.")
 

@@ -23,6 +23,7 @@ def main(verbose=False):
         '#Tipping_Hurley.dat': 4,
     }
 
+    # Compile source and result tables
     mst = utils.compile_and_rank_mst(data_b, rank)
     soln_species = ct.compile_solution_species_table(data_b)
     db_list = utils.reorder_file_list(data_b, rank)
@@ -56,6 +57,8 @@ def main(verbose=False):
     equations_add = equations_add.drop(index=drop_index)
     result_sp = pd.concat([result_sp, equations_add], ignore_index=True)
     result_mst = result_mst.sort_values(by=['element'])
+
+    # Display information by source
     if verbose:
         logging.info(f"Master database compiled with {len(result_mst)} elements and {len(result_sp)} equations.")
         num_of_species_by_source = result_sp['source'].value_counts()
@@ -63,14 +66,13 @@ def main(verbose=False):
         for source, num in num_of_species_by_source.items():
             logging.info(f"{source}: {num}")
 
-    # Parse command line arguments
+    # Handle user input
     current_dir = os.path.dirname(os.path.realpath(__file__))
     default_output = os.path.join(current_dir, 'master_database.dat')
     parser = argparse.ArgumentParser(description='Compile multiple databases into a single master database.')
     parser.add_argument('--output', '-o', type=str, default=default_output, help='Output file path')
     args = parser.parse_args()
 
-    # Save file
     utils.save_master_database(args.output, result_mst, result_sp)
 
 
