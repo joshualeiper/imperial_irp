@@ -13,6 +13,7 @@ For further details on tests, see [tests](tests/). Details of testing coverage a
 - [Project Structure](#project-structure)
 - [Testing](#testing)
 - [Documentation](#docs)
+- [Documentation](#docs)
 
 # Description
 This project provides tools for the comparative analysis and optimization of PHREEQC databases for geochemical speciation calculations. It includes scripts for database conversion, conflict resolution, and creating a unified database that combines multiple PHREEQC-provided databases.
