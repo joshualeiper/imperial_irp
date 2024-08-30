@@ -12,6 +12,7 @@ For further details on tests, see [tests](tests/). Details of testing coverage a
 - [Usage](#Usage)
 - [Project Structure](#Project-Structure)
 - [Testing](#Testing)
+- [Documentation](#docs)
 
 # Description
 This project provides tools for the comparative analysis and optimization of PHREEQC databases for geochemical speciation calculations. It includes scripts for database conversion, conflict resolution, and creating a unified database that combines multiple PHREEQC-provided databases.
@@ -184,3 +185,5 @@ To run the testing framework, simply use the pytest command in the terminal
 ```bash
 pytest tests/
 ```
+### Docs
+For detals on documentation, plese refer to the sphinx autodocs in the [docs](./docs) folder.
