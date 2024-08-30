@@ -186,4 +186,4 @@ To run the testing framework, simply use the pytest command in the terminal
 pytest tests/
 ```
 ### Docs
-For detals on documentation, plese refer to the sphinx autodocs in the [docs](./docs) folder.
+For detals on documentation, plese refer to the sphinx autodocs in the [docs](./docs/_build/html/index.html) file.
