@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>build_database package &mdash; PHREEQC Database Tools  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="build_database.databases package" href="build_database.databases.html" />
+    <link rel="prev" title="irp-jjl122" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PHREEQC Database Tools
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">irp-jjl122</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">build_database package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="build_database.databases.html">build_database.databases package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-build_database.blocks">build_database.blocks module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-build_database.clean_tables">build_database.clean_tables module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.clean_tables.clean_tuple"><code class="docutils literal notranslate"><span class="pre">clean_tuple()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.clean_tables.compile_master_solution_table"><code class="docutils literal notranslate"><span class="pre">compile_master_solution_table()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.clean_tables.compile_phase_table"><code class="docutils literal notranslate"><span class="pre">compile_phase_table()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.clean_tables.compile_solution_species_table"><code class="docutils literal notranslate"><span class="pre">compile_solution_species_table()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.clean_tables.expand_logk"><code class="docutils literal notranslate"><span class="pre">expand_logk()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.clean_tables.expand_tc"><code class="docutils literal notranslate"><span class="pre">expand_tc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.clean_tables.log_k_to_float"><code class="docutils literal notranslate"><span class="pre">log_k_to_float()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.clean_tables.remove_ones"><code class="docutils literal notranslate"><span class="pre">remove_ones()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.clean_tables.replace_charges"><code class="docutils literal notranslate"><span class="pre">replace_charges()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.clean_tables.replace_elements"><code class="docutils literal notranslate"><span class="pre">replace_elements()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.clean_tables.strfloat_to_stringint"><code class="docutils literal notranslate"><span class="pre">strfloat_to_stringint()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.clean_tables.tuple_to_float"><code class="docutils literal notranslate"><span class="pre">tuple_to_float()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.clean_tables.tuple_to_string"><code class="docutils literal notranslate"><span class="pre">tuple_to_string()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-build_database.parser_dat">build_database.parser_dat module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.parser_dat.BaseParser"><code class="docutils literal notranslate"><span class="pre">BaseParser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.parser_dat.MasterSolutionParser"><code class="docutils literal notranslate"><span class="pre">MasterSolutionParser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.parser_dat.PhaseData"><code class="docutils literal notranslate"><span class="pre">PhaseData</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.parser_dat.PhaseParser"><code class="docutils literal notranslate"><span class="pre">PhaseParser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.parser_dat.SolutionData"><code class="docutils literal notranslate"><span class="pre">SolutionData</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.parser_dat.SolutionParser"><code class="docutils literal notranslate"><span class="pre">SolutionParser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.parser_dat.file_name"><code class="docutils literal notranslate"><span class="pre">file_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.parser_dat.text_selection"><code class="docutils literal notranslate"><span class="pre">text_selection()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-build_database.utils">build_database.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.utils.add_hash_to_source"><code class="docutils literal notranslate"><span class="pre">add_hash_to_source()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.utils.compile_and_rank_mst"><code class="docutils literal notranslate"><span class="pre">compile_and_rank_mst()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.utils.find_and_collect_matches"><code class="docutils literal notranslate"><span class="pre">find_and_collect_matches()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.utils.get_missing_species"><code class="docutils literal notranslate"><span class="pre">get_missing_species()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.utils.phreeqc_database_list"><code class="docutils literal notranslate"><span class="pre">phreeqc_database_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.utils.process_missing_species"><code class="docutils literal notranslate"><span class="pre">process_missing_species()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.utils.remove_hash_from_source"><code class="docutils literal notranslate"><span class="pre">remove_hash_from_source()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.utils.reorder_file_list"><code class="docutils literal notranslate"><span class="pre">reorder_file_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.utils.save_master_database"><code class="docutils literal notranslate"><span class="pre">save_master_database()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-build_database.write_dataframes">build_database.write_dataframes module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.write_dataframes.write_mst"><code class="docutils literal notranslate"><span class="pre">write_mst()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.write_dataframes.write_phase"><code class="docutils literal notranslate"><span class="pre">write_phase()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.write_dataframes.write_sp"><code class="docutils literal notranslate"><span class="pre">write_sp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_database.write_dataframes.write_tuple"><code class="docutils literal notranslate"><span class="pre">write_tuple()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-build_database">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="results.html">results package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PHREEQC Database Tools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">irp-jjl122</a></li>
+      <li class="breadcrumb-item active">build_database package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/build_database.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="build-database-package">
+<h1>build_database package<a class="headerlink" href="#build-database-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build_database.databases.html">build_database.databases package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_database.databases.html#module-build_database.databases">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-build_database.blocks">
+<span id="build-database-blocks-module"></span><h2>build_database.blocks module<a class="headerlink" href="#module-build_database.blocks" title="Link to this heading"></a></h2>
+<p>BLOCKS required for LLNL thermo database.</p>
+</section>
+<section id="module-build_database.clean_tables">
+<span id="build-database-clean-tables-module"></span><h2>build_database.clean_tables module<a class="headerlink" href="#module-build_database.clean_tables" title="Link to this heading"></a></h2>
+<p>Uses Solution and Master Solution parsers to compile tables from multiple databases</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.clean_tables.clean_tuple">
+<span class="sig-prename descclassname"><span class="pre">build_database.clean_tables.</span></span><span class="sig-name descname"><span class="pre">clean_tuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tup</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_str</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'vm'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'dw'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/build_database/clean_tables.html#clean_tuple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.clean_tables.clean_tuple" title="Link to this definition"></a></dt>
+<dd><p>Clean the input tuple by removing elements that contain a specified substring (‘vm’ or ‘dw’)
+and converting numeric strings to floats. Retains numeric elements as they are.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tup</strong> (<em>tuple</em>) – The input tuple to be cleaned.</p></li>
+<li><p><strong>filter_str</strong> (<em>Literal</em><em>[</em><em>'vm'</em><em>, </em><em>'dw'</em><em>]</em>) – The substring to filter out from the tuple. Only ‘vm’ or ‘dw’ are allowed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The cleaned tuple, or None if the input tuple is empty or contains no valid elements.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.clean_tables.compile_master_solution_table">
+<span class="sig-prename descclassname"><span class="pre">build_database.clean_tables.</span></span><span class="sig-name descname"><span class="pre">compile_master_solution_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_databases</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/build_database/clean_tables.html#compile_master_solution_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.clean_tables.compile_master_solution_table" title="Link to this definition"></a></dt>
+<dd><p>Compile the master solution table by merging data from multiple databases.</p>
+<p>Parameters:
+- list_of_databases (list): A list of databases to merge.</p>
+<p>Returns:
+- pd.DataFrame: The compiled master solution table.</p>
+<p>Raises:
+- None</p>
+<p>Examples:
+&gt;&gt;&gt; compile_master_solution_table([‘db1’, ‘db2’])
+Returns the compiled master solution table by merging data from ‘db1’ and ‘db2’ databases.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.clean_tables.compile_phase_table">
+<span class="sig-prename descclassname"><span class="pre">build_database.clean_tables.</span></span><span class="sig-name descname"><span class="pre">compile_phase_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_databases</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/build_database/clean_tables.html#compile_phase_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.clean_tables.compile_phase_table" title="Link to this definition"></a></dt>
+<dd><p>Compile phase table from a list of databases.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>list_of_databases</strong> (<em>list</em>) – A list of database file paths.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The compiled phase table.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>IndexError</strong> – If the ‘SURFACE_SPECIES’ phase is not found in the result.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.clean_tables.compile_solution_species_table">
+<span class="sig-prename descclassname"><span class="pre">build_database.clean_tables.</span></span><span class="sig-name descname"><span class="pre">compile_solution_species_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_databases</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/build_database/clean_tables.html#compile_solution_species_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.clean_tables.compile_solution_species_table" title="Link to this definition"></a></dt>
+<dd><p>Compile the solution species table from a list of databases.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>list_of_databases</strong> (<em>list</em>) – A list of database file paths.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The compiled solution species table.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.clean_tables.expand_logk">
+<span class="sig-prename descclassname"><span class="pre">build_database.clean_tables.</span></span><span class="sig-name descname"><span class="pre">expand_logk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Series</span></span></span><a class="reference internal" href="_modules/build_database/clean_tables.html#expand_logk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.clean_tables.expand_logk" title="Link to this definition"></a></dt>
+<dd><p>Expand the log_k value in the given row.</p>
+<p>Parameters:
+- row (pandas.Series): A row of data containing ‘log_k’ and ‘delta_h’ columns.</p>
+<p>Returns:
+- pandas.Series: A new series with expanded ‘log_k’ value and corrected ‘delta_h’ value.</p>
+<p>Notes:
+- The ‘log_k’ value is expanded by separating the first element from the rest of the elements.
+- The ‘delta_h’ value is corrected by removing any entries that do not contain ‘delta_h’ in their lowercase form.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.clean_tables.expand_tc">
+<span class="sig-prename descclassname"><span class="pre">build_database.clean_tables.</span></span><span class="sig-name descname"><span class="pre">expand_tc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Series</span></span></span><a class="reference internal" href="_modules/build_database/clean_tables.html#expand_tc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.clean_tables.expand_tc" title="Link to this definition"></a></dt>
+<dd><p>Expand the ‘t_c’ column in the given row by extracting ‘p_c’ and ‘omega’ values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>row</strong> (<em>dict</em>) – A dictionary representing a row of data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The modified row dictionary with ‘p_c’ and ‘omega’ values extracted from ‘t_c’.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function assumes that the ‘t_c’ column in the given row contains a list of values.
+The first value in the list is considered as the ‘t_c’ value, followed by optional ‘p_c’ and ‘omega’ values.
+The ‘p_c’ value is identified by the presence of ‘P_c’ or ‘p_c’ in the list.
+The ‘omega’ value is identified by the presence of ‘Omega’ or ‘omega’ in the list.</p>
+<p>If the ‘t_c’ column is empty or contains only one value, the ‘p_c’ and ‘omega’ values will be set to 0.0.
+These are the default values listing in PHREEQC documentation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.clean_tables.log_k_to_float">
+<span class="sig-prename descclassname"><span class="pre">build_database.clean_tables.</span></span><span class="sig-name descname"><span class="pre">log_k_to_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_database/clean_tables.html#log_k_to_float"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.clean_tables.log_k_to_float" title="Link to this definition"></a></dt>
+<dd><p>Convert log_k value to float</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.clean_tables.remove_ones">
+<span class="sig-prename descclassname"><span class="pre">build_database.clean_tables.</span></span><span class="sig-name descname"><span class="pre">remove_ones</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Series</span></span></span><a class="reference internal" href="_modules/build_database/clean_tables.html#remove_ones"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.clean_tables.remove_ones" title="Link to this definition"></a></dt>
+<dd><p>Changes 1.0000 to 1 in the equation column</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.clean_tables.replace_charges">
+<span class="sig-prename descclassname"><span class="pre">build_database.clean_tables.</span></span><span class="sig-name descname"><span class="pre">replace_charges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/build_database/clean_tables.html#replace_charges"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.clean_tables.replace_charges" title="Link to this definition"></a></dt>
+<dd><p>Replace charges in a string with their corresponding values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>str</em>) – The input string containing charges to be replaced.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The modified string with charges replaced.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">replace_charges</span><span class="p">(</span><span class="s2">&quot;HO----&quot;</span><span class="p">)</span>
+<span class="go">&quot;HO-4&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.clean_tables.replace_elements">
+<span class="sig-prename descclassname"><span class="pre">build_database.clean_tables.</span></span><span class="sig-name descname"><span class="pre">replace_elements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_database/clean_tables.html#replace_elements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.clean_tables.replace_elements" title="Link to this definition"></a></dt>
+<dd><p>Replace elements in the format ‘Element(Number)’ with ‘Element(+Number)’.</p>
+<p>Parameters:
+value (str): The input string to be processed.</p>
+<p>Returns:
+str: The processed string with replaced elements.</p>
+<p>Example:
+&gt;&gt;&gt; replace_elements(“H(2)O + Na(1)Cl”)
+‘H(+2)O + Na(+1)Cl’</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.clean_tables.strfloat_to_stringint">
+<span class="sig-prename descclassname"><span class="pre">build_database.clean_tables.</span></span><span class="sig-name descname"><span class="pre">strfloat_to_stringint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Series</span></span></span><a class="reference internal" href="_modules/build_database/clean_tables.html#strfloat_to_stringint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.clean_tables.strfloat_to_stringint" title="Link to this definition"></a></dt>
+<dd><p>Removes decimals from equation when representing integers</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.clean_tables.tuple_to_float">
+<span class="sig-prename descclassname"><span class="pre">build_database.clean_tables.</span></span><span class="sig-name descname"><span class="pre">tuple_to_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tup</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/build_database/clean_tables.html#tuple_to_float"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.clean_tables.tuple_to_float" title="Link to this definition"></a></dt>
+<dd><p>Converts a tuple to a float by taking the first element</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.clean_tables.tuple_to_string">
+<span class="sig-prename descclassname"><span class="pre">build_database.clean_tables.</span></span><span class="sig-name descname"><span class="pre">tuple_to_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tup</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/build_database/clean_tables.html#tuple_to_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.clean_tables.tuple_to_string" title="Link to this definition"></a></dt>
+<dd><p>Converts a tuple to a string by joining all elements with a space</p>
+</dd></dl>
+
+</section>
+<section id="module-build_database.parser_dat">
+<span id="build-database-parser-dat-module"></span><h2>build_database.parser_dat module<a class="headerlink" href="#module-build_database.parser_dat" title="Link to this heading"></a></h2>
+<p>Parses phreeqc .dat files and returns pandas dataframes</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="build_database.parser_dat.BaseParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">build_database.parser_dat.</span></span><span class="sig-name descname"><span class="pre">BaseParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">section_start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">section_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_database/parser_dat.html#BaseParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.parser_dat.BaseParser" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for parsing phreeqc database files</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="build_database.parser_dat.BaseParser.match_patterns">
+<span class="sig-name descname"><span class="pre">match_patterns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_instance</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/build_database/parser_dat.html#BaseParser.match_patterns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.parser_dat.BaseParser.match_patterns" title="Link to this definition"></a></dt>
+<dd><p>Match patterns in a line and update the data instance accordingly.</p>
+<p>Parameters:
+- line (str): The line to match patterns in.
+- data_instance (Any): The data instance to update.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="build_database.parser_dat.BaseParser.parse_block">
+<span class="sig-name descname"><span class="pre">parse_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_database/parser_dat.html#BaseParser.parse_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.parser_dat.BaseParser.parse_block" title="Link to this definition"></a></dt>
+<dd><p>Parse a block of lines and return the parsed data.</p>
+<p>Parameters:
+- block (List[str]): The block of lines to parse.</p>
+<p>Returns:
+- Any: The parsed data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="build_database.parser_dat.BaseParser.parse_file">
+<span class="sig-name descname"><span class="pre">parse_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/build_database/parser_dat.html#BaseParser.parse_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.parser_dat.BaseParser.parse_file" title="Link to this definition"></a></dt>
+<dd><p>Parse the file and return the parsed data as a pandas DataFrame.</p>
+<p>Returns:
+- pd.DataFrame: The parsed data as a DataFrame.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_database.parser_dat.MasterSolutionParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">build_database.parser_dat.</span></span><span class="sig-name descname"><span class="pre">MasterSolutionParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database_file_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_database/parser_dat.html#MasterSolutionParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.parser_dat.MasterSolutionParser" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A parser for processing and combining master solution species data from a database file.</p>
+<p>This class handles the extraction of species information from a specified database file and
+converts it into a pandas DataFrame for further analysis or combination with other data sources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>database_file_path</strong> (<em>str</em><em>, </em><em>optional</em>) – The path to the database file containing the solution master species data.
+If provided, the species list will be extracted and processed.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.MasterSolutionParser.composed_sources">
+<span class="sig-name descname"><span class="pre">composed_sources</span></span><a class="headerlink" href="#build_database.parser_dat.MasterSolutionParser.composed_sources" title="Link to this definition"></a></dt>
+<dd><p>A list of source names that have been processed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.MasterSolutionParser.data_frame">
+<span class="sig-name descname"><span class="pre">data_frame</span></span><a class="headerlink" href="#build_database.parser_dat.MasterSolutionParser.data_frame" title="Link to this definition"></a></dt>
+<dd><p>The DataFrame containing the processed species data. This will be <cite>None</cite> until the data is processed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="build_database.parser_dat.MasterSolutionParser.make_dataframe">
+<span class="sig-name descname"><span class="pre">make_dataframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_database/parser_dat.html#MasterSolutionParser.make_dataframe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.parser_dat.MasterSolutionParser.make_dataframe" title="Link to this definition"></a></dt>
+<dd><p>Converts the extracted species list into a pandas DataFrame and assigns it to <cite>data_frame</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">make_dataframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/build_database/parser_dat.html#MasterSolutionParser.make_dataframe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>Convert the species list into a pandas DataFrame and store it in the <cite>data_frame</cite> attribute.</p>
+<p>The DataFrame will have columns for the element, species, alkalinity,
+gram formula weight (gfw) formula, and element gfw. The DataFrame will also
+include a column indicating the source of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_database.parser_dat.PhaseData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">build_database.parser_dat.</span></span><span class="sig-name descname"><span class="pre">PhaseData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dissolution_reaction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analytic</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">omega</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_database/parser_dat.html#PhaseData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.parser_dat.PhaseData" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Dataclass for phase species</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.PhaseData.analytic">
+<span class="sig-name descname"><span class="pre">analytic</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.PhaseData.analytic" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.PhaseData.delta_h">
+<span class="sig-name descname"><span class="pre">delta_h</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.PhaseData.delta_h" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.PhaseData.dissolution_reaction">
+<span class="sig-name descname"><span class="pre">dissolution_reaction</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.PhaseData.dissolution_reaction" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.PhaseData.log_k">
+<span class="sig-name descname"><span class="pre">log_k</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.PhaseData.log_k" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.PhaseData.omega">
+<span class="sig-name descname"><span class="pre">omega</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.PhaseData.omega" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.PhaseData.p_c">
+<span class="sig-name descname"><span class="pre">p_c</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.PhaseData.p_c" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.PhaseData.phase_name">
+<span class="sig-name descname"><span class="pre">phase_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.PhaseData.phase_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.PhaseData.t_c">
+<span class="sig-name descname"><span class="pre">t_c</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.PhaseData.t_c" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.PhaseData.v_m">
+<span class="sig-name descname"><span class="pre">v_m</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.PhaseData.v_m" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_database.parser_dat.PhaseParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">build_database.parser_dat.</span></span><span class="sig-name descname"><span class="pre">PhaseParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database_file_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_database/parser_dat.html#PhaseParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.parser_dat.PhaseParser" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#build_database.parser_dat.BaseParser" title="build_database.parser_dat.BaseParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseParser</span></code></a></p>
+<p>Class for parsing phase species in phreeqc database files</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="build_database.parser_dat.PhaseParser.parse_block">
+<span class="sig-name descname"><span class="pre">parse_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#build_database.parser_dat.PhaseData" title="build_database.parser_dat.PhaseData"><span class="pre">PhaseData</span></a></span></span><a class="reference internal" href="_modules/build_database/parser_dat.html#PhaseParser.parse_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.parser_dat.PhaseParser.parse_block" title="Link to this definition"></a></dt>
+<dd><p>Parse a block of lines and return the parsed data.</p>
+<p>Parameters:
+- block (List[str]): The block of lines to parse.</p>
+<p>Returns:
+- PhaseData: The parsed data.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">build_database.parser_dat.</span></span><span class="sig-name descname"><span class="pre">SolutionData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">millero</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activity_water</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_logk</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">llnl_gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">co2_llnl_gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erm_ddl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_check</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mole_balance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_database/parser_dat.html#SolutionData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.parser_dat.SolutionData" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Dataclass for solution species</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionData.activity_water">
+<span class="sig-name descname"><span class="pre">activity_water</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.SolutionData.activity_water" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionData.add_logk">
+<span class="sig-name descname"><span class="pre">add_logk</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.SolutionData.add_logk" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionData.co2_llnl_gamma">
+<span class="sig-name descname"><span class="pre">co2_llnl_gamma</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.SolutionData.co2_llnl_gamma" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionData.d_w">
+<span class="sig-name descname"><span class="pre">d_w</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.SolutionData.d_w" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionData.delta_h">
+<span class="sig-name descname"><span class="pre">delta_h</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.SolutionData.delta_h" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionData.equation">
+<span class="sig-name descname"><span class="pre">equation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.SolutionData.equation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionData.erm_ddl">
+<span class="sig-name descname"><span class="pre">erm_ddl</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.SolutionData.erm_ddl" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionData.gamma">
+<span class="sig-name descname"><span class="pre">gamma</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.SolutionData.gamma" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionData.llnl_gamma">
+<span class="sig-name descname"><span class="pre">llnl_gamma</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.SolutionData.llnl_gamma" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionData.log_k">
+<span class="sig-name descname"><span class="pre">log_k</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.SolutionData.log_k" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionData.millero">
+<span class="sig-name descname"><span class="pre">millero</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.SolutionData.millero" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionData.mole_balance">
+<span class="sig-name descname"><span class="pre">mole_balance</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.SolutionData.mole_balance" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionData.no_check">
+<span class="sig-name descname"><span class="pre">no_check</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.SolutionData.no_check" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionData.v_m">
+<span class="sig-name descname"><span class="pre">v_m</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_database.parser_dat.SolutionData.v_m" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">build_database.parser_dat.</span></span><span class="sig-name descname"><span class="pre">SolutionParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database_file_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_database/parser_dat.html#SolutionParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.parser_dat.SolutionParser" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#build_database.parser_dat.BaseParser" title="build_database.parser_dat.BaseParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseParser</span></code></a></p>
+<p>Class for parsing solution species in phreeqc database files</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="build_database.parser_dat.SolutionParser.parse_block">
+<span class="sig-name descname"><span class="pre">parse_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#build_database.parser_dat.SolutionData" title="build_database.parser_dat.SolutionData"><span class="pre">SolutionData</span></a></span></span><a class="reference internal" href="_modules/build_database/parser_dat.html#SolutionParser.parse_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.parser_dat.SolutionParser.parse_block" title="Link to this definition"></a></dt>
+<dd><p>Parse a block of lines and return the parsed data.</p>
+<p>Parameters:
+- block (List[str]): The block of lines to parse.</p>
+<p>Returns:
+- SolutionData: The parsed data.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.parser_dat.file_name">
+<span class="sig-prename descclassname"><span class="pre">build_database.parser_dat.</span></span><span class="sig-name descname"><span class="pre">file_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/build_database/parser_dat.html#file_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.parser_dat.file_name" title="Link to this definition"></a></dt>
+<dd><p>Extracts the file name from a file path</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.parser_dat.text_selection">
+<span class="sig-prename descclassname"><span class="pre">build_database.parser_dat.</span></span><span class="sig-name descname"><span class="pre">text_selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_block</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/build_database/parser_dat.html#text_selection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.parser_dat.text_selection" title="Link to this definition"></a></dt>
+<dd><p>Selects lines from a text file between start_block and end_block</p>
+</dd></dl>
+
+</section>
+<section id="module-build_database.utils">
+<span id="build-database-utils-module"></span><h2>build_database.utils module<a class="headerlink" href="#module-build_database.utils" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.utils.add_hash_to_source">
+<span class="sig-prename descclassname"><span class="pre">build_database.utils.</span></span><span class="sig-name descname"><span class="pre">add_hash_to_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/build_database/utils.html#add_hash_to_source"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.utils.add_hash_to_source" title="Link to this definition"></a></dt>
+<dd><p>Add a hash symbol to the beginning of the source if it is not already present.</p>
+<p>Parameters:
+source (str): The source string to add a hash symbol to.</p>
+<p>Returns:
+str: The modified source string with a hash symbol added.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.utils.compile_and_rank_mst">
+<span class="sig-prename descclassname"><span class="pre">build_database.utils.</span></span><span class="sig-name descname"><span class="pre">compile_and_rank_mst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/build_database/utils.html#compile_and_rank_mst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.utils.compile_and_rank_mst" title="Link to this definition"></a></dt>
+<dd><p>Compile and rank the master solution table.
+:param db_list: A list of database names.
+:type db_list: list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The compiled and ranked master solution table.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function compiles the master solution table using the given list of database names.
+It assigns a priority to each row in the table based on the ‘source’ column.
+The priority is determined by looking up the ‘source’ value in the RANK dictionary.
+If the ‘source’ value is not found in the RANK dictionary, a default priority of 5 is assigned.
+The resulting table is then sorted by the ‘priority’ column.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.utils.find_and_collect_matches">
+<span class="sig-prename descclassname"><span class="pre">build_database.utils.</span></span><span class="sig-name descname"><span class="pre">find_and_collect_matches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_match_indexes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/build_database/utils.html#find_and_collect_matches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.utils.find_and_collect_matches" title="Link to this definition"></a></dt>
+<dd><p>Find and collect matches in a series based on a given entry.</p>
+<section id="parameters">
+<h3>Parameters:<a class="headerlink" href="#parameters" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>series<span class="classifier">pandas.Series</span></dt><dd><p>The series to search for matches.</p>
+</dd>
+<dt>entry<span class="classifier">str</span></dt><dd><p>The entry to search for in the series.</p>
+</dd>
+<dt>all_match_indexes<span class="classifier">list</span></dt><dd><p>The list to collect all the match indexes.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3>Returns:<a class="headerlink" href="#returns" title="Link to this heading"></a></h3>
+<p>None</p>
+</section>
+<section id="raises">
+<h3>Raises:<a class="headerlink" href="#raises" title="Link to this heading"></a></h3>
+<p>None</p>
+</section>
+<section id="notes">
+<h3>Notes:<a class="headerlink" href="#notes" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>If the entry is ‘Sb(OH)6-’, a warning message will be logged.</p></li>
+<li><p>The function searches for matches in the series based on the entry.</p></li>
+<li><p>The match indexes are collected in the all_match_indexes list.</p></li>
+</ul>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.utils.get_missing_species">
+<span class="sig-prename descclassname"><span class="pre">build_database.utils.</span></span><span class="sig-name descname"><span class="pre">get_missing_species</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_mst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#minteq.v4.dat'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/build_database/utils.html#get_missing_species"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.utils.get_missing_species" title="Link to this definition"></a></dt>
+<dd><p>Get the missing species from the master database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mst</strong> (<em>pd.DataFrame</em>) – The master database.</p></li>
+<li><p><strong>result_mst</strong> (<em>pd.DataFrame</em>) – The result master database.</p></li>
+<li><p><strong>add</strong> (<em>str</em><em>, </em><em>optional</em>) – The source to add. Defaults to ‘#minteq.v4.dat’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The missing species from the master database.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.utils.phreeqc_database_list">
+<span class="sig-prename descclassname"><span class="pre">build_database.utils.</span></span><span class="sig-name descname"><span class="pre">phreeqc_database_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/build_database/utils.html#phreeqc_database_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.utils.phreeqc_database_list" title="Link to this definition"></a></dt>
+<dd><p>Returns a list of phreeqc database file paths</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.utils.process_missing_species">
+<span class="sig-prename descclassname"><span class="pre">build_database.utils.</span></span><span class="sig-name descname"><span class="pre">process_missing_species</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">missing_species</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/build_database/utils.html#process_missing_species"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.utils.process_missing_species" title="Link to this definition"></a></dt>
+<dd><p>Process missing species data by removing rows with species in TO_DROP.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>missing_species</strong> (<em>pandas.DataFrame</em>) – DataFrame containing missing species data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame with rows removed where species is in TO_DROP.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.utils.remove_hash_from_source">
+<span class="sig-prename descclassname"><span class="pre">build_database.utils.</span></span><span class="sig-name descname"><span class="pre">remove_hash_from_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/build_database/utils.html#remove_hash_from_source"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.utils.remove_hash_from_source" title="Link to this definition"></a></dt>
+<dd><p>Remove the hash symbol from the beginning of the source string.</p>
+<p>Parameters:
+source (str): The source string.</p>
+<p>Returns:
+str: The source string without the hash symbol at the beginning.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.utils.reorder_file_list">
+<span class="sig-prename descclassname"><span class="pre">build_database.utils.</span></span><span class="sig-name descname"><span class="pre">reorder_file_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/build_database/utils.html#reorder_file_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.utils.reorder_file_list" title="Link to this definition"></a></dt>
+<dd><p>Reorders a list of file paths based on a ranking dictionary.</p>
+<p>Parameters:
+- file_list (list): A list of file paths.
+- rank_dict (dict): A dictionary containing the ranking information.</p>
+<p>Returns:
+- sorted_file_paths (list): A list of file paths sorted according to the ranking dictionary.</p>
+<p>Example:
+&gt;&gt;&gt; file_list = [‘/path/to/file1.txt’, ‘/path/to/file2.txt’, ‘/path/to/file3.txt’]
+&gt;&gt;&gt; rank_dict = {‘#file1.txt’: 3, ‘#file2.txt’: 1, ‘#file3.txt’: 2}
+&gt;&gt;&gt; reorder_file_list(file_list, rank_dict)
+[‘#file2.txt’, ‘#file3.txt’, ‘#file1.txt’]</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.utils.save_master_database">
+<span class="sig-prename descclassname"><span class="pre">build_database.utils.</span></span><span class="sig-name descname"><span class="pre">save_master_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_mst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_sp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/build_database/utils.html#save_master_database"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.utils.save_master_database" title="Link to this definition"></a></dt>
+<dd><p>Save the master database to a file or return the file content as a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_file</strong> (<em>str</em><em>, </em><em>optional</em>) – The path to the output file. If provided,</p></li>
+<li><p><strong>None.</strong> (<em>Defaults to</em>)</p></li>
+<li><p><strong>result_mst</strong> (<em>pd.DataFrame</em><em>, </em><em>optional</em>) – The DataFrame containing the solution master species data.</p></li>
+<li><p><strong>None.</strong></p></li>
+<li><p><strong>result_sp</strong> (<em>pd.DataFrame</em><em>, </em><em>optional</em>) – The DataFrame containing the solution species data. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The content of the master database file if output_file is not provided.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If both result_mst and result_sp are None.</p></li>
+<li><p><strong>UserWarning</strong> – If either result_mst or result_sp is None.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>If output_file is provided, the master database will be saved to the specified file.</p></li>
+<li><p>If output_file is not provided, the content of the master database file will be returned as a string.</p></li>
+<li><p>If either result_mst or result_sp is None, a warning will be raised.</p></li>
+</ul>
+</dd></dl>
+
+</section>
+<section id="module-build_database.write_dataframes">
+<span id="build-database-write-dataframes-module"></span><h2>build_database.write_dataframes module<a class="headerlink" href="#module-build_database.write_dataframes" title="Link to this heading"></a></h2>
+<p>This module contains functions to write data to a file.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.write_dataframes.write_mst">
+<span class="sig-prename descclassname"><span class="pre">build_database.write_dataframes.</span></span><span class="sig-name descname"><span class="pre">write_mst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/build_database/write_dataframes.html#write_mst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.write_dataframes.write_mst" title="Link to this definition"></a></dt>
+<dd><p>Writes a row of data to a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>pd.Series</em>) – The row of data to be written.</p></li>
+<li><p><strong>file</strong> – The file object to write the data to.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.write_dataframes.write_phase">
+<span class="sig-prename descclassname"><span class="pre">build_database.write_dataframes.</span></span><span class="sig-name descname"><span class="pre">write_phase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_database/write_dataframes.html#write_phase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.write_dataframes.write_phase" title="Link to this definition"></a></dt>
+<dd><p>Writes PHASES information to file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>pandas.Series</em>) – The row containing the phase information.</p></li>
+<li><p><strong>file</strong> (<em>file object</em>) – The file to write the information to.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.write_dataframes.write_sp">
+<span class="sig-prename descclassname"><span class="pre">build_database.write_dataframes.</span></span><span class="sig-name descname"><span class="pre">write_sp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/build_database/write_dataframes.html#write_sp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.write_dataframes.write_sp" title="Link to this definition"></a></dt>
+<dd><p>Writes SOLUTION_SPECIES to file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>pd.Series</em>) – A row of the combined SOLUTION_SPECIES dataframe.</p></li>
+<li><p><strong>file</strong> (<em>file</em>) – The file object to write the data to.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_database.write_dataframes.write_tuple">
+<span class="sig-prename descclassname"><span class="pre">build_database.write_dataframes.</span></span><span class="sig-name descname"><span class="pre">write_tuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">att</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/build_database/write_dataframes.html#write_tuple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_database.write_dataframes.write_tuple" title="Link to this definition"></a></dt>
+<dd><p>Breaks a tuple into individual values and writes them to a file.</p>
+<p>Parameters:
+att (str): The attribute name.
+value (tuple): The tuple to be written.
+file: The file object to write to.</p>
+<p>Returns:
+None</p>
+</dd></dl>
+
+</section>
+<section id="module-build_database">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-build_database" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="irp-jjl122" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="build_database.databases.html" class="btn btn-neutral float-right" title="build_database.databases package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Joshua Leiper.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

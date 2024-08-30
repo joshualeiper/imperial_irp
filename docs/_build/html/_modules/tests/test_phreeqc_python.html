@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tests.test_phreeqc_python &mdash; PHREEQC Database Tools  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            PHREEQC Database Tools
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">irp-jjl122</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PHREEQC Database Tools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">tests.test_phreeqc_python</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for tests.test_phreeqc_python</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">import</span> <span class="nn">importlib.resources</span> <span class="k">as</span> <span class="nn">pkg_resources</span>
+<span class="kn">from</span> <span class="nn">build_database.__main__</span> <span class="kn">import</span> <span class="n">main</span>
+<span class="kn">from</span> <span class="nn">phreeqpython</span> <span class="kn">import</span> <span class="n">PhreeqPython</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>
+
+
+<div class="viewcode-block" id="TestPhreeqPython">
+<a class="viewcode-back" href="../../tests.html#tests.test_phreeqc_python.TestPhreeqPython">[docs]</a>
+<span class="k">class</span> <span class="nc">TestPhreeqPython</span><span class="p">:</span>
+<div class="viewcode-block" id="TestPhreeqPython.setup_module">
+<a class="viewcode-back" href="../../tests.html#tests.test_phreeqc_python.TestPhreeqPython.setup_module">[docs]</a>
+    <span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">setup_module</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run the main function to create the master database&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">master_database_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file_dir</span><span class="p">,</span> <span class="s1">&#39;master_database.dat&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master_database_path</span><span class="p">)</span>
+        <span class="n">test_args</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;__main__.py&quot;</span><span class="p">,</span> <span class="s2">&quot;--output&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">master_database_path</span><span class="p">]</span>
+        <span class="k">with</span> <span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span> <span class="s1">&#39;argv&#39;</span><span class="p">,</span> <span class="n">test_args</span><span class="p">):</span>
+            <span class="n">main</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="TestPhreeqPython.test_main">
+<a class="viewcode-back" href="../../tests.html#tests.test_phreeqc_python.TestPhreeqPython.test_main">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_main</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test if master_database.dat is created&quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master_database_path</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">master_database_path</span><span class="si">}</span><span class="s2"> not found&quot;</span></div>
+
+
+    <span class="n">is_github_actions</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;GITHUB_ACTIONS&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span>
+
+<div class="viewcode-block" id="TestPhreeqPython.test_add_solution">
+<a class="viewcode-back" href="../../tests.html#tests.test_phreeqc_python.TestPhreeqPython.test_add_solution">[docs]</a>
+    <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">skipif</span><span class="p">(</span><span class="n">is_github_actions</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s2">&quot;Skipping test on GitHub Actions&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_add_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Tests if the database compiles&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">master_database_path</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="s1">&#39;tests&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;master_database.dat&#39;</span><span class="p">)</span>
+        <span class="n">pp</span> <span class="o">=</span> <span class="n">PhreeqPython</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master_database_path</span><span class="p">)</span>
+        <span class="n">sol</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;pH&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+            <span class="s1">&#39;Cl&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+            <span class="s1">&#39;Na&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+            <span class="s1">&#39;As(+5)&#39;</span><span class="p">:</span> <span class="mf">0.00000303</span><span class="p">,</span>
+            <span class="s1">&#39;units&#39;</span><span class="p">:</span> <span class="s1">&#39;mol/kgw&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;temperature&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">pp</span><span class="o">.</span><span class="n">add_solution</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
+            <span class="k">assert</span> <span class="kc">True</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="kc">False</span><span class="p">,</span> <span class="n">e</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="test_module">
+<a class="viewcode-back" href="../../tests.html#tests.test_phreeqc_python.test_module">[docs]</a>
+<span class="k">def</span> <span class="nf">test_module</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tests if the results from PHREEQCPython are the same as PHREEQC&quot;&quot;&quot;</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="s1">&#39;tests.testing_databases&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;PdmaDatabase1.dat&#39;</span><span class="p">)</span>
+    <span class="n">pp</span> <span class="o">=</span> <span class="n">PhreeqPython</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
+    <span class="n">sol</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;units&#39;</span><span class="p">:</span> <span class="s1">&#39;mol/kgw&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;pH&#39;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s1">&#39;Cl&#39;</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
+        <span class="s1">&#39;Na&#39;</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
+        <span class="s1">&#39;K&#39;</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
+        <span class="s1">&#39;Pdma&#39;</span><span class="p">:</span> <span class="mf">0.00001</span><span class="p">,</span>
+        <span class="s1">&#39;Zn&#39;</span><span class="p">:</span> <span class="mf">0.000001</span><span class="p">,</span>
+        <span class="s1">&#39;temperature&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+        <span class="s1">&#39;pe&#39;</span><span class="p">:</span> <span class="mf">5.92</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">solution</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">add_solution</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;ZnPdmaSpeciation.xls&#39;</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="s1">&#39;tests&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+    <span class="n">df_phreeqc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">df_phreeqc</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;m_&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df_phreeqc</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    <span class="n">df_pyphreeqc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">solution</span><span class="o">.</span><span class="n">species</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">df_val</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_phreeqc</span><span class="p">,</span> <span class="n">df_pyphreeqc</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">df_val</span> <span class="o">=</span> <span class="n">df_val</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_series_equal</span><span class="p">(</span><span class="n">df_val</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">df_val</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="test_exampls">
+<a class="viewcode-back" href="../../tests.html#tests.test_phreeqc_python.test_exampls">[docs]</a>
+<span class="k">def</span> <span class="nf">test_exampls</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tests if the results from PHREEQCPython are the same as PHREEQC&quot;&quot;&quot;</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="s1">&#39;build_database.databases&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;llnl.dat&#39;</span><span class="p">)</span>
+    <span class="n">pp</span> <span class="o">=</span> <span class="n">PhreeqPython</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;output.xls&#39;</span>
+    <span class="n">keep</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AsO4-3&#39;</span><span class="p">,</span> <span class="s1">&#39;HAsO4-2&#39;</span><span class="p">,</span> <span class="s1">&#39;H2AsO4-&#39;</span><span class="p">,</span> <span class="s1">&#39;H3AsO4&#39;</span><span class="p">]</span>
+    <span class="n">val_path</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="s1">&#39;tests&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+    <span class="n">df_val</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">val_path</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">df_val</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;m_&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df_val</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    <span class="n">df_val</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;pH&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_val</span> <span class="o">=</span> <span class="n">df_val</span><span class="p">[</span><span class="n">keep</span><span class="p">]</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">pH</span> <span class="ow">in</span> <span class="n">df_val</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+        <span class="n">sol</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;units&#39;</span><span class="p">:</span> <span class="s1">&#39;mol/kgw&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;pH&#39;</span><span class="p">:</span> <span class="n">pH</span><span class="p">,</span>
+            <span class="s1">&#39;Cl&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+            <span class="s1">&#39;Na&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+            <span class="s1">&#39;As(+5)&#39;</span><span class="p">:</span> <span class="mf">0.0000030</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">solution</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">add_solution</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
+        <span class="n">temp_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">solution</span><span class="o">.</span><span class="n">species</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="n">pH</span><span class="p">])</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">result</span><span class="p">,</span> <span class="n">temp_df</span><span class="p">])</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">keep</span><span class="p">]</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;pH&#39;</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+    <span class="n">pd</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_frame_equal</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">df_val</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Joshua Leiper.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

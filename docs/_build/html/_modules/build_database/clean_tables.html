@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>build_database.clean_tables &mdash; PHREEQC Database Tools  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            PHREEQC Database Tools
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">irp-jjl122</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PHREEQC Database Tools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">build_database.clean_tables</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for build_database.clean_tables</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Uses Solution and Master Solution parsers to compile tables from multiple databases&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">click</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Literal</span>
+<span class="kn">import</span> <span class="nn">importlib.resources</span> <span class="k">as</span> <span class="nn">pkg_resources</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">build_database</span> <span class="kn">import</span> <span class="n">parser_dat</span>
+<span class="kn">from</span> <span class="nn">build_database</span> <span class="kn">import</span> <span class="n">utils</span>
+
+
+<div class="viewcode-block" id="compile_master_solution_table">
+<a class="viewcode-back" href="../../build_database.html#build_database.clean_tables.compile_master_solution_table">[docs]</a>
+<span class="k">def</span> <span class="nf">compile_master_solution_table</span><span class="p">(</span>
+    <span class="n">list_of_databases</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">analysis</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compile the master solution table by merging data from multiple databases.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - list_of_databases (list): A list of databases to merge.</span>
+
+
+<span class="sd">    Returns:</span>
+<span class="sd">    - pd.DataFrame: The compiled master solution table.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">    - None</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">    &gt;&gt;&gt; compile_master_solution_table([&#39;db1&#39;, &#39;db2&#39;])</span>
+<span class="sd">    Returns the compiled master solution table by merging data from &#39;db1&#39; and &#39;db2&#39; databases.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">parser_dat</span><span class="o">.</span><span class="n">MasterSolutionParser</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">database</span> <span class="ow">in</span> <span class="n">list_of_databases</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">parser_dat</span><span class="o">.</span><span class="n">MasterSolutionParser</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">data_frame</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">data_frame</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;element&quot;</span><span class="p">,</span> <span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;gfw_formula&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">data_frame</span><span class="p">[</span><span class="s2">&quot;element&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">data_frame</span><span class="p">[</span><span class="s2">&quot;element&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">replace_elements</span><span class="p">)</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">data_frame</span><span class="p">[</span><span class="s2">&quot;alk&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">data_frame</span><span class="p">[</span><span class="s2">&quot;alk&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">analysis</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">data_frame</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">data_frame</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span>
+            <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;element&quot;</span><span class="p">,</span> <span class="s2">&quot;species&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">data_frame</span><span class="p">[</span><span class="s2">&quot;source&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">data_frame</span><span class="p">[</span><span class="s2">&quot;source&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;#</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">data_frame</span></div>
+
+
+
+<div class="viewcode-block" id="compile_solution_species_table">
+<a class="viewcode-back" href="../../build_database.html#build_database.clean_tables.compile_solution_species_table">[docs]</a>
+<span class="k">def</span> <span class="nf">compile_solution_species_table</span><span class="p">(</span><span class="n">list_of_databases</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compile the solution species table from a list of databases.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        list_of_databases (list): A list of database file paths.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The compiled solution species table.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># init result</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">parser_dat</span><span class="o">.</span><span class="n">SolutionParser</span><span class="p">(</span><span class="n">list_of_databases</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">parse_file</span><span class="p">()</span>
+
+    <span class="c1"># loop through all databases</span>
+    <span class="k">for</span> <span class="n">database</span> <span class="ow">in</span> <span class="n">list_of_databases</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">result</span><span class="p">,</span> <span class="n">parser_dat</span><span class="o">.</span><span class="n">SolutionParser</span><span class="p">(</span><span class="n">database</span><span class="p">)</span><span class="o">.</span><span class="n">parse_file</span><span class="p">()])</span>
+
+    <span class="c1"># convert log_k to float</span>
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;log_k&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;log_k&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">log_k_to_float</span><span class="p">)</span>
+
+    <span class="c1"># convert llnl_gamma to float</span>
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;llnl_gamma&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;llnl_gamma&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">if</span> <span class="n">x</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="c1"># remove 1.0000 from equations</span>
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;equation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">remove_ones</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;equation&quot;</span><span class="p">])</span>
+
+    <span class="c1"># Change mulitple ---- to -4, --- to -3, -- to -2</span>
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;equation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;equation&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">replace_charges</span><span class="p">)</span>
+
+    <span class="c1"># remove decimals from equations where possible</span>
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;equation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">strfloat_to_stringint</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;equation&quot;</span><span class="p">])</span>
+
+    <span class="c1"># clean vm column</span>
+    <span class="k">if</span> <span class="s2">&quot;v_m&quot;</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">result</span><span class="p">[</span><span class="s2">&quot;v_m&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;v_m&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">clean_tuple</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;vm&quot;</span><span class="p">))</span>
+
+    <span class="c1"># clean dw column</span>
+    <span class="k">if</span> <span class="s2">&quot;d_w&quot;</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">result</span><span class="p">[</span><span class="s2">&quot;d_w&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;d_w&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">clean_tuple</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;dw&quot;</span><span class="p">))</span>
+
+    <span class="c1"># convert no_check to boolean</span>
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;no_check&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;no_check&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="kc">True</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="kc">False</span>
+    <span class="p">)</span>
+
+    <span class="c1"># reset index and drop index column</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">result</span></div>
+
+
+
+<span class="c1"># This function is not implemented yet, skip in testing</span>
+<div class="viewcode-block" id="compile_phase_table">
+<a class="viewcode-back" href="../../build_database.html#build_database.clean_tables.compile_phase_table">[docs]</a>
+<span class="k">def</span> <span class="nf">compile_phase_table</span><span class="p">(</span><span class="n">list_of_databases</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compile phase table from a list of databases.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        list_of_databases (list): A list of database file paths.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The compiled phase table.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        IndexError: If the &#39;SURFACE_SPECIES&#39; phase is not found in the result.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># init result</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">parser_dat</span><span class="o">.</span><span class="n">PhaseParser</span><span class="p">(</span><span class="n">list_of_databases</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">parse_file</span><span class="p">()</span>
+
+    <span class="c1"># loop through all databases</span>
+    <span class="k">for</span> <span class="n">database</span> <span class="ow">in</span> <span class="n">list_of_databases</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">result</span><span class="p">,</span> <span class="n">parser_dat</span><span class="o">.</span><span class="n">PhaseParser</span><span class="p">(</span><span class="n">database</span><span class="p">)</span><span class="o">.</span><span class="n">parse_file</span><span class="p">()])</span>
+
+    <span class="c1"># drop empty rows</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+    <span class="c1"># drop duplicate rows</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;phase_name&quot;</span><span class="p">,</span> <span class="s2">&quot;dissolution_reaction&quot;</span><span class="p">])</span>
+
+    <span class="c1"># convert dissolution_reaction to string</span>
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;dissolution_reaction&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;dissolution_reaction&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="n">tuple_to_string</span>
+    <span class="p">)</span>
+
+    <span class="c1"># clean up vm column</span>
+    <span class="k">if</span> <span class="s2">&quot;v_m&quot;</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">result</span><span class="p">[</span><span class="s2">&quot;v_m&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;v_m&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">clean_tuple</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;vm&quot;</span><span class="p">))</span>
+
+    <span class="c1"># breakup tc column</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">expand_tc</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">tupe_to_float_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;t_c&quot;</span><span class="p">,</span> <span class="s2">&quot;p_c&quot;</span><span class="p">,</span> <span class="s2">&quot;omega&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">tupe_to_float_columns</span><span class="p">:</span>
+        <span class="n">result</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">tuple_to_float</span><span class="p">)</span>
+
+    <span class="c1"># remove 1.0000 from equations</span>
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;dissolution_reaction&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">remove_ones</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;dissolution_reaction&quot;</span><span class="p">])</span>
+
+    <span class="c1"># remove decimals from equations where possible</span>
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;dissolution_reaction&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">strfloat_to_stringint</span><span class="p">(</span>
+        <span class="n">result</span><span class="p">[</span><span class="s2">&quot;dissolution_reaction&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Change ---- to -4, --- to -3, -- to -2</span>
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;dissolution_reaction&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;dissolution_reaction&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="n">replace_charges</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Seperate log_k and delta_h</span>
+    <span class="n">result</span><span class="p">[[</span><span class="s2">&quot;log_k&quot;</span><span class="p">,</span> <span class="s2">&quot;delta_h&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">expand_logk</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># convert log_k tuple to float</span>
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;log_k&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;log_k&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">tuple_to_float</span><span class="p">)</span>
+
+    <span class="c1"># replace all np.nan with None</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">:</span> <span class="kc">None</span><span class="p">})</span>
+
+    <span class="c1"># remove surface master species row</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">surface_species_index</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;phase_name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;SURFACE_SPECIES&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">[</span>
+            <span class="mi">0</span>
+        <span class="p">]</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">surface_species_index</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="c1"># reset index and drop index column</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span></div>
+
+
+
+<div class="viewcode-block" id="replace_charges">
+<a class="viewcode-back" href="../../build_database.html#build_database.clean_tables.replace_charges">[docs]</a>
+<span class="k">def</span> <span class="nf">replace_charges</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Replace charges in a string with their corresponding values.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        value (str): The input string containing charges to be replaced.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The modified string with charges replaced.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; replace_charges(&quot;HO----&quot;)</span>
+<span class="sd">        &quot;HO-4&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;----&quot;</span><span class="p">,</span> <span class="s2">&quot;-4&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;-3&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="s2">&quot;-2&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span></div>
+
+
+
+<div class="viewcode-block" id="replace_elements">
+<a class="viewcode-back" href="../../build_database.html#build_database.clean_tables.replace_elements">[docs]</a>
+<span class="k">def</span> <span class="nf">replace_elements</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Replace elements in the format &#39;Element(Number)&#39; with &#39;Element(+Number)&#39;.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    value (str): The input string to be processed.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    str: The processed string with replaced elements.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">    &gt;&gt;&gt; replace_elements(&quot;H(2)O + Na(1)Cl&quot;)</span>
+<span class="sd">    &#39;H(+2)O + Na(+1)Cl&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([A-Za-z]+)\((?!0\b)(\d+)\)&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+        <span class="n">element</span><span class="p">,</span> <span class="n">number</span> <span class="o">=</span> <span class="n">match</span>
+        <span class="c1"># Replace the matched pattern with &#39;Element(+Number)&#39;</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">element</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">element</span><span class="si">}</span><span class="s2">(+</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span></div>
+
+
+
+<div class="viewcode-block" id="remove_ones">
+<a class="viewcode-back" href="../../build_database.html#build_database.clean_tables.remove_ones">[docs]</a>
+<span class="k">def</span> <span class="nf">remove_ones</span><span class="p">(</span><span class="n">equation</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Changes 1.0000 to 1 in the equation column&quot;&quot;&quot;</span>
+    <span class="n">ones</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\b1\.0000?\b\s?&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">equation</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">ones</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="strfloat_to_stringint">
+<a class="viewcode-back" href="../../build_database.html#build_database.clean_tables.strfloat_to_stringint">[docs]</a>
+<span class="k">def</span> <span class="nf">strfloat_to_stringint</span><span class="p">(</span><span class="n">equation</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Removes decimals from equation when representing integers&quot;&quot;&quot;</span>
+    <span class="n">decimals</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\.0000?[ ]?&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">equation</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">decimals</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="clean_tuple">
+<a class="viewcode-back" href="../../build_database.html#build_database.clean_tables.clean_tuple">[docs]</a>
+<span class="k">def</span> <span class="nf">clean_tuple</span><span class="p">(</span>
+    <span class="n">tup</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">filter_str</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;vm&quot;</span><span class="p">,</span> <span class="s2">&quot;dw&quot;</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="o">...</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Clean the input tuple by removing elements that contain a specified substring (&#39;vm&#39; or &#39;dw&#39;)</span>
+<span class="sd">    and converting numeric strings to floats. Retains numeric elements as they are.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        tup (tuple): The input tuple to be cleaned.</span>
+<span class="sd">        filter_str (Literal[&#39;vm&#39;, &#39;dw&#39;]): The substring to filter out from the tuple. Only &#39;vm&#39; or &#39;dw&#39; are allowed.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: The cleaned tuple, or None if the input tuple is empty or contains no valid elements.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">tup</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">tup</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="p">(</span><span class="nb">float</span><span class="p">)):</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">entry</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">filter_str</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">entry</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">entry</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+                    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="k">pass</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="k">if</span> <span class="n">result</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="expand_tc">
+<a class="viewcode-back" href="../../build_database.html#build_database.clean_tables.expand_tc">[docs]</a>
+<span class="k">def</span> <span class="nf">expand_tc</span><span class="p">(</span><span class="n">row</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Expand the &#39;t_c&#39; column in the given row by extracting &#39;p_c&#39; and &#39;omega&#39; values.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    row : dict</span>
+<span class="sd">        A dictionary representing a row of data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        The modified row dictionary with &#39;p_c&#39; and &#39;omega&#39; values extracted from &#39;t_c&#39;.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This function assumes that the &#39;t_c&#39; column in the given row contains a list of values.</span>
+<span class="sd">    The first value in the list is considered as the &#39;t_c&#39; value, followed by optional &#39;p_c&#39; and &#39;omega&#39; values.</span>
+<span class="sd">    The &#39;p_c&#39; value is identified by the presence of &#39;P_c&#39; or &#39;p_c&#39; in the list.</span>
+<span class="sd">    The &#39;omega&#39; value is identified by the presence of &#39;Omega&#39; or &#39;omega&#39; in the list.</span>
+
+<span class="sd">    If the &#39;t_c&#39; column is empty or contains only one value, the &#39;p_c&#39; and &#39;omega&#39; values will be set to 0.0.</span>
+<span class="sd">    These are the default values listing in PHREEQC documentation.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pc_ex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\W?[Pp]_?[Cc]&quot;</span><span class="p">)</span>
+    <span class="n">omega_ex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\s?\W?[Oo]mega&quot;</span><span class="p">)</span>
+    <span class="n">t_c_combined</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;t_c&quot;</span><span class="p">]</span>
+    <span class="n">t_c</span><span class="p">,</span> <span class="n">p_c</span><span class="p">,</span> <span class="n">omega</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">if</span> <span class="n">t_c_combined</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">t_c_combined</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">entry</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">t_c_combined</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">t_c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">pc_ex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">entry</span><span class="p">):</span>
+                <span class="n">p_c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">t_c_combined</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">omega_ex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">entry</span><span class="p">):</span>
+                <span class="n">omega</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">t_c_combined</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">))</span>
+    <span class="n">row</span><span class="p">[</span><span class="s2">&quot;p_c&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">p_c</span>
+    <span class="n">row</span><span class="p">[</span><span class="s2">&quot;omega&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">omega</span>
+    <span class="n">row</span><span class="p">[</span><span class="s2">&quot;t_c&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t_c</span>
+    <span class="k">return</span> <span class="n">row</span></div>
+
+
+
+<span class="c1"># function is only used in compile_phase_table, which is not implemented yet, skip in testing</span>
+<div class="viewcode-block" id="tuple_to_string">
+<a class="viewcode-back" href="../../build_database.html#build_database.clean_tables.tuple_to_string">[docs]</a>
+<span class="k">def</span> <span class="nf">tuple_to_string</span><span class="p">(</span><span class="n">tup</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Converts a tuple to a string by joining all elements with a space&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span></div>
+
+
+
+<span class="c1"># function is only used in compile_phase_table, which is not implemented yet, skip in testing</span>
+<div class="viewcode-block" id="tuple_to_float">
+<a class="viewcode-back" href="../../build_database.html#build_database.clean_tables.tuple_to_float">[docs]</a>
+<span class="k">def</span> <span class="nf">tuple_to_float</span><span class="p">(</span><span class="n">tup</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>  <span class="c1"># pragma: no cover</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Converts a tuple to a float by taking the first element&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">tup</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tup</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+<span class="c1"># function is only used in compile_phase_table, which is not implemented yet, skip in testing</span>
+<div class="viewcode-block" id="expand_logk">
+<a class="viewcode-back" href="../../build_database.html#build_database.clean_tables.expand_logk">[docs]</a>
+<span class="k">def</span> <span class="nf">expand_logk</span><span class="p">(</span><span class="n">row</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Expand the log_k value in the given row.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - row (pandas.Series): A row of data containing &#39;log_k&#39; and &#39;delta_h&#39; columns.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    - pandas.Series: A new series with expanded &#39;log_k&#39; value and corrected &#39;delta_h&#39; value.</span>
+
+<span class="sd">    Notes:</span>
+<span class="sd">    - The &#39;log_k&#39; value is expanded by separating the first element from the rest of the elements.</span>
+<span class="sd">    - The &#39;delta_h&#39; value is corrected by removing any entries that do not contain &#39;delta_h&#39; in their lowercase form.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">log_k_value</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;log_k&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">log_k_value</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">log_k_value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">log_k_corrected</span> <span class="o">=</span> <span class="p">(</span><span class="n">log_k_value</span><span class="p">[</span><span class="mi">0</span><span class="p">],)</span>
+        <span class="n">delta_h_corrected</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">entry</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">log_k_value</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="s2">&quot;delta_h&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">entry</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                <span class="n">delta_h_corrected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+        <span class="n">delta_h_corrected</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">delta_h_corrected</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">log_k_corrected</span><span class="p">,</span> <span class="n">delta_h_corrected</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">log_k_value</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;delta_h&quot;</span><span class="p">]])</span></div>
+
+
+
+<div class="viewcode-block" id="log_k_to_float">
+<a class="viewcode-back" href="../../build_database.html#build_database.clean_tables.log_k_to_float">[docs]</a>
+<span class="k">def</span> <span class="nf">log_k_to_float</span><span class="p">(</span><span class="n">entry</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert log_k value to float&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">entry</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">))</span> <span class="k">if</span> <span class="s2">&quot;;&quot;</span> <span class="ow">in</span> <span class="n">entry</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="mf">0.0</span></div>
+
+
+
+<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--function&quot;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">click</span><span class="o">.</span><span class="n">Choice</span><span class="p">([</span><span class="s2">&quot;master_solution&quot;</span><span class="p">,</span> <span class="s2">&quot;solution_species&quot;</span><span class="p">],</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The function to run: compile_master_solution_table (master_solution)&quot;</span>
+    <span class="s2">&quot; or compile_solution_species_table (solution_species).&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1"># @click.option(&#39;--databases&#39;, multiple=True, required=True, help=&#39;List of database file paths.&#39;)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--output&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;-o&quot;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">click</span><span class="o">.</span><span class="n">Path</span><span class="p">(),</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="s2">&quot;result&quot;</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Output file path.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--format&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;-f&quot;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">click</span><span class="o">.</span><span class="n">Choice</span><span class="p">([</span><span class="s2">&quot;csv&quot;</span><span class="p">,</span> <span class="s2">&quot;json&quot;</span><span class="p">],</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+    <span class="n">default</span><span class="o">=</span><span class="s2">&quot;csv&quot;</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Output file format: csv or json.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--analysis&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;-a&quot;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Flag to include additional analysis in the master solution table.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">analysis</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A CLI tool to compile tables from multiple databases and save as CSV or JSON.</span>
+
+<span class="sd">    Example usage:</span>
+<span class="sd">    python script.py --function master_solution --databases db1 db2 --output output.csv --format csv</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data_b</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="s1">&#39;build_database&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;databases&#39;</span><span class="p">)</span>
+    <span class="n">data_b</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">phreeqc_database_list</span><span class="p">(</span><span class="n">data_b</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">function</span> <span class="o">==</span> <span class="s2">&quot;master_solution&quot;</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">compile_master_solution_table</span><span class="p">(</span>
+            <span class="n">list_of_databases</span><span class="o">=</span><span class="n">data_b</span><span class="p">,</span> <span class="n">analysis</span><span class="o">=</span><span class="n">analysis</span>
+        <span class="p">)</span>
+    <span class="k">elif</span> <span class="n">function</span> <span class="o">==</span> <span class="s2">&quot;solution_species&quot;</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">compile_solution_species_table</span><span class="p">(</span><span class="n">list_of_databases</span><span class="o">=</span><span class="n">data_b</span><span class="p">)</span>
+
+    <span class="c1"># Save the DataFrame to the specified format</span>
+    <span class="k">if</span> <span class="nb">format</span> <span class="o">==</span> <span class="s2">&quot;csv&quot;</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;.csv&quot;</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">output</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.csv&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data saved to </span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s2"> in CSV format.&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">format</span> <span class="o">==</span> <span class="s2">&quot;json&quot;</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;.json&quot;</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">output</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.json&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;records&quot;</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data saved to </span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s2"> in JSON format.&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Joshua Leiper.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

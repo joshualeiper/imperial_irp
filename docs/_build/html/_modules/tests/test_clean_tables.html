@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tests.test_clean_tables &mdash; PHREEQC Database Tools  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            PHREEQC Database Tools
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">irp-jjl122</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PHREEQC Database Tools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">tests.test_clean_tables</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for tests.test_clean_tables</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">importlib.resources</span> <span class="k">as</span> <span class="nn">pkg_resources</span>
+<span class="kn">import</span> <span class="nn">build_database.clean_tables</span> <span class="k">as</span> <span class="nn">ct</span>
+<span class="kn">from</span> <span class="nn">build_database.utils</span> <span class="kn">import</span> <span class="n">save_master_database</span>
+
+
+<span class="n">DB_LIST</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;test_database.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;test_database_1.dat&#39;</span><span class="p">]</span>
+<span class="n">DB_LIST</span> <span class="o">=</span> <span class="p">[</span><span class="n">pkg_resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="s1">&#39;tests.testing_databases&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">DB_LIST</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="TestSmsTable">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestSmsTable">[docs]</a>
+<span class="k">class</span> <span class="nc">TestSmsTable</span><span class="p">:</span>
+
+<div class="viewcode-block" id="TestSmsTable.setup">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestSmsTable.setup">[docs]</a>
+    <span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compile the master solution table &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">compile_master_solution_table</span><span class="p">(</span><span class="n">DB_LIST</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TestSmsTable.test_sms_shape">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestSmsTable.test_sms_shape">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_sms_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Should have one duplicate row</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">30</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Expected shape (30, 6), but got </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+<div class="viewcode-block" id="TestSmsTable.test_replace_elements">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestSmsTable.test_replace_elements">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_replace_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;element&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;U[(]\d[)]&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;element&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;U\(\+\d\)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">==</span> <span class="mi">3</span></div>
+
+
+<div class="viewcode-block" id="TestSmsTable.test_alk_type">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestSmsTable.test_alk_type">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_alk_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;alk&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="nb">float</span></div>
+
+
+<div class="viewcode-block" id="TestSmsTable.test_source">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestSmsTable.test_source">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_source</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">==</span> <span class="mi">2</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TestSolutionTable">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestSolutionTable">[docs]</a>
+<span class="k">class</span> <span class="nc">TestSolutionTable</span><span class="p">:</span>
+
+<div class="viewcode-block" id="TestSolutionTable.setup">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestSolutionTable.setup">[docs]</a>
+    <span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">compile_solution_species_table</span><span class="p">(</span><span class="n">DB_LIST</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TestSolutionTable.test_log_k">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestSolutionTable.test_log_k">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_log_k</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;log_k&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="nb">float</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;log_k&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="TestSolutionTable.test_check_floats">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestSolutionTable.test_check_floats">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_check_floats</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Ensure 1.0000 is not present</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;equation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;equation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;1.0000&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+        <span class="c1"># Make sure 11.0000 -&gt; 11</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;equation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;11(?!.\.)[ ]?[a-zA-Z]&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;equation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\b11\.000\b&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="TestSolutionTable.test_ions">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestSolutionTable.test_ions">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_ions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;equation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;----&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(),</span> <span class="s2">&quot;---- not converted to -4&quot;</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;equation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;---&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(),</span> <span class="s2">&quot;--- not converted to -3&quot;</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;equation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;--&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(),</span> <span class="s2">&quot;-- not converted to -2&quot;</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;equation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;-4&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(),</span> <span class="s2">&quot;Converstion failed&quot;</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;equation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;-3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(),</span> <span class="s2">&quot;Converstion failed&quot;</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;equation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;-2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(),</span> <span class="s2">&quot;Converstion failed&quot;</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="clean_function_test">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.clean_function_test">[docs]</a>
+<span class="k">def</span> <span class="nf">clean_function_test</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">clean_function</span><span class="p">,</span> <span class="n">sample_tuples</span><span class="p">,</span> <span class="n">expected_answer</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sample</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sample_tuples</span><span class="p">):</span>
+        <span class="n">cleaned_sample</span> <span class="o">=</span> <span class="n">clean_function</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cleaned_sample</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Test case </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: Expected tuple, but got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">cleaned_sample</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">long_message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Test case </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: Expected &#39;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">&#39; to be removed, but got </span><span class="si">{</span><span class="n">cleaned_sample</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">assert</span> <span class="n">prefix</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cleaned_sample</span><span class="p">,</span> <span class="n">long_message</span>
+        <span class="n">long_message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Test case </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: Expected all floats, but got </span><span class="si">{</span><span class="p">[</span><span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">cleaned_sample</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">cleaned_sample</span><span class="p">),</span> <span class="n">long_message</span>
+        <span class="k">assert</span> <span class="n">cleaned_sample</span> <span class="o">==</span> <span class="n">expected_answer</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Test case </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: Expected </span><span class="si">{</span><span class="n">expected_answer</span><span class="si">}</span><span class="s2">, but got </span><span class="si">{</span><span class="n">cleaned_sample</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="TestExpandTC">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestExpandTC">[docs]</a>
+<span class="k">class</span> <span class="nc">TestExpandTC</span><span class="p">:</span>
+
+<div class="viewcode-block" id="TestExpandTC.test_expand_tc_basic_case">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestExpandTC.test_expand_tc_basic_case">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_expand_tc_basic_case</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;t_c&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;25.0&#39;</span><span class="p">,</span> <span class="s1">&#39;P_c&#39;</span><span class="p">,</span> <span class="s1">&#39;101.3&#39;</span><span class="p">,</span> <span class="s1">&#39;Omega&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8&#39;</span><span class="p">]})</span>
+        <span class="n">expected</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;t_c&#39;</span><span class="p">:</span> <span class="mf">25.0</span><span class="p">,</span> <span class="s1">&#39;p_c&#39;</span><span class="p">:</span> <span class="mf">101.3</span><span class="p">,</span> <span class="s1">&#39;omega&#39;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">})</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">expand_tc</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;t_c&#39;</span><span class="p">,</span> <span class="s1">&#39;p_c&#39;</span><span class="p">,</span> <span class="s1">&#39;omega&#39;</span><span class="p">]:</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="nb">float</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> to be of type float, but got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">==</span> <span class="n">expected</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> to be </span><span class="si">{</span><span class="n">expected</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">, but got </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+<div class="viewcode-block" id="TestExpandTC.test_expand_tc_tc_and_pc_only">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestExpandTC.test_expand_tc_tc_and_pc_only">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_expand_tc_tc_and_pc_only</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;t_c&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;25.0&#39;</span><span class="p">,</span> <span class="s1">&#39;P_c&#39;</span><span class="p">,</span> <span class="s1">&#39;101.3&#39;</span><span class="p">]})</span>
+        <span class="n">expected</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;t_c&#39;</span><span class="p">:</span> <span class="mf">25.0</span><span class="p">,</span> <span class="s1">&#39;p_c&#39;</span><span class="p">:</span> <span class="mf">101.3</span><span class="p">,</span> <span class="s1">&#39;omega&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">})</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">expand_tc</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;t_c&#39;</span><span class="p">,</span> <span class="s1">&#39;p_c&#39;</span><span class="p">]:</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="nb">float</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> to be of type float, but got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">==</span> <span class="n">expected</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> to be </span><span class="si">{</span><span class="n">expected</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">, but got </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;omega&#39;</span><span class="p">]),</span> <span class="sa">f</span><span class="s2">&quot;Expected omega to be NaN, but got </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;omega&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+<div class="viewcode-block" id="TestExpandTC.test_expand_tc_tc_and_omega_only">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestExpandTC.test_expand_tc_tc_and_omega_only">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_expand_tc_tc_and_omega_only</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;t_c&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;25.0&#39;</span><span class="p">,</span> <span class="s1">&#39;Omega&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8&#39;</span><span class="p">]})</span>
+        <span class="n">expected</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;t_c&#39;</span><span class="p">:</span> <span class="mf">25.0</span><span class="p">,</span> <span class="s1">&#39;p_c&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s1">&#39;omega&#39;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">})</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">expand_tc</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;t_c&#39;</span><span class="p">,</span> <span class="s1">&#39;omega&#39;</span><span class="p">]:</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="nb">float</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> to be of type float, but got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">==</span> <span class="n">expected</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> to be </span><span class="si">{</span><span class="n">expected</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">, but got </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;p_c&#39;</span><span class="p">]),</span> <span class="sa">f</span><span class="s2">&quot;Expected p_c to be NaN, but got </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;p_c&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+<div class="viewcode-block" id="TestExpandTC.test_expand_tc_empty_list">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestExpandTC.test_expand_tc_empty_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_expand_tc_empty_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;t_c&#39;</span><span class="p">:</span> <span class="p">[]})</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">expand_tc</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;t_c&#39;</span><span class="p">,</span> <span class="s1">&#39;p_c&#39;</span><span class="p">,</span> <span class="s1">&#39;omega&#39;</span><span class="p">]:</span>
+            <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]),</span> <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> to be NaN, but got </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+<div class="viewcode-block" id="TestExpandTC.test_expand_tc_mixed_noise_data">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.TestExpandTC.test_expand_tc_mixed_noise_data">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_expand_tc_mixed_noise_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;t_c&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;25.0&#39;</span><span class="p">,</span> <span class="s1">&#39;Noise&#39;</span><span class="p">,</span> <span class="s1">&#39;P_c&#39;</span><span class="p">,</span> <span class="s1">&#39;101.3&#39;</span><span class="p">,</span> <span class="s1">&#39;Random&#39;</span><span class="p">,</span> <span class="s1">&#39;Omega&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8&#39;</span><span class="p">,</span> <span class="s1">&#39;Extra&#39;</span><span class="p">]})</span>
+        <span class="n">expected</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;t_c&#39;</span><span class="p">:</span> <span class="mf">25.0</span><span class="p">,</span> <span class="s1">&#39;p_c&#39;</span><span class="p">:</span> <span class="mf">101.3</span><span class="p">,</span> <span class="s1">&#39;omega&#39;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">})</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">expand_tc</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;t_c&#39;</span><span class="p">,</span> <span class="s1">&#39;p_c&#39;</span><span class="p">,</span> <span class="s1">&#39;omega&#39;</span><span class="p">]:</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="nb">float</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> to be of type float, but got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">==</span> <span class="n">expected</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> to be </span><span class="si">{</span><span class="n">expected</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">, but got </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="test_clean_vm">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.test_clean_vm">[docs]</a>
+<span class="k">def</span> <span class="nf">test_clean_vm</span><span class="p">():</span>
+    <span class="n">vm_samples</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;-Vm&#39;</span><span class="p">,</span> <span class="s1">&#39;-9.66&#39;</span><span class="p">,</span> <span class="s1">&#39;28.5&#39;</span><span class="p">,</span> <span class="s1">&#39;80.0&#39;</span><span class="p">,</span> <span class="s1">&#39;-22.9&#39;</span><span class="p">,</span> <span class="s1">&#39;1.89&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1.09&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;vm&#39;</span><span class="p">,</span> <span class="s1">&#39;-9.66&#39;</span><span class="p">,</span> <span class="mf">28.5</span><span class="p">,</span> <span class="s1">&#39;80.0&#39;</span><span class="p">,</span> <span class="s1">&#39;-22.9&#39;</span><span class="p">,</span> <span class="s1">&#39;1.89&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1.09&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;Vm&#39;</span><span class="p">,</span> <span class="s1">&#39;-9.66&#39;</span><span class="p">,</span> <span class="s1">&#39;28.5&#39;</span><span class="p">,</span> <span class="s1">&#39;80.0&#39;</span><span class="p">,</span> <span class="s1">&#39;-22.9&#39;</span><span class="p">,</span> <span class="s1">&#39;1.89&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1.09&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;-9.66&#39;</span><span class="p">,</span> <span class="s1">&#39;28.5&#39;</span><span class="p">,</span> <span class="s1">&#39;80.0&#39;</span><span class="p">,</span> <span class="s1">&#39;-22.9&#39;</span><span class="p">,</span> <span class="s1">&#39;1.89&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1.09&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">vm_expected_answer</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">9.66</span><span class="p">,</span> <span class="mf">28.5</span><span class="p">,</span> <span class="mf">80.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">22.9</span><span class="p">,</span> <span class="mf">1.89</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.09</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">vm_samples</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">ct</span><span class="o">.</span><span class="n">clean_tuple</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="s1">&#39;vm&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">vm_expected_answer</span></div>
+
+
+
+<div class="viewcode-block" id="test_clean_dw">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.test_clean_dw">[docs]</a>
+<span class="k">def</span> <span class="nf">test_clean_dw</span><span class="p">():</span>
+    <span class="n">dw_samples</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;-dw&#39;</span><span class="p">,</span> <span class="s1">&#39;0.955e-9&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1.12&#39;</span><span class="p">,</span> <span class="s1">&#39;2.84&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;dw&#39;</span><span class="p">,</span> <span class="s1">&#39;0.955e-9&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="mf">1.12</span><span class="p">,</span> <span class="s1">&#39;2.84&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;-Dw&#39;</span><span class="p">,</span> <span class="s1">&#39;0.955e-9&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1.12&#39;</span><span class="p">,</span> <span class="s1">&#39;2.84&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;0.955e-9&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1.12&#39;</span><span class="p">,</span> <span class="s1">&#39;2.84&#39;</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">dw_expected_answer</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.955e-9</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.12</span><span class="p">,</span> <span class="mf">2.84</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">dw_samples</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">ct</span><span class="o">.</span><span class="n">clean_tuple</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="s1">&#39;dw&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">dw_expected_answer</span></div>
+
+
+
+<div class="viewcode-block" id="test_strfloat_to_stringint_">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.test_strfloat_to_stringint_">[docs]</a>
+<span class="k">def</span> <span class="nf">test_strfloat_to_stringint_</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;5.0000&#39;</span><span class="p">,</span> <span class="s1">&#39;789.000&#39;</span><span class="p">,</span> <span class="s1">&#39;1000.0000 &#39;</span><span class="p">])</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;789&#39;</span><span class="p">,</span> <span class="s1">&#39;1000&#39;</span><span class="p">])</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">strfloat_to_stringint</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_series_equal</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">expected</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="test_no_check">
+<a class="viewcode-back" href="../../tests.html#tests.test_clean_tables.test_no_check">[docs]</a>
+<span class="k">def</span> <span class="nf">test_no_check</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Test if no_check is captured correctly&#39;&#39;&#39;</span>
+
+    <span class="c1"># The minteq database has a no_check column</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="s1">&#39;build_database.databases&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;minteq.v4.dat&#39;</span><span class="p">)</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">compile_solution_species_table</span><span class="p">([</span><span class="n">db</span><span class="p">])</span>
+    <span class="k">assert</span> <span class="s1">&#39;no_check&#39;</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">columns</span>
+
+    <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="ne">UserWarning</span><span class="p">)</span>
+        <span class="n">minteq_db</span> <span class="o">=</span> <span class="n">save_master_database</span><span class="p">(</span><span class="n">output_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">result_mst</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">result_sp</span><span class="o">=</span><span class="n">db</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="s1">&#39;no_check&#39;</span> <span class="ow">in</span> <span class="n">minteq_db</span><span class="p">,</span> <span class="s1">&#39;no_check not found in minteq database&#39;</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Joshua Leiper.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
