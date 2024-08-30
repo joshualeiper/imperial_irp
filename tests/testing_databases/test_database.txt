@@ -1,0 +1,2 @@
+Some users save databases as txt files. This is not encoraged and this program will not
+search these files for databaase entries.

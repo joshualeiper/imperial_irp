@@ -3,7 +3,7 @@ exercises/anser_key/
 master_database/__pycache__
 *.csv
 
-*.txt
+
 PHREEQC_trials/
 demo.sh
 .coverage
