@@ -227,4 +227,4 @@ pytest tests/
 For details on documentation, please refer to the Sphinx autodocs in the [docs](./docs/_build/html) folder. You can view this documentation if you have cloned the repo locally by launching the [index](./docs/_build/html/index.html) file in your favorite browser.
 
 ### License
-This software is available under the MIT Licence. For details, please see [License](./LICENSE)
+This software is available under the MIT Licence. For details, please see the [License](./LICENCE.MD) document.
