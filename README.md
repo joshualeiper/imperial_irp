@@ -51,7 +51,7 @@ cd to/desired/folder
 Now, clone the repo into the folder:
 
 ```bash
-git clone https://github.com/ese-msc-2023/irp-jjl122
+https://github.com/joshualeiper/imperial_irp
 ```
 
 Move the terminal into the project repository folder:
